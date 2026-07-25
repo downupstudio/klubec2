@@ -76,6 +76,61 @@
             background: #f7f7f9;
         }
 
+        .cta-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 50px 70px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cta-section h2 {
+            font-size: 34px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: #6b6b73;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #1e1e22;
+            color: #ffffff;
+            padding: 16px 48px;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            font-family: inherit;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: #3a3a40;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn .arrow {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-btn:hover .arrow {
+            transform: translateX(4px);
+        }
+
         @media (max-width: 1024px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -100,6 +155,19 @@
                 max-height: 300px;
                 min-height: 200px;
             }
+            .cta-section {
+                padding: 35px 30px;
+            }
+            .cta-section h2 {
+                font-size: 28px;
+            }
+            .cta-section p {
+                font-size: 16px;
+            }
+            .cta-btn {
+                padding: 14px 36px;
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 640px) {
@@ -116,6 +184,21 @@
             .hero-image img {
                 max-height: 200px;
                 min-height: 150px;
+            }
+            .cta-section {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .cta-section h2 {
+                font-size: 24px;
+            }
+            .cta-section p {
+                font-size: 15px;
+            }
+            .cta-btn {
+                padding: 12px 28px;
+                font-size: 15px;
+                width: 100%;
             }
         }
     </style>
@@ -154,6 +237,17 @@
                         <div class="caption">Elektrociepłownia EC2 w Łodzi – jedna z najważniejszych powojennych inwestycji przemysłowych miasta (fot. Veolia)</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Dołącz do nas!</h2>
+                <p>
+                    Chcesz być częścią społeczności, która ocala pamięć o EC2?<br />
+                    Zapisz się do klubu i pomóż nam tworzyć archiwum tego wyjątkowego miejsca.
+                </p>
+                <a href="czlonkowie.html" class="cta-btn">
+                    Zapisz się teraz <span class="arrow">→</span>
+                </a>
             </div>
         </main>
 
