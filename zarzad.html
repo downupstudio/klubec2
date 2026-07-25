@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zarząd - Klub Przyjaciół EC2</title>
+    <link rel="stylesheet" href="header_footer.css" />
+    <style>
+        .board-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .board-container h1 {
+            font-size: 36px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .board-container .subtitle {
+            font-size: 18px;
+            color: #6b6b73;
+            margin-bottom: 50px;
+            font-weight: 350;
+        }
+
+        .board-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .board-member {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: #f7f7f9;
+            border-radius: 24px;
+            padding: 35px 45px 35px 40px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .board-member:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .board-member .avatar {
+            flex-shrink: 0;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: #e8e8ee;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: #8a8a92;
+            font-weight: 300;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .board-member .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .board-member .info {
+            flex: 1;
+        }
+
+        .board-member .name {
+            font-size: 28px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 2px;
+        }
+
+        .board-member .role {
+            font-size: 18px;
+            color: #6b6b73;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .board-member .desc {
+            font-size: 16px;
+            color: #6b6b73;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .board-member .badge {
+            display: inline-block;
+            background: #e0e0e8;
+            color: #4a4a52;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-top: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 768px) {
+            .board-container {
+                padding: 35px 30px;
+            }
+            .board-container h1 {
+                font-size: 28px;
+            }
+            .board-member {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 25px;
+                gap: 20px;
+            }
+            .board-member .avatar {
+                width: 140px;
+                height: 140px;
+                font-size: 48px;
+            }
+            .board-member .name {
+                font-size: 24px;
+            }
+            .board-member .role {
+                font-size: 16px;
+            }
+            .board-member .desc {
+                font-size: 15px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .board-container {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .board-container h1 {
+                font-size: 24px;
+            }
+            .board-container .subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            .board-list {
+                gap: 24px;
+            }
+            .board-member {
+                padding: 24px 18px;
+                border-radius: 18px;
+                gap: 16px;
+            }
+            .board-member .avatar {
+                width: 110px;
+                height: 110px;
+                font-size: 38px;
+            }
+            .board-member .name {
+                font-size: 20px;
+            }
+            .board-member .role {
+                font-size: 14px;
+            }
+            .board-member .desc {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder" style="min-height:130px;"></div>
+
+        <main>
+            <div class="board-container">
+                <h1>Zarząd Klubu</h1>
+                <p class="subtitle">Poznaj osoby, które tworzą Klub Przyjaciół EC2</p>
+
+                <div class="board-list">
+                    <!-- Członek 1 -->
+                    <div class="board-member">
+                        <div class="avatar">
+                            <img src="idraws.png" alt="iDraws na sterowni w EC-2" />
+                        </div>
+                        <div class="info">
+                            <div class="name">iDraws</div>
+                            <div class="role">Urbexiarz, Fotograf</div>
+                            <div class="desc">iDraws to założyciel Klubu Przyjaciół EC-2 i jeden z najbardziej rozpoznawalnych Łódzkich urbexiarzy. Jest również moderatorem i honorowym członkiem desolate.zone.</div>
+                            <span class="badge">od 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Członek 2 -->
+                    <div class="board-member">
+                        <div class="avatar">
+                            <img src="cyzblox.png" alt="_inc0gnit0" />
+                        </div>
+                        <div class="info">
+                            <div class="name">_inc0gnit0</div>
+                            <div class="role">Urbexiarz, Fotograf</div>
+                            <div class="desc">_inc0gnit0, znany również jako cyzblox to Łódzki urbexiarz, moderator i honorowy członek desolate.zone. </div>
+                            <span class="badge">od 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Członek 3 -->
+                    <div class="board-member">
+                        <div class="avatar">
+                            <img src="gmis54.png" alt="gmis54 urbex" />
+                        </div>
+                        <div class="info">
+                            <div class="name">Gmis54 Urbex</div>
+                            <div class="role">Urbexiarz, Fotograf</div>
+                            <div class="desc">Gmis54 to Łódzki urbexiarz i fotograf, który od 2021 roku dokumentuje opuszczone i zapomniane miejsca.</div>
+                            <span class="badge">od 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Członek 4 -->
+                    <div class="board-member">
+                        <div class="avatar">
+                            <img src="gabriel.png" alt="Gabriel stojący w oknie EC-2" />
+                        </div>
+                        <div class="info">
+                            <div class="name">gabrielisafuckinho</div>
+                            <div class="role">Programista, wspinacz, urbexiarz, fotograf</div>
+                            <div class="desc">Gabriel jest urbexiarzem i wspinaczem, który stworzył tą stronę. Jest członkiem-założycielem grupy urbexowej GUALA.</div>
+                            <span class="badge">od 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;">Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;">Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+    </script>
+</body>
+</html>
