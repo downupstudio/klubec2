@@ -4,107 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 - Strona nie znaleziona | Klub Przyjaciół EC2</title>
+    <link rel="stylesheet" href="header_footer.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
-            background-color: #f7f7f9;
-            color: #2e2e32;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .wrapper {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-            width: 100%;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 32px 0 28px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            background-color: #ffffff;
-            margin: 0 -32px;
-            padding-left: 32px;
-            padding-right: 32px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            text-decoration: none;
-            color: #1e1e22;
-        }
-
-        .logo-icon {
-            width: 72px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-        }
-
-        .logo-icon img {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-size: 32px;
-            font-weight: 500;
-            letter-spacing: -0.3px;
-            color: #222226;
-        }
-
-        .logo-text span {
-            font-weight: 300;
-            color: #6b6b73;
-        }
-
-        nav {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        nav a {
-            color: #4a4a52;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 450;
-            transition: color 0.2s ease;
-            letter-spacing: 0.2px;
-            white-space: nowrap;
-        }
-
-        nav a:hover {
-            color: #1a1a20;
-        }
-
         main {
-            flex: 1;
-            padding: 60px 0;
-            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -169,85 +71,11 @@
             margin-top: 20px;
         }
 
-        footer {
-            margin-top: auto;
-            padding: 28px 0 24px 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            background-color: #ffffff;
-            margin: 0 -32px;
-            padding-left: 32px;
-            padding-right: 32px;
-            margin-top: 40px;
-            box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.01);
-        }
-
-        .footer-inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px 32px;
-        }
-
-        .footer-copy {
-            font-size: 15px;
-            color: #585860;
-            letter-spacing: 0.2px;
-        }
-
-        .footer-copy strong {
-            color: #2a2a30;
-            font-weight: 500;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            font-size: 14px;
-        }
-
-        .footer-links a {
-            color: #6e6e78;
-            text-decoration: none;
-            transition: color 0.2s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        .footer-links a:hover {
-            color: #1f1f26;
-            border-bottom-color: #cbcbd2;
-        }
-
-        .footer-small {
-            font-size: 13px;
-            color: #9a9aa3;
-            margin-top: 8px;
-            width: 100%;
-            text-align: center;
+        .error-container .sub a {
+            color: #6b6b73;
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-wrap: wrap;
-                gap: 16px;
-                padding: 24px 20px;
-                margin: 0 -20px;
-            }
-            .logo {
-                flex: 1 1 auto;
-            }
-            nav {
-                flex-wrap: wrap;
-                gap: 14px 20px;
-                width: 100%;
-                justify-content: flex-start;
-                padding-top: 8px;
-                border-top: 1px solid rgba(0, 0, 0, 0.04);
-            }
-            nav a {
-                font-size: 14px;
-                white-space: normal;
-            }
             .error-container {
                 padding: 40px 30px;
             }
@@ -263,31 +91,6 @@
         }
 
         @media (max-width: 640px) {
-            .wrapper {
-                padding: 0 20px;
-            }
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-                padding: 20px;
-                margin: 0 -20px;
-            }
-            .logo-icon {
-                width: 56px;
-                height: 56px;
-            }
-            .logo-text {
-                font-size: 24px;
-            }
-            nav {
-                border-top: 1px solid rgba(0, 0, 0, 0.04);
-                padding-top: 12px;
-                gap: 12px 16px;
-            }
-            main {
-                padding: 30px 0;
-            }
             .error-container {
                 padding: 30px 20px;
                 border-radius: 16px;
@@ -306,42 +109,12 @@
                 font-size: 15px;
                 width: 100%;
             }
-            footer {
-                padding: 24px 20px;
-                margin: 0 -20px;
-            }
-            .footer-inner {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            .footer-links {
-                flex-wrap: wrap;
-                gap: 12px 20px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">
-                    <img src="logo_czarne.png" alt="Logo klubu" />
-                </div>
-                <div class="logo-text">
-                    Klub <span>Przyjaciół</span> EC2
-                </div>
-            </a>
-            <nav>
-                <a href="miejsca.html">Miejsca</a>
-                <a href="aktualnosci.html">Aktualności</a>
-                <a href="archiwum.html">Archiwum</a>
-                <a href="urbex.html">Urbex</a>
-                <a href="urban_climbing.html">Urban climbing</a>
-                <a href="rooftopping.html">Rooftopping</a>
-            </nav>
-        </header>
+        <div id="header-placeholder"></div>
 
         <main>
             <div class="error-container">
@@ -354,26 +127,22 @@
                 </p>
                 <a href="index.html" class="btn-primary">← Wróć na stronę główną</a>
                 <div class="sub">
-                    Jeśli uważasz, że to błąd, daj nam znać przez <a href="kontakt.html" style="color:#6b6b73;">naszego maila</a>.
+                    Jeśli uważasz, że to błąd, daj nam znać przez <a href="kontakt.html">naszego maila</a>.
                 </div>
             </div>
         </main>
 
-        <footer>
-            <div class="footer-inner">
-                <div class="footer-copy">
-                    &copy; 2026 <strong>Klub Przyjaciół EC2</strong> &middot; Łódź
-                </div>
-                <div class="footer-links">
-                    <a href="kontakt.html">Kontakt</a>
-                    <a href="zarzad.html">Zarząd</a>
-                    <a href="czlonkowie.html">Lista członków</a>
-                </div>
-            </div>
-            <div class="footer-small">
-                Strona stworzona przez Gabriela z grupy GUALA. &middot; Wszelkie prawa zastrzeżone.
-            </div>
-        </footer>
+        <div id="footer-placeholder"></div>
     </div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
 </body>
 </html>
