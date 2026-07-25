@@ -122,7 +122,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div id="header-placeholder"></div>
+        <div id="header-placeholder" style="min-height:130px;"></div>
 
         <main>
             <div class="hero">
@@ -150,24 +150,51 @@
                         </p>
                     </div>
                     <div class="hero-image">
-                        <img src="https://www.rynekinfrastruktury.pl//img/eclodzfotveolia.jpg_678-443.jpg" alt="Elektrociepłownia EC2 w Łodzi" />
+                        <img src="https://www.rynekinfrastruktury.pl//img/eclodzfotveolia.jpg_678-443.jpg" alt="Elektrociepłownia EC2 w Łodzi (fot. Veolia)" />
                         <div class="caption">Elektrociepłownia EC2 w Łodzi – jedna z najważniejszych powojennych inwestycji przemysłowych miasta</div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <div id="footer-placeholder"></div>
+        <div id="footer-placeholder" style="min-height:130px;"></div>
     </div>
 
     <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
         
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
     </script>
 </body>
 </html>
