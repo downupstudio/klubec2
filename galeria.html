@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria - Klub Przyjaciół EC2</title>
+    <link rel="stylesheet" href="header_footer.css" />
+    <style>
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .gallery-container h1 {
+            font-size: 36px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .gallery-container .subtitle {
+            font-size: 18px;
+            color: #6b6b73;
+            margin-bottom: 40px;
+            font-weight: 350;
+        }
+
+        .album-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .album-card {
+            background: #f7f7f9;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .album-card .album-thumb {
+            width: 100%;
+            height: 200px;
+            background: #e8e8ee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #8a8a92;
+            overflow: hidden;
+        }
+
+        .album-card .album-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .album-card .album-info {
+            padding: 20px 24px 24px;
+        }
+
+        .album-card .album-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 4px;
+        }
+
+        .album-card .album-desc {
+            font-size: 14px;
+            color: #6b6b73;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .album-card .album-meta {
+            font-size: 13px;
+            color: #8a8a92;
+        }
+
+        .album-card .album-meta span {
+            margin-right: 16px;
+        }
+
+        .album-view {
+            display: none;
+        }
+
+        .album-view.active {
+            display: block;
+        }
+
+        .album-view .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f0f4;
+            color: #1e1e22;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 450;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-family: inherit;
+            margin-bottom: 30px;
+        }
+
+        .album-view .back-btn:hover {
+            background: #e4e4ea;
+        }
+
+        .album-view .album-header {
+            margin-bottom: 30px;
+        }
+
+        .album-view .album-header h2 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 4px;
+        }
+
+        .album-view .album-header p {
+            font-size: 16px;
+            color: #6b6b73;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-item {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f7f7f9;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-item .photo-img {
+            width: 100%;
+            height: 180px;
+            background: #e8e8ee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #8a8a92;
+            overflow: hidden;
+        }
+
+        .photo-item .photo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-item .photo-info {
+            padding: 12px 16px 16px;
+        }
+
+        .photo-item .photo-author {
+            font-size: 13px;
+            color: #6b6b73;
+        }
+
+        .photo-item .photo-author strong {
+            color: #4a4a52;
+            font-weight: 500;
+        }
+
+        .photo-item .photo-desc {
+            font-size: 13px;
+            color: #8a8a92;
+            margin-top: 2px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-info {
+            color: #ffffff;
+            text-align: center;
+            margin-top: 16px;
+            padding: 12px 24px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        .lightbox-info .lb-author {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        .lightbox-info .lb-author strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .lightbox-info .lb-desc {
+            font-size: 15px;
+            color: #bbbbbb;
+            margin-top: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 32px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.2s ease;
+            padding: 10px;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 20px 16px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            font-family: inherit;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-nav.prev {
+            left: -60px;
+        }
+
+        .lightbox-nav.next {
+            right: -60px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                padding: 35px 30px;
+            }
+            .gallery-container h1 {
+                font-size: 28px;
+            }
+            .album-list {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            .album-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+            .album-view .album-header h2 {
+                font-size: 24px;
+            }
+            .lightbox {
+                padding: 20px;
+            }
+            .lightbox-content img {
+                max-height: 60vh;
+            }
+            .lightbox-nav {
+                font-size: 28px;
+                padding: 14px 10px;
+            }
+            .lightbox-nav.prev {
+                left: -40px;
+            }
+            .lightbox-nav.next {
+                right: -40px;
+            }
+            .lightbox-close {
+                top: -30px;
+                right: -20px;
+                font-size: 28px;
+            }
+            .lightbox-counter {
+                top: -30px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .gallery-container {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .gallery-container h1 {
+                font-size: 24px;
+            }
+            .gallery-container .subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            .album-list {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .album-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .album-card .album-thumb {
+                height: 150px;
+            }
+            .photo-item .photo-img {
+                height: 140px;
+            }
+            .album-view .album-header h2 {
+                font-size: 20px;
+            }
+            .lightbox {
+                padding: 12px;
+            }
+            .lightbox-content img {
+                max-height: 50vh;
+            }
+            .lightbox-nav {
+                font-size: 22px;
+                padding: 10px 6px;
+            }
+            .lightbox-nav.prev {
+                left: -25px;
+            }
+            .lightbox-nav.next {
+                right: -25px;
+            }
+            .lightbox-close {
+                top: -25px;
+                right: -10px;
+                font-size: 24px;
+            }
+            .lightbox-info {
+                max-width: 95%;
+                padding: 10px 16px;
+            }
+            .lightbox-info .lb-author {
+                font-size: 14px;
+            }
+            .lightbox-info .lb-desc {
+                font-size: 13px;
+            }
+            .lightbox-counter {
+                top: -25px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .album-grid {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder" style="min-height:130px;"></div>
+
+        <main>
+            <div class="gallery-container">
+                <h1>Galeria</h1>
+                <p class="subtitle">Zdjęcia związane z EC2</p>
+
+                <div id="albumListView">
+                    <div class="album-list">
+                        <div class="album-card" data-album="1">
+                            <div class="album-thumb">
+                                <img src="https://www.fotofestiwal.com/2012/wp-content/uploads/2012/06/DSC3126.jpg" alt="Album 1" />
+                            </div>
+                            <div class="album-info">
+                                <div class="album-title">Fotospacer z Dalkią "Czas energii EC2" podczas Fotofestiwalu 2012.</div>
+                                <div class="album-desc">Zdjęcia z Fotofestiwalu 2012.</div>
+                                <div class="album-meta">
+                                    <span>7 zdjęć</span>
+                                    <span>2012</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="albumView" class="album-view">
+                    <button class="back-btn" id="backBtn">← Powrót do albumów</button>
+                    <div class="album-header">
+                        <h2 id="albumTitle">Nazwa albumu</h2>
+                        <p id="albumDesc">Opis albumu</p>
+                    </div>
+                    <div class="album-grid" id="albumGrid">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">✕</button>
+            <span class="lightbox-counter" id="lightboxCounter"></span>
+            <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
+            <button class="lightbox-nav next" id="lightboxNext">›</button>
+            <img id="lightboxImg" src="" alt="" />
+            <div class="lightbox-info">
+                <div class="lb-author" id="lightboxAuthor"></div>
+                <div class="lb-desc" id="lightboxDesc"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+
+        const albums = {
+            1: {
+                title: 'Fotospacer z Dalkią "Czas energii EC2" podczas Fotofestiwalu 2012.',
+                desc: 'Zdjęcia z Fotofestiwalu 2012.',
+                photos: [
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/Krzysztof-Eberle-3.jpg', 
+                        author: 'Krzysztof Eberle', 
+                        desc: 'Główny pulpit nastawni EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/Krzysztof-Eberle-4.jpg', 
+                        author: 'Krzysztof Eberle', 
+                        desc: 'Maszynownia EC2 z widocznym turbozespołem nr. 4 podczas Fotofestiwalu 2012.' 
+                    },
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/Krzysztof-Eberle.jpg', 
+                        author: 'Krzysztof Eberle', 
+                        desc: 'Kotłownia EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/Maciej-Sobczyk-3.jpg', 
+                        author: 'Maciej Sobczyk', 
+                        desc: 'Nastawnia EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/Maciej-Sobczyk.jpg', 
+                        author: 'Maciej Sobczyk', 
+                        desc: 'Wnętrze północnej chłodni kominowej EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/Tomasz-Dobrakowski.JPG', 
+                        author: 'Tomasz Dobrakowski', 
+                        desc: 'Kominy EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                    { 
+                        src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/stanislaw-wronski-2.jpg', 
+                        author: 'Stanisław Wroński', 
+                        desc: 'Przechowywalnia znaków ostrzegawczych EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                ]
+            }
+        };
+
+        const albumListView = document.getElementById('albumListView');
+        const albumView = document.getElementById('albumView');
+        const albumGrid = document.getElementById('albumGrid');
+        const albumTitle = document.getElementById('albumTitle');
+        const albumDesc = document.getElementById('albumDesc');
+        const backBtn = document.getElementById('backBtn');
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxAuthor = document.getElementById('lightboxAuthor');
+        const lightboxDesc = document.getElementById('lightboxDesc');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        let currentPhotos = [];
+        let currentIndex = 0;
+
+        function openLightbox(photos, index) {
+            currentPhotos = photos;
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLightbox() {
+            const photo = currentPhotos[currentIndex];
+            lightboxImg.src = photo.src;
+            lightboxImg.alt = photo.desc;
+            lightboxAuthor.innerHTML = `<strong>fot. ${photo.author}</strong>`;
+            lightboxDesc.textContent = photo.desc;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${currentPhotos.length}`;
+        }
+
+        function prevPhoto() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateLightbox();
+            }
+        }
+
+        function nextPhoto() {
+            if (currentIndex < currentPhotos.length - 1) {
+                currentIndex++;
+                updateLightbox();
+            }
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevPhoto);
+        lightboxNext.addEventListener('click', nextPhoto);
+
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevPhoto();
+            if (e.key === 'ArrowRight') nextPhoto();
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        function showAlbum(albumId) {
+            const album = albums[albumId];
+            if (!album) return;
+
+            albumTitle.textContent = album.title;
+            albumDesc.textContent = album.desc;
+
+            let photosHtml = '';
+            album.photos.forEach((photo, index) => {
+                photosHtml += `
+                    <div class="photo-item" data-index="${index}">
+                        <div class="photo-img">
+                            <img src="${photo.src}" alt="${photo.desc}" />
+                        </div>
+                        <div class="photo-info">
+                            <div class="photo-author"><strong>fot. ${photo.author}</strong></div>
+                            <div class="photo-desc">${photo.desc}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            albumGrid.innerHTML = photosHtml;
+
+            document.querySelectorAll('.photo-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    openLightbox(album.photos, index);
+                });
+            });
+
+            albumListView.classList.add('hidden');
+            albumView.classList.remove('hidden');
+            albumView.classList.add('active');
+        }
+
+        function showAlbumList() {
+            albumView.classList.remove('active');
+            albumView.classList.add('hidden');
+            albumListView.classList.remove('hidden');
+            closeLightbox();
+        }
+
+        document.querySelectorAll('.album-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const albumId = this.dataset.album;
+                showAlbum(albumId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        backBtn.addEventListener('click', showAlbumList);
+    </script>
+</body>
+</html>
