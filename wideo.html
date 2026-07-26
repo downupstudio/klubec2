@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wideo - Klub Przyjaciół EC2</title>
+    <link rel="stylesheet" href="header_footer.css" />
+    <style>
+        .video-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .video-container h1 {
+            font-size: 36px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .video-container .subtitle {
+            font-size: 18px;
+            color: #6b6b73;
+            margin-bottom: 40px;
+            font-weight: 350;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .category-card {
+            background: #f7f7f9;
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .category-card .icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .category-card .name {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1e1e22;
+        }
+
+        .category-card .count {
+            font-size: 14px;
+            color: #8a8a92;
+            margin-top: 4px;
+        }
+
+        .video-view {
+            display: none;
+        }
+
+        .video-view.active {
+            display: block;
+        }
+
+        .video-view .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f0f4;
+            color: #1e1e22;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 450;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-family: inherit;
+            margin-bottom: 30px;
+        }
+
+        .video-view .back-btn:hover {
+            background: #e4e4ea;
+        }
+
+        .video-view .category-header {
+            margin-bottom: 30px;
+        }
+
+        .video-view .category-header h2 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 4px;
+        }
+
+        .video-view .category-header p {
+            font-size: 16px;
+            color: #6b6b73;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .video-item {
+            background: #f7f7f9;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .video-item .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-item .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-item .video-info {
+            padding: 20px 24px 24px;
+        }
+
+        .video-item .video-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 4px;
+        }
+
+        .video-item .video-author {
+            font-size: 14px;
+            color: #6b6b73;
+        }
+
+        .video-item .video-author strong {
+            color: #4a4a52;
+            font-weight: 500;
+        }
+
+        .video-item .video-desc {
+            font-size: 14px;
+            color: #8a8a92;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                padding: 35px 30px;
+            }
+            .video-container h1 {
+                font-size: 28px;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .category-card {
+                padding: 30px 16px;
+            }
+            .category-card .icon {
+                font-size: 36px;
+            }
+            .category-card .name {
+                font-size: 17px;
+            }
+            .video-view .category-header h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .video-container {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .video-container h1 {
+                font-size: 24px;
+            }
+            .video-container .subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .category-card {
+                padding: 24px 12px;
+            }
+            .category-card .icon {
+                font-size: 28px;
+            }
+            .category-card .name {
+                font-size: 15px;
+            }
+            .category-card .count {
+                font-size: 12px;
+            }
+            .video-view .category-header h2 {
+                font-size: 20px;
+            }
+            .video-item .video-title {
+                font-size: 17px;
+            }
+            .video-item .video-info {
+                padding: 16px 18px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder" style="min-height:130px;"></div>
+
+        <main>
+            <div class="video-container">
+                <h1>Wideo</h1>
+                <p class="subtitle">Filmy związane z EC2</p>
+
+                <div id="categoryListView">
+                    <div class="category-grid">
+                        <div class="category-card" data-category="news">
+                            <div class="icon">📰</div>
+                            <div class="name">Wiadomości</div>
+                            <div class="count">1 film</div>
+                        </div>
+                        <div class="category-card" data-category="exploration">
+                            <div class="icon">🔦</div>
+                            <div class="name">Eksploracja</div>
+                            <div class="count">3 filmy</div>
+                        </div>
+                        <div class="category-card" data-category="climbing">
+                            <div class="icon">🧗</div>
+                            <div class="name">Wspinaczka</div>
+                            <div class="count">3 filmy</div>
+                        </div>
+                        <div class="category-card" data-category="drone">
+                            <div class="icon">🚁</div>
+                            <div class="name">Z lotu ptaka</div>
+                            <div class="count">3 filmy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="videoView" class="video-view">
+                    <button class="back-btn" id="backBtn">← Powrót do kategorii</button>
+                    <div class="category-header">
+                        <h2 id="categoryTitle">Nazwa kategorii</h2>
+                        <p id="categoryDesc">Opis kategorii</p>
+                    </div>
+                    <div class="video-grid" id="videoGrid">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+
+        const categories = {
+            news: {
+                title: 'Wiadomości',
+                desc: 'Filmy informacyjne i reportaże o EC2.',
+                videos: [
+                    {
+                        embed: 'https://www.youtube.com/embed/ownffsdbqto',
+                        title: 'EC-2 znika z mapy Łodzi. Rozbiórka zabytkowej elektrociepłowni',
+                        author: 'TVP3 Łódź',
+                        desc: 'Z mapy Łodzi powoli znika jeden z symboli powojennego dziedzictwa przemysłowego. Chodzi o nieczynną od dekady Elektrociepłownię EC-2 przy ul. Wróblewskiego. Rozbiórka już się rozpoczęła. Sęk w tym, że sześć lat temu Wojewódzki Konserwator Zabytków wpisał EC-2 do rejestru zabytków, wskazując najcenniejsze elementy kompleksu. Teraz konserwator zmienił zdanie i wyraził zgodę na ich zrównanie z ziemią.'
+                    },
+                ]
+            },
+            exploration: {
+                title: 'Eksploracja',
+                desc: 'Filmy z wypraw i eksploracji EC2.',
+                videos: [
+                    {
+                        embed: 'https://www.youtube.com/embed/2Bp4_qL1aQg',
+                        title: 'WIELKA OPUSZCZONA ELEKTROCIEPŁOWNIA - URBEX',
+                        author: 'Żądny Przygód',
+                        desc: 'Grudzień 2019. Eksploruję opuszczoną elektrociepłownię, gigantyczny, zabytkowy budynek pełen zakamarków i ciekawostek. To właśnie tutaj nagrywano teledysk do utworu Tamagotchi, którego autorami są TACONAFIDE czyli Quebonafide i Taco Hemingway. Ten hit podbił Polskę jakiś czas temu, teraz jednak miejsce w którym nagrywano do niego klip jest w dużej części zniszczone. Mimo wszytko, to co pozostało i tak stanowi sporą gratkę dla miłośników historii i eksploratorów.'
+                    },
+                    {
+                        embed: 'https://www.youtube.com/embed/e2Y6EaDTrfI',
+                        title: 'OPUSZCZONA ELEKTROCIEPŁOWNIA EC-2 - ŁÓDŹ - SMTE - UrbexPov',
+                        author: 'SMTE TV',
+                        desc: 'Kwiecień 2020. Witamy ponownie! W dzisiejszym odcinku odwiedzimy wspólnie elektrociepłownię EC-2 w Łodzi. Bardzo ciekawe miejsce. Po obiekcie oprowadza nas ekipa Explorersi Łdz, którą z całego serca pozdrawiamy. Zdrówka Mordeczki!'
+                    },
+                    {
+                        embed: 'https://www.youtube.com/embed/cDT-K09q6dA',
+                        title: 'GIGANTYCZNA OPUSZCZONA ELEKTROCIEPŁOWNIA "EC-2" | URBEX',
+                        author: 'iDraws | Urbex',
+                        desc: 'Październik 2025. Ja, @DoMiN53  i moi znajomi wyruszyliśmy pewnego dnia zwiedzić pewną elektrociepłownie.. mianowicie EC-2, zbudowane w 1958 dzialalo az do 2015. Zostalo sprzedane prywatnej firmie która zaczeła nielegalne wyburzanie budynku, ponieważ jest zabytkiem. Konserwator zabytków zgłosił tą firmę na prokuraturę, a elektrownia stoi opuszczona do dziś... Był tu też nagrywany pewien słynny teledysk ale o nim już w filmie ;)'
+                    }
+                ]
+            },
+            climbing: {
+                title: 'Wspinaczka',
+                desc: 'Filmy z wspinaczki na kominy i inne struktury EC2.',
+                videos: [
+                    {
+                        embed: 'https://www.youtube.com/embed/T7d1PUj2i_w',
+                        title: 'Prace wysokościowe na terenie Elektrociepłowni (wszystko legalnie)',
+                        author: 'Krokodyl Vlog',
+                        desc: 'Lipiec 2023. Siema! 🐊 Wpadłem dzisiaj odwiedzić 3 piękne kominy elektrociepłowni Łódzkiej. Nieco utrudniony dostęp natomiast misja udała się bez zbędnych komplikacji. Zapraszam do oglądania.'
+                    },
+                    {
+                        embed: 'https://www.youtube.com/embed/gPEoNh-2zHo',
+                        title: 'GUALA 1: Wejście na chłodnię kominową Elektrociepłowni EC-2 w Łodzi',
+                        author: 'GUALA',
+                        desc: 'Lipiec 2026. Wejście na 64-metrową chłodnię kominową opuszczonej Elektrociepłowni EC-2 w Łodzi. Wspinaczka odbyła się bez asekuracji.'
+                    },
+                    {
+                        embed: 'https://www.youtube.com/embed/tEKKqZnHPuE',
+                        title: 'EC2 Łódź - Wejście Na Komin O Wschodzie Słońca',
+                        author: 'Krzysiek Bocheński',
+                        desc: 'Styczeń 2020. Wschód słońca na kominie EC2 w Łodzi.'
+                    }
+                ]
+            },
+            drone: {
+                title: 'Z lotu ptaka',
+                desc: 'Filmy z drona przedstawiające EC2 z powietrza.',
+                videos: [
+                    {
+                        embed: 'https://www.youtube.com/embed/sVjDUYtFnPk',
+                        title: 'Elektrociepłownia EC2 Łódź #urbex #foto #dron',
+                        author: 'Krzysztof Apanowicz',
+                        desc: 'Maj 2026. Film z drona przedstawiający EC2 w Łodzi z lotu ptaka.'
+                    },
+                    {
+                        embed: 'https://www.youtube.com/embed/3uc4UHkNZSc',
+                        title: '2024 EC-2 Łódź | Dron',
+                        author: 'Kerpy',
+                        desc: 'Lipiec 2024. Film z drona przedstawiający EC2 w Łodzi z lotu ptaka.'
+                    },
+                    {
+                        embed: 'https://www.youtube.com/embed/pqErKyQX4Os',
+                        title: '2022 EC2 Łódź Drone',
+                        author: 'ŁÓDZKIE MOCNE',
+                        desc: 'Listopad 2022. EC2 z lotu drona.'
+                    }
+                ]
+            }
+        };
+
+        const categoryListView = document.getElementById('categoryListView');
+        const videoView = document.getElementById('videoView');
+        const videoGrid = document.getElementById('videoGrid');
+        const categoryTitle = document.getElementById('categoryTitle');
+        const categoryDesc = document.getElementById('categoryDesc');
+        const backBtn = document.getElementById('backBtn');
+
+        function showCategory(categoryKey) {
+            const category = categories[categoryKey];
+            if (!category) return;
+
+            categoryTitle.textContent = category.title;
+            categoryDesc.textContent = category.desc;
+
+            let videosHtml = '';
+            category.videos.forEach(video => {
+                videosHtml += `
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="${video.embed}" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">${video.title}</div>
+                            <div class="video-author"><strong>${video.author}</strong></div>
+                            <div class="video-desc">${video.desc}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            videoGrid.innerHTML = videosHtml;
+
+            categoryListView.classList.add('hidden');
+            videoView.classList.remove('hidden');
+            videoView.classList.add('active');
+        }
+
+        function showCategoryList() {
+            videoView.classList.remove('active');
+            videoView.classList.add('hidden');
+            categoryListView.classList.remove('hidden');
+        }
+
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const category = this.dataset.category;
+                showCategory(category);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        backBtn.addEventListener('click', showCategoryList);
+    </script>
+</body>
+</html>
