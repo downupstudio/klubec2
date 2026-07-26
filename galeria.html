@@ -33,7 +33,7 @@
 
         .album-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
@@ -73,7 +73,7 @@
         }
 
         .album-card .album-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 500;
             color: #1e1e22;
             margin-bottom: 4px;
@@ -313,6 +313,13 @@
             font-size: 14px;
         }
 
+        @media (max-width: 992px) {
+            .album-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
         @media (max-width: 768px) {
             .gallery-container {
                 padding: 35px 30px;
@@ -321,7 +328,7 @@
                 font-size: 28px;
             }
             .album-list {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
             .album-grid {
@@ -457,6 +464,20 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="album-card" data-album="22">
+                            <div class="album-thumb">
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik2BqB7BavCO3mwJok1stW35InV1rjVepiUpqwYvXV1-G9Rkkw9rlpVUSFzSZ9JxMB60U2yyugd7b3GSOMItCZWWsSg8dR8_VPBF_TW70xTwh0ZbWnWs7pZ7_vx87_H6Q89dH56LNY4_fH/s640/DSC_2268.jpg" alt="Album 2" />
+                            </div>
+                            <div class="album-info">
+                                <div class="album-title">EC2 w zimie 2019/2020</div>
+                                <div class="album-desc">Zdjęcia z wyprawy Penetrator Scavenger Team na EC2.</div>
+                                <div class="album-meta">
+                                    <span>7 zdjęć</span>
+                                    <span>2020</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -564,6 +585,47 @@
                         src: 'https://www.fotofestiwal.com/2012/wp-content/gallery/sesja-ec2/stanislaw-wronski-2.jpg', 
                         author: 'Stanisław Wroński', 
                         desc: 'Przechowywalnia znaków ostrzegawczych EC2 podczas Fotofestiwalu 2012.' 
+                    },
+                ]
+            },
+            22: {
+                title: 'EC2 w zimie 2019/2020',
+                desc: 'Zdjęcia z wyprawy Penetrator Scavenger Team na EC2.',
+                photos: [
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik2BqB7BavCO3mwJok1stW35InV1rjVepiUpqwYvXV1-G9Rkkw9rlpVUSFzSZ9JxMB60U2yyugd7b3GSOMItCZWWsSg8dR8_VPBF_TW70xTwh0ZbWnWs7pZ7_vx87_H6Q89dH56LNY4_fH/s640/DSC_2268.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Widok na całe EC2 od strony zachodniej, zima 2019/2020.' 
+                    },
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoc5XxGGI5GOFVbEjToBETH5ltFM-vdPgtZQgKIuc9YHrJOXSyEPVjVo6cXfkSPjLZDKIkwgN4KSKaqE6O2M8YmYIRxRxI5YqzqOshy8ulOMX9-VKqAasL9TiEKNKLKY4NYcBaGyjm4FhT/s640/DSC_2322.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Maszynownia EC2 z widocznym turbozespołem nr. 4, zima 2019/2020.' 
+                    },
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilczrbs4jYRiUrmR68NEWqQvIch1naMImeTV-Tz0DpxtcKrO-NiDtH1arQSTTdRtVo4SXkY873EWjMnmisqEOGI_kcsRxyxaEXRYusxif1H8yBYJ_smI7Rjnz3hWGnG3p0I55EB1ms2Sep/s640/DSC_2324.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Jeden z pokojów kontrolnych przy maszynowni EC2, zima 2019/2020.' 
+                    },
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguaID-VqT1pCEzPwGyDqPB9HBBeQaxtHu83u6JoGztWznOwBLQjhxtspQ66ALjbdQtduxAbP9rncwc-B1Aus4DtFhNd9MUTP51wYNXCx-emI6PRnrRLQbMIFCsJbI2VGlI2Uz_1Kdewu3L/s640/DSC_2326.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Turbogenerator nr. 4 w maszynowni EC2, zima 2019/2020.' 
+                    },
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8gdeZKNwZROvCQPNySHfPrsWIsmjW_yV6oUbzKDrq6SE5xQkhF7CFjEh82xGtdSFpPv4UE_6uONKEGyM_R9XfNa4YsTWuRegL5H3d4gK_9nwvWIqbFFt71DfetZxvCadXFPMVfmyVBCzW/s640/DSC_2349.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Kolektory dolotowe turbozespołu nr. 5 w maszynowni EC2, zima 2019/2020.' 
+                    },
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk61k8d2TNG1jX-7pEOpPVXLt4bSDtEIeCqbLZBBduZqcrxW1RjX4-UOv37T3Z0qBz-0TOj6HgulCb1pleaHqZdggY8ITjFDpISd-SX-P3YTdmat2dnbx6_4Mcqy1wBJ-Tgw_wpSM7WIIa/s640/DSC_2350.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Nastawnia EC2, zima 2019/2020.' 
+                    },
+                    { 
+                        src: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPLCPaMpPf7-DnI-2pjDYlV5rS0YyPOuge5u2SUFpRq7fQrF2XJPyfcRS5bt1sK1283QpCVuu9ROnpL7LbRS8nK0LewMOkL9CE8ssdZzvsm3rdDFZo1FUPOAjtGcjBkvW0aCEpua7sHDPF/s640/DSC_2300.jpg', 
+                        author: 'Penetrator Scavenger Team', 
+                        desc: 'Kotłownia EC2, zima 2019/2020.' 
                     },
                 ]
             }
