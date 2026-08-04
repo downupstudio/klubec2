@@ -9,7 +9,7 @@
         .hero {
             background: #ffffff;
             border-radius: 24px;
-            padding: 60px 70px;
+            padding: 50px 60px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
             border: 1px solid rgba(0, 0, 0, 0.04);
             margin-bottom: 40px;
@@ -46,14 +46,6 @@
             margin-bottom: 0;
         }
 
-        .hero-text .sub {
-            font-size: 15px;
-            color: #6b6b73;
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
         .hero-image {
             border-radius: 16px;
             overflow: hidden;
@@ -74,6 +66,121 @@
             text-align: center;
             padding: 10px 16px;
             background: #f7f7f9;
+        }
+
+        .history-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-bottom: 40px;
+        }
+
+        .history-section h2 {
+            font-size: 32px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .history-section h2 .highlight {
+            color: #6b6b73;
+            font-weight: 300;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .history-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4a4a52;
+            margin-bottom: 14px;
+        }
+
+        .history-text p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .history-text .sub {
+            font-size: 14px;
+            color: #6b6b73;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .history-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .history-highlights .highlight-item {
+            background: #f7f7f9;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .history-highlights .highlight-item .icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .history-highlights .highlight-item .content {
+            font-size: 15px;
+            color: #4a4a52;
+            line-height: 1.5;
+        }
+
+        .history-highlights .highlight-item .content strong {
+            color: #1e1e22;
+            font-weight: 500;
+        }
+
+        .hero-video-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .hero-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            min-height: 300px;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .hero-video-wrapper .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 12px 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+            z-index: 2;
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.3px;
         }
 
         .cta-section {
@@ -139,6 +246,13 @@
             .hero-image img {
                 max-height: 400px;
             }
+            .history-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-video-wrapper video {
+                max-height: 400px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -152,6 +266,19 @@
                 font-size: 16px;
             }
             .hero-image img {
+                max-height: 300px;
+                min-height: 200px;
+            }
+            .history-section {
+                padding: 35px 30px;
+            }
+            .history-section h2 {
+                font-size: 26px;
+            }
+            .history-text p {
+                font-size: 15px;
+            }
+            .hero-video-wrapper video {
                 max-height: 300px;
                 min-height: 200px;
             }
@@ -182,6 +309,26 @@
                 font-size: 15px;
             }
             .hero-image img {
+                max-height: 200px;
+                min-height: 150px;
+            }
+            .history-section {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .history-section h2 {
+                font-size: 22px;
+            }
+            .history-text p {
+                font-size: 14px;
+            }
+            .history-highlights .highlight-item {
+                padding: 12px 16px;
+            }
+            .history-highlights .highlight-item .content {
+                font-size: 14px;
+            }
+            .hero-video-wrapper video {
                 max-height: 200px;
                 min-height: 150px;
             }
@@ -239,6 +386,84 @@
                 </div>
             </div>
 
+            <div class="history-section">
+                <h2>Historia <span class="highlight">EC2</span></h2>
+                <div class="history-grid">
+                    <div class="history-text">
+                        <p>
+                            Elektrociepłownia EC-2 (dawniej Elektrociepłownia im. W. I. Lenina) została 
+                            zaprojektowana przez inżyniera Mariusza Sowińskiego. Budowę rozpoczęto w czerwcu 1954 roku, 
+                            a w 1957 uruchomiono pierwszy kocioł i turbinę. 19 stycznia 1960 elektrociepłowni 
+                            nadano imię Włodzimierza Lenina. Budowę ukończono w 1961 roku, uruchamiając 
+                            ósmy kocioł i szósty turbozespół.
+                        </p>
+                        <p>
+                            W 1993 roku EC-2 wraz z EC-3 i EC-4 została przekształcona w spółkę Skarbu Państwa, 
+                            a następnie sprzedana firmie Dalkia (obecnie Veolia). Proces wygaszania rozpoczęto 
+                            w 2012 roku, a ostatecznie elektrownię wyłączono z eksploatacji 31 marca 2015 roku 
+                            z przyczyn technologicznych.
+                        </p>
+                        <p>
+                            Obiekt został sprzedany firmie Hakamore za około 30 milionów złotych. W 2019 roku 
+                            rozpoczęto prace rozbiórkowe, które wstrzymał Wojewódzki Urząd Ochrony Zabytków 
+                            w Łodzi – rozbiórka prowadzona była bez pozwolenia, mimo trwającego wpisu do rejestru 
+                            zabytków. Firma Hakamore upadła w 2019 roku. Od sierpnia 2021 roku właścicielem 
+                            EC-2 jest JHM DEVELOPMENT S.A. z grupy Mirbud.
+                        </p>
+                        <div class="sub">
+                            Źródło: Wikipedia 
+                            (<a href="https://pl.wikipedia.org/wiki/Elektrociep%C5%82ownia_EC-2_w_%C5%81odzi" target="_blank" rel="noopener noreferrer">link</a>)
+                        </div>
+                    </div>
+                    <div class="history-highlights">
+                        <div class="highlight-item">
+                            <span class="icon">🏗️</span>
+                            <div class="content">
+                                <strong>1954–1961</strong> – budowa i uruchomienie elektrociepłowni
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">⚡</span>
+                            <div class="content">
+                                <strong>87 MW</strong> – moc elektryczna w szczytowym okresie
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">🏭</span>
+                            <div class="content">
+                                <strong>650 osób</strong> – zatrudnienie w latach świetności
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">📅</span>
+                            <div class="content">
+                                <strong>2015</strong> – ostateczne wyłączenie z eksploatacji
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">🏛️</span>
+                            <div class="content">
+                                <strong>Wpisana do rejestru zabytków</strong> – ochrona przed całkowitą rozbiórką
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">🧗</span>
+                            <div class="content">
+                                <strong>160 m i 120 m</strong> – wysokość charakterystycznych kominów EC2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-video-wrapper">
+                <video id="ec2Video" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload noplaybackrate nofullscreen">
+                    <source src="ezgif-6979d0000b5410a5.mp4" type="video/mp4" />
+                    Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                </video>
+                <div class="caption">EC2 z lotu ptaka – render 3D</div>
+            </div>
+
             <div class="cta-section">
                 <h2>Dołącz do nas!</h2>
                 <p>
@@ -289,6 +514,17 @@
                     '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
                 footerPlaceholder.style.minHeight = 'auto';
             });
+
+        const video = document.getElementById('ec2Video');
+        video.addEventListener('contextmenu', (e) => e.preventDefault());
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Spacebar') {
+                if (document.activeElement === video) {
+                    e.preventDefault();
+                }
+            }
+        });
     </script>
 </body>
 </html>
