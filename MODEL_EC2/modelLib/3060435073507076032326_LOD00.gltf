@@ -1,0 +1,136 @@
+{
+  "asset": {
+    "copyright": "",
+    "generator": "SharpGLTF 1.0.0",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "name": "POSITION",
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 236,
+      "max": [
+        -118.32907104492188,
+        28.953544616699219,
+        326.78094482421875
+      ],
+      "min": [
+        -130.15255737304688,
+        19.661691665649414,
+        324.6864013671875
+      ],
+      "type": "VEC3"
+    },
+    {
+      "name": "NORMAL",
+      "bufferView": 0,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "count": 236,
+      "max": [
+        0.31070616841316223,
+        0.22821857035160065,
+        0.9993177056312561
+      ],
+      "min": [
+        -0.0044285566546022892,
+        -0.16767123341560364,
+        0.95038658380508423
+      ],
+      "type": "VEC3"
+    },
+    {
+      "name": "TEXCOORD_0",
+      "bufferView": 0,
+      "byteOffset": 24,
+      "componentType": 5126,
+      "count": 236,
+      "max": [
+        0.986328125,
+        0.9990234375
+      ],
+      "min": [
+        0.001953125,
+        0.3115234375
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5123,
+      "count": 807,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 7552,
+      "byteStride": 32,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1614,
+      "byteOffset": 7552,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 9168,
+      "uri": "3060435073507076032326_LOD00.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "3060435073507076032326_LOD00.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "3060435073507076032326_0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "source": 0
+    }
+  ]
+}

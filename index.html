@@ -147,28 +147,18 @@
             font-weight: 500;
         }
 
-        .hero-video-wrapper {
-            position: relative;
+        .model-container {
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             background: #0a0a0a;
             border: 1px solid rgba(255, 255, 255, 0.05);
             margin-bottom: 40px;
+            position: relative;
+            height: 500px;
         }
 
-        .hero-video-wrapper video {
-            width: 100%;
-            height: 100%;
-            display: block;
-            min-height: 300px;
-            object-fit: cover;
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .hero-video-wrapper .caption {
+        .model-container .caption {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -181,6 +171,41 @@
             z-index: 2;
             backdrop-filter: blur(4px);
             letter-spacing: 0.3px;
+            pointer-events: none;
+        }
+
+        #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .model-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .model-loading .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .cta-section {
@@ -238,6 +263,22 @@
             transform: translateX(4px);
         }
 
+        .cesium-viewer-bottom {
+            display: none !important;
+        }
+        .cesium-widget-credits {
+            display: none !important;
+        }
+        .cesium-button {
+            display: none !important;
+        }
+        .cesium-viewer-toolbar {
+            display: none !important;
+        }
+        .cesium-infoBox {
+            display: none !important;
+        }
+
         @media (max-width: 1024px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -250,8 +291,8 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            .hero-video-wrapper video {
-                max-height: 400px;
+            .model-container {
+                height: 400px;
             }
         }
 
@@ -278,9 +319,8 @@
             .history-text p {
                 font-size: 15px;
             }
-            .hero-video-wrapper video {
-                max-height: 300px;
-                min-height: 200px;
+            .model-container {
+                height: 300px;
             }
             .cta-section {
                 padding: 35px 30px;
@@ -328,9 +368,8 @@
             .history-highlights .highlight-item .content {
                 font-size: 14px;
             }
-            .hero-video-wrapper video {
-                max-height: 200px;
-                min-height: 150px;
+            .model-container {
+                height: 250px;
             }
             .cta-section {
                 padding: 28px 20px;
@@ -434,12 +473,13 @@
                 </div>
             </div>
 
-            <div class="hero-video-wrapper">
-                <video id="ec2Video" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload noplaybackrate nofullscreen">
-                    <source src="ezgif-6979d0000b5410a5.mp4" type="video/mp4" />
-                    Twoja przeglądarka nie obsługuje odtwarzania wideo.
-                </video>
-                <div class="caption">EC2 z lotu ptaka – render 3D</div>
+            <div class="model-container" id="modelContainer">
+                <div class="model-loading" id="loadingText">
+                    <div class="spinner"></div>
+                    Ładowanie modelu 3D EC2...
+                </div>
+                <div id="cesiumContainer"></div>
+                <div class="caption">EC2 – model 3D | Kliknij i przeciągaj, aby obracać | Scroll, aby przybliżać</div>
             </div>
 
             <div class="cta-section">
@@ -456,6 +496,9 @@
 
         <div id="footer-placeholder" style="min-height:130px;"></div>
     </div>
+
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+    <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" />
 
     <script>
         const headerPlaceholder = document.getElementById('header-placeholder');
@@ -493,15 +536,69 @@
                 footerPlaceholder.style.minHeight = 'auto';
             });
 
-        const video = document.getElementById('ec2Video');
-        video.addEventListener('contextmenu', (e) => e.preventDefault());
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === ' ' || e.key === 'Spacebar') {
-                if (document.activeElement === video) {
-                    e.preventDefault();
-                }
-            }
+        const container = document.getElementById('cesiumContainer');
+        const loadingText = document.getElementById('loadingText');
+
+        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0N2UwNDM5NS04YzNlLTQ5ZGYtODQyNC1hZjU5Y2I2NzM5YzMiLCJpZCI6MjU5LCJpYXQiOjE2MTk1NDE3MDZ9.4n7XZ8jKjHkLQxYp2gjN8xVn3m0oSncZ5vJm8';
+
+        const viewer = new Cesium.Viewer('cesiumContainer', {
+            terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+            baseLayerPicker: false,
+            geocoder: false,
+            homeButton: false,
+            sceneModePicker: false,
+            navigationHelpButton: false,
+            animation: false,
+            timeline: false,
+            fullscreenButton: false,
+            vrButton: false,
+            infoBox: false,
+            selectionIndicator: false,
+            shadows: false,
+            shouldAnimate: false
+        });
+
+        viewer._cesiumWidget._creditContainer.style.display = 'none';
+
+        const ec2Position = Cesium.Cartesian3.fromDegrees(19.4221, 51.7445, 200);
+        viewer.camera.flyTo({
+            destination: ec2Position,
+            orientation: {
+                heading: Cesium.Math.toRadians(0),
+                pitch: Cesium.Math.toRadians(-30),
+                roll: 0
+            },
+            duration: 2
+        });
+
+        const tilesetUrl = 'MODEL_EC2/scene/objects.xml'; 
+
+        try {
+            const tileset = new Cesium.Cesium3DTileset({
+                url: tilesetUrl
+            });
+            
+            viewer.scene.primitives.add(tileset);
+            
+            tileset.readyPromise.then(function(tileset) {
+                loadingText.style.display = 'none';
+                viewer.flyTo(tileset, {
+                    duration: 2,
+                    offset: new Cesium.HeadingPitchRange(0, -0.5, 500)
+                });
+            }).catch(function(error) {
+                console.error('Błąd ładowania modelu:', error);
+                loadingText.innerHTML = '❌ Nie udało się załadować modelu. Sprawdź ścieżkę do pliku.';
+                loadingText.style.color = '#ff6b6b';
+            });
+        } catch (error) {
+            console.error('Błąd:', error);
+            loadingText.innerHTML = '❌ Błąd ładowania modelu. Sprawdź konsolę.';
+            loadingText.style.color = '#ff6b6b';
+        }
+
+        window.addEventListener('resize', function() {
+            viewer.resize();
         });
     </script>
 </body>
