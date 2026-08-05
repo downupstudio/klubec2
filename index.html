@@ -539,7 +539,7 @@
         const container = document.getElementById('cesiumContainer');
         const loadingText = document.getElementById('loadingText');
 
-        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0N2UwNDM5NS04YzNlLTQ5ZGYtODQyNC1hZjU5Y2I2NzM5YzMiLCJpZCI6MjU5LCJpYXQiOjE2MTk1NDE3MDZ9.4n7XZ8jKjHkLQxYp2gjN8xVn3m0oSncZ5vJm8';
+        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjZjkyOWVkNS05MWZkLTQ1ZWItYTUxOS0wZjUzMWM5ZTE1NDEiLCJpZCI6NDY0Mzc4LCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODU5NjM4MzN9.Ol7v5ppcidZlUAM3IVW4mBvwXMjrQhGoLJB6obKHjIA';
 
         const viewer = new Cesium.Viewer('cesiumContainer', {
             terrainProvider: new Cesium.EllipsoidTerrainProvider(),
@@ -571,7 +571,7 @@
             duration: 2
         });
 
-        const tilesetUrl = 'MODEL_EC2/scene/objects.xml'; 
+        const tilesetUrl = 'MODEL_EC2/scene/objects.xml';
 
         try {
             const tileset = new Cesium.Cesium3DTileset({
