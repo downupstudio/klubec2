@@ -581,20 +581,14 @@
             try {
                 const tileset = viewer.scene.primitives.add(
                     await Cesium.Cesium3DTileset.fromIonAssetId(5114384, {
-                        maximumScreenSpaceError: 2,
-                        
-                        maximumNumberOfLoadedTiles: 10000,
-                        
+                        maximumMemoryUsage: 10000,
+                        maximumScreenSpaceError: 1,
+                        forgetTileParents: false,
                         preloadWhenHidden: true,
                         preferLeaves: true,
-                        
-                        dynamicScreenSpaceError: true,
-                        dynamicScreenSpaceErrorDensity: 0.00278,
-                        dynamicScreenSpaceErrorFactor: 4.0,
-                        
-                        maximumCacheSize: 512,
-                        
-                        cullWithChildrenBounds: true
+                        dynamicScreenSpaceError: false,
+                        maximumCacheSize: 10000,
+                        cullWithChildrenBounds: false
                     })
                 );
 
@@ -602,10 +596,11 @@
                 
                 setTimeout(() => {
                     viewer.zoomTo(tileset, new Cesium.HeadingPitchRange(0, -0.5, 500));
-                }, 500);
+                }, 1000);
+
             } catch (error) {
                 console.error('Błąd ładowania modelu:', error);
-                loadingText.innerHTML = '❌ Nie udało się załadować modelu. Sprawdź Asset ID i token.';
+                loadingText.innerHTML = '❌ Nie udało się załadować modelu.';
                 loadingText.style.color = '#ff6b6b';
             }
         })();
