@@ -581,14 +581,16 @@
             try {
                 const tileset = viewer.scene.primitives.add(
                     await Cesium.Cesium3DTileset.fromIonAssetId(5114384, {
-                        maximumMemoryUsage: 10000,
-                        maximumScreenSpaceError: 1,
+                        cacheBytes: 2147483648,
+                        skipLevelOfDetail: false,
+                        maximumScreenSpaceError: 2,
+                        loadSiblings: true,
+                        cullWithChildrenBounds: false,
+                        dynamicScreenSpaceError: false,
                         forgetTileParents: false,
                         preloadWhenHidden: true,
                         preferLeaves: true,
-                        dynamicScreenSpaceError: false,
-                        maximumCacheSize: 10000,
-                        cullWithChildrenBounds: false
+                        maximumCacheSize: 10000
                     })
                 );
 
@@ -596,7 +598,7 @@
                 
                 setTimeout(() => {
                     viewer.zoomTo(tileset, new Cesium.HeadingPitchRange(0, -0.5, 500));
-                }, 1000);
+                }, 2000);
 
             } catch (error) {
                 console.error('Błąd ładowania modelu:', error);
