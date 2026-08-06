@@ -554,10 +554,16 @@
             infoBox: false,
             selectionIndicator: false,
             shadows: false,
-            shouldAnimate: false
+            shouldAnimate: false,
+            skyBox: false,
+            skyAtmosphere: false,
+            mapMode: 'continuous'
         });
 
         viewer._cesiumWidget._creditContainer.style.display = 'none';
+        
+        viewer.scene.globe.show = false;
+        viewer.scene.backgroundColor = new Cesium.Color(0.04, 0.04, 0.04, 1);
 
         (async function() {
             try {
