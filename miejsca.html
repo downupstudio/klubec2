@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miejsca - Klub Przyjaciół EC2</title>
+    <link rel="stylesheet" href="header_footer.css" />
+    <style>
+        .places-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .places-container h1 {
+            font-size: 36px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .places-container .subtitle {
+            font-size: 18px;
+            color: #6b6b73;
+            margin-bottom: 40px;
+            font-weight: 350;
+        }
+
+        .place-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .place-item {
+            background: #f7f7f9;
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .place-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .place-item .place-image {
+            position: relative;
+            height: 100%;
+            min-height: 220px;
+            background: #e8e8ee;
+            overflow: hidden;
+        }
+
+        .place-item .place-image .image-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .place-item .place-image .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.5s ease;
+        }
+
+        .place-item .place-image .image-wrapper img.hidden {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .place-item .place-image .image-wrapper img.visible {
+            opacity: 1;
+        }
+
+        .place-item .place-image .photo-tabs {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 4px;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 4px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .place-item .place-image .photo-tabs .tab {
+            padding: 6px 16px;
+            border-radius: 16px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+            font-family: inherit;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .place-item .place-image .photo-tabs .tab:hover {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .place-item .place-image .photo-tabs .tab.active {
+            background: #ffffff;
+            color: #1e1e22;
+        }
+
+        .place-item .place-image .photo-tabs .tab:not(.active):hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .place-item .place-info {
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .place-item .place-name {
+            font-size: 24px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 4px;
+        }
+
+        .place-item .place-location {
+            font-size: 14px;
+            color: #8a8a92;
+            margin-bottom: 10px;
+        }
+
+        .place-item .place-location span {
+            margin-right: 12px;
+        }
+
+        .place-item .place-desc {
+            font-size: 15px;
+            color: #4a4a52;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .places-container {
+                padding: 35px 30px;
+            }
+            .places-container h1 {
+                font-size: 28px;
+            }
+            .place-item {
+                grid-template-columns: 1fr;
+            }
+            .place-item .place-image {
+                min-height: 180px;
+                max-height: 220px;
+            }
+            .place-item .place-info {
+                padding: 24px 28px;
+            }
+            .place-item .place-name {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .places-container {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .places-container h1 {
+                font-size: 24px;
+            }
+            .places-container .subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            .place-item {
+                border-radius: 12px;
+            }
+            .place-item .place-image {
+                min-height: 140px;
+                max-height: 180px;
+            }
+            .place-item .place-info {
+                padding: 20px;
+            }
+            .place-item .place-name {
+                font-size: 18px;
+            }
+            .place-item .place-desc {
+                font-size: 14px;
+            }
+            .place-item .place-image .photo-tabs .tab {
+                font-size: 9px;
+                padding: 4px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder" style="min-height:130px;"></div>
+
+        <main>
+            <div class="places-container">
+                <h1>Miejsca</h1>
+                <p class="subtitle">Poznaj najważniejsze przestrzenie EC2</p>
+
+                <div class="place-list">
+                    <div class="place-item">
+                        <div class="place-image" id="nastawnia">
+                            <div class="image-wrapper">
+                                <img src="https://ocdn.eu/images/pulscms/YmE7MDA_/4191841906b7e6f2f4e42381f06d4695.jpg" alt="Nastawnia EC2 - podczas działania" class="visible" data-state="dzialanie" />
+                                <img src="https://static.ddbelchatow.pl/tulodz/articles/image/97cf95e1-3be6-4653-b9db-7759f36a3eb8" alt="Nastawnia EC2 - wprost po opuszczeniu" class="hidden" data-state="opo" />
+                                <img src="https://desolate.zone/imagecache/place_gallery_image/56o91oje3chv8l7wlp6mpgl5.webp" alt="Nastawnia EC2 - obecnie" class="hidden" data-state="obecnie" />
+                            </div>
+                            <div class="photo-tabs" id="tabsNastawnia">
+                                <button class="tab active" data-state="dzialanie">Podczas działania</button>
+                                <button class="tab" data-state="opo">Wprost po opuszczeniu</button>
+                                <button class="tab" data-state="obecnie">Obecnie</button>
+                            </div>
+                        </div>
+                        <div class="place-info">
+                            <div class="place-name">Nastawnia</div>
+                            <div class="place-location">
+                                <span>📍 Główny budynek</span>
+                                <span>📋 Stan: Częściowo zachowana</span>
+                            </div>
+                            <div class="place-desc">
+                                Serce sterownicze elektrociepłowni, jedyne wnętrze EC2, które wciąż jest wpisane do rejestru zabytków. To tutaj, za tymi kultowymi pulpitami, operatorzy przez dekady czuwali nad pracą kotłów i turbin – podejmowali decyzje, które miały wpływ na całe miasto. Setki przycisków, wskaźników i dźwigni do dziś robią ogromne wrażenie, choć dziś wyglądają już zupełnie inaczej.
+                                Nastawnia nie uniknęła zniszczeń. Jeszcze w 2023 roku jej ściany były w znacznym stopniu zachowane – dziś zostały wycięte na złom. Ocalał jedynie główny pulpit, który też widział lepsze czasy. Mimo to, wciąż czuć tu ducha tego miejsca. To jedno z tych pomieszczeń, które najlepiej opowiadają historię EC2 – i jedno z tych, które najbardziej szkoda.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const placeItems = document.querySelectorAll('.place-item');
+
+            placeItems.forEach(item => {
+                const images = item.querySelectorAll('.image-wrapper img');
+                const tabs = item.querySelectorAll('.tab');
+
+                function goToState(state) {
+                    images.forEach(img => {
+                        img.classList.remove('visible');
+                        img.classList.add('hidden');
+                    });
+
+                    const targetImg = item.querySelector(`.image-wrapper img[data-state="${state}"]`);
+                    if (targetImg) {
+                        targetImg.classList.remove('hidden');
+                        targetImg.classList.add('visible');
+                    }
+
+                    tabs.forEach(tab => {
+                        tab.classList.toggle('active', tab.dataset.state === state);
+                    });
+                }
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        const state = this.dataset.state;
+                        goToState(state);
+                    });
+                });
+
+                goToState('dzialanie');
+            });
+        });
+    </script>
+</body>
+</html>
