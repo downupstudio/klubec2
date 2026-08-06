@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 - Strona nie znaleziona | Klub Przyjaciół EC2</title>
+    <link rel="icon" href="logo_czarne.png" id="favicon" />
     <link rel="stylesheet" href="header_footer.css" />
+    <script>
+        const favicon = document.getElementById('favicon');
+        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function updateFavicon() {
+            if (darkModeMedia.matches) {
+                favicon.href = 'logo_biale.png';
+            } else {
+                favicon.href = 'logo_czarne.png';
+            }
+        }
+
+        darkModeMedia.addEventListener('change', updateFavicon);
+        updateFavicon();
+    </script>
     <style>
         main {
             display: flex;

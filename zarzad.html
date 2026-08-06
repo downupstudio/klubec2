@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zarząd - Klub Przyjaciół EC2</title>
+    <link rel="icon" href="logo_czarne.png" id="favicon" />
     <link rel="stylesheet" href="header_footer.css" />
+    <script>
+        const favicon = document.getElementById('favicon');
+        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function updateFavicon() {
+            if (darkModeMedia.matches) {
+                favicon.href = 'logo_biale.png';
+            } else {
+                favicon.href = 'logo_czarne.png';
+            }
+        }
+
+        darkModeMedia.addEventListener('change', updateFavicon);
+        updateFavicon();
+    </script>
     <style>
         .board-container {
             max-width: 1100px;
@@ -189,7 +205,6 @@
                 <p class="subtitle">Poznaj osoby, które tworzą Klub Przyjaciół EC2</p>
 
                 <div class="board-list">
-                    <!-- Członek 1 -->
                     <div class="board-member">
                         <div class="avatar">
                             <img src="idraws.png" alt="iDraws na sterowni w EC-2" />
@@ -197,25 +212,11 @@
                         <div class="info">
                             <div class="name">iDraws</div>
                             <div class="role">Urbexiarz, Fotograf</div>
-                            <div class="desc">iDraws to założyciel Klubu Przyjaciół EC-2 i jeden z najbardziej rozpoznawalnych Łódzkich urbexiarzy. Jest również moderatorem i honorowym członkiem desolate.zone.</div>
+                            <div class="desc">iDraws to założyciel Klubu Przyjaciół EC-2 , zajmuje się archiwizacją oraz tworzeniem postów na stronie Facebookowej, oraz fotografią. Jest on jednym z najbardziej rozpoznawalnych Łódzkich urbexiarzy.</div>
                             <span class="badge">od 2026</span>
                         </div>
                     </div>
 
-                    <!-- Członek 2 -->
-                    <div class="board-member">
-                        <div class="avatar">
-                            <img src="cyzblox.png" alt="_inc0gnit0" />
-                        </div>
-                        <div class="info">
-                            <div class="name">_inc0gnit0</div>
-                            <div class="role">Urbexiarz, Fotograf</div>
-                            <div class="desc">_inc0gnit0, znany również jako cyzblox to Łódzki urbexiarz, moderator i honorowy członek desolate.zone. </div>
-                            <span class="badge">od 2026</span>
-                        </div>
-                    </div>
-
-                    <!-- Członek 3 -->
                     <div class="board-member">
                         <div class="avatar">
                             <img src="gmis54.png" alt="gmis54 urbex" />
@@ -228,7 +229,6 @@
                         </div>
                     </div>
 
-                    <!-- Członek 4 -->
                     <div class="board-member">
                         <div class="avatar">
                             <img src="gabriel.png" alt="Gabriel stojący w oknie EC-2" />
