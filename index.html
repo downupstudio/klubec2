@@ -556,14 +556,26 @@
             shadows: false,
             shouldAnimate: false,
             skyBox: false,
-            skyAtmosphere: false,
-            mapMode: 'continuous'
+            skyAtmosphere: false
         });
 
         viewer._cesiumWidget._creditContainer.style.display = 'none';
-        
         viewer.scene.globe.show = false;
         viewer.scene.backgroundColor = new Cesium.Color(0.04, 0.04, 0.04, 1);
+
+        const longitude = 19.4428815285;
+        const latitude = 51.7398409621;
+        const height = 223.2196395923;
+
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(longitude, latitude, height + 200),
+            orientation: {
+                heading: Cesium.Math.toRadians(0),
+                pitch: Cesium.Math.toRadians(-30),
+                roll: 0
+            },
+            duration: 2
+        });
 
         (async function() {
             try {
