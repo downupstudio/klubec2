@@ -276,4 +276,97 @@
                             <div class="photo-tabs" id="tabsKotlownia">
                                 <button class="tab active" data-state="dzialanie">Podczas działania</button>
                                 <button class="tab" data-state="opo">Wprost po opuszczeniu</button>
-                                <button class="tab" data-state="obecnie">Obecnie</
+                                <button class="tab" data-state="obecnie">Obecnie</button>
+                            </div>
+                        </div>
+                        <div class="place-info">
+                            <div class="place-name">Kotłownia</div>
+                            <div class="place-location">
+                                <span>📍 Główny budynek</span>
+                                <span>📋 Stan: Częściowo zachowana</span>
+                            </div>
+                            <div class="place-desc">
+                                Hala, w której stało 9 kotłów. Pierwsze 4 rozebrano jeszcze przed wygaszeniem elektrowni. Na hali pozostały kotły 5–9. Po wykupieniu terenu zburzono piętro, a wraz z nim połowicznie rozebrano kocioł K-5. Kotły K-6, K-7 i K-8 zachowały się w dobrej kondycji – brakuje jedynie metalowych elementów, wyciętych na złom. Kocioł K-9 został rozebrany od góry – dziś wygląda, jakby przecięto go w pół. Hala kotłów to jedno z miejsc, które najlepiej uchowały się w całym kompleksie.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const placeItems = document.querySelectorAll('.place-item');
+
+            placeItems.forEach(item => {
+                const images = item.querySelectorAll('.image-wrapper img');
+                const tabs = item.querySelectorAll('.tab');
+
+                function goToState(state) {
+                    images.forEach(img => {
+                        img.classList.remove('visible');
+                        img.classList.add('hidden');
+                    });
+
+                    const targetImg = item.querySelector(`.image-wrapper img[data-state="${state}"]`);
+                    if (targetImg) {
+                        targetImg.classList.remove('hidden');
+                        targetImg.classList.add('visible');
+                    }
+
+                    tabs.forEach(tab => {
+                        tab.classList.toggle('active', tab.dataset.state === state);
+                    });
+                }
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        const state = this.dataset.state;
+                        goToState(state);
+                    });
+                });
+
+                goToState('dzialanie');
+            });
+        });
+    </script>
+</body>
+</html>
