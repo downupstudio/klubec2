@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aktualności - Klub Przyjaciół EC2</title>
+    <link rel="icon" href="logo_czarne.png" id="favicon" />
+    <link rel="stylesheet" href="header_footer.css" />
+    <script>
+        const favicon = document.getElementById('favicon');
+        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function updateFavicon() {
+            if (darkModeMedia.matches) {
+                favicon.href = 'logo_biale.png';
+            } else {
+                favicon.href = 'logo_czarne.png';
+            }
+        }
+
+        darkModeMedia.addEventListener('change', updateFavicon);
+        updateFavicon();
+    </script>
+    <style>
+        .news-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .news-container h1 {
+            font-size: 36px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .news-container .subtitle {
+            font-size: 18px;
+            color: #6b6b73;
+            margin-bottom: 40px;
+            font-weight: 350;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .news-item {
+            background: #f7f7f9;
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .news-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .news-item .news-image {
+            height: 100%;
+            min-height: 250px;
+            background: #e8e8ee;
+            overflow: hidden;
+        }
+
+        .news-item .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-item .news-content {
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-item .news-date {
+            font-size: 13px;
+            color: #8a8a92;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .news-item .news-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 10px;
+        }
+
+        .news-item .news-desc {
+            font-size: 15px;
+            color: #4a4a52;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .news-container {
+                padding: 35px 30px;
+            }
+            .news-container h1 {
+                font-size: 28px;
+            }
+            .news-item {
+                grid-template-columns: 1fr;
+            }
+            .news-item .news-image {
+                min-height: 200px;
+                max-height: 250px;
+            }
+            .news-item .news-content {
+                padding: 24px 28px;
+            }
+            .news-item .news-title {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .news-container {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .news-container h1 {
+                font-size: 24px;
+            }
+            .news-container .subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            .news-item {
+                border-radius: 12px;
+            }
+            .news-item .news-image {
+                min-height: 160px;
+                max-height: 200px;
+            }
+            .news-item .news-content {
+                padding: 20px;
+            }
+            .news-item .news-title {
+                font-size: 18px;
+            }
+            .news-item .news-desc {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder" style="min-height:130px;"></div>
+
+        <main>
+            <div class="news-container">
+                <h1>Aktualności</h1>
+                <p class="subtitle">Najnowsze newsy prosto z EC2</p>
+
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-image">
+                            <img src="https://media.discordapp.net/attachments/1529448568363155530/1543330562754879549/b72e0d60234db2823b0b490d23fb1597.jpg?ex=6a947a17&is=6a932897&hm=16c9625c58f89dd0542ea60abe8106352ada4a8c401b701944f17273dafb5f06&=&format=webp" alt="Sokoły wędrowne na kominie EC2" />
+                        </div>
+                        <div class="news-content">
+                            <div class="news-date">29 sierpnia 2026</div>
+                            <div class="news-title">Sokoły wędrowne na kominie EC2!</div>
+                            <div class="news-desc">
+                                Na kominie Elektrociepłowni EC2 zaobserwowano sokoły wędrowne. Ptaki, które w Polsce objęte są ścisłą ochroną gatunkową, zostały uchwycone na zdjęciach. Sokoły wędrowne osiągają w locie nurkowym prędkość przekraczającą 300 km/h, co czyni je najszybszymi zwierzętami na świecie.
+                            </div>
+                            <div class="news-desc">
+                                Zdjęcia przedstawiają ptaki siedzące na jednym z kominów elektrociepłowni. Na razie nie wiadomo, czy był to jedynie przystanek w trakcie wędrówki, czy też sokoły wybrały to miejsce na dłuższy pobyt.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+    </script>
+</body>
+</html>
