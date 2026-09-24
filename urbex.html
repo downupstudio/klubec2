@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urbex - Klub Przyjaciół EC2</title>
+    <link rel="icon" href="logo_czarne.png" id="favicon" />
+    <link rel="stylesheet" href="header_footer.css" />
+    <script>
+        const favicon = document.getElementById('favicon');
+        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function updateFavicon() {
+            if (darkModeMedia.matches) {
+                favicon.href = 'logo_biale.png';
+            } else {
+                favicon.href = 'logo_czarne.png';
+            }
+        }
+
+        darkModeMedia.addEventListener('change', updateFavicon);
+        updateFavicon();
+    </script>
+    <style>
+        .urbex-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 70px;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .urbex-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .urbex-header h1 {
+            font-size: 44px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .urbex-header .subtitle {
+            font-size: 18px;
+            color: #6b6b73;
+            font-weight: 350;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .urbex-intro {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #4a4a52;
+            margin-bottom: 60px;
+            padding: 32px 36px;
+            background: linear-gradient(135deg, #f7f7f9 0%, #f0f0f4 100%);
+            border-radius: 16px;
+            border-left: 4px solid #1e1e22;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 30px;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 28px;
+            background: #1e1e22;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .urbex-timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 60px;
+            padding-left: 40px;
+        }
+
+        .urbex-timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(to bottom, #1e1e22 0%, #e0e0e8 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 34px;
+            width: 14px;
+            height: 14px;
+            background: #ffffff;
+            border: 3px solid #1e1e22;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item .timeline-year {
+            display: inline-block;
+            font-size: 13px;
+            color: #1e1e22;
+            background: #f0f0f4;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item .timeline-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .timeline-item .timeline-desc {
+            font-size: 15px;
+            color: #4a4a52;
+            line-height: 1.8;
+        }
+
+        .urbex-section {
+            margin-bottom: 60px;
+        }
+
+        .urbex-section p {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #4a4a52;
+            margin-bottom: 16px;
+        }
+
+        .urbex-section p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .urbex-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .urbex-section ul li {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 14px;
+            padding: 18px 22px;
+            font-size: 15px;
+            color: #4a4a52;
+            line-height: 1.6;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            padding-left: 56px;
+        }
+
+        .urbex-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: #f0f0f4;
+            border-radius: 50%;
+        }
+
+        .urbex-section ul li::after {
+            content: '';
+            position: absolute;
+            left: 29px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: #1e1e22;
+            border-radius: 50%;
+        }
+
+        .urbex-section ul li:hover {
+            transform: translateX(4px);
+            border-color: rgba(0, 0, 0, 0.12);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .urbex-section ul li strong {
+            color: #1e1e22;
+            font-weight: 500;
+        }
+
+        .urbex-photo {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .urbex-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .urbex-photo:hover img {
+            transform: scale(1.02);
+        }
+
+        .urbex-photo .caption {
+            font-size: 13px;
+            color: #8a8a92;
+            text-align: center;
+            padding: 14px 20px;
+            background: #f7f7f9;
+            letter-spacing: 0.2px;
+        }
+
+        @media (max-width: 768px) {
+            .urbex-container {
+                padding: 40px 30px;
+            }
+            .urbex-header h1 {
+                font-size: 32px;
+            }
+            .urbex-header .subtitle {
+                font-size: 16px;
+            }
+            .urbex-intro {
+                padding: 24px;
+                font-size: 15px;
+                margin-bottom: 40px;
+            }
+            .section-title {
+                font-size: 22px;
+            }
+            .section-title::before {
+                height: 22px;
+            }
+            .urbex-timeline {
+                padding-left: 30px;
+                margin-bottom: 40px;
+            }
+            .urbex-timeline::before {
+                left: 8px;
+            }
+            .timeline-item {
+                padding: 22px 24px;
+            }
+            .timeline-item::before {
+                left: -28px;
+                width: 12px;
+                height: 12px;
+            }
+            .timeline-item .timeline-title {
+                font-size: 19px;
+            }
+            .urbex-section {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .urbex-container {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+            .urbex-header h1 {
+                font-size: 26px;
+            }
+            .urbex-header .subtitle {
+                font-size: 15px;
+            }
+            .urbex-intro {
+                padding: 20px;
+                font-size: 14px;
+                line-height: 1.75;
+            }
+            .section-title {
+                font-size: 19px;
+                margin-bottom: 20px;
+            }
+            .urbex-timeline {
+                padding-left: 24px;
+            }
+            .urbex-timeline::before {
+                left: 6px;
+            }
+            .timeline-item {
+                padding: 20px 18px;
+                border-radius: 12px;
+            }
+            .timeline-item::before {
+                left: -22px;
+                width: 10px;
+                height: 10px;
+                border-width: 2px;
+            }
+            .timeline-item .timeline-title {
+                font-size: 17px;
+            }
+            .timeline-item .timeline-desc {
+                font-size: 14px;
+            }
+            .urbex-section p {
+                font-size: 14px;
+            }
+            .urbex-section ul li {
+                font-size: 14px;
+                padding: 14px 16px 14px 46px;
+            }
+            .urbex-section ul li::before {
+                left: 16px;
+                width: 18px;
+                height: 18px;
+            }
+            .urbex-section ul li::after {
+                left: 22px;
+                width: 6px;
+                height: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-placeholder" style="min-height:130px;"></div>
+
+        <main>
+            <div class="urbex-container">
+                <div class="urbex-header">
+                    <h1>Urbex na EC2</h1>
+                    <p class="subtitle">Historia eksploracji Elektrociepłowni EC2 w Łodzi</p>
+                </div>
+
+                <div class="urbex-intro">
+                    Elektrociepłownia EC2 od momentu wyłączenia z eksploatacji w 2015 roku stała się jednym z najczęściej odwiedzanych obiektów przemysłowych w Łodzi. Przez ponad dekadę miejsce to przyciągało urbexiarzy, fotografów i pasjonatów historii przemysłu z całej Polski. Poniżej przedstawiamy najważniejsze etapy eksploracji EC2.
+                </div>
+
+                <h2 class="section-title">Historia eksploracji</h2>
+
+                <div class="urbex-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2015–2016</div>
+                        <div class="timeline-title">Pierwsze wejścia po wyłączeniu</div>
+                        <div class="timeline-desc">
+                            Po 31 marca 2015 roku, gdy EC2 zakończyła pracę, obiekt przez pewien czas pozostawał pod nadzorem właściciela – firmy Dalkia (obecnie Veolia). Pierwsze nieoficjalne wejścia miały miejsce jeszcze w tym samym roku. Były to pojedyncze wyprawy doświadczonych eksploratorów, którzy dokumentowali stan zachowania maszyn i wnętrz.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2017–2018</div>
+                        <div class="timeline-title">Okres świetności urbexu</div>
+                        <div class="timeline-desc">
+                            Po sprzedaży terenu firmie Hakamore w 2017 roku obiekt stracił stały nadzór. To wtedy EC2 stała się popularnym celem wypraw urbexowych. Zwiększyła się liczba osób odwiedzających elektrociepłownię, a w internecie zaczęły pojawiać się pierwsze relacje i galerie zdjęć. W tym okresie obiekt był jeszcze w stosunkowo dobrym stanie technicznym – działało oświetlenie awaryjne, a wnętrza nie były zdewastowane.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-title">Wstrzymanie rozbiórki</div>
+                        <div class="timeline-desc">
+                            W 2019 roku firma Hakamore rozpoczęła prace rozbiórkowe, które zostały wstrzymane przez Wojewódzki Urząd Ochrony Zabytków w Łodzi. Powodem było prowadzenie prac bez wymaganych pozwoleń oraz trwające postępowanie w sprawie wpisu obiektu do rejestru zabytków. W tym okresie część wejść zabezpieczono.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020–2022</div>
+                        <div class="timeline-title">Wzrost zainteresowania i pierwsze zniszczenia</div>
+                        <div class="timeline-desc">
+                            Po nieudanej próbie rozbiórki i upadku firmy Hakamore, EC2 ponownie znalazła się bez gospodarza. Rosnąca popularność obiektu w mediach społecznościowych przyczyniła się do znacznego wzrostu liczby odwiedzających. Niestety, wraz z nią pojawiły się akty wandalizmu – wycinanie elementów metalowych, niszczenie pulpitów sterowniczych i dewastacja wnętrz. Część najbardziej charakterystycznych elementów wyposażenia zniknęła właśnie w tym okresie.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-title">Ostatni dzwonek przed wyburzeniem</div>
+                        <div class="timeline-desc">
+                            Rok 2023 to okres, w którym wnętrza EC2 były jeszcze w znacznym stopniu zachowane. Wielu eksploratorów decydowało się na wyprawy, zdając sobie sprawę, że to prawdopodobnie ostatnia okazja, by zobaczyć nastawnię, kotłownię i maszynownię w ich pierwotnym układzie.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025–2026</div>
+                        <div class="timeline-title">Wznowienie wyburzania</div>
+                        <div class="timeline-desc">
+                            Pod koniec 2025 roku nowy właściciel – JHM DEVELOPMENT S.A. z grupy Mirbud – wznowił prace rozbiórkowe.  Wejście na teren obiektu stało się znacznie trudniejsze, a sama eksploracja – bardziej ryzykowna. Mimo to, wiele osób wciąż dokumentuje postępujące zmiany.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="urbex-section">
+                    <h2 class="section-title">Zasady bezpiecznej eksploracji EC2</h2>
+                    <p>
+                        Eksploracja obiektów poprzemysłowych wiąże się z ryzykiem. Poniżej kilka podstawowych zasad, których warto przestrzegać podczas wypraw na teren EC2 i podobnych miejsc.
+                    </p>
+                    <ul>
+                        <li><strong>Nie chodź sam</strong> – zawsze informuj kogoś o planowanej wyprawie i jej przewidywanym czasie trwania.</li>
+                        <li><strong>Sprawdź stan konstrukcji</strong> – w EC2 trwają prace rozbiórkowe. Część stropów i ścian może być niestabilna.</li>
+                        <li><strong>Noś odpowiedni ubiór</strong> – buty z twardą podeszwą, rękawice i maska przeciwpyłowa to podstawa.</li>
+                        <li><strong>Nie niszcz i nie zabieraj</strong> – każdy element wyposażenia to część historii tego miejsca.</li>
+                        <li><strong>Szanuj teren prywatny</strong> – EC2 jest własnością prywatną. Wejście na teren bez zgody właściciela jest nielegalne.</li>
+                    </ul>
+                </div>
+
+                <div class="urbex-section">
+                    <h2 class="section-title">Dokumentacja i archiwum</h2>
+                    <p>
+                        Klub Przyjaciół EC2 od początku swojej działalności gromadzi materiały związane z eksploracją tego miejsca. W naszym archiwum znajdują się zdjęcia, nagrania wideo oraz relacje z wypraw, które dokumentują stan EC2 w różnych okresach. Część z tych materiałów została już opublikowana w galerii oraz w sekcji wideo. Kolejne będą sukcesywnie udostępniane.
+                    </p>
+                    <p>
+                        Jeżeli posiadasz własne zdjęcia lub relacje z eksploracji EC2, zachęcamy do kontaktu. Wspólnie tworzymy archiwum, które pozwoli zachować pamięć o tym miejscu.
+                    </p>
+                </div>
+
+                <div class="urbex-photo">
+                    <img src="https://desolate.zone/imagecache/place_gallery_thumb/wyd1edtgx4wy20z4bzkli537.webp" alt="Widok na EC2 podczas wyprawy urbexowej" />
+                    <div class="caption">Widok na kompleks EC2 podczas jednej z wypraw, fot. iDraws</div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer-placeholder" style="min-height:130px;"></div>
+    </div>
+
+    <script>
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono header.html');
+                return response.text();
+            })
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                headerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania headera:', error);
+                headerPlaceholder.innerHTML = 
+                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
+                headerPlaceholder.style.minHeight = 'auto';
+            });
+        
+        fetch('footer.html') 
+            .then(response => {
+                if (!response.ok) throw new Error('Nie znaleziono footer.html');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                footerPlaceholder.style.minHeight = 'auto';
+            })
+            .catch(error => {
+                console.error('Błąd ładowania footera:', error);
+                footerPlaceholder.innerHTML = 
+                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
+                footerPlaceholder.style.minHeight = 'auto';
+            });
+    </script>
+</body>
+</html>
