@@ -25,141 +25,373 @@
         .news-container {
             max-width: 1100px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 50px 60px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
-        .news-container h1 {
-            font-size: 36px;
+        .news-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .news-header h1 {
+            font-size: 44px;
             font-weight: 500;
             color: #1e1e22;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
         }
 
-        .news-container .subtitle {
+        .news-header .subtitle {
             font-size: 18px;
             color: #6b6b73;
-            margin-bottom: 40px;
             font-weight: 350;
+        }
+
+        .news-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .news-sidebar {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 20px;
+        }
+
+        .news-sidebar h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #8a8a92;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .year-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .year-list li {
+            margin: 0;
+        }
+
+        .year-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 9px 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #4a4a52;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            text-align: left;
+        }
+
+        .year-btn:hover {
+            background: #f0f0f4;
+            color: #1e1e22;
+        }
+
+        .year-btn.active {
+            background: #1e1e22;
+            color: #ffffff;
+        }
+
+        .year-btn .count {
+            font-size: 12px;
+            color: #8a8a92;
+            font-weight: 450;
+        }
+
+        .year-btn.active .count {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .month-list {
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            margin-left: 8px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(0, 0, 0, 0.06);
+            margin-bottom: 12px;
+        }
+
+        .month-list.expanded {
+            display: flex;
+        }
+
+        .month-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #6b6b73;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .month-btn:hover {
+            background: #f0f0f4;
+            color: #1e1e22;
+        }
+
+        .month-btn.active {
+            background: #f0f0f4;
+            color: #1e1e22;
+            font-weight: 500;
+        }
+
+        .month-btn .count {
+            font-size: 11px;
+            color: #9a9aa3;
+        }
+
+        .all-btn {
+            width: 100%;
+            background: #f0f0f4;
+            border: none;
+            padding: 11px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #4a4a52;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .all-btn:hover {
+            background: #e4e4ea;
+            color: #1e1e22;
+        }
+
+        .all-btn.active {
+            background: #1e1e22;
+            color: #ffffff;
+        }
+
+        .news-main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .news-current-filter {
+            font-size: 14px;
+            color: #8a8a92;
+            padding: 0 4px;
+            margin-bottom: -4px;
+        }
+
+        .news-current-filter strong {
+            color: #1e1e22;
+            font-weight: 500;
         }
 
         .news-list {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 32px;
         }
 
         .news-item {
-            background: #f7f7f9;
-            border-radius: 16px;
+            background: #ffffff;
+            border-radius: 24px;
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .news-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
         }
 
         .news-item .news-image {
-            height: 100%;
-            min-height: 250px;
-            background: #e8e8ee;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #f0f0f4;
             overflow: hidden;
+            position: relative;
         }
 
         .news-item .news-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .news-item:hover .news-image img {
+            transform: scale(1.03);
         }
 
         .news-item .news-content {
-            padding: 28px 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 36px 44px 40px;
         }
 
         .news-item .news-date {
             font-size: 13px;
             color: #8a8a92;
+            letter-spacing: 0.2px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-
-        .news-item .news-title {
-            font-size: 24px;
-            font-weight: 500;
-            color: #1e1e22;
-            margin-bottom: 10px;
-        }
-
-        .news-item .news-desc {
-            font-size: 15px;
-            color: #4a4a52;
-            line-height: 1.7;
             margin-bottom: 12px;
         }
 
-        @media (max-width: 768px) {
-            .news-container {
-                padding: 35px 30px;
-            }
-            .news-container h1 {
-                font-size: 28px;
-            }
-            .news-item {
+        .news-item .news-title {
+            font-size: 26px;
+            font-weight: 500;
+            color: #1e1e22;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+        }
+
+        .news-item .news-desc {
+            font-size: 16px;
+            color: #4a4a52;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .news-item .news-desc:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .news-item .news-photo-credit {
+            font-size: 13px;
+            color: #9a9aa3;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            font-style: italic;
+        }
+
+        .empty-news {
+            text-align: center;
+            padding: 80px 20px;
+            color: #8a8a92;
+            font-size: 16px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        @media (max-width: 900px) {
+            .news-layout {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
-            .news-item .news-image {
-                min-height: 200px;
-                max-height: 250px;
+            .news-sidebar {
+                position: static;
+                padding: 18px;
+            }
+            .news-sidebar h3 {
+                margin-bottom: 12px;
+            }
+            .year-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 12px;
+            }
+            .year-btn {
+                width: auto;
+                padding: 7px 14px;
+            }
+            .month-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                border-left: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.06);
+                padding-left: 0;
+                margin-left: 0;
+                padding-top: 10px;
             }
             .news-item .news-content {
-                padding: 24px 28px;
+                padding: 28px 32px 32px;
+            }
+            .news-item .news-title {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .news-header h1 {
+                font-size: 32px;
+            }
+            .news-header .subtitle {
+                font-size: 16px;
+            }
+            .news-item .news-image {
+                aspect-ratio: 16 / 10;
+            }
+            .news-item .news-content {
+                padding: 24px 24px 28px;
             }
             .news-item .news-title {
                 font-size: 20px;
             }
+            .news-item .news-desc {
+                font-size: 15px;
+            }
         }
 
         @media (max-width: 640px) {
-            .news-container {
-                padding: 28px 20px;
-                border-radius: 16px;
+            .news-header h1 {
+                font-size: 26px;
             }
-            .news-container h1 {
-                font-size: 24px;
-            }
-            .news-container .subtitle {
-                font-size: 16px;
-                margin-bottom: 30px;
+            .news-header .subtitle {
+                font-size: 15px;
             }
             .news-item {
-                border-radius: 12px;
+                border-radius: 18px;
             }
             .news-item .news-image {
-                min-height: 160px;
-                max-height: 200px;
+                aspect-ratio: 16 / 10;
             }
             .news-item .news-content {
-                padding: 20px;
+                padding: 22px 20px 24px;
             }
             .news-item .news-title {
                 font-size: 18px;
             }
             .news-item .news-desc {
                 font-size: 14px;
+            }
+            .news-item .news-photo-credit {
+                font-size: 12px;
+                margin-top: 16px;
+                padding-top: 14px;
             }
         }
     </style>
@@ -170,69 +402,101 @@
 
         <main>
             <div class="news-container">
-                <h1>Aktualności</h1>
-                <p class="subtitle">Najnowsze newsy prosto z EC2</p>
+                <div class="news-header">
+                    <h1>Aktualności</h1>
+                    <p class="subtitle">Najnowsze newsy prosto z EC2</p>
+                </div>
 
-                <div class="news-list">
-                    <div class="news-item">
-                        <div class="news-image">
-                            <img src="https://scontent-waw2-2.xx.fbcdn.net/v/t39.99422-6/816310208_2254666805073635_1773199614130464363_n.png?stp=dst-jpg_tt6&cstp=mx1919x1021&ctp=s1919x1021&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=P0rI4PS18pIQ7kNvwEK15AT&_nc_oc=AdrccfLcT_m0USO5iGOhXJFLgvsjdTGzZPCbtycOz2L0IK9csQlzDZbPGb29pyItFrw&_nc_zt=14&_nc_ht=scontent-waw2-2.xx&_nc_gid=oYoF7rQKlgqparqsCVupvw&_nc_ss=7b2a8&oh=00_AQJWac_N107le_x79ymDD7-jgQB3VZlqo_iVgxOi1qZM4Q&oe=6ABB697E" alt="Wizualizacja nowego EC2" />
+                <div class="news-layout">
+                    <aside class="news-sidebar">
+                        <h3>Archiwum</h3>
+                        <ul class="year-list" id="yearList"></ul>
+                        <button class="all-btn active" id="allBtn">Wszystkie aktualności</button>
+                    </aside>
+
+                    <div class="news-main">
+                        <div class="news-current-filter" id="currentFilter"></div>
+
+                        <div class="news-list" id="newsList">
+                            <div class="news-item" data-date="2026-09-24">
+                                <div class="news-image">
+                                    <img src="https://d-pa.ppstatic.pl/frames/pa-def/c1/b3/2609220535_976287865_xlarge.jpg" alt="EC2" />
+                                </div>
+                                <div class="news-content">
+                                    <div class="news-date">24 września 2026</div>
+                                    <div class="news-title">Deweloper nie ma planu, ale zdążył już podjąć decyzję o rozbiórce charakterystycznych elementów EC2</div>
+                                    <div class="news-desc">
+                                        Przyszłość terenu po Elektrociepłowni EC2 pozostaje nieokreślona. Sebastian Makówka, dyrektor ds. marketingu w JHM Development, w rozmowie z „Dziennikiem Łódzkim" przyznał, że publikowane wizualizacje nie są obowiązujące, a konkretna koncepcja zagospodarowania terenu wciąż nie istnieje. Innymi słowy – deweloper nie ma planu, ale zdążył już podjąć decyzję o rozbiórce charakterystycznych elementów kompleksu: trzech kominów spalinowych oraz dwóch chłodni kominowych.
+                                    </div>
+                                    <div class="news-desc">
+                                        Jako Klub Przyjaciół EC2 nie możemy przejść obok tego obojętnie. Chłodnie kominowe to nie tylko konstrukcje techniczne – to ikony łódzkiego krajobrazu, nierozerwalnie związane z tożsamością zachodniej części miasta. Ich wyburzenie oznacza nieodwracalną stratę, której nie da się wytłumaczyć żadnym „potencjałem terenu".
+                                    </div>
+                                    <div class="news-desc">
+                                        Co gorsza, deweloper nie kryje, że planu na to miejsce po prostu nie ma. „W chwili obecnej plan na ten teren jest bliżej nieokreślony. Rozmawiamy z miastem i szukamy wspólnej koncepcji" – mówi Makówka. „Potencjał terenu jest ogromny, chcemy przywrócić go tkance miasta" – dodaje. Brzmi to dobrze, ale w praktyce oznacza jedno: najpierw burzymy, potem się zastanowimy, co dalej. A przecież chłodnie i kominy mogłyby stać się częścią nowej koncepcji, a nie jej ofiarą.
+                                    </div>
+                                    <div class="news-desc">
+                                        Klub Przyjaciół EC2 będzie monitorować sytuację i informować o kolejnych krokach dewelopera. Zachęcamy również mieszkańców do dzielenia się swoimi opiniami i pomysłami na przyszłość tego miejsca – być może wspólnie uda nam się wpłynąć na decyzje inwestora.
+                                    </div>
+                                    <div class="news-photo-credit">fot. Bartosz Księżak</div>
+                                </div>
+                            </div>
+
+                            <div class="news-item" data-date="2026-09-22">
+                                <div class="news-image">
+                                    <img src="https://scontent-waw2-2.xx.fbcdn.net/v/t39.99422-6/816310208_2254666805073635_1773199614130464363_n.png?stp=dst-jpg_tt6&cstp=mx1919x1021&ctp=s1919x1021&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=P0rI4PS18pIQ7kNvwEK15AT&_nc_oc=AdrccfLcT_m0USO5iGOhXJFLgvsjdTGzZPCbtycOz2L0IK9csQlzDZbPGb29pyItFrw&_nc_zt=14&_nc_ht=scontent-waw2-2.xx&_nc_gid=oYoF7rQKlgqparqsCVupvw&_nc_ss=7b2a8&oh=00_AQJWac_N107le_x79ymDD7-jgQB3VZlqo_iVgxOi1qZM4Q&oe=6ABB697E" alt="Wizualizacja nowego EC2" />
+                                </div>
+                                <div class="news-content">
+                                    <div class="news-date">22 września 2026</div>
+                                    <div class="news-title">JHM Development opublikowało wizualizacje "nowego" EC2</div>
+                                    <div class="news-desc">
+                                        JHM Development opublikował wizualizacje planowanej inwestycji na terenie dawnej Elektrociepłowni EC2. Publikacja pojawiła się przy okazji targów Expo Real w Monachium i pokazuje koncepcję nowego osiedla oraz zagospodarowania terenu elektrociepłowni.
+                                    </div>
+                                    <div class="news-desc">
+                                        Wizualizacje — najpewniej wygenerowane przez AI — wyglądają obrzydliwie. Są sterylne, bez charakteru i kompletnie nie oddają ducha tego miejsca. To nie jest przyszłość, na jaką zasługuje EC2. Będziemy przyglądać się dalszym działaniom inwestora i informować o nich na bieżąco.
+                                    </div>
+                                    <div class="news-photo-credit">fot. JHM Development</div>
+                                </div>
+                            </div>
+
+                            <div class="news-item" data-date="2026-09-22">
+                                <div class="news-image">
+                                    <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/799547157_122112408519405679_5798394336919493428_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ipVD2uRlbwEQ7kNvwHyYw9i&_nc_oc=Adr8insHn2JrYSXN4fVGXG39eW0qixN4D2-jRTdAdOb9Qm7U_VRDUDk2dQGle8Ae7Uc&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=2cibxZ8jZCpnjRswg-_FYA&_nc_ss=7b2a8&oh=00_AQJCg8Dd55_icpkOyN0UkWel6wbLJc0FDAlZ9AFeRtCI3A&oe=6ABB7141" alt="Wyburzanie kominów EC2" />
+                                </div>
+                                <div class="news-content">
+                                    <div class="news-date">22 września 2026</div>
+                                    <div class="news-title">Zaplanowane wyburzanie kominów EC2</div>
+                                    <div class="news-desc">
+                                        Ogłoszone zostały plany wyburzenia kominów dawnej Elektrociepłowni EC2 przy ul. Wróblewskiego w Łodzi. Na najwyższym kominie, liczącym około 160 metrów, przygotowano już otwory pod ładunki wyburzeniowe. Decyzją wojewódzkiego konserwatora zabytków obiekty zostaną rozebrane ze względu na zły stan techniczny.
+                                    </div>
+                                    <div class="news-desc">
+                                        Dla Klubu Przyjaciół EC2 to smutny moment – kominy przez dziesięciolecia były symbolem elektrociepłowni i częścią łódzkiego krajobrazu. Będziemy dokumentować ich ostatnie dni oraz zachęcamy członków i sympatyków do dzielenia się zdjęciami i wspomnieniami.
+                                    </div>
+                                    <div class="news-photo-credit">fot. Klub Przyjaciół EC2</div>
+                                </div>
+                            </div>
+
+                            <div class="news-item" data-date="2026-08-29">
+                                <div class="news-image">
+                                    <img src="sokol.jpg" alt="Sokoły wędrowne na kominie EC2" />
+                                </div>
+                                <div class="news-content">
+                                    <div class="news-date">29 sierpnia 2026</div>
+                                    <div class="news-title">Sokoły wędrowne na kominie EC2!</div>
+                                    <div class="news-desc">
+                                        Na kominie Elektrociepłowni EC2 zaobserwowano sokoły wędrowne. Ptaki, które w Polsce objęte są ścisłą ochroną gatunkową, zostały uchwycone na zdjęciach. Sokoły wędrowne osiągają w locie nurkowym prędkość przekraczającą 300 km/h, co czyni je najszybszymi zwierzętami na świecie.
+                                    </div>
+                                    <div class="news-desc">
+                                        Zdjęcia przedstawiają ptaki siedzące na jednym z kominów elektrociepłowni. Na razie nie wiadomo, czy był to jedynie przystanek w trakcie wędrówki, czy też sokoły wybrały to miejsce na dłuższy pobyt.
+                                    </div>
+                                    <div class="news-photo-credit">fot. Ewelina Bogatek</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="news-content">
-                            <div class="news-date">22 września 2026</div>
-                            <div class="news-title">JHM Development opublikował wizualizacje "nowego" EC2</div>
-                            <div class="news-desc">
-                                JHM Development opublikował wizualizacje planowanej inwestycji na terenie dawnej Elektrociepłowni EC2. Publikacja pojawiła się przy okazji targów Expo Real w Monachium i pokazuje koncepcję nowego osiedla oraz zagospodarowania terenu elektrociepłowni.
-                            </div>
-                            <div class="news-desc">
-                                Wizualizacje — najpewniej wygenerowane przez AI — wyglądają obrzydliwie. Są sterylne, bez charakteru i kompletnie nie oddają ducha tego miejsca. To nie jest przyszłość, na jaką zasługuje EC2. Będziemy przyglądać się dalszym działaniom inwestora i informować o nich na bieżąco.
-                            </div>
-                            <div class="news-desc">
-                                fot. JHM Development
-                            </div>
+
+                        <div class="empty-news" id="emptyNews" style="display:none;">
+                            Brak aktualności w tym okresie.
                         </div>
                     </div>
-
-                <div class="news-list">
-                    <div class="news-item">
-                        <div class="news-image">
-                            <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/799547157_122112408519405679_5798394336919493428_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ipVD2uRlbwEQ7kNvwHyYw9i&_nc_oc=Adr8insHn2JrYSXN4fVGXG39eW0qixN4D2-jRTdAdOb9Qm7U_VRDUDk2dQGle8Ae7Uc&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=2cibxZ8jZCpnjRswg-_FYA&_nc_ss=7b2a8&oh=00_AQJCg8Dd55_icpkOyN0UkWel6wbLJc0FDAlZ9AFeRtCI3A&oe=6ABB7141" alt="Wyburzanie kominów EC2" />
-                        </div>
-                        <div class="news-content">
-                            <div class="news-date">22 września 2026</div>
-                            <div class="news-title">Zaplanowane wyburzanie kominów EC2</div>
-                            <div class="news-desc">
-                                Ogłoszone zostały plany wyburzenia kominów dawnej Elektrociepłowni EC2 przy ul. Wróblewskiego w Łodzi. Na najwyższym kominie, liczącym około 160 metrów, przygotowano już otwory pod ładunki wyburzeniowe. Decyzją wojewódzkiego konserwatora zabytków obiekty zostaną rozebrane ze względu na zły stan techniczny.
-                            </div>
-                            <div class="news-desc">
-                                Dla Klubu Przyjaciół EC2 to smutny moment – kominy przez dziesięciolecia były symbolem elektrociepłowni i częścią łódzkiego krajobrazu. Będziemy dokumentować ich ostatnie dni oraz zachęcamy członków i sympatyków do dzielenia się zdjęciami i wspomnieniami.
-                            </div>
-                            <div class="news-desc">
-                                fot. Klub Przyjaciół EC2
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="news-list">
-                    <div class="news-item">
-                        <div class="news-image">
-                            <img src="sokol.jpg" alt="Sokoły wędrowne na kominie EC2" />
-                        </div>
-                        <div class="news-content">
-                            <div class="news-date">29 sierpnia 2026</div>
-                            <div class="news-title">Sokoły wędrowne na kominie EC2!</div>
-                            <div class="news-desc">
-                                Na kominie Elektrociepłowni EC2 zaobserwowano sokoły wędrowne. Ptaki, które w Polsce objęte są ścisłą ochroną gatunkową, zostały uchwycone na zdjęciach. Sokoły wędrowne osiągają w locie nurkowym prędkość przekraczającą 300 km/h, co czyni je najszybszymi zwierzętami na świecie.
-                            </div>
-                            <div class="news-desc">
-                                Zdjęcia przedstawiają ptaki siedzące na jednym z kominów elektrociepłowni. Na razie nie wiadomo, czy był to jedynie przystanek w trakcie wędrówki, czy też sokoły wybrały to miejsce na dłuższy pobyt.
-                            </div>
-                            <div class="news-desc">
-                                fot. Ewelina Bogatek
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </main>
@@ -275,6 +539,132 @@
                     '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
                 footerPlaceholder.style.minHeight = 'auto';
             });
+
+        const monthNames = [
+            'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec',
+            'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'
+        ];
+
+        const newsItems = document.querySelectorAll('.news-item');
+        const yearList = document.getElementById('yearList');
+        const allBtn = document.getElementById('allBtn');
+        const emptyNews = document.getElementById('emptyNews');
+        const currentFilter = document.getElementById('currentFilter');
+
+        const archive = {};
+
+        newsItems.forEach(item => {
+            const dateStr = item.dataset.date;
+            const [year, month] = dateStr.split('-');
+            if (!archive[year]) archive[year] = {};
+            if (!archive[year][month]) archive[year][month] = 0;
+            archive[year][month]++;
+        });
+
+        const years = Object.keys(archive).sort((a, b) => b - a);
+
+        years.forEach(year => {
+            const yearLi = document.createElement('li');
+
+            const yearBtn = document.createElement('button');
+            yearBtn.className = 'year-btn';
+            yearBtn.dataset.year = year;
+
+            const totalCount = Object.values(archive[year]).reduce((a, b) => a + b, 0);
+            yearBtn.innerHTML = `<span>${year}</span><span class="count">${totalCount}</span>`;
+
+            const monthList = document.createElement('div');
+            monthList.className = 'month-list';
+            monthList.dataset.year = year;
+
+            const monthsInYear = Object.keys(archive[year]).sort((a, b) => b - a);
+
+            monthsInYear.forEach(month => {
+                const monthBtn = document.createElement('button');
+                monthBtn.className = 'month-btn';
+                monthBtn.dataset.year = year;
+                monthBtn.dataset.month = month;
+
+                const monthName = monthNames[parseInt(month) - 1];
+                monthBtn.innerHTML = `<span>${monthName}</span><span class="count">${archive[year][month]}</span>`;
+                monthList.appendChild(monthBtn);
+            });
+
+            yearBtn.addEventListener('click', () => {
+                const isExpanded = monthList.classList.contains('expanded');
+
+                document.querySelectorAll('.month-list').forEach(ml => ml.classList.remove('expanded'));
+                document.querySelectorAll('.year-btn').forEach(yb => yb.classList.remove('active'));
+                document.querySelectorAll('.month-btn').forEach(mb => mb.classList.remove('active'));
+                allBtn.classList.remove('active');
+
+                if (isExpanded) {
+                    applyFilter(null, null);
+                    allBtn.classList.add('active');
+                } else {
+                    monthList.classList.add('expanded');
+                    yearBtn.classList.add('active');
+                    applyFilter(year, null);
+                }
+            });
+
+            yearLi.appendChild(yearBtn);
+            yearLi.appendChild(monthList);
+            yearList.appendChild(yearLi);
+        });
+
+        document.querySelectorAll('.month-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const year = btn.dataset.year;
+                const month = btn.dataset.month;
+
+                document.querySelectorAll('.month-btn').forEach(mb => mb.classList.remove('active'));
+                document.querySelectorAll('.year-btn').forEach(yb => yb.classList.remove('active'));
+                allBtn.classList.remove('active');
+
+                btn.classList.add('active');
+                applyFilter(year, month);
+            });
+        });
+
+        allBtn.addEventListener('click', () => {
+            document.querySelectorAll('.month-btn').forEach(mb => mb.classList.remove('active'));
+            document.querySelectorAll('.year-btn').forEach(yb => yb.classList.remove('active'));
+            document.querySelectorAll('.month-list').forEach(ml => ml.classList.remove('expanded'));
+            allBtn.classList.add('active');
+            applyFilter(null, null);
+        });
+
+        function applyFilter(year, month) {
+            let visibleCount = 0;
+
+            newsItems.forEach(item => {
+                const [itemYear, itemMonth] = item.dataset.date.split('-');
+
+                let show = true;
+                if (year && itemYear !== year) show = false;
+                if (month && itemMonth !== month) show = false;
+
+                if (show) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            emptyNews.style.display = visibleCount === 0 ? 'block' : 'none';
+
+            if (year && month) {
+                currentFilter.innerHTML = `Wyświetlane: <strong>${monthNames[parseInt(month) - 1]} ${year}</strong>`;
+            } else if (year) {
+                currentFilter.innerHTML = `Wyświetlane: <strong>Rok ${year}</strong>`;
+            } else {
+                currentFilter.innerHTML = `Wyświetlane: <strong>wszystkie aktualności</strong>`;
+            }
+        }
+
+        applyFilter(null, null);
     </script>
 </body>
 </html>
