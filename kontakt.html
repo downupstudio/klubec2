@@ -1,231 +1,48 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kontakt - Klub Przyjaciół EC2</title>
-    <link rel="icon" href="logo_czarne.png" id="favicon" />
-    <link rel="stylesheet" href="header_footer.css" />
-    <script>
-        const favicon = document.getElementById('favicon');
-        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function updateFavicon() {
-            if (darkModeMedia.matches) {
-                favicon.href = 'logo_biale.png';
-            } else {
-                favicon.href = 'logo_czarne.png';
-            }
-        }
-
-        darkModeMedia.addEventListener('change', updateFavicon);
-        updateFavicon();
-    </script>
-    <style>
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 50px 60px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .contact-container h1 {
-            font-size: 36px;
-            font-weight: 500;
-            color: #1e1e22;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .contact-container .subtitle {
-            font-size: 18px;
-            color: #6b6b73;
-            margin-bottom: 40px;
-            font-weight: 350;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .contact-item:last-child {
-            border-bottom: none;
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: #f0f0f4;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-            color: #3a3a40;
-        }
-
-        .contact-icon img {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
-            display: block;
-        }
-
-        .contact-content {
-            flex: 1;
-        }
-
-        .contact-content .label {
-            font-size: 13px;
-            color: #8a8a92;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .contact-content .value {
-            font-size: 18px;
-            color: #1e1e22;
-            font-weight: 450;
-        }
-
-        .contact-content .value a {
-            color: #1e1e22;
-            text-decoration: none;
-            transition: color 0.2s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        .contact-content .value a:hover {
-            color: #000000;
-            border-bottom-color: #cbcbd2;
-        }
-
-        .contact-item .badge {
-            background: #ececf0;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #5a5a62;
-            font-weight: 450;
-            letter-spacing: 0.2px;
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                padding: 35px 30px;
-            }
-            .contact-container h1 {
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .contact-container {
-                padding: 28px 20px;
-                border-radius: 16px;
-            }
-            .contact-container h1 {
-                font-size: 24px;
-            }
-            .contact-item {
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-            .contact-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-            .contact-content .value {
-                font-size: 16px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Klub Przyjaciół EC2</title>
+  <meta name="description" content="Skontaktuj się z Klubem Przyjaciół EC2 — email i Facebook." />
+  <link rel="icon" href="logo_czarne.png" id="favicon" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="common.js" defer></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div id="header-placeholder" style="min-height:130px;"></div>
+  <div id="header-placeholder"></div>
+  <main>
+    <div class="container" style="max-width: 760px;">
+      <h1 class="page-title">Kontakt</h1>
+      <p class="page-subtitle">Skontaktuj się z nami — czekamy na Twoją wiadomość</p>
 
-        <main>
-            <div class="contact-container">
-                <h1>Kontakt</h1>
-                <p class="subtitle">Skontaktuj się z nami — czekamy na Twoją wiadomość</p>
-
-                <div class="contact-item">
-                    <div class="contact-icon">✉</div>
-                    <div class="contact-content">
-                        <div class="label">Email</div>
-                        <div class="value">
-                            <a href="mailto:klubprzyjaciolec2@gmail.com">klubprzyjaciolec2@gmail.com</a>
-                        </div>
-                    </div>
-                    <span class="badge">Napisz do nas</span>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1280px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" />
-                    </div>
-                    <div class="contact-content">
-                        <div class="label">Facebook</div>
-                        <div class="value">
-                            <a href="https://www.facebook.com/people/Klub-Przyjaci%C3%B3%C5%82-Elektrociep%C5%82owni-EC-2-w-%C5%81odzi/61592170383097/" target="_blank">Klub Przyjaciół EC2</a>
-                        </div>
-                    </div>
-                    <span class="badge">Zaobserwuj!</span>
-                </div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-item__icon">&#9993;</div>
+          <div class="contact-item__content">
+            <div class="contact-item__label">Email</div>
+            <div class="contact-item__value">
+              <a href="mailto:klubprzyjaciolec2@gmail.com">klubprzyjaciolec2@gmail.com</a>
             </div>
-        </main>
+          </div>
+          <span class="contact-item__badge">Napisz do nas</span>
+        </div>
 
-        <div id="footer-placeholder" style="min-height:130px;"></div>
+        <div class="contact-item">
+          <div class="contact-item__icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1280px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" />
+          </div>
+          <div class="contact-item__content">
+            <div class="contact-item__label">Facebook</div>
+            <div class="contact-item__value">
+              <a href="https://www.facebook.com/people/Klub-Przyjaci%C3%B3%C5%82-Elektrociep%C5%82owni-EC-2-w-%C5%81odzi/61592170383097/" target="_blank" rel="noopener">Klub Przyjaciół EC2</a>
+            </div>
+          </div>
+          <span class="contact-item__badge">Zaobserwuj!</span>
+        </div>
+      </div>
     </div>
-
-    <script>
-        const headerPlaceholder = document.getElementById('header-placeholder');
-        const footerPlaceholder = document.getElementById('footer-placeholder');
-        
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono header.html');
-                return response.text();
-            })
-            .then(data => {
-                headerPlaceholder.innerHTML = data;
-                headerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania headera:', error);
-                headerPlaceholder.innerHTML = 
-                    '<header style="padding:20px;color:red;">Nie udało się załadować headera</header>';
-                headerPlaceholder.style.minHeight = 'auto';
-            });
-        
-        fetch('footer.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono footer.html');
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-                footerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania footera:', error);
-                footerPlaceholder.innerHTML = 
-                    '<footer style="padding:20px;color:red;">Nie udało się załadować footera</footer>';
-                footerPlaceholder.style.minHeight = 'auto';
-            });
-    </script>
+  </main>
+  <div id="footer-placeholder"></div>
 </body>
 </html>

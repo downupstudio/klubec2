@@ -1,631 +1,121 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Klub Przyjaciół EC2</title>
-    <link rel="icon" href="logo_czarne.png" id="favicon" />
-    <link rel="stylesheet" href="header_footer.css" />
-    <script>
-        const favicon = document.getElementById('favicon');
-        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function updateFavicon() {
-            if (darkModeMedia.matches) {
-                favicon.href = 'logo_biale.png';
-            } else {
-                favicon.href = 'logo_czarne.png';
-            }
-        }
-
-        darkModeMedia.addEventListener('change', updateFavicon);
-        updateFavicon();
-    </script>
-    <style>
-        .hero {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 50px 60px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            margin-bottom: 40px;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 44px;
-            font-weight: 500;
-            color: #1e1e22;
-            letter-spacing: -0.5px;
-            margin-bottom: 20px;
-        }
-
-        .hero-text h1 .highlight {
-            color: #6b6b73;
-            font-weight: 300;
-        }
-
-        .hero-text p {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #4a4a52;
-            margin-bottom: 16px;
-        }
-
-        .hero-text p:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .hero-image {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            min-height: 300px;
-        }
-
-        .hero-image .caption {
-            font-size: 13px;
-            color: #8a8a92;
-            text-align: center;
-            padding: 10px 16px;
-            background: #f7f7f9;
-        }
-
-        .history-section {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 50px 60px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            margin-bottom: 40px;
-        }
-
-        .history-section h2 {
-            font-size: 32px;
-            font-weight: 500;
-            color: #1e1e22;
-            margin-bottom: 20px;
-            letter-spacing: -0.3px;
-        }
-
-        .history-section h2 .highlight {
-            color: #6b6b73;
-            font-weight: 300;
-        }
-
-        .history-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .history-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #4a4a52;
-            margin-bottom: 14px;
-        }
-
-        .history-text p:last-of-type {
-            margin-bottom: 0;
-        }
-
-        .history-text .sub {
-            font-size: 14px;
-            color: #6b6b73;
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .history-highlights {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .history-highlights .highlight-item {
-            background: #f7f7f9;
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-
-        .history-highlights .highlight-item .icon {
-            font-size: 24px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .history-highlights .highlight-item .content {
-            font-size: 15px;
-            color: #4a4a52;
-            line-height: 1.5;
-        }
-
-        .history-highlights .highlight-item .content strong {
-            color: #1e1e22;
-            font-weight: 500;
-        }
-
-        .model-container {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 40px;
-            position: relative;
-            height: 500px;
-        }
-
-        .model-container .caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            padding: 12px 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-            z-index: 2;
-            backdrop-filter: blur(4px);
-            letter-spacing: 0.3px;
-            pointer-events: none;
-        }
-
-        #cesiumContainer {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .model-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .model-loading .spinner {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top: 3px solid #ffffff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 16px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .cta-section {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 50px 70px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .cta-section h2 {
-            font-size: 34px;
-            font-weight: 500;
-            color: #1e1e22;
-            margin-bottom: 12px;
-            letter-spacing: -0.3px;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            color: #6b6b73;
-            margin-bottom: 28px;
-            line-height: 1.6;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: #1e1e22;
-            color: #ffffff;
-            padding: 16px 48px;
-            border-radius: 40px;
-            font-size: 18px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s ease, transform 0.2s ease;
-            font-family: inherit;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-btn:hover {
-            background: #3a3a40;
-            transform: translateY(-2px);
-        }
-
-        .cta-btn .arrow {
-            display: inline-block;
-            margin-left: 8px;
-            transition: transform 0.2s ease;
-        }
-
-        .cta-btn:hover .arrow {
-            transform: translateX(4px);
-        }
-
-        .cesium-viewer-bottom {
-            display: none !important;
-        }
-        .cesium-widget-credits {
-            display: none !important;
-        }
-        .cesium-button {
-            display: none !important;
-        }
-        .cesium-viewer-toolbar {
-            display: none !important;
-        }
-        .cesium-infoBox {
-            display: none !important;
-        }
-
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .hero-image img {
-                max-height: 400px;
-            }
-            .history-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .model-container {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 35px 30px;
-            }
-            .hero-text h1 {
-                font-size: 32px;
-            }
-            .hero-text p {
-                font-size: 16px;
-            }
-            .hero-image img {
-                max-height: 300px;
-                min-height: 200px;
-            }
-            .history-section {
-                padding: 35px 30px;
-            }
-            .history-section h2 {
-                font-size: 26px;
-            }
-            .history-text p {
-                font-size: 15px;
-            }
-            .model-container {
-                height: 300px;
-            }
-            .cta-section {
-                padding: 35px 30px;
-            }
-            .cta-section h2 {
-                font-size: 28px;
-            }
-            .cta-section p {
-                font-size: 16px;
-            }
-            .cta-btn {
-                padding: 14px 36px;
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero {
-                padding: 28px 20px;
-                border-radius: 16px;
-            }
-            .hero-text h1 {
-                font-size: 26px;
-            }
-            .hero-text p {
-                font-size: 15px;
-            }
-            .hero-image img {
-                max-height: 200px;
-                min-height: 150px;
-            }
-            .history-section {
-                padding: 28px 20px;
-                border-radius: 16px;
-            }
-            .history-section h2 {
-                font-size: 22px;
-            }
-            .history-text p {
-                font-size: 14px;
-            }
-            .history-highlights .highlight-item {
-                padding: 12px 16px;
-            }
-            .history-highlights .highlight-item .content {
-                font-size: 14px;
-            }
-            .model-container {
-                height: 250px;
-            }
-            .cta-section {
-                padding: 28px 20px;
-                border-radius: 16px;
-            }
-            .cta-section h2 {
-                font-size: 24px;
-            }
-            .cta-section p {
-                font-size: 15px;
-            }
-            .cta-btn {
-                padding: 12px 28px;
-                font-size: 15px;
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klub Przyjaciół EC2</title>
+  <meta name="description" content="Klub Przyjaciół EC2 — archiwum i dokumentacja Elektrociepłowni EC2 w Łodzi." />
+  <link rel="icon" href="logo_czarne.png" id="favicon" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" />
+  <script src="common.js" defer></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div id="header-placeholder" style="min-height:130px;"></div>
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">Klub Przyjaciół <span>EC2</span></h1>
+          <p>Elektrociepłownia EC2 to jeden z najciekawszych postindustrialnych obiektów w Łodzi. Powstała w latach 50. XX wieku jako pierwsza z trzech powojennych elektrociepłowni miasta. Przez dziesięciolecia dostarczała ciepło i energię dla osiedli Retkinia i Karolew, a jej trzy kominy (160 m i dwa po 120 m) na stałe wrosły w krajobraz zachodniej części Łodzi.</p>
+          <p>W szczytowym okresie pracowało tu około 650 osób, a moc sięgała 87 MW mocy elektrycznej i 578 MWt mocy cieplnej. W 2015 roku EC2 zakończyła pracę. Obiekt jest wpisany do rejestru zabytków, ale od końca 2025 roku trwa jego wyburzanie.</p>
+          <p><strong>Klub Przyjaciół EC2</strong> to grupa pasjonatów, która dokumentuje i archiwizuje wszystko, co związane z tą elektrociepłownią. Zbieramy zdjęcia, dokumenty, plany, wspomnienia pracowników i relacje. Chcemy ocalić pamięć o tym miejscu — dla przyszłych pokoleń i dla wszystkich, którzy czują, że EC2 to ważna część łódzkiej historii.</p>
+        </div>
+        <div class="hero__image">
+          <img src="https://www.rynekinfrastruktury.pl//img/eclodzfotveolia.jpg_678-443.jpg" alt="Elektrociepłownia EC2 w Łodzi" />
+          <div class="hero__caption">Elektrociepłownia EC2 w Łodzi — fot. Veolia</div>
+        </div>
+      </div>
+    </section>
 
-        <main>
-            <div class="hero">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Klub Przyjaciół <span class="highlight">EC2</span></h1>
-                        <p>
-                            Elektrociepłownia EC2 to jeden z najciekawszych postindustrialnych obiektów w Łodzi. Powstała w latach 50. XX wieku jako pierwsza z trzech powojennych elektrociepłowni miasta. Przez dziesięciolecia dostarczała ciepło i energię dla osiedli Retkinia i Karolew, a jej trzy kominy (160 m i dwa po 120 m) na stałe wrosły w krajobraz zachodniej części Łodzi.
-                        </p>
-                        <p>
-                            W szczytowym okresie pracowało tu około 650 osób, a moc sięgała 87 MW mocy elektrycznej i 578 MWt mocy cieplnej. W 2015 roku EC2 zakończyła pracę. Obiekt jest wpisany do rejestru zabytków, ale od końca 2025 roku trwa jego wyburzanie.
-                        </p>
-                        <p>
-                            <strong>Klub Przyjaciół EC2</strong> to grupa pasjonatów, która dokumentuje i archiwizuje wszystko, co związane z tą elektrociepłownią. Zbieramy zdjęcia, dokumenty, plany, wspomnienia pracowników i relacje. Chcemy ocalić pamięć o tym miejscu – dla przyszłych pokoleń i dla wszystkich, którzy czują, że EC2 to ważna część łódzkiej historii.
-                        </p>
-                    </div>
-                    <div class="hero-image">
-                        <img src="https://www.rynekinfrastruktury.pl//img/eclodzfotveolia.jpg_678-443.jpg" alt="Elektrociepłownia EC2 w Łodzi (fot. Veolia)" />
-                        <div class="caption">Elektrociepłownia EC2 w Łodzi – jedna z najważniejszych powojennych inwestycji przemysłowych miasta (fot. Veolia)</div>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+      <section class="section">
+        <h2 class="section__title">Historia EC2</h2>
+        <div class="grid-2">
+          <div class="prose">
+            <p>Elektrociepłownia EC-2 (dawniej im. W. I. Lenina) została zaprojektowana przez inżyniera Mariusza Sowińskiego. Budowa ruszyła w czerwcu 1954 roku. W 1957 uruchomiono pierwszy kocioł i turbinę. 19 stycznia 1960 roku elektrociepłowni nadano imię Lenina. Budowę zakończono w 1961 roku — wtedy ruszył ósmy kocioł i szósty turbozespół.</p>
+            <p>W 1993 roku EC-2, razem z EC-3 i EC-4, została przekształcona w spółkę Skarbu Państwa, a później sprzedana firmie Dalkia (dziś Veolia). Proces wygaszania rozpoczęto w 2012 roku. 31 marca 2015 roku elektrociepłownia została wyłączona z eksploatacji.</p>
+            <p>Teren został sprzedany firmie Hakamore. W 2019 roku rozpoczęto rozbiórkę, ale wstrzymał ją Wojewódzki Urząd Ochrony Zabytków — prace prowadzono bez pozwolenia. Hakamore upadła. Od sierpnia 2021 roku właścicielem jest JHM DEVELOPMENT S.A. z grupy Mirbud. Pod koniec 2025 roku wznowiono wyburzanie.</p>
+            <div class="sub">Źródło: Wikipedia / opracowanie własne</div>
+          </div>
+          <ul class="highlight-list">
+            <li><span class="key">1954–1961</span><span>budowa i uruchomienie</span></li>
+            <li><span class="key">87 MW</span><span>moc elektryczna w szczycie</span></li>
+            <li><span class="key">650 osób</span><span>zatrudnienie w latach świetności</span></li>
+            <li><span class="key">2015</span><span>koniec eksploatacji</span></li>
+            <li><span class="key">Zabytek</span><span>wpisana do rejestru zabytków</span></li>
+            <li><span class="key">160 / 120 m</span><span>wysokość kominów</span></li>
+          </ul>
+        </div>
+      </section>
 
-            <div class="history-section">
-                <h2>Historia <span class="highlight">EC2</span></h2>
-                <div class="history-grid">
-                    <div class="history-text">
-                        <p>
-                            Elektrociepłownia EC-2 (dawniej im. W. I. Lenina) została zaprojektowana przez inżyniera Mariusza Sowińskiego. Budowa ruszyła w czerwcu 1954 roku. W 1957 uruchomiono pierwszy kocioł i turbinę. 19 stycznia 1960 roku elektrociepłowni nadano imię Lenina. Budowę zakończono w 1961 roku – wtedy ruszył ósmy kocioł i szósty turbozespół.
-                        </p>
-                        <p>
-                            W 1993 roku EC-2, razem z EC-3 i EC-4, została przekształcona w spółkę Skarbu Państwa, a później sprzedana firmie Dalkia (dziś Veolia). Proces wygaszania rozpoczęto w 2012 roku. 31 marca 2015 roku elektrociepłownia została wyłączona z eksploatacji.
-                        </p>
-                        <p>
-                            Teren został sprzedany firmie Hakamore. W 2019 roku rozpoczęto rozbiórkę, ale wstrzymał ją Wojewódzki Urząd Ochrony Zabytków – prace prowadzono bez pozwolenia. Hakamore upadła. Od sierpnia 2021 roku właścicielem jest JHM DEVELOPMENT S.A. z grupy Mirbud. Pod koniec 2025 roku wznowiono wyburzanie.
-                        </p>
-                        <div class="sub">
-                            Źródło: Wikipedia / opracowanie własne
-                        </div>
-                    </div>
-                    <div class="history-highlights">
-                        <div class="highlight-item">
-                            <span class="icon">🏗️</span>
-                            <div class="content">
-                                <strong>1954–1961</strong> – budowa i uruchomienie
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">⚡</span>
-                            <div class="content">
-                                <strong>87 MW</strong> – moc elektryczna w szczycie
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">🏭</span>
-                            <div class="content">
-                                <strong>650 osób</strong> – zatrudnienie w latach świetności
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">📅</span>
-                            <div class="content">
-                                <strong>2015</strong> – koniec eksploatacji
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">🏛️</span>
-                            <div class="content">
-                                <strong>Wpisana do rejestru zabytków</strong>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">🧗</span>
-                            <div class="content">
-                                <strong>160 m i 120 m</strong> – wysokość kominów
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <section class="section">
+        <h2 class="section__title">Model 3D</h2>
+        <div class="model-wrap" id="modelContainer">
+          <div class="model-loader" id="loadingText">Ładowanie modelu 3D EC2…</div>
+          <div id="cesiumContainer"></div>
+          <div class="model-caption">EC2 — model 3D · Kliknij i przeciągaj, aby obracać · Scroll, aby przybliżać</div>
+        </div>
+      </section>
 
-            <div class="model-container" id="modelContainer">
-                <div class="model-loading" id="loadingText">
-                    <div class="spinner"></div>
-                    Ładowanie modelu 3D EC2...
-                </div>
-                <div id="cesiumContainer"></div>
-                <div class="caption">EC2 – model 3D | Kliknij i przeciągaj, aby obracać | Scroll, aby przybliżać</div>
-            </div>
-
-            <div class="cta-section">
-                <h2>Dołącz do nas!</h2>
-                <p>
-                    Chcesz pomóc nam ocalić pamięć o EC2? Masz zdjęcia, dokumenty lub wspomnienia?<br />
-                    Zapisz się do klubu i razem stwórzmy archiwum tego wyjątkowego miejsca.
-                </p>
-                <a href="czlonkowie.html" class="cta-btn">
-                    Zapisz się teraz <span class="arrow">→</span>
-                </a>
-            </div>
-        </main>
-
-        <div id="footer-placeholder" style="min-height:130px;"></div>
+      <section class="section">
+        <div class="cta">
+          <h2 class="cta__title">Dołącz do nas</h2>
+          <p class="cta__text">Chcesz pomóc nam ocalić pamięć o EC2? Masz zdjęcia, dokumenty lub wspomnienia?<br />Zapisz się do klubu i razem stwórzmy archiwum tego wyjątkowego miejsca.</p>
+          <a href="czlonkowie.html" class="btn">Zapisz się &rarr;</a>
+        </div>
+      </section>
     </div>
+  </main>
+  <div id="footer-placeholder"></div>
 
-    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
-    <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" />
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      const loadingText = document.getElementById('loadingText');
+      Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3MWJkZmQ3MS1iZDk3LTQzMTktODkyNS05MDQ1NjU0NGVlNzAiLCJpZCI6NDY0Mzc4LCJzdWIiOiJhbnRhcmVzdGFyIiwiaXNzIjoiaHR0cHM6Ly9hcGkuY2VzaXVtLmNvbSIsImF1ZCI6IkVDMiBXZWJzaXRlIiwiaWF0IjoxNzg1OTY1MDc3fQ.AO0P_aGE6Gyy2Uqd2rBkajzSzPnNZGqDetZQ6tnbDI8';
 
-    <script>
-        const headerPlaceholder = document.getElementById('header-placeholder');
-        const footerPlaceholder = document.getElementById('footer-placeholder');
-        
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono header.html');
-                return response.text();
+      const viewer = new Cesium.Viewer('cesiumContainer', {
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+        baseLayerPicker: false, geocoder: false, homeButton: false,
+        sceneModePicker: false, navigationHelpButton: false,
+        animation: false, timeline: false, fullscreenButton: false,
+        vrButton: false, infoBox: false, selectionIndicator: false,
+        shadows: false, shouldAnimate: false, skyBox: false, skyAtmosphere: false
+      });
+      viewer._cesiumWidget._creditContainer.style.display = 'none';
+      viewer.scene.globe.show = false;
+      viewer.scene.backgroundColor = new Cesium.Color(0.04, 0.04, 0.04, 1);
+
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(19.4428815285, 51.7398409621, 523),
+        orientation: { heading: 0, pitch: Cesium.Math.toRadians(-30), roll: 0 },
+        duration: 1
+      });
+
+      (async function () {
+        try {
+          const tileset = viewer.scene.primitives.add(
+            await Cesium.Cesium3DTileset.fromIonAssetId(5114384, {
+              cacheBytes: 2147483648, skipLevelOfDetail: false,
+              maximumScreenSpaceError: 2, loadSiblings: true,
+              cullWithChildrenBounds: false, dynamicScreenSpaceError: false,
+              forgetTileParents: false, preloadWhenHidden: true,
+              preferLeaves: true, maximumCacheSize: 10000
             })
-            .then(data => {
-                headerPlaceholder.innerHTML = data;
-                headerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania headera:', error);
-                headerPlaceholder.innerHTML = 
-                    '<header style="padding:20px;color:red;"> Nie udało się załadować headera</header>';
-                headerPlaceholder.style.minHeight = 'auto';
-            });
-        
-        fetch('footer.html') 
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono footer.html');
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-                footerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania footera:', error);
-                footerPlaceholder.innerHTML = 
-                    '<footer style="padding:20px;color:red;"> Nie udało się załadować footera</footer>';
-                footerPlaceholder.style.minHeight = 'auto';
-            });
+          );
+          loadingText.style.display = 'none';
+          setTimeout(() => {
+            viewer.zoomTo(tileset, new Cesium.HeadingPitchRange(0, -0.5, 500));
+          }, 2000);
+        } catch (error) {
+          console.error(error);
+          loadingText.textContent = 'Nie udało się załadować modelu.';
+        }
+      })();
 
-        const loadingText = document.getElementById('loadingText');
-
-        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3MWJkZmQ3MS1iZDk3LTQzMTktODkyNS05MDQ1NjU0NGVlNzAiLCJpZCI6NDY0Mzc4LCJzdWIiOiJhbnRhcmVzdGFyIiwiaXNzIjoiaHR0cHM6Ly9hcGkuY2VzaXVtLmNvbSIsImF1ZCI6IkVDMiBXZWJzaXRlIiwiaWF0IjoxNzg1OTY1MDc3fQ.AO0P_aGE6Gyy2Uqd2rBkajzSzPnNZGqDetZQ6tnbDI8';
-
-        const viewer = new Cesium.Viewer('cesiumContainer', {
-            terrainProvider: new Cesium.EllipsoidTerrainProvider(),
-            baseLayerPicker: false,
-            geocoder: false,
-            homeButton: false,
-            sceneModePicker: false,
-            navigationHelpButton: false,
-            animation: false,
-            timeline: false,
-            fullscreenButton: false,
-            vrButton: false,
-            infoBox: false,
-            selectionIndicator: false,
-            shadows: false,
-            shouldAnimate: false,
-            skyBox: false,
-            skyAtmosphere: false
-        });
-
-        viewer._cesiumWidget._creditContainer.style.display = 'none';
-        viewer.scene.globe.show = false;
-        viewer.scene.backgroundColor = new Cesium.Color(0.04, 0.04, 0.04, 1);
-
-        const longitude = 19.4428815285;
-        const latitude = 51.7398409621;
-        const height = 223.2196395923;
-
-        viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(longitude, latitude, height + 300),
-            orientation: {
-                heading: Cesium.Math.toRadians(0),
-                pitch: Cesium.Math.toRadians(-30),
-                roll: 0
-            },
-            duration: 1
-        });
-
-        (async function() {
-            try {
-                const tileset = viewer.scene.primitives.add(
-                    await Cesium.Cesium3DTileset.fromIonAssetId(5114384, {
-                        cacheBytes: 2147483648,
-                        skipLevelOfDetail: false,
-                        maximumScreenSpaceError: 2,
-                        loadSiblings: true,
-                        cullWithChildrenBounds: false,
-                        dynamicScreenSpaceError: false,
-                        forgetTileParents: false,
-                        preloadWhenHidden: true,
-                        preferLeaves: true,
-                        maximumCacheSize: 10000
-                    })
-                );
-
-                loadingText.style.display = 'none';
-                
-                setTimeout(() => {
-                    viewer.zoomTo(tileset, new Cesium.HeadingPitchRange(0, -0.5, 500));
-                }, 2000);
-
-            } catch (error) {
-                console.error('Błąd ładowania modelu:', error);
-                loadingText.innerHTML = '❌ Nie udało się załadować modelu.';
-                loadingText.style.color = '#ff6b6b';
-            }
-        })();
-
-        window.addEventListener('resize', function() {
-            viewer.resize();
-        });
-    </script>
+      window.addEventListener('resize', function () { viewer.resize(); });
+    });
+  </script>
 </body>
 </html>

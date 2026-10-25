@@ -1,536 +1,204 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista członków - Klub Przyjaciół EC2</title>
-    <link rel="icon" href="logo_czarne.png" id="favicon" />
-    <link rel="stylesheet" href="header_footer.css" />
-    <script>
-        const favicon = document.getElementById('favicon');
-        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function updateFavicon() {
-            if (darkModeMedia.matches) {
-                favicon.href = 'logo_biale.png';
-            } else {
-                favicon.href = 'logo_czarne.png';
-            }
-        }
-
-        darkModeMedia.addEventListener('change', updateFavicon);
-        updateFavicon();
-    </script>
-    <style>
-        .members-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 50px 60px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .members-container h1 {
-            font-size: 36px;
-            font-weight: 500;
-            color: #1e1e22;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .members-container .subtitle {
-            font-size: 18px;
-            color: #6b6b73;
-            margin-bottom: 40px;
-            font-weight: 350;
-        }
-
-        .btn-primary {
-            background: #1e1e22;
-            color: #ffffff;
-            border: none;
-            padding: 12px 32px;
-            border-radius: 40px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            display: inline-block;
-            text-decoration: none;
-            font-family: inherit;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary:hover {
-            background: #3a3a40;
-        }
-
-        .btn-secondary {
-            background: #f0f0f4;
-            color: #1e1e22;
-            border: none;
-            padding: 10px 28px;
-            border-radius: 40px;
-            font-size: 15px;
-            font-weight: 450;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            font-family: inherit;
-        }
-
-        .btn-secondary:hover {
-            background: #e4e4ea;
-        }
-
-        .form-section {
-            background: #f7f7f9;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 40px;
-            display: none;
-        }
-
-        .form-section.active {
-            display: block;
-        }
-
-        .form-section h2 {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: #1e1e22;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            color: #4a4a52;
-            margin-bottom: 6px;
-        }
-
-        .form-group label .required {
-            color: #d32f2f;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #d0d0d8;
-            border-radius: 10px;
-            font-size: 15px;
-            font-family: inherit;
-            transition: border-color 0.2s ease;
-            background: #ffffff;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #1e1e22;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .message {
-            padding: 16px 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            display: none;
-        }
-
-        .message.success {
-            display: block;
-            background: #e8f5e9;
-            color: #2e7d32;
-            border: 1px solid #a5d6a7;
-        }
-
-        .message.error {
-            display: block;
-            background: #ffebee;
-            color: #c62828;
-            border: 1px solid #ef9a9a;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 15px;
-        }
-
-        table thead {
-            background: #f0f0f4;
-        }
-
-        table th {
-            text-align: left;
-            padding: 14px 16px;
-            font-weight: 500;
-            color: #4a4a52;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #f0f0f4;
-        }
-
-        table tbody tr:hover {
-            background: #fafafc;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #8a8a92;
-        }
-
-        .empty-state p {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .empty-state .sub {
-            font-size: 14px;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #6b6b73;
-        }
-
-        .loading .spinner {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f0f0f4;
-            border-top: 4px solid #1e1e22;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 768px) {
-            .members-container {
-                padding: 35px 30px;
-            }
-            .members-container h1 {
-                font-size: 28px;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .members-container {
-                padding: 28px 20px;
-                border-radius: 16px;
-            }
-            .members-container h1 {
-                font-size: 24px;
-            }
-            .form-section {
-                padding: 20px;
-            }
-            .form-actions {
-                flex-direction: column;
-            }
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                text-align: center;
-            }
-            table {
-                font-size: 13px;
-            }
-            table th, table td {
-                padding: 10px 12px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista członków — Klub Przyjaciół EC2</title>
+  <meta name="description" content="Lista członków Klubu Przyjaciół EC2 — dołącz do nas." />
+  <link rel="icon" href="logo_czarne.png" id="favicon" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="common.js" defer></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div id="header-placeholder" style="min-height:130px;"></div>
+  <div id="header-placeholder"></div>
+  <main>
+    <div class="container" style="max-width: 900px;">
+      <h1 class="page-title">Lista członków</h1>
+      <p class="page-subtitle">Poznaj społeczność Klubu Przyjaciół EC2</p>
 
+      <button class="btn" id="showFormBtn" style="margin-bottom:20px;">+ Zapisz się do klubu</button>
+      <div id="message" class="msg"></div>
 
-        <main>
-            <div class="members-container">
-                <h1>Lista członków</h1>
-                <p class="subtitle">Poznaj społeczność Klubu Przyjaciół EC2</p>
-
-                <button class="btn-primary" id="showFormBtn">+ Zapisz się do klubu</button>
-
-                <div id="message" class="message"></div>
-
-                <div class="form-section" id="formSection">
-                    <h2>Formularz zgłoszeniowy</h2>
-                    <form id="memberForm">
-                        <div class="form-group">
-                            <label>Nick <span class="required">*</span></label>
-                            <input type="text" id="nick" required placeholder="Twój pseudonim" />
-                        </div>
-                        <div class="form-group">
-                            <label>Miejscowość <span class="required">*</span></label>
-                            <input type="text" id="miejscowosc" required placeholder="Skąd jesteś?" />
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Imię</label>
-                                <input type="text" id="imie" placeholder="Opcjonalnie" />
-                            </div>
-                            <div class="form-group">
-                                <label>Nazwisko</label>
-                                <input type="text" id="nazwisko" placeholder="Opcjonalnie" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Grupa urbexowa</label>
-                            <input type="text" id="grupa" placeholder="Nazwa Twojej grupy (opcjonalnie)" />
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn-primary" style="margin:0;">Zapisz się</button>
-                            <button type="button" class="btn-secondary" id="cancelBtn">Anuluj</button>
-                        </div>
-                    </form>
-                </div>
-
-                <div id="membersList">
-                    <div class="loading" id="loading">
-                        <div class="spinner"></div>
-                        <p style="margin-top:12px;">Ładowanie listy członków...</p>
-                    </div>
-                    <div class="table-wrapper" id="tableWrapper" style="display:none;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nick</th>
-                                    <th>Miejscowość</th>
-                                    <th>Imię</th>
-                                    <th>Grupa</th>
-                                    <th>Data dołączenia</th>
-                                </tr>
-                            </thead>
-                            <tbody id="membersTableBody">
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="empty-state" id="emptyState" style="display:none;">
-                        <p>Brak członków</p>
-                        <p class="sub">Bądź pierwszy! Zapisz się do klubu.</p>
-                    </div>
-                </div>
+      <div class="form hidden" id="formSection">
+        <div class="form__title">Formularz zgłoszeniowy</div>
+        <form id="memberForm">
+          <div class="form-row">
+            <label class="form-label" for="nick">Nick <span class="required">*</span></label>
+            <input type="text" id="nick" class="form-input" required placeholder="Twój pseudonim" />
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="miejscowosc">Miejscowość <span class="required">*</span></label>
+            <input type="text" id="miejscowosc" class="form-input" required placeholder="Skąd jesteś?" />
+          </div>
+          <div class="form-row form-row--half">
+            <div>
+              <label class="form-label" for="imie">Imię</label>
+              <input type="text" id="imie" class="form-input" placeholder="Opcjonalnie" />
             </div>
-        </main>
+            <div>
+              <label class="form-label" for="nazwisko">Nazwisko</label>
+              <input type="text" id="nazwisko" class="form-input" placeholder="Opcjonalnie" />
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="grupa">Grupa urbexowa</label>
+            <input type="text" id="grupa" class="form-input" placeholder="Nazwa Twojej grupy (opcjonalnie)" />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Zapisz się</button>
+            <button type="button" class="btn btn--ghost" id="cancelBtn">Anuluj</button>
+          </div>
+        </form>
+      </div>
 
-        <div id="footer-placeholder" style="min-height:130px;"></div>
+      <div id="membersList">
+        <div class="loading" id="loading">Ładowanie listy członków…</div>
+        <div class="table-wrap hidden" id="tableWrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nick</th>
+                <th>Miejscowość</th>
+                <th>Imię</th>
+                <th>Grupa</th>
+                <th>Data dołączenia</th>
+              </tr>
+            </thead>
+            <tbody id="membersTableBody"></tbody>
+          </table>
+        </div>
+        <div class="empty hidden" id="emptyState"></div>
+      </div>
     </div>
+  </main>
+  <div id="footer-placeholder"></div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
-    <script>
-        const headerPlaceholder = document.getElementById('header-placeholder');
-        const footerPlaceholder = document.getElementById('footer-placeholder');
-        
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono header.html');
-                return response.text();
-            })
-            .then(data => {
-                headerPlaceholder.innerHTML = data;
-                headerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania headera:', error);
-                headerPlaceholder.innerHTML = 
-                    '<header style="padding:20px;color:red;">Nie udało się załadować headera</header>';
-                headerPlaceholder.style.minHeight = 'auto';
-            });
-        
-        fetch('footer.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono footer.html');
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-                footerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania footera:', error);
-                footerPlaceholder.innerHTML = 
-                    '<footer style="padding:20px;color:red;">Nie udało się załadować footera</footer>';
-                footerPlaceholder.style.minHeight = 'auto';
-            });
+  <script>
+  (function () {
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8pI8HsPVxrFoa9ndn66KHVQeS1a6F10o",
+      authDomain: "klub-ec2.firebaseapp.com",
+      projectId: "klub-ec2",
+      storageBucket: "klub-ec2.firebasestorage.app",
+      messagingSenderId: "858186765208",
+      appId: "1:858186765208:web:3062bcd07c2c7cef8fd1ed"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyC8pI8HsPVxrFoa9ndn66KHVQeS1a6F10o",
-            authDomain: "klub-ec2.firebaseapp.com",
-            projectId: "klub-ec2",
-            storageBucket: "klub-ec2.firebasestorage.app",
-            messagingSenderId: "858186765208",
-            appId: "1:858186765208:web:3062bcd07c2c7cef8fd1ed"
-        };
+    const loading = document.getElementById('loading');
+    const tableWrapper = document.getElementById('tableWrapper');
+    const emptyState = document.getElementById('emptyState');
+    const tbody = document.getElementById('membersTableBody');
+    const formSection = document.getElementById('formSection');
+    const showFormBtn = document.getElementById('showFormBtn');
+    const memberForm = document.getElementById('memberForm');
 
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+    async function loadMembers() {
+      try {
+        const snapshot = await db.collection('czlonkowie').orderBy('data', 'desc').get();
+        const members = [];
+        snapshot.forEach(doc => members.push(doc.data()));
+        renderMembers(members);
+      } catch (error) {
+        console.error('Błąd ładowania:', error);
+        loading.classList.add('hidden');
+        tableWrapper.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        emptyState.innerHTML = '<p>Nie udało się załadować listy</p><p class="sub" style="font-size:0.62rem;opacity:0.5;margin-top:8px;">Spróbuj odświeżyć stronę</p>';
+      }
+    }
 
-        async function loadMembers() {
-            try {
-                const snapshot = await db.collection('czlonkowie')
-                    .orderBy('data', 'desc')
-                    .get();
+    function renderMembers(members) {
+      loading.classList.add('hidden');
+      if (members.length === 0) {
+        tableWrapper.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        emptyState.innerHTML = '<p>Brak członków</p><p class="sub" style="font-size:0.62rem;opacity:0.5;margin-top:8px;">Bądź pierwszy! Zapisz się do klubu.</p>';
+        return;
+      }
+      tableWrapper.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+      tbody.innerHTML = members.map(m => `
+        <tr>
+          <td><strong>${m.nick || '—'}</strong></td>
+          <td>${m.miejscowosc || '—'}</td>
+          <td>${m.imie || '—'}</td>
+          <td>${m.grupa || '—'}</td>
+          <td>${m.data || '—'}</td>
+        </tr>
+      `).join('');
+    }
 
-                const members = [];
-                snapshot.forEach(doc => {
-                    members.push(doc.data());
-                });
+    function showMessage(text, type) {
+      const msg = document.getElementById('message');
+      msg.textContent = text;
+      msg.className = 'msg msg--' + type;
+      setTimeout(() => { msg.className = 'msg'; }, 5000);
+    }
 
-                renderMembers(members);
-            } catch (error) {
-                console.error('Błąd ładowania:', error);
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('emptyState').style.display = 'block';
-                document.getElementById('emptyState').innerHTML = `
-                    <p>Nie udało się załadować listy</p>
-                    <p class="sub">Spróbuj odświeżyć stronę</p>
-                `;
-            }
+    showFormBtn.addEventListener('click', () => {
+      const open = !formSection.classList.contains('hidden');
+      formSection.classList.toggle('hidden');
+      showFormBtn.textContent = open ? '+ Zapisz się do klubu' : '✕ Zamknij formularz';
+    });
+
+    document.getElementById('cancelBtn').addEventListener('click', () => {
+      formSection.classList.add('hidden');
+      showFormBtn.textContent = '+ Zapisz się do klubu';
+      memberForm.reset();
+    });
+
+    memberForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nick = document.getElementById('nick').value.trim();
+      const miejscowosc = document.getElementById('miejscowosc').value.trim();
+      const imie = document.getElementById('imie').value.trim();
+      const nazwisko = document.getElementById('nazwisko').value.trim();
+      const grupa = document.getElementById('grupa').value.trim();
+
+      if (!nick || !miejscowosc) {
+        showMessage('Nick i miejscowość są wymagane!', 'error');
+        return;
+      }
+
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipRes.json();
+        const userIP = ipData.ip;
+
+        const existing = await db.collection('czlonkowie').where('ip', '==', userIP).get();
+        if (!existing.empty) {
+          showMessage('Już jesteś zapisany z tego adresu IP!', 'error');
+          return;
         }
 
-        function renderMembers(members) {
-            const loading = document.getElementById('loading');
-            const tableWrapper = document.getElementById('tableWrapper');
-            const emptyState = document.getElementById('emptyState');
-            const tbody = document.getElementById('membersTableBody');
-
-            loading.style.display = 'none';
-
-            if (members.length === 0) {
-                tableWrapper.style.display = 'none';
-                emptyState.style.display = 'block';
-                return;
-            }
-
-            tableWrapper.style.display = 'block';
-            emptyState.style.display = 'none';
-            tbody.innerHTML = members.map(m => `
-                <tr>
-                    <td><strong>${m.nick || '—'}</strong></td>
-                    <td>${m.miejscowosc || '—'}</td>
-                    <td>${m.imie || '—'}</td>
-                    <td>${m.grupa || '—'}</td>
-                    <td>${m.data || '—'}</td>
-                </tr>
-            `).join('');
-        }
-
-        function showMessage(text, type) {
-            const msg = document.getElementById('message');
-            msg.textContent = text;
-            msg.className = `message ${type}`;
-            setTimeout(() => {
-                msg.className = 'message';
-            }, 5000);
-        }
-
-        document.getElementById('showFormBtn').addEventListener('click', () => {
-            const form = document.getElementById('formSection');
-            form.classList.toggle('active');
-            document.getElementById('showFormBtn').textContent = form.classList.contains('active') 
-                ? '✕ Zamknij formularz' 
-                : '+ Zapisz się do klubu';
+        await db.collection('czlonkowie').add({
+          nick, miejscowosc,
+          imie: imie || '',
+          nazwisko: nazwisko || '',
+          grupa: grupa || '',
+          ip: userIP,
+          data: new Date().toISOString().split('T')[0],
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
 
-        document.getElementById('cancelBtn').addEventListener('click', () => {
-            document.getElementById('formSection').classList.remove('active');
-            document.getElementById('showFormBtn').textContent = '+ Zapisz się do klubu';
-            document.getElementById('memberForm').reset();
-        });
-
-        document.getElementById('memberForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const nick = document.getElementById('nick').value.trim();
-            const miejscowosc = document.getElementById('miejscowosc').value.trim();
-            const imie = document.getElementById('imie').value.trim();
-            const nazwisko = document.getElementById('nazwisko').value.trim();
-            const grupa = document.getElementById('grupa').value.trim();
-
-            if (!nick || !miejscowosc) {
-                showMessage('Nick i miejscowość są wymagane!', 'error');
-                return;
-            }
-
-            try {
-                const ipResponse = await fetch('https://api.ipify.org?format=json');
-                const ipData = await ipResponse.json();
-                const userIP = ipData.ip;
-
-                const existing = await db.collection('czlonkowie')
-                    .where('ip', '==', userIP)
-                    .get();
-
-                if (!existing.empty) {
-                    showMessage('Już jesteś zapisany z tego adresu IP!', 'error');
-                    return;
-                }
-
-                const newMember = {
-                    nick,
-                    miejscowosc,
-                    imie: imie || '',
-                    nazwisko: nazwisko || '',
-                    grupa: grupa || '',
-                    ip: userIP,
-                    data: new Date().toISOString().split('T')[0],
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                };
-
-                await db.collection('czlonkowie').add(newMember);
-                
-                showMessage('Dołączyłeś do klubu! Witamy!', 'success');
-                document.getElementById('memberForm').reset();
-                document.getElementById('formSection').classList.remove('active');
-                document.getElementById('showFormBtn').textContent = '+ Zapisz się do klubu';
-                
-                loadMembers();
-            } catch (error) {
-                console.error('Błąd:', error);
-                showMessage('Nie udało się zapisać. Spróbuj później.', 'error');
-            }
-        });
-
+        showMessage('Dołączyłeś do klubu! Witamy!', 'success');
+        memberForm.reset();
+        formSection.classList.add('hidden');
+        showFormBtn.textContent = '+ Zapisz się do klubu';
         loadMembers();
-    </script>
+      } catch (error) {
+        console.error('Błąd:', error);
+        showMessage('Nie udało się zapisać. Spróbuj później.', 'error');
+      }
+    });
+
+    loadMembers();
+  })();
+  </script>
 </body>
 </html>

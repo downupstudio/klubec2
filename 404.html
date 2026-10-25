@@ -1,191 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Strona nie znaleziona | Klub Przyjaciół EC2</title>
-    <link rel="icon" href="logo_czarne.png" id="favicon" />
-    <link rel="stylesheet" href="header_footer.css" />
-    <script>
-        const favicon = document.getElementById('favicon');
-        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function updateFavicon() {
-            if (darkModeMedia.matches) {
-                favicon.href = 'logo_biale.png';
-            } else {
-                favicon.href = 'logo_czarne.png';
-            }
-        }
-
-        darkModeMedia.addEventListener('change', updateFavicon);
-        updateFavicon();
-    </script>
-    <style>
-        main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .error-container {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 70px 80px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .error-code {
-            font-size: 120px;
-            font-weight: 600;
-            color: #e8e8ee;
-            line-height: 1;
-            margin-bottom: 10px;
-            letter-spacing: -5px;
-        }
-
-        .error-container h1 {
-            font-size: 32px;
-            font-weight: 500;
-            color: #1e1e22;
-            margin-bottom: 16px;
-        }
-
-        .error-container p {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #6b6b73;
-            margin-bottom: 32px;
-        }
-
-        .btn-primary {
-            background: #1e1e22;
-            color: #ffffff;
-            border: none;
-            padding: 14px 40px;
-            border-radius: 40px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            display: inline-block;
-            text-decoration: none;
-            font-family: inherit;
-        }
-
-        .btn-primary:hover {
-            background: #3a3a40;
-        }
-
-        .error-container .sub {
-            font-size: 14px;
-            color: #9a9aa3;
-            margin-top: 20px;
-        }
-
-        .error-container .sub a {
-            color: #6b6b73;
-        }
-
-        @media (max-width: 768px) {
-            .error-container {
-                padding: 40px 30px;
-            }
-            .error-code {
-                font-size: 80px;
-            }
-            .error-container h1 {
-                font-size: 26px;
-            }
-            .error-container p {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .error-container {
-                padding: 30px 20px;
-                border-radius: 16px;
-            }
-            .error-code {
-                font-size: 60px;
-            }
-            .error-container h1 {
-                font-size: 22px;
-            }
-            .error-container p {
-                font-size: 15px;
-            }
-            .btn-primary {
-                padding: 12px 30px;
-                font-size: 15px;
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Klub Przyjaciół EC2</title>
+  <meta name="description" content="Strona nie znaleziona — Klub Przyjaciół EC2" />
+  <link rel="icon" href="logo_czarne.png" id="favicon" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="common.js" defer></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div id="header-placeholder" style="min-height:130px;"></div>
-
-        <main>
-            <div class="error-container">
-                <div class="error-code">404</div>
-                <h1>Strona nie została znaleziona</h1>
-                <p>
-                    Wygląda na to, że trafiłeś na jeden z 
-                    zamkniętych korytarzy EC2. Może to dobry moment, by wrócić do głównego 
-                    wejścia?
-                </p>
-                <a href="index.html" class="btn-primary">← Wróć na stronę główną</a>
-                <div class="sub">
-                    Jeśli uważasz, że to błąd, daj nam znać przez <a href="kontakt.html">naszego maila</a>.
-                </div>
-            </div>
-        </main>
-
-        <div id="footer-placeholder" style="min-height:130px;"></div>
+  <div id="header-placeholder"></div>
+  <main>
+    <div class="error-page">
+      <div class="error-box">
+        <div class="error-box__code">404</div>
+        <h1 class="error-box__title">Strona nie znaleziona</h1>
+        <p class="error-box__text">
+          Wygląda na to, że trafiłeś na jeden z zamkniętych korytarzy EC2.
+          Może to dobry moment, by wrócić do głównego wejścia?
+        </p>
+        <a href="index.html" class="btn">&larr; Wróć na stronę główną</a>
+        <div class="error-box__sub">
+          Jeśli uważasz, że to błąd, napisz przez <a href="kontakt.html">kontakt</a>.
+        </div>
+      </div>
     </div>
-
-    <script>
-        const headerPlaceholder = document.getElementById('header-placeholder');
-        const footerPlaceholder = document.getElementById('footer-placeholder');
-        
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono header.html');
-                return response.text();
-            })
-            .then(data => {
-                headerPlaceholder.innerHTML = data;
-                headerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania headera:', error);
-                headerPlaceholder.innerHTML = 
-                    '<header style="padding:20px;color:red;">Nie udało się załadować headera</header>';
-                headerPlaceholder.style.minHeight = 'auto';
-            });
-        
-        fetch('footer.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Nie znaleziono footer.html');
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-                footerPlaceholder.style.minHeight = 'auto';
-            })
-            .catch(error => {
-                console.error('Błąd ładowania footera:', error);
-                footerPlaceholder.innerHTML = 
-                    '<footer style="padding:20px;color:red;">Nie udało się załadować footera</footer>';
-                footerPlaceholder.style.minHeight = 'auto';
-            });
-    </script>
+  </main>
+  <div id="footer-placeholder"></div>
 </body>
 </html>
