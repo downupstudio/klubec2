@@ -17,7 +17,8 @@
       "rok": "2005",
       "opis": "Skoroszyt z dokumentacją modernizacji układu zabezpieczeń podgrzewaczy PWP1 i PWP2 (Tom 4).",
       "zawartosc": [
-        { "typ": "dokument", "id": "projekt-wykonawczy-pwp1-pwp2-2005" }
+        { "typ": "dokument", "id": "projekt-wykonawczy-pwp1-pwp2-2005" },
+        { "typ": "dokument", "id": "kosztorys-pwp1-pwp2-2005" }
       ]
     }
   ],
@@ -121,6 +122,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/projekt-wykonawczy-pwp1-pwp2-2005.html", "label": "Pełna transkrypcja (15 stron)" }
+      ],
+      "skany": []
+    },
+    "kosztorys-pwp1-pwp2-2005": {
+      "tytul": "Kosztorys - Nakłady Rzeczowe (Modernizacja PWP1 i PWP2)",
+      "sygnatura": "Tom 4 / Kosztorys",
+      "data": "V 2005",
+      "autor": "Przedsiębiorstwo Usługowo-Produkcyjne K.G.K.",
+      "typ": "Kosztorys",
+      "strony": "5",
+      "analiza": [
+        "Prezentowany dokument to 'Kosztorys – Nakłady Rzeczowe' z maja 2005 roku, opracowany przez Przedsiębiorstwo Usługowo-Produkcyjne K.G.K. z Łodzi. Stanowi on część projektu modernizacji układu zabezpieczeń w podgrzewaczach PWP1 i PWP2 (turbina TZ-4 w EC-2).",
+        "Dokument ten to klasyczne zestawienie kosztorysowe (tzw. przedmiar z wyceną), które szczegółowo rozbija inwestycję na dwa główne zadania: uzupełnienie szafy zasilania 4LW1 (montaż przekaźników czasowych, gniazd wtykowych) oraz prace instalacyjne bezpośrednio na obiekcie. Wykaz obejmuje m.in. montaż nowych sygnalizatorów ciśnienia, diod, układanie przewodów w korytkach, a także roboty budowlane (przebicia, uszczelnienia, wykopy pod kable).",
+        "Dla archiwum EC-2 jest to cenny materiał ukazujący nie tylko techniczne, ale i finansowo-organizacyjne realia modernizacji infrastruktury z początku XXI wieku, łącznie z ówczesnymi stawkami za roboczogodzinę i zużyciem materiałów."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/kosztorys-pwp1-pwp2-2005.html", "label": "Pełna transkrypcja (5 stron)" }
       ],
       "skany": []
     }
