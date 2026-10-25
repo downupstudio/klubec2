@@ -48,50 +48,17 @@
   </main>
   <div id="footer-placeholder"></div>
 
-  <script type="application/json" id="archiwum-data">
-  {
-    "skoroszyty": [
-      {
-        "id": "2-1-19-PM2-8-106",
-        "sygnatura": "2-1/19 PM2-8/106",
-        "rok": "2003",
-        "opis": "Skoroszyt z dokumentacją techniczną podgrzewaczy regeneracyjnych EC2.",
-        "zawartosc": [
-          { "typ": "dokument", "id": "p-725-21271" }
-        ]
-      }
-    ],
-    "dokumenty": {
-      "p-725-21271": {
-        "tytul": "Obliczenia wytrzymałościowe podgrzewacza PWP-2",
-        "sygnatura": "P-725 / 21271",
-        "data": "IX 2003",
-        "autor": "PRO-TECH Sp. z o.o.",
-        "typ": "Ekspertyza techniczna",
-        "strony": "32 + lista elementów",
-        "analiza": [
-          "Prezentowany dokument to szczegółowa ekspertyza techniczna z września 2003 roku, autorstwa łódzkiej firmy PRO-TECH, wykonana na zlecenie ZEC Łódź S.A. Dotyczy ona podgrzewacza regeneracyjnego PWP-2 (typ PWS-200-5) wyprodukowanego w 1958 roku.",
-          "Powodem zlecenia obliczeń była modernizacja turbozespołu TZ-4, która wymusiła weryfikację urządzenia pod kątem nowych, wyższych parametrów pary. Dokument zawiera kompletne obliczenia wytrzymałościowe kluczowych węzłów podgrzewacza: króćców, płaszcza i dennicy komory parowej oraz połączeń śrubowo-kołnierzowych.",
-          "Jest to o tyle istotny materiał historyczny, że zawiera oficjalne zatwierdzenie przez Urząd Dozoru Technicznego (UDT) oraz konkretne zalecenia powykonawcze. Aby bezpiecznie eksploatować ten stary podgrzewacz na nowych parametrach, inżynierowie nakazali m.in. przeprowadzenie badań ultradźwiękowych spoin, fizyczną weryfikację grubości ścianek oraz wymianę śrub i uszczelek na nowoczesne (m.in. grafitowe z wkładką metalową). Dokument doskonale ilustruje proces dostosowywania powojennej infrastruktury EC-2 do współczesnych norm bezpieczeństwa."
-        ],
-        "transkrypcja": [
-          { "src": "dokumenty/p-725-21271.html", "label": "Pełna transkrypcja (32 strony + lista elementów)" }
-        ],
-        "skany": []
-      }
-    },
-    "dokumenty_bez_skoroszytu": []
-  }
-  </script>
-
   <script>
   (function () {
-    const DATA = JSON.parse(document.getElementById('archiwum-data').textContent);
+    let DATA = null;
+    let currentSource = 'archive';
+    let currentSkoroszytId = null;
+    let currentDocId = null;
+    let activeTab = 'analiza';
 
     const archiveView = document.getElementById('archiveView');
     const skoroszytView = document.getElementById('skoroszytView');
     const documentView = document.getElementById('documentView');
-
     const archiveList = document.getElementById('archiveList');
     const looseDocsSection = document.getElementById('looseDocsSection');
     const skoroszytSig = document.getElementById('skoroszytSig');
@@ -102,11 +69,6 @@
     const docMeta = document.getElementById('docMeta');
     const tabContent = document.getElementById('tabContent');
     const docTabs = document.getElementById('docTabs');
-
-    let currentSource = 'archive'; 
-    let currentSkoroszytId = null;
-    let currentDocId = null;
-    let activeTab = 'analiza';
 
     function esc(str) {
       return String(str == null ? '' : str).replace(/[&<>"']/g, function (c) {
@@ -156,7 +118,7 @@
             +   (s.rok ? '<span>' + esc(s.rok) + '</span>' : '')
             + '</div>'
             + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
-            + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumentów') + '</div>';
+            + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumenty') + '</div>';
           btn.addEventListener('click', function () {
             currentSkoroszytId = s.id;
             renderSkoroszyt(s.id);
@@ -347,8 +309,20 @@
       });
     });
 
-    renderArchive();
+    fetch('archiwum.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('Nie udało się załadować archiwum.json');
+        return response.json();
+      })
+      .then(function (data) {
+        DATA = data;
+        renderArchive();
+      })
+      .catch(function (error) {
+        console.error(error);
+        archiveList.innerHTML = '<div class="empty">Nie udało się załadować danych archiwum. Spróbuj odświeżyć stronę.</div>';
+      });
   })();
   </script>
 </body>
-</html>a
+</html>

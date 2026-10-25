@@ -1,0 +1,69 @@
+{
+  "skoroszyty": [
+    {
+      "id": "2-1-19-PM2-8-106",
+      "sygnatura": "2-1/19 PM2-8/106",
+      "rok": "1954–2003",
+      "opis": "Skoroszyt z dokumentacją techniczną podgrzewaczy regeneracyjnych EC2. Zawiera 3 pozycje — zdygitalizowano wszystkie dokumenty.",
+      "zawartosc": [
+        { "typ": "dokument", "id": "rysunek-7-51309" },
+        { "typ": "dokument", "id": "obliczenia-pws-200-5-1966" },
+        { "typ": "dokument", "id": "p-725-21271" }
+      ]
+    }
+  ],
+  "dokumenty": {
+    "rysunek-7-51309": {
+      "tytul": "Rysunek techniczny: Komora parowa PWS-200-5",
+      "sygnatura": "7-51309",
+      "data": "XII 1954",
+      "autor": "Centr. Biuro Konstrukcyjne Przem. Hutniczego",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to oryginalny rysunek techniczny z grudnia 1954 roku, opracowany przez Centralne Biuro Konstrukcyjne Przemysłu Hutniczego w Tarnowskich Górach (z późniejszą adnotacją z 1956 r.). Przedstawia on w skali 1:10 konstrukcję komory parowej podgrzewacza typu PWS-200-5.",
+        "Rysunek szczegółowo obrazuje przekroje urządzenia, geometrię króćców oraz detale spawalnicze (oznaczone literami A-K). Zawiera również kluczowe uwagi technologiczne, m.in. nakaz przeprowadzenia próby szczelności płaszcza wodnego na 5 atm i próby ciśnieniowej całej komory na 15 atm.",
+        "Dokument ten jest niezwykle istotny z punktu widzenia historii EC-2, ponieważ stanowi fizyczne źródło wymiarów (np. średnica zewnętrzna płaszcza Ø1600, średnica kołnierza Ø1930), które blisko 50 lat później, w 2003 roku, posłużyły inżynierom do przeprowadzenia obliczeń modernizacyjnych i dopuszczenia tego starego urządzenia do dalszej eksploatacji."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7-51309.html", "label": "Pełna transkrypcja rysunku (1954)" }
+      ],
+      "skany": []
+    },
+    "obliczenia-pws-200-5-1966": {
+      "tytul": "Obliczenia wytrzymałościowe podgrzewacza wysokoprężnego PWS-200-5",
+      "sygnatura": "CBKK / 04-23",
+      "data": "IX–X 1966",
+      "autor": "Centralne Biuro Konstrukcji Kotłów",
+      "typ": "Obliczenia inżynierskie",
+      "strony": "23",
+      "analiza": [
+        "Prezentowany dokument to szczegółowe opracowanie inżynierskie z 1966 roku (powstałe między 27 września a 14 października), przygotowane przez Centralne Biuro Konstrukcji Kotłów (CBKK) w Tarnowskich Górach. Stanowi ono kompletny zbiór obliczeń wytrzymałościowych dla podgrzewacza wysokoprężnego PWS-200-5 – tego samego urządzenia, którego rysunek wykonawczy z 1954 roku oraz obliczenia modernizacyjne z 2003 roku znajdują się w naszym archiwum.",
+        "Dokument skrupulatnie weryfikuje wytrzymałość kluczowych elementów, takich jak płaszcz komory parowej (dla ciśnienia 30 atm i temperatury 380°C) oraz układ rurowy (dla ciśnienia 180 atm). Inżynierowie przeanalizowali w nim grubości ścianek, wytrzymałość dennic, a także połączenia kołnierzowo-śrubowe, opierając się na ówczesnych normach i materiałach (m.in. stal R45, odkuwka 22K).",
+        "Dokument zachował się w formie roboczej kopii z licznymi odręcznymi adnotacjami, poprawkami i pieczątkami ówczesnych zakładów budowy maszyn, co czyni go unikatowym świadectwem procesu projektowania i atestacji infrastruktury, która przez dekady pracowała na rzecz EC-2."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/obliczenia-pws-200-5-1966.html", "label": "Pełna transkrypcja (23 strony)" }
+      ],
+      "skany": []
+    },
+    "p-725-21271": {
+      "tytul": "Obliczenia wytrzymałościowe podgrzewacza PWP-2",
+      "sygnatura": "P-725 / 21271",
+      "data": "IX 2003",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Ekspertyza techniczna",
+      "strony": "32 + lista elementów",
+      "analiza": [
+        "Prezentowany dokument to szczegółowa ekspertyza techniczna z września 2003 roku, autorstwa łódzkiej firmy PRO-TECH, wykonana na zlecenie ZEC Łódź S.A. Dotyczy ona podgrzewacza regeneracyjnego PWP-2 (typ PWS-200-5) wyprodukowanego w 1958 roku.",
+        "Powodem zlecenia obliczeń była modernizacja turbozespołu TZ-4, która wymusiła weryfikację urządzenia pod kątem nowych, wyższych parametrów pary. Dokument zawiera kompletne obliczenia wytrzymałościowe kluczowych węzłów podgrzewacza: króćców, płaszcza i dennicy komory parowej oraz połączeń śrubowo-kołnierzowych.",
+        "Jest to o tyle istotny materiał historyczny, że zawiera oficjalne zatwierdzenie przez Urząd Dozoru Technicznego (UDT) oraz konkretne zalecenia powykonawcze. Aby bezpiecznie eksploatować ten stary podgrzewacz na nowych parametrach, inżynierowie nakazali m.in. przeprowadzenie badań ultradźwiękowych spoin, fizyczną weryfikację grubości ścianek oraz wymianę śrub i uszczelek na nowoczesne (m.in. grafitowe z wkładką metalową). Dokument doskonale ilustruje proces dostosowywania powojennej infrastruktury EC-2 do współczesnych norm bezpieczeństwa."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/p-725-21271.html", "label": "Pełna transkrypcja (32 strony + lista elementów)" }
+      ],
+      "skany": []
+    }
+  },
+  "dokumenty_bez_skoroszytu": []
+}
