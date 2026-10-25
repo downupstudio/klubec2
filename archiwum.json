@@ -80,9 +80,27 @@
         { "src": "dokumenty/aneks-master-3-2004.html", "label": "Pełna transkrypcja (19 stron)" }
       ],
       "skany": []
+    },
+    "umowa-7-00-ec-2000": {
+      "tytul": "Umowa Nr 7/00/EC - Remont Czopucha K10 i K11",
+      "sygnatura": "7/00/EC",
+      "data": "16 sierpnia 2000",
+      "autor": "ZEC Łódź S.A. / Zakład Kotlarski S.C.",
+      "typ": "Umowa i kosztorys",
+      "strony": "30",
+      "analiza": [
+        "Prezentowany dokument to kompletna dokumentacja umowna i kosztorysowa (Umowa Nr 7/00/EC) z 16 sierpnia 2000 roku, dotycząca remontu infrastruktury odprowadzania spalin w EC-2. Zawarta została pomiędzy Zespołem Elektrociepłowni w Łodzi S.A. a Zakładem Kotlarskim S.C. (Cuper, Mańkowski, Krzysztof).",
+        "Przedmiotem prac był remont samonośnej konstrukcji stalowego czopucha odprowadzającego spaliny z kotłów mazutowych K10 i K11 do komina nr 3. Wartość całego zlecenia opiewała na kwotę 204 386,42 zł netto (plus 22% VAT).",
+        "Dokument ten jest niezwykle cennym źródłem historycznym z przełomu wieków, ukazującym nie tylko twarde zapisy prawne (24-miesięczna gwarancja, kary umowne 1% za każdy dzień zwłoki), ale przede wszystkim szczegółowy proces planowania i wyceniania robót remontowych. Zawiera on kompletny przedmiar robót, kosztorysy z rozbiciem na robociznę, materiały i sprzęt, a także harmonogram realizacji prac (od sierpnia do października 2000 r.)."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/umowa-7-00-ec-2000.html", "label": "Pełna transkrypcja (30 stron)" }
+      ],
+      "skany": []
     }
   },
   "dokumenty_bez_skoroszytu": [
-    "aneks-master-3-2004"
+    "aneks-master-3-2004",
+    "umowa-7-00-ec-2000"
   ]
 }
