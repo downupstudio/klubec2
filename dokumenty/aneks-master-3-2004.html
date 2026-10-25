@@ -4,42 +4,32 @@
     <meta charset="UTF-8">
     <title>Aneks do instrukcji obsługi - MASTER 3 (UNIMAT-3M)</title>
     <style>
-        /* Style ogólne */
         body { font-family: Arial, sans-serif; line-height: 1.5; margin: 40px; color: #333; background-color: #f4f4f4; }
         .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
         h1, h2, h3, h4 { color: #222; border-bottom: 2px solid #444; padding-bottom: 5px; margin-top: 30px; }
         .page { border-bottom: 2px dashed #aaa; padding-bottom: 30px; margin-bottom: 30px; }
-        .typewriter { font-family: "Courier New", Courier, monospace; font-size: 0.95em; white-space: pre-wrap; }
+        .typewriter { font-family: "Courier New", Courier, monospace; font-size: 0.95em; }
+        .unreadable { background-color: #eee; color: #777; font-style: italic; padding: 0 4px; }
         .footer-box { border: 1px solid #000; padding: 10px; font-size: 0.8em; margin-top: 20px; font-family: monospace; text-align: center; background: #fafafa; }
-        
-        /* Tabele */
         table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.9em; }
         th, td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }
         th { background-color: #eee; text-align: center; }
+        .screen-mock { border: 2px solid #333; padding: 10px; font-family: monospace; background: #eef; margin-bottom: 20px; font-size: 0.85em; }
+        .screen-header { text-align: center; font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px; }
+        ul { padding-left: 20px; }
+        .sig-list { column-count: 2; column-gap: 40px; font-family: monospace; font-size: 0.9em; }
         
-        /* Listy */
-        ol, ul { padding-left: 20px; }
-        .sig-list { column-count: 2; column-gap: 40px; font-family: monospace; font-size: 0.9em; line-height: 1.6; }
-        
-        /* Style dla Spisu Treści (Poprawione - Flexbox) */
-        .toc-container { font-family: "Courier New", Courier, monospace; font-size: 0.95em; width: 100%; margin-top: 15px;}
-        .toc-item { display: flex; align-items: baseline; margin-bottom: 6px; }
-        .toc-text { flex-shrink: 1; padding-right: 5px; }
-        .toc-dots { flex-grow: 1; border-bottom: 1px dotted #555; margin: 0 5px; position: relative; top: -3px; }
-        .toc-page { flex-shrink: 0; }
-        .toc-indent { padding-left: 25px; font-style: italic; }
-
-        /* Style dla zrzutów ekranu (pulpit EMT-1) */
-        .screen-mock { border: 2px solid #333; padding: 15px; font-family: monospace; background: #f0f4f8; margin-bottom: 25px; font-size: 0.85em; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
-        .screen-header { text-align: center; font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px; background: #ddd;}
-        .screen-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
-        .screen-footer { border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between; font-weight: bold;}
+        /* Nowe style dla spisu treści */
+        .toc-list { font-family: "Courier New", Courier, monospace; font-size: 0.95em; line-height: 2; margin: 0; padding: 0; list-style: none; }
+        .toc-row { display: flex; align-items: baseline; }
+        .toc-text { white-space: nowrap; margin-right: 10px; }
+        .toc-dots { flex-grow: 1; border-bottom: 1px dotted #333; position: relative; top: -4px; margin-right: 10px; min-width: 20px; }
+        .toc-page { white-space: nowrap; }
     </style>
 </head>
 <body>
 
 <div class="doc-container">
-    
     <!-- STRONA 1 (Okładka) -->
     <div class="page" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
         <h2 style="border: none;">Instytut Automatyki Systemów Energetycznych</h2>
@@ -86,77 +76,21 @@
         </div>
         <h3>Spis treści</h3>
         
-        <div class="toc-container">
-            <div class="toc-item">
-                <span class="toc-text">1. Ogólny opis regulatora</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">4</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">5</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">3. Funkcje regulatora</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">12</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">2.1. Regulacja automatyczna.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">12</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">2.2. Ograniczniki.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">12</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">4. Układ zabezpieczeń.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">12</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">5. Pulpit sterowniczy EMT-1.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">13</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">6. Próby zabezpieczeń i testy.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">13</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">5.1 Próba wytrzasku elektronicznego.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">13</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">5.2 Sprawdzenie działania zaworu odcinającego WP - MAA11AA211</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">13</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">5.3 Próby przetworników ciśnienia oleju smarnego</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">13</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">5.4 Próba szczelności zaworów</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">14</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">5.5 Sterowanie napędem pompy lewarowej.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">15</span>
-            </div>
-            <div class="toc-item toc-indent">
-                <span class="toc-text">5.6 Sterowanie napędem pomp oleju regulacyjnego.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">15</span>
-            </div>
+        <div class="toc-list">
+            <div class="toc-row"><span class="toc-text">1. Ogólny opis regulatora</span><span class="toc-dots"></span><span class="toc-page">4</span></div>
+            <div class="toc-row"><span class="toc-text">2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
+            <div class="toc-row"><span class="toc-text">3. Funkcje regulatora</span><span class="toc-dots"></span><span class="toc-page">12</span></div>
+            <div class="toc-row"><span class="toc-text">4. <em>Regulacja automatyczna.</em></span><span class="toc-dots"></span><span class="toc-page">12</span></div>
+            <div class="toc-row"><span class="toc-text">5. <em>Ograniczniki.</em></span><span class="toc-dots"></span><span class="toc-page">12</span></div>
+            <div class="toc-row"><span class="toc-text">6. Układ zabezpieczeń.</span><span class="toc-dots"></span><span class="toc-page">12</span></div>
+            <div class="toc-row"><span class="toc-text">7. Pulpit sterowniczy EMT-1.</span><span class="toc-dots"></span><span class="toc-page">13</span></div>
+            <div class="toc-row"><span class="toc-text">8. Próby zabezpieczeń i testy.</span><span class="toc-dots"></span><span class="toc-page">13</span></div>
+            <div class="toc-row"><span class="toc-text">9. <em>Próba wytrzasku elektronicznego.</em></span><span class="toc-dots"></span><span class="toc-page">13</span></div>
+            <div class="toc-row"><span class="toc-text">10. <em>Sprawdzenie działania zaworu odcinającego WP - MAA11AA211</em></span><span class="toc-dots"></span><span class="toc-page">13</span></div>
+            <div class="toc-row"><span class="toc-text">11. <em>Próby przetworników ciśnienia oleju smarnego</em></span><span class="toc-dots"></span><span class="toc-page">13</span></div>
+            <div class="toc-row"><span class="toc-text">12. <em>Próba szczelności zaworów</em></span><span class="toc-dots"></span><span class="toc-page">14</span></div>
+            <div class="toc-row"><span class="toc-text">13. <em>Sterowanie napędem pompy lewarowej.</em></span><span class="toc-dots"></span><span class="toc-page">15</span></div>
+            <div class="toc-row"><span class="toc-text">14. <em>Sterowanie napędem pomp oleju regulacyjnego.</em></span><span class="toc-dots"></span><span class="toc-page">15</span></div>
         </div>
     </div>
 
@@ -167,62 +101,18 @@
         </div>
         <h3>Spis rysunków.</h3>
         
-        <div class="toc-container">
-            <div class="toc-item">
-                <span class="toc-text">Rys. 1 Tablica operacyjna MENU GŁÓWNE</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">16</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 2 Tablica operacyjna REGULACJA Pu</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">16</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 3 Tablica operacyjna REGULACJA Pc i Tw.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">16</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">17</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">17</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">17</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">18</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">18</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OŁ. REGULAC.</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">18</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">19</span>
-            </div>
-            <div class="toc-item">
-                <span class="toc-text">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU</span>
-                <span class="toc-dots"></span>
-                <span class="toc-page">19</span>
-            </div>
+        <div class="toc-list">
+            <div class="toc-row"><span class="toc-text">Rys. 1 Tablica operacyjna MENU GŁÓWNE</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 2 Tablica operacyjna REGULACJA Pu</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 3 Tablica operacyjna REGULACJA Pc i Tw.</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OŁ. REGULAC.</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ</span><span class="toc-dots"></span><span class="toc-page">19</span></div>
+            <div class="toc-row"><span class="toc-text">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU</span><span class="toc-dots"></span><span class="toc-page">19</span></div>
         </div>
     </div>
 
@@ -435,14 +325,14 @@
             97.) Uszk.Pol.sm.t1 Z1<br>
             98.) Uszk.Pol.sm.t2 Z1<br>
             99.) Uszk.Pśw. t2 Z1<br>
-            100.) Uszk.Pup.NP t2 Z1<br>
-            101.) Uszk.Pwyl.t2 Z1<br>
-            102.) Uszk.Pup.SP t2 Z1<br>
-            103.) Uszk.Twyl.t2 Z1<br>
-            104.) Uszk.Pol.sm.t3 Z1<br>
-            105.) Uszk. obr. t1 Z3<br>
-            106.) Uszk. obr. t2 Z3<br>
-            107.) Uszk. obr. t3 Z3
+            100.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pup.NP t2 Z1<br>
+            101.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pwyl.t2 Z1<br>
+            102.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pup.SP t2 Z1<br>
+            103.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Twyl.t2 Z1<br>
+            104.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pol.sm.t3 Z1<br>
+            105.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk. obr. t1 Z3<br>
+            106.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk. obr. t2 Z3<br>
+            107.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk. obr. t3 Z3
         </div>
         <br>
         <p>W polu statusowym na pulpicie EMT-1 sygnalizowane są szczególne stany pracy regulatora:</p>
@@ -567,7 +457,7 @@
         <ul>
             <li>od zabezpieczeń technologicznych,</li>
             <li>od zabezpieczeń generatora,</li>
-            <li>od minimalnego poziom oleju w zbiorniku olejowym,</li>
+            <li>od minimalnego poziomu oleju w zbiorniku olejowym,</li>
             <li>od przekroczenia dopuszczalnego ciśnienia pary na upuście regulowanym LBC10,</li>
             <li>od przekroczenia dopuszczalnego ciśnienia pary na upuście regulowanym LBD10,</li>
             <li>od przekroczenia dopuszczalnego ciśnienia na wylocie turbiny,</li>
@@ -653,8 +543,8 @@
         
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold; margin-bottom: 10px;">F0 &nbsp; MENU</div>
-            <div class="screen-row">
+            <div style="text-align: center;">F0 &nbsp; MENU</div>
+            <div style="display: flex; justify-content: space-between;">
                 <div>
                     F1 - NABÓR OBROTÓW<br>
                     F2 - SYNCHRONIZACJA<br>
@@ -673,7 +563,7 @@
                     FD - PRÓBY ZAB.
                 </div>
             </div>
-            <div class="screen-footer">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between;">
                 <span>[F1]</span><span>[F2]</span><span>[F3]</span><span>[F4]</span><span>[F5]</span><span>[F6]</span><span>[F7]</span><span>[F8]</span><span>[F9]</span>
             </div>
         </div>
@@ -681,14 +571,14 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div class="screen-row">
+            <div style="display: flex; justify-content: space-between;">
                 <div>Moc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>Psw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pu3SP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pu4NP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] kPa</div>
                 <div>WP/SP/NP<br>UPUST_SP<br>UPUST_NP<br>Tw</div>
                 <div>[ ] %<br>[ ] %<br>[ ] %<br>[ ] °C</div>
             </div>
             <div style="text-align: center; margin-top: 10px;">F5-REGULACJA Pu3SP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uchyb [ ] kPa</div>
             <div style="text-align: center; margin-top: 10px;">Pu3SP zd. [ ] &lt;---|---> MPa</div>
-            <div class="screen-footer">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between;">
                 <span>F0 - MENU</span><span>F3 - R. MOCY</span><span>F4 - R. Psw</span>
             </div>
         </div>
@@ -696,7 +586,7 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div class="screen-row">
+            <div style="display: flex; justify-content: space-between;">
                 <div>Moc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>Psw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] kPa</div>
                 <div>WP/SP/NP<br>UPUST_SP<br>UPUST_NP<br>Tw</div>
                 <div>[ ] %<br>[ ] %<br>[ ] %<br>[ ] °C</div>
@@ -704,7 +594,7 @@
             <div style="text-align: center; margin-top: 10px;">F6-REGULACJA Pc,Tw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uchyb [ ] kPa</div>
             <div style="text-align: center; margin-top: 10px;">Pc zd. [ ] &lt;---|---> kPa</div>
             <div style="text-align: center; margin-top: 5px;">Reg.Tw [ ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tw zd. [ ] &lt;--|--> °C</div>
-            <div class="screen-footer">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between;">
                 <span>F0 - MENU</span><span>F3 - REG. MOCY</span><span>F4 - REG. Psw</span>
             </div>
         </div>
@@ -719,13 +609,13 @@
         
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">FC SYGNAŁY WEJŚCIOWE</div>
+            <div style="text-align: center;">FC SYGNAŁY WEJŚCIOWE</div>
             <div style="text-align: center; margin-top: 10px;">
                 F1 - SYG. WEJŚCIOWE ANALOGOWE<br>
                 F2 - SYG. WEJŚCIOWE ANALOGOWE<br>
                 F3 - SYGNAŁY WEJŚCIOWE BOT
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -733,8 +623,8 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">FC-F1 SYGNAŁY WEJŚCIOWE UNIMAT cz.I</div>
-            <div class="screen-row" style="margin-top: 10px;">
+            <div style="text-align: center;">FC-F1 SYGNAŁY WEJŚCIOWE UNIMAT cz.I</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                 <div>
                     Moc1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>
                     Moc2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>
@@ -756,7 +646,7 @@
                     Lol_zb &nbsp;&nbsp;&nbsp;&nbsp;[ ] mm
                 </div>
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -764,8 +654,8 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">FC-F2 SYGNAŁY WEJŚCIOWE UNIMAT cz.II</div>
-            <div class="screen-row" style="margin-top: 10px;">
+            <div style="text-align: center;">FC-F2 SYGNAŁY WEJŚCIOWE UNIMAT cz.II</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                 <div>
                     IsterWP1 &nbsp;&nbsp;&nbsp;[ ] mA<br>
                     IsterWP2 &nbsp;&nbsp;&nbsp;[ ] mA<br>
@@ -790,7 +680,7 @@
                     Tszafy &nbsp;&nbsp;&nbsp;&nbsp;[ ] °C
                 </div>
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -805,8 +695,8 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">FC-F3 SYGNAŁY WEJŚCIOWE BOT</div>
-            <div class="screen-row" style="margin-top: 10px;">
+            <div style="text-align: center;">FC-F3 SYGNAŁY WEJŚCIOWE BOT</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                 <div>
                     Tp20_WP &nbsp;&nbsp;&nbsp;[ ] °C<br>
                     Tk.rpGs &nbsp;&nbsp;&nbsp;[ ] °C<br>
@@ -824,7 +714,7 @@
                     BOT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] %
                 </div>
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -832,14 +722,14 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">F7 STEROWANIE NAPĘDEM POMPY LEWAROWEJ</div>
+            <div style="text-align: center;">F7 STEROWANIE NAPĘDEM POMPY LEWAROWEJ</div>
             <div style="margin-top: 15px;">
                 MAV52AP001 [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ]
             </div>
             <div style="margin-top: 15px;">
                 Obroty &nbsp;&nbsp;&nbsp;[ ] obr/min
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -847,7 +737,7 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">F8 STEROWANIE NAPĘDAMI POMP OŁ.REG.</div>
+            <div style="text-align: center;">F8 STEROWANIE NAPĘDAMI POMP OŁ.REG.</div>
             <div style="margin-top: 15px;">
                 MAX09AP001 [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ]<br><br>
                 MAX09AP002 [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ]
@@ -856,7 +746,7 @@
                 P ol.reg. [ ] MPa<br>
                 L ol.reg. [ ]
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -871,7 +761,7 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">FD PRÓBY ZABEZPIECZEŃ</div>
+            <div style="text-align: center;">FD PRÓBY ZABEZPIECZEŃ</div>
             <div style="margin-top: 10px;">
                 Próba cz.Prz.Z.O.[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ]<br>
                 Próba szcz. Z.O. [ ]<br>
@@ -880,7 +770,7 @@
                 Próba RZ 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ]<br>
                 Ciśn.ol.smarnego [ ] &nbsp;&nbsp;&nbsp;&nbsp; MPa
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
@@ -888,8 +778,8 @@
 
         <div class="screen-mock">
             <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center; font-weight: bold;">F9 SYGNAŁY WYTRZASKU</div>
-            <div class="screen-row" style="margin-top: 10px;">
+            <div style="text-align: center;">F9 SYGNAŁY WYTRZASKU</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                 <div>
                     Zab.technol.<br>
                     Zab.elektr.<br>
@@ -906,7 +796,7 @@
                     [ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]
                 </div>
             </div>
-            <div class="screen-footer" style="justify-content: center;">
+            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
                 <span>F0-MENU</span>
             </div>
         </div>
