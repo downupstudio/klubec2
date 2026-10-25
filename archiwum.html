@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archiwum — Klub Przyjaciół EC2</title>
+  <meta name="description" content="Archiwum skoroszytów i dokumentów Klubu Przyjaciół EC2 — digitalizacja dokumentacji technicznej elektrociepłowni EC2." />
+  <link rel="icon" href="logo_czarne.png" id="favicon" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="common.js" defer></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main>
+    <div class="container">
+      <h1 class="page-title">Archiwum</h1>
+      <p class="page-subtitle">Skoroszyty i dokumenty z archiwum EC2</p>
+
+      <div id="archiveView">
+        <div class="archive-list" id="archiveList"></div>
+        <div id="looseDocsSection"></div>
+      </div>
+
+      <div id="skoroszytView" class="hidden">
+        <button type="button" class="btn btn--ghost btn--small" id="backToArchiveBtn">&larr; Wróć do archiwum</button>
+        <div class="skoroszyt-header">
+          <h2 id="skoroszytSig"></h2>
+          <div class="meta" id="skoroszytMeta"></div>
+          <div class="desc" id="skoroszytDesc"></div>
+        </div>
+        <div class="skoroszyt-docs" id="skoroszytDocs"></div>
+      </div>
+
+      <div id="documentView" class="hidden">
+        <button type="button" class="btn btn--ghost btn--small" id="backToParentBtn">&larr; Wróć</button>
+        <div class="doc-header">
+          <h2 id="docTitle"></h2>
+          <div class="doc-header__meta" id="docMeta"></div>
+        </div>
+        <div class="tabs" role="tablist" id="docTabs">
+          <button type="button" class="tab active" data-tab="analiza" role="tab">Analiza</button>
+          <button type="button" class="tab" data-tab="transkrypcja" role="tab">Transkrypcja</button>
+          <button type="button" class="tab" data-tab="skany" role="tab">Skany</button>
+        </div>
+        <div id="tabContent"></div>
+      </div>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+
+  <script type="application/json" id="archiwum-data">
+  {
+    "skoroszyty": [
+      {
+        "id": "2-1-19-PM2-8-106",
+        "sygnatura": "2-1/19 PM2-8/106",
+        "rok": "2003",
+        "opis": "Skoroszyt z dokumentacją techniczną podgrzewaczy regeneracyjnych EC2.",
+        "zawartosc": [
+          { "typ": "dokument", "id": "p-725-21271" }
+        ]
+      }
+    ],
+    "dokumenty": {
+      "p-725-21271": {
+        "tytul": "Obliczenia wytrzymałościowe podgrzewacza PWP-2",
+        "sygnatura": "P-725 / 21271",
+        "data": "IX 2003",
+        "autor": "PRO-TECH Sp. z o.o.",
+        "typ": "Ekspertyza techniczna",
+        "strony": "32 + lista elementów",
+        "analiza": [
+          "Prezentowany dokument to szczegółowa ekspertyza techniczna z września 2003 roku, autorstwa łódzkiej firmy PRO-TECH, wykonana na zlecenie ZEC Łódź S.A. Dotyczy ona podgrzewacza regeneracyjnego PWP-2 (typ PWS-200-5) wyprodukowanego w 1958 roku.",
+          "Powodem zlecenia obliczeń była modernizacja turbozespołu TZ-4, która wymusiła weryfikację urządzenia pod kątem nowych, wyższych parametrów pary. Dokument zawiera kompletne obliczenia wytrzymałościowe kluczowych węzłów podgrzewacza: króćców, płaszcza i dennicy komory parowej oraz połączeń śrubowo-kołnierzowych.",
+          "Jest to o tyle istotny materiał historyczny, że zawiera oficjalne zatwierdzenie przez Urząd Dozoru Technicznego (UDT) oraz konkretne zalecenia powykonawcze. Aby bezpiecznie eksploatować ten stary podgrzewacz na nowych parametrach, inżynierowie nakazali m.in. przeprowadzenie badań ultradźwiękowych spoin, fizyczną weryfikację grubości ścianek oraz wymianę śrub i uszczelek na nowoczesne (m.in. grafitowe z wkładką metalową). Dokument doskonale ilustruje proces dostosowywania powojennej infrastruktury EC-2 do współczesnych norm bezpieczeństwa."
+        ],
+        "transkrypcja": [
+          { "src": "dokumenty/p-725-21271.html", "label": "Pełna transkrypcja (32 strony + lista elementów)" }
+        ],
+        "skany": []
+      }
+    },
+    "dokumenty_bez_skoroszytu": []
+  }
+  </script>
+
+  <script>
+  (function () {
+    const DATA = JSON.parse(document.getElementById('archiwum-data').textContent);
+
+    const archiveView = document.getElementById('archiveView');
+    const skoroszytView = document.getElementById('skoroszytView');
+    const documentView = document.getElementById('documentView');
+
+    const archiveList = document.getElementById('archiveList');
+    const looseDocsSection = document.getElementById('looseDocsSection');
+    const skoroszytSig = document.getElementById('skoroszytSig');
+    const skoroszytMeta = document.getElementById('skoroszytMeta');
+    const skoroszytDesc = document.getElementById('skoroszytDesc');
+    const skoroszytDocs = document.getElementById('skoroszytDocs');
+    const docTitle = document.getElementById('docTitle');
+    const docMeta = document.getElementById('docMeta');
+    const tabContent = document.getElementById('tabContent');
+    const docTabs = document.getElementById('docTabs');
+
+    let currentSource = 'archive'; 
+    let currentSkoroszytId = null;
+    let currentDocId = null;
+    let activeTab = 'analiza';
+
+    function esc(str) {
+      return String(str == null ? '' : str).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    function showArchiveView() {
+      archiveView.classList.remove('hidden');
+      skoroszytView.classList.add('hidden');
+      documentView.classList.add('hidden');
+      currentSource = 'archive';
+      currentSkoroszytId = null;
+      currentDocId = null;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showSkoroszytView() {
+      archiveView.classList.add('hidden');
+      skoroszytView.classList.remove('hidden');
+      documentView.classList.add('hidden');
+      currentSource = 'skoroszyt';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showDocumentView() {
+      archiveView.classList.add('hidden');
+      skoroszytView.classList.add('hidden');
+      documentView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderArchive() {
+      archiveList.innerHTML = '';
+
+      if (!DATA.skoroszyty || DATA.skoroszyty.length === 0) {
+        archiveList.innerHTML = '<div class="empty">Brak skoroszytów w archiwum.</div>';
+      } else {
+        DATA.skoroszyty.forEach(function (s) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'archive-card';
+          const docCount = (s.zawartosc || []).filter(function (i) { return i.typ === 'dokument'; }).length;
+          btn.innerHTML =
+            '<div class="archive-card__sig">' + esc(s.sygnatura) + '</div>'
+            + '<div class="archive-card__meta">'
+            +   (s.rok ? '<span>' + esc(s.rok) + '</span>' : '')
+            + '</div>'
+            + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
+            + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumentów') + '</div>';
+          btn.addEventListener('click', function () {
+            currentSkoroszytId = s.id;
+            renderSkoroszyt(s.id);
+            showSkoroszytView();
+          });
+          archiveList.appendChild(btn);
+        });
+      }
+
+      looseDocsSection.innerHTML = '';
+      const loose = DATA.dokumenty_bez_skoroszytu || [];
+      if (loose.length > 0) {
+        const title = document.createElement('h2');
+        title.className = 'archive-section-title';
+        title.textContent = 'Dokumenty poza skoroszytami';
+        looseDocsSection.appendChild(title);
+
+        const wrap = document.createElement('div');
+        wrap.className = 'skoroszyt-docs';
+        loose.forEach(function (docId) {
+          const doc = DATA.dokumenty[docId];
+          if (!doc) return;
+          wrap.appendChild(buildDocRow(docId, doc, 'loose'));
+        });
+        looseDocsSection.appendChild(wrap);
+      }
+    }
+
+    function renderSkoroszyt(id) {
+      const s = DATA.skoroszyty.find(function (x) { return x.id === id; });
+      if (!s) return;
+
+      skoroszytSig.textContent = 'Skoroszyt ' + s.sygnatura;
+      skoroszytMeta.textContent = (s.rok ? 'Rok ' + s.rok : '');
+      skoroszytDesc.textContent = s.opis || '';
+
+      skoroszytDocs.innerHTML = '';
+      const items = s.zawartosc || [];
+      if (items.length === 0) {
+        skoroszytDocs.innerHTML = '<div class="empty" style="border:none;">Skoroszyt jest pusty.</div>';
+        return;
+      }
+
+      let counter = 0;
+      items.forEach(function (item) {
+        if (item.typ === 'dokument') {
+          const doc = DATA.dokumenty[item.id];
+          if (!doc) return;
+          counter++;
+          skoroszytDocs.appendChild(buildDocRow(item.id, doc, 'skoroszyt', counter));
+        } else {
+          counter++;
+          const row = document.createElement('div');
+          row.className = 'doc-row';
+          row.innerHTML =
+            '<div class="doc-row__num">' + counter + '.</div>'
+            + '<div class="doc-row__main">'
+            +   '<div class="doc-row__title">' + esc(item.tytul || 'Pozycja') + '</div>'
+            +   '<div class="doc-row__meta">' + esc(item.opis || 'Nie zdygitalizowano') + '</div>'
+            + '</div>';
+          skoroszytDocs.appendChild(row);
+        }
+      });
+    }
+
+    function buildDocRow(id, doc, source, num) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'doc-row';
+      btn.innerHTML =
+        (num ? '<div class="doc-row__num">' + num + '.</div>' : '')
+        + '<div class="doc-row__main">'
+        +   '<div class="doc-row__title">' + esc(doc.tytul) + '</div>'
+        +   '<div class="doc-row__meta">' + esc(doc.sygnatura) + ' · ' + esc(doc.data) + ' · ' + esc(doc.autor) + '</div>'
+        + '</div>'
+        + '<div class="doc-row__arrow">&rarr;</div>';
+      btn.addEventListener('click', function () {
+        currentSource = source;
+        currentDocId = id;
+        activeTab = 'analiza';
+        renderDocument(id);
+        showDocumentView();
+      });
+      return btn;
+    }
+
+    function renderDocument(id) {
+      const doc = DATA.dokumenty[id];
+      if (!doc) return;
+
+      docTitle.textContent = doc.tytul;
+      docMeta.innerHTML =
+        '<span>' + esc(doc.sygnatura) + '</span>'
+        + (doc.data ? '<span>' + esc(doc.data) + '</span>' : '')
+        + (doc.autor ? '<span>' + esc(doc.autor) + '</span>' : '')
+        + (doc.typ ? '<span>' + esc(doc.typ) + '</span>' : '')
+        + (doc.strony ? '<span>' + esc(doc.strony) + ' str.</span>' : '');
+
+      docTabs.querySelectorAll('.tab').forEach(function (t) {
+        t.classList.toggle('active', t.dataset.tab === activeTab);
+      });
+
+      renderTabContent();
+    }
+
+    function renderTabContent() {
+      const doc = DATA.dokumenty[currentDocId];
+      if (!doc) return;
+      tabContent.innerHTML = '';
+
+      if (activeTab === 'analiza') {
+        const wrap = document.createElement('div');
+        wrap.className = 'prose prose--narrow';
+        const paras = Array.isArray(doc.analiza) ? doc.analiza : (doc.analiza ? [doc.analiza] : []);
+        if (paras.length === 0) {
+          wrap.innerHTML = '<div class="empty" style="border:none;">Analiza jeszcze nie została przygotowana.</div>';
+        } else {
+          paras.forEach(function (p) {
+            const el = document.createElement('p');
+            el.textContent = p;
+            wrap.appendChild(el);
+          });
+        }
+        tabContent.appendChild(wrap);
+      }
+
+      else if (activeTab === 'transkrypcja') {
+        const parts = Array.isArray(doc.transkrypcja)
+          ? doc.transkrypcja
+          : (doc.transkrypcja ? [{ src: doc.transkrypcja, label: 'Transkrypcja' }] : []);
+
+        if (parts.length === 0) {
+          tabContent.innerHTML = '<div class="empty" style="border:none;">Transkrypcja jeszcze nie została przygotowana.</div>';
+          return;
+        }
+
+        parts.forEach(function (part) {
+          const wrap = document.createElement('div');
+          wrap.className = 'transcription-part';
+          wrap.innerHTML =
+            '<div class="transcription-part__label">' + esc(part.label || 'Transkrypcja') + '</div>'
+            + '<iframe class="transcription-frame" src="' + esc(part.src) + '" title="' + esc(part.label || 'Transkrypcja') + '" loading="lazy"></iframe>';
+          tabContent.appendChild(wrap);
+        });
+      }
+
+      else if (activeTab === 'skany') {
+        const scans = doc.skany || [];
+        if (scans.length === 0) {
+          tabContent.innerHTML = '<div class="empty" style="border:none;">Skany jeszcze nie zostały dodane.</div>';
+          return;
+        }
+        const grid = document.createElement('div');
+        grid.className = 'scans-grid';
+        scans.forEach(function (scan, i) {
+          const src = typeof scan === 'string' ? scan : scan.src;
+          const label = typeof scan === 'string' ? ('Strona ' + (i + 1)) : (scan.label || ('Strona ' + (i + 1)));
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'scan-card';
+          btn.innerHTML =
+            '<img src="' + esc(src) + '" alt="' + esc(label) + '" loading="lazy" />'
+            + '<div class="scan-card__label">' + esc(label) + '</div>';
+          btn.addEventListener('click', function () { window.open(src, '_blank'); });
+          grid.appendChild(btn);
+        });
+        tabContent.appendChild(grid);
+      }
+    }
+
+    document.getElementById('backToArchiveBtn').addEventListener('click', showArchiveView);
+
+    document.getElementById('backToParentBtn').addEventListener('click', function () {
+      if (currentSource === 'skoroszyt' && currentSkoroszytId) {
+        showSkoroszytView();
+      } else {
+        showArchiveView();
+      }
+    });
+
+    docTabs.querySelectorAll('.tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        activeTab = tab.dataset.tab;
+        docTabs.querySelectorAll('.tab').forEach(function (t) {
+          t.classList.toggle('active', t === tab);
+        });
+        renderTabContent();
+      });
+    });
+
+    renderArchive();
+  })();
+  </script>
+</body>
+</html>a

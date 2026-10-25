@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Transkrypcja: Obliczenia wytrzymałościowe PWP-2</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; color: #333; }
+        h1, h2, h3, h4 { color: #222; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .header-table { border: none; margin-bottom: 30px; width: 100%; font-size: 0.9em; }
+        .header-table td { border: none; padding: 2px; vertical-align: top; }
+        .data-table { border-collapse: collapse; width: 100%; margin-bottom: 15px; font-size: 0.95em; }
+        .data-table td { border: none; padding: 4px; vertical-align: top; }
+        .bom-table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.85em; }
+        .bom-table th, .bom-table td { border: 1px solid #000; padding: 6px; text-align: left; }
+        .bom-table th { background-color: #eee; }
+        .formula, .formula-box { font-family: "Courier New", Courier, monospace; background: #f4f4f4; padding: 10px; margin: 15px 0; border-left: 3px solid #555; overflow-x: auto; }
+        .fraction { display: inline-block; vertical-align: middle; text-align: center; }
+        .fraction .top { border-bottom: 1px solid black; display: block; padding: 0 5px; }
+        .fraction .bottom { display: block; padding: 0 5px; }
+        .stamp { color: red; font-weight: bold; transform: rotate(-10deg); display: inline-block; border: 2px solid red; padding: 5px; margin: 10px 0; }
+        .warning { background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; margin: 15px 0; }
+        .page-break { border-top: 4px dashed #888; margin: 50px 0; page-break-after: always; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         STRONA 1/32 — Okładka i spis treści
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong><br>90-608 Łódź, ul. Siewna 15<br>tel./fax (0-42) 613-28-52<br>e-mail: pro.tech@pro.onet.pl</td>
+                <td style="text-align: right;">
+                    <strong>Umowa:</strong> P - 725<br>
+                    <strong>Nr arch:</strong> 21271<br>
+                    <strong>Rew.:</strong> <br>
+                    <strong>Tom:</strong> 1<br>
+                    <strong>Zeszyt:</strong> 4
+                </td>
+            </tr>
+        </table>
+
+        <p><strong>Tytuł opracowania:</strong><br>
+        PW wykonania obliczeń wytrzymałościowych dla podgrzewaczy regeneracyjnych PNP1, PNP2, PWP1, PWP2 przy TZ4 w związku z modernizacją turbiny i zmianą parametrów pary upustowej.</p>
+
+        <p><strong>Branża:</strong> Cieplno-Maszynowa<br>
+        <strong>Obiekt:</strong> EC-2 Łódź<br>
+        <strong>Data:</strong> IX 2003<br>
+        <strong>Nr strony:</strong> 1/32</p>
+
+        <hr>
+        <h2 style="text-align: center;">OPIS TECHNICZNY</h2>
+        <p style="text-align: center;">do obliczeń wytrzymałościowych podgrzewacza PWP Nr 2 typ PWS 200-5<br>w obrębie turbozespołu TZ-4 w EC-2 Łódź</p>
+
+        <ol>
+            <li>Dane ogólne
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Adres obiektu</li>
+                    <li>Zamawiający</li>
+                    <li>Inwestor</li>
+                </ol>
+            </li>
+            <li>Podstawa opracowania</li>
+            <li>Przedmiot i zakres opracowania</li>
+            <li>Dane znamionowe podgrzewacza</li>
+            <li>Obliczenia wytrzymałościowe sprawdzające
+                <ol style="list-style-type: decimal;">
+                    <li>Obliczenia sprawdzające króćce</li>
+                    <li>Obliczenia sprawdzające płaszcz komory parowej</li>
+                    <li>Obliczenia sprawdzające średnice nie wymagające wzmocnienia</li>
+                    <li>Obliczenia sprawdzające wzmocnienia otworów</li>
+                    <li>Obliczenia sprawdzające dennicę komory parowej</li>
+                    <li>Obliczenia sprawdzające połączeń kołnierzowo – śrubowych</li>
+                </ol>
+            </li>
+            <li>Wnioski i zalecenia</li>
+        </ol>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 2/32 — Dane ogólne
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 2/32</td>
+            </tr>
+        </table>
+
+        <h3>1. DANE OGÓLNE</h3>
+        <p><strong>1.1. ADRES OBIEKTU</strong><br>
+        Elektrociepłownia EC – 2, ul. J. Wróblewskiego 26, 93 – 578 Łódź.</p>
+
+        <p><strong>1.2. ZAMAWIAJĄCY</strong><br>
+        Zespół Elektrociepłowni w Łodzi S. A., ul. J. Andrzejewskiej 5, 90 – 975 Łódź.</p>
+
+        <p><strong>1.3. INWESTOR</strong><br>
+        Zespół Elektrociepłowni w Łodzi S. A., ul. J. Andrzejewskiej 5, 90 – 975 Łódź.</p>
+
+        <h3>2. PODSTAWA OPRACOWANIA</h3>
+        <ul>
+            <li>Zlecenie Zamawiającego</li>
+            <li>Notatka służbowa Nr 01/725 dotycząca nowych parametrów pary oraz wykonania dokumentacji</li>
+            <li>Istniejąca dokumentacja koncesyjna podgrzewacza PWP-2</li>
+            <li>Obowiązujące aktualnie normy i przepisy.</li>
+        </ul>
+
+        <h3>3. PRZEDMIOT I ZAKRES OPRACOWANIA</h3>
+        <p>Przedmiotem opracowania są obliczenia sprawdzające część parową podgrzewacza wody PNP-2 typ PN-65-II o numerze fabrycznym 60872/6 w EC – 2 Łódź.</p>
+
+        <h3>4. DANE ZNAMIONOWE PODGRZEWACZA</h3>
+        <table>
+            <tr><td>Typ</td><td>PWS – 200 – 5</td></tr>
+            <tr><td>Nr fabryczny</td><td>15845</td></tr>
+            <tr><td>Nr ewidencyjny</td><td>20094</td></tr>
+            <tr><td>Rok produkcji</td><td>1958</td></tr>
+            <tr><td>Producent</td><td>Dolnośląskie Z-dy Bud. Urz. Przem. Nysa</td></tr>
+            <tr><td>Powierzchnia wymiany ciepła</td><td>65 m<sup>2</sup></td></tr>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 3/32 — Parametry i wzory
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 3/32</td>
+            </tr>
+        </table>
+
+        <table class="data-table">
+            <tr><td>Przestrzeń parowa</td><td></td></tr>
+            <tr><td>Ciśnienie robocze</td><td>3,10 MPa (abs)</td></tr>
+            <tr><td>Temperatura robocza</td><td>370°C (krótkotrwałe 398°C)</td></tr>
+            <tr><td>Przestrzeń wodna</td><td></td></tr>
+            <tr><td>Ciśnienie obliczeniowe</td><td>1,80 MPa</td></tr>
+            <tr><td>Temperatura obliczeniowa</td><td>220°C</td></tr>
+        </table>
+
+        <h3>5. OBLICZENIA WYTRZYMAŁOŚCIOWE SPRAWDZAJĄCE</h3>
+        <h4>5.1. OBLICZENIA SPRAWDZAJĄCE KRÓĆCE wg DT-UC-90/WO-O/01</h4>
+        <p>Dane wejściowe:</p>
+        <ul>
+            <li>Ciśnienie obliczeniowe: 3,0 MPa</li>
+            <li>Temperatura obliczeniowa: 418 °C</li>
+            <li>Granica plastyczności: R<sub>e</sub><sup>t=20°C</sup> = 160MPa<br>
+            R<sub>e</sub><sup>t=418°C</sup> = 52,5MPa</li>
+        </ul>
+
+        <div class="formula">
+            R<sub>e</sub><sup>t=418°C</sup> = A · R<sub>e</sub><sup>t=20°C</sup> = [ 1,019 – 0,09 (t<sub>o</sub>/100) – 0,018 (t<sub>o</sub>/100)<sup>2</sup> ] · R<sub>e</sub><sup>t=20°C</sup><br><br>
+            R<sub>e</sub><sup>t=418°C</sup> = [ 1,019 – 0,09 (418/100) – 0,018 (418/100)<sup>2</sup> ] · 160 = 52,5MPa
+        </div>
+
+        <ul>
+            <li>Współczynnik bezpieczeństwa: x = 1,8</li>
+            <li>Naprężenia dopuszczalne: k = 29,2MPa</li>
+        </ul>
+
+        <div class="formula">
+            k = R<sub>e</sub><sup>t=418°C</sup> / x = 52,5 / 1,8 = 29,2MPa
+        </div>
+
+        <ul>
+            <li>Współczynnik wytrzymałościowy: z = 0,9</li>
+            <li>Nadatek grubości ścianki: C<sub>1</sub> = 0,4</li>
+            <li>Nadatek grubości ścianki na ścienienie się jej pod wpływem działań mechanicznych i chemicznych: C<sub>2</sub> = 1</li>
+            <li>Nadatek grubości ze względu na występowanie dodatkowych naprężeń: C<sub>3</sub> = 0</li>
+        </ul>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 5/32 — Króciec 1
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 5/32</td>
+            </tr>
+        </table>
+
+        <h4>Króciec 1:</h4>
+        <p>Wymiary:</p>
+        <p>φ24x5 &nbsp;&nbsp;&nbsp; D<sub>z</sub> = 24mm<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D<sub>w</sub> = 14mm<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g<sub>n</sub> = 5mm</p>
+
+        <p>- Współczynnik β:</p>
+        <div class="formula">
+            β = D<sub>z</sub> / (D<sub>z</sub> - 2g<sub>n</sub>) = 24 / (24 - (2·5)) = 1,75 ⇒ α = 1,082
+        </div>
+
+        <p><strong>Obliczenia grubości ścianki:</strong></p>
+        <p>- grubość obliczeniowa</p>
+        <div class="formula">
+            g<sub>o</sub> = (p<sub>o</sub> · D<sub>w</sub>) / ( (2,3/α) · k · z - p<sub>o</sub> )<br><br>
+            g<sub>o</sub> = (3,0 · 14) / ( (2,3/1,082) · 29,2 · 0,9 - 3,0 ) = 0,8mm
+        </div>
+
+        <p>- najmniejsza wymagana grubość ścianki</p>
+        <div class="formula">
+            g = g<sub>o</sub> + C<sub>2</sub> + C<sub>3</sub><br>
+            g = 0,8 + 1 + 0 = 1,8mm
+        </div>
+
+        <p>- nominalna grubość wyrobu hutniczego</p>
+        <div class="formula">
+            g<sub>n</sub> ≥ g + C<sub>1</sub><br>
+            g<sub>n</sub> ≥ 1,8 + 0,4 = 2,2mm
+        </div>
+        <p style="float: right; margin-top: -40px;">przyjęto g<sub>n</sub> = 5mm</p>
+        <div style="clear: both;"></div>
+
+        <p>- rzeczywista grubość ścianki</p>
+        <div class="formula">
+            g<sub>rz</sub> = g<sub>n</sub> - C<sub>1</sub><br>
+            g<sub>rz</sub> = 5 - 0,4 = 4,6mm
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 9/32 — Płaszcz komory parowej
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 9/32</td>
+            </tr>
+        </table>
+
+        <h4>5.2. OBLICZENIA SPRAWDZAJĄCE PŁASZCZ KOMORY PAROWEJ<br>wg DT-UC-90/WO-O/01</h4>
+        <p>Dane wejściowe:</p>
+        <ul>
+            <li>Ciśnienie obliczeniowe: 3,0 MPa</li>
+            <li>Temperatura obliczeniowa: 418°C</li>
+            <li>Materiał: B41K (St41K)</li>
+            <li>Granica plastyczności: R<sub>e</sub><sup>t=418°C</sup> = 118MPa</li>
+            <li>Współczynnik bezpieczeństwa: x = 1,65</li>
+            <li>Naprężenia dopuszczalne: k = 65,5MPa</li>
+        </ul>
+
+        <div class="formula">
+            k = R<sub>e</sub><sup>t=418°C</sup> / x = 118 / 1,65 = 71,5MPa
+        </div>
+
+        <ul>
+            <li>Nadatek grubości ścianki: C<sub>1</sub> = 1</li>
+            <li>Nadatek grubości ścianki na ścienienie się jej pod wpływem działań mechanicznych i chemicznych: C<sub>2</sub> = 1</li>
+            <li>Nadatek grubości ze względu na występowanie dodatkowych naprężeń: C<sub>3</sub> = 0</li>
+        </ul>
+
+        <p>Wymiary:</p>
+        <p>D<sub>z</sub> = 1600mm<br>
+        D<sub>w</sub> = 1540mm<br>
+        g<sub>n</sub> = 30mm</p>
+
+        <p>Współczynnik β:</p>
+        <div class="formula">
+            β = D<sub>z</sub> / (D<sub>z</sub> - 2g<sub>n</sub>) = 1600 / (1600 - (2·30)) = 1,04 ⇒ α = 1
+        </div>
+
+        <p>Wyznaczenie współczynnika wytrzymałościowego z:</p>
+        <p>Współczynnik wytrzymałościowy wynika z najmniejszej wartości współczynnika wytrzymałościowego dla pojedynczego otworu z<sub>o</sub></p>
+
+        <div class="formula">
+            ω = d / √(D<sub>z</sub> · g<sub>rz</sub>)<br><br>
+            d = 139mm
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 10/32
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 10/32</td>
+            </tr>
+        </table>
+
+        <div class="formula-box">
+            g<sub>rz</sub> = g<sub>n</sub> - C<sub>1</sub> = 29,0mm<br><br>
+            ω = <span class="fraction"><span class="top">139</span><span class="bottom">√(1600 · 29)</span></span> = 0,64<br><br>
+            ω = 0,64 ⇒ z<sub>o</sub> = 0,78<br><br>
+            z<sub>o</sub> = z
+        </div>
+
+        <p><strong>Obliczenia grubości ścianki:</strong></p>
+        <p>- grubość obliczeniowa</p>
+        <div class="formula-box">
+            g<sub>o</sub> = <span class="fraction"><span class="top">p<sub>o</sub> · D<sub>z</sub></span><span class="bottom">(2,3/α) · k · z + p<sub>o</sub></span></span><br><br>
+            g<sub>o</sub> = <span class="fraction"><span class="top">3,0 · 1600</span><span class="bottom">(2,3/1) · 71,5 · 1 + 3,0</span></span> = 28,66mm
+        </div>
+        <p style="text-align: right; margin-top: -30px;">przyjęto g<sub>n</sub> = 30mm</p>
+
+        <p><strong>UWAGA:</strong> Do obliczeń przyjęto z=1. Wymagania odnośnie badań płaszcza komory parowej wg punktu 6.</p>
+
+        <h4>5.3. OBLICZENIA SPRAWDZAJĄCE ŚREDNICE NIE WYMAGAJĄCE WZMOCNIENIA wg DT-UC-90/WO-O/18</h4>
+        <p>- Rzeczywisty współczynnik wytrzymałościowy elementu osłabionego otworem:</p>
+        <div class="formula-box">
+            z<sub>rz</sub> = <span class="fraction"><span class="top">p<sub>o</sub>(D<sub>w</sub> + g<sub>rz</sub> - C<sub>2</sub>)</span><span class="bottom">(2,3/α) · k · (g<sub>rz</sub> - C<sub>2</sub>)</span></span> = <span class="fraction"><span class="top">3(1540 + 30 - 0)</span><span class="bottom">(2,3/1) · 71,5 · (30 - 0)</span></span> = 0,95
+        </div>
+
+        <p>- Obliczenia największego otworu nie wymagającego wzmocnienia:</p>
+        <div class="formula-box">
+            d = 8,1 · ∛[D<sub>w</sub>(g<sub>rz</sub> - C<sub>2</sub>)(1 - z<sub>rz</sub>)]<br><br>
+            d = 8,1 · ∛[1540(30 - 0)(1 - 0,95)] = 107mm<br><br>
+            d = 0,35 D<sub>z</sub> = 0,35 · 1600 = 560mm<br><br>
+            d = 200mm
+        </div>
+        <p>Wybrano najmniejszą wartość d=107mm, zatem otwór φ159 wymaga obliczeń dodatkowego wzmocnienia.</p>
+
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 11/32 — Wzmocnienie otworu
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 11/32</td>
+            </tr>
+        </table>
+
+        <h4>5.4. OBLICZENIA SPRAWDZAJĄCE WZMOCNIENIA OTWORU wg DT-UC-90/WO-O/18</h4>
+        <p><strong>Dane wejściowe - otwór φ159x7:</strong></p>
+        <table class="data-table">
+            <tr><td>- Ciśnienie obliczeniowe</td><td>3,0 MPa</td></tr>
+            <tr><td>- Temperatura obliczeniowa</td><td>418°C</td></tr>
+            <tr><td>- średnica zewnętrzna</td><td>d<sub>z</sub>=159mm</td></tr>
+            <tr><td>- średnica wewnętrzna</td><td>d<sub>w</sub>=139mm</td></tr>
+            <tr><td>- nominalna grubość ścianki</td><td>g<sub>n</sub>=10mm</td></tr>
+            <tr><td>- rzeczywista grubość ścianki</td><td>g<sub>rz</sub>=9,6mm</td></tr>
+            <tr><td>- grubość nakładki wzmacniającej</td><td>g<sub>w</sub>=30mm</td></tr>
+            <tr><td>- materiał króćca</td><td>NN</td></tr>
+            <tr><td>- granica plastyczności</td><td>R<sub>e</sub><sup>t=418°C</sup> = 52,5MPa</td></tr>
+            <tr><td>- współczynnik bezpieczeństwa</td><td>x=1,8</td></tr>
+            <tr><td>- naprężenia dopuszczalne</td><td>k=29,2MPa</td></tr>
+            <tr><td>- grubość obliczeniowa</td><td>g<sub>o</sub><sup>kr</sup> = 2mm</td></tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczeniowa grubość ścianki płaszcza przy z=1:</p>
+        <div class="formula-box">
+            g<sub>o</sub> = <span class="fraction"><span class="top">p<sub>o</sub> · D<sub>z</sub></span><span class="bottom">(2,3/α) · k · z + p<sub>o</sub></span></span> = <span class="fraction"><span class="top">3 · 1600</span><span class="bottom">(2,3/1) · 71,5 · 1 + 3</span></span> = 28,66mm
+        </div>
+
+        <p>- Pole powierzchni przekroju materiału straconego</p>
+        <div class="formula-box">
+            F<sub>str</sub> = (d<sub>w</sub> - 2C<sub>2</sub>) · g<sub>o</sub><br><br>
+            F<sub>str</sub> = (139 - 2·1) · 28,66 = 3926,4mm<sup>2</sup>
+        </div>
+
+        <p>- Obliczenia wartości pomocniczych</p>
+        <div class="formula-box">
+            h = 2,5g<sub>rz</sub> = 2,5 · 9,6 = 24mm<br><br>
+            Δg<sub>kr</sub> = g<sub>rz</sub> - g<sub>o</sub><sup>kr</sup> - C<sub>2</sub> = 9,6 - 2 - 1 = 6,6mm<br><br>
+            Δg = g<sub>rz</sub> - g<sub>o</sub> = 30 - 28,66 = 1,34mm<br><br>
+            2b' = d<sub>w</sub> - 2g<sub>rz</sub> = 139 - 2·9,6 = 119,8mm
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 12/32 — Pole wzmocnienia + dennica
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 12/32</td>
+            </tr>
+        </table>
+
+        <p>Obliczenie pola powierzchni materiału wzmocnionego:</p>
+        <div class="formula-box">
+            F<sub>wzm</sub> = F<sub>1</sub> + F<sub>2</sub> + F<sub>3</sub> + F<sub>sp</sub>' + F<sub>sp</sub>''<br><br>
+            F<sub>1</sub> = 2b' · Δg = 119,8 · 1,34 = 160,5mm<sup>2</sup><br><br>
+            F<sub>2</sub> = 2(h + Δg)Δg<sub>w</sub> = 2 · (24 + 1,34) · 6,6 = 334,5mm<sup>2</sup><br><br>
+            F<sub>3</sub> = 2b' · Δg<sub>w</sub> = 119,8 · 30 = 3594mm<sup>2</sup><br><br>
+            F<sub>4</sub> = 2 · Δg<sub>w</sub> · h<sub>p</sub> = 2 · 6,6 · 8 = 105,6<br><br>
+            F<sub>sp</sub>' + F<sub>sp</sub>'' = (g<sub>rz</sub>)<sup>2</sup> = (9,6)<sup>2</sup> = 92mm<sup>2</sup><br><br>
+            F<sub>wzm</sub> = 160,5 + 334,5 + 3594 + 105,6 + 92 = 4286,6mm<sup>2</sup>
+        </div>
+
+        <p>- Sprawdzenie warunku prawidłowości wzmocnienia otworu</p>
+        <div class="formula-box">
+            F<sub>wzm</sub> > F<sub>str</sub> &nbsp;&nbsp;&nbsp;&nbsp; 4286,6mm<sup>2</sup> > 3926,4mm<sup>2</sup>
+        </div>
+        <p>Otwór jest wzmocniony prawidłowo.</p>
+
+        <h4>5.5. OBLICZENIA SPRAWDZAJĄCE DENNICĘ KOMORY PAROWEJ wg DT-UC-90/WO-O/08</h4>
+        <p><strong>Dane wejściowe:</strong></p>
+        <table class="data-table">
+            <tr><td>- Ciśnienie obliczeniowe</td><td>3,0 MPa</td></tr>
+            <tr><td>- Temperatura obliczeniowa</td><td>418 °C</td></tr>
+            <tr><td>- Materiał</td><td>B41K (St41K)</td></tr>
+            <tr><td>- Granica plastyczności</td><td>R<sub>e</sub><sup>t=418°C</sup> = 118MPa</td></tr>
+            <tr><td>- Współczynnik bezpieczeństwa</td><td>x = 1,4</td></tr>
+            <tr><td>- Naprężenia dopuszczalne</td><td>k = 76,1MPa</td></tr>
+        </table>
+        <div class="formula-box">
+            k = <span class="fraction"><span class="top">R<sub>e</sub><sup>t=418°C</sup></span><span class="bottom">x</span></span> = <span class="fraction"><span class="top">118</span><span class="bottom">1,4</span></span> = 84,3MPa
+        </div>
+
+        <table class="data-table">
+            <tr><td>- Nadatek grubości ścianki</td><td>C<sub>1</sub> = 1</td></tr>
+            <tr><td>- Nadatek eksploatacyjny</td><td>C<sub>2</sub> = 2</td></tr>
+            <tr><td colspan="2"><strong>Dane dennicy:</strong></td></tr>
+            <tr><td>- Średnica zewnętrzna dna</td><td>D<sub>z</sub> = 1600mm</td></tr>
+            <tr><td>- Zewnętrzna wysokość wyoblonej części dna</td><td>H<sub>z</sub> = 585mm</td></tr>
+            <tr><td>- Przyjęta nominalna grubość dna</td><td>g<sub>n</sub> = 36mm</td></tr>
+            <tr><td>- Średnica otworu w dnie</td><td>d = 100mm</td></tr>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 13/32 — Obliczenia dennicy
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 13/32</td>
+            </tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Rzeczywista grubość wyoblonej części dna</p>
+        <div class="formula-box">
+            g<sub>rz</sub><sup>w</sup> = g<sub>n</sub> - C<sub>1</sub> = 36 - 1 = 35mm
+        </div>
+
+        <p>- Wskaźnik osłabienia dna przez otwór</p>
+        <div class="formula-box">
+            ω = <span class="fraction"><span class="top">d</span><span class="bottom">√(D<sub>z</sub> · g<sub>rz</sub><sup>w</sup>)</span></span> = <span class="fraction"><span class="top">100</span><span class="bottom">√(1600 · 35)</span></span> = 0,42
+        </div>
+
+        <p>- Dla <span class="fraction"><span class="top">H<sub>z</sub></span><span class="bottom">D<sub>z</sub></span></span> = <span class="fraction"><span class="top">585</span><span class="bottom">1600</span></span> = 0,36 oraz ω = 0,42 ⇒ współczynnik wytrzymałościowy wypukłej części dana wynosi y<sub>w</sub> = 1,42</p>
+
+        <p>- Obliczeniowa grubość wypukłej części dna</p>
+        <div class="formula-box">
+            g<sub>o</sub><sup>w</sup> = <span class="fraction"><span class="top">D<sub>z</sub> · p<sub>o</sub> · y<sub>w</sub></span><span class="bottom">4 · k</span></span> = <span class="fraction"><span class="top">1600 · 3,0 · 1,42</span><span class="bottom">4 · 84,3</span></span> = 20,2mm
+        </div>
+
+        <p>- Najmniejsza wymagana grubość ścianki</p>
+        <div class="formula-box">
+            g = g<sub>o</sub><sup>w</sup> + C<sub>2</sub> + C<sub>3</sub> = 20,2 + 2 + 0 = 22,2mm
+        </div>
+
+        <p>- Nominalna grubość ścianki</p>
+        <div class="formula-box">
+            g<sub>n</sub> ≥ g + C<sub>1</sub><br><br>
+            g<sub>n</sub> ≥ 22,2 + 1 = 23,2mm
+        </div>
+        <p style="text-align: right; margin-top: -30px;">przyjęto g<sub>n</sub> = 36mm</p>
+
+        <p>- Rzeczywista grubość ścianki</p>
+        <div class="formula-box">
+            g<sub>rz</sub> = g<sub>n</sub> - C<sub>1</sub><br><br>
+            g<sub>rz</sub> = 36 - 1 = 35mm
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 14/32 — Połączenia śrubowo-kołnierzowe — dane ogólne
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 14/32</td>
+            </tr>
+        </table>
+
+        <h4>5.6. OBLICZENIA POŁĄCZEŃ ŚRUBOWO-KOŁNIERZOWYCH wg DT-UC-90/WO-O/19</h4>
+        <p><strong>Dane ogólne:</strong></p>
+        <table class="data-table">
+            <tr><td>- Ciśnienie obliczeniowe</td><td>p<sub>o</sub>=3,0 MPa</td></tr>
+            <tr><td>- Temperatura obliczeniowa</td><td>t<sub>o</sub>=398°C</td></tr>
+            <tr><td>- Materiał</td><td>St4S</td></tr>
+            <tr><td>- Wsp. bezp.: dla montażowego naciągu śrub</td><td>x<sub>1</sub>=1,3</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dla ruchowego naciągu śrub</td><td>x<sub>2</sub>=1,55</td></tr>
+            <tr><td>- Granica plastyczności w temp. St4S</td><td>R<sub>e</sub><sup>t=20°C</sup> = 255MPa<br>R<sub>e</sub><sup>t=398°C</sup> = 95,7MPa</td></tr>
+        </table>
+
+        <div class="formula-box">
+            R<sub>e</sub><sup>t=398°C</sup> = A · R<sub>e</sub><sup>t=20°C</sup> = [1,019 - 0,09(t<sub>o</sub>/100) - 0,018(t<sub>o</sub>/100)<sup>2</sup>] · R<sub>e</sub><sup>t=20°C</sup><br><br>
+            R<sub>e</sub><sup>t=398°C</sup> = [1,019 - 0,09(398/100) - 0,018(398/100)<sup>2</sup>] · 255 = 95,7MPa
+        </div>
+
+        <p>- Naprężenia dopuszczalne dla: St4S</p>
+        <div class="formula-box">
+            k<sub>1</sub> = <span class="fraction"><span class="top">R<sub>e</sub></span><span class="bottom">x<sub>1</sub></span></span> = 196MPa<br><br>
+            k<sub>2</sub> = <span class="fraction"><span class="top">R<sub>et</sub></span><span class="bottom">x<sub>2</sub></span></span> = 61,7MPa
+        </div>
+
+        <p>- Śruby <span style="float: right; text-align: right; font-size: 0.9em;">brak danych przyjęto do<br>obliczeń 15HM</span></p>
+        <table class="data-table" style="clear: both;">
+            <tr><td>- Temperatura obliczeniowa dla śrub</td><td>t<sub>o</sub>=398°C</td></tr>
+            <tr><td>- Wsp. bezp. dla śrub: dla montażowego naciągu</td><td>x<sub>1</sub>=1,1</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dla ruchowego naciągu</td><td>x<sub>2</sub>=1,5</td></tr>
+            <tr><td>- Granica plastyczności w temp.</td><td>R<sub>e</sub><sup>t=20°C</sup> = 300MPa<br>R<sub>e</sub><sup>t=398°C</sup> = 210MPa</td></tr>
+        </table>
+
+        <p>- Naprężenia dopuszczalne</p>
+        <div class="formula-box">
+            k<sub>1</sub> = <span class="fraction"><span class="top">R<sub>e</sub></span><span class="bottom">x<sub>1</sub></span></span> = 272,7MPa<br><br>
+            k<sub>2</sub> = <span class="fraction"><span class="top">R<sub>et</sub></span><span class="bottom">x<sub>2</sub></span></span> = 140MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 15/32 — Króciec 1 DN15
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 15/32</td>
+            </tr>
+        </table>
+
+        <p><strong>UWAGA:</strong><br>
+        Z powodu braku (wycofania) norm PN/H-74342 i PN/H-74371 podanych w dokumentacji do obliczeń przyjęto wymiary kołnierzy wpust – wypust zgodnie z normami PN/H-74307 i PN/H-74710/07.</p>
+
+        <h4>Króciec 1 DN15:</h4>
+        <table class="data-table">
+            <tr><td>- średnica zew. kołnierza</td><td>D<sub>z</sub>=105mm</td></tr>
+            <tr><td>- średnica wew.</td><td>D<sub>w</sub>=13,6mm</td></tr>
+            <tr><td>- średnica zew. rury</td><td>D<sub>z</sub>=20mm</td></tr>
+            <tr><td>- grubość nominalna szyjki</td><td>g<sub>n</sub>=3,2mm</td></tr>
+            <tr><td>- ilość śrub</td><td>n<sub>s</sub>=4</td></tr>
+            <tr><td>- rodzaj śruby</td><td>M12</td></tr>
+            <tr><td>- średnica rdzenia śruby</td><td>d<sub>s</sub>=9,698mm</td></tr>
+            <tr><td>- dokładność gwintu</td><td>ψ=1</td></tr>
+            <tr><td>- średnica osi otworów pod śruby</td><td>D<sub>0</sub>=75mm</td></tr>
+            <tr><td>- średnica otworów pod śruby</td><td>d<sub>0</sub>=14mm</td></tr>
+            <tr><td>- wysokość kryzy</td><td>h=18mm</td></tr>
+            <tr><td>- Nr konstrukcji uszczelnienia</td><td>6</td></tr>
+            <tr><td>- Średnica uszczelnienia</td><td>D<sub>r</sub>=39mm</td></tr>
+            <tr><td>- Współczynnik</td><td>b=2</td></tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczenie sił naciągu śrub</p>
+        <p>wartość sił ruchowego naciągu śrub</p>
+        <div class="formula-box">
+            D<sub>u</sub> = <span class="fraction"><span class="top">D<sub>r</sub> + D<sub>w</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">39 + 13,6</span><span class="bottom">2</span></span> = 26,3mm<br><br>
+            U<sub>cz</sub> = 3,47√U = 3,47√(<span class="fraction"><span class="top">D<sub>r</sub> - D<sub>w</sub></span><span class="bottom">2</span></span>) = 3,47√(<span class="fraction"><span class="top">39 - 13,6</span><span class="bottom">2</span></span>) = 12,4mm<br><br>
+            σ<sub>r</sub> = 5p<sub>o</sub> = 5x3,0 = 15MPa<br><br>
+            P = <span class="fraction"><span class="top">πD<sub>u</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx26,3<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 1684N<br><br>
+            S = πD<sub>u</sub>U<sub>cz</sub>σ<sub>r</sub> = πx26,3x12,4x15 = 15880N<br><br>
+            N<sub>r</sub> = P + bS = 1684 + 2x15880 = 33445N
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 16/32 — Króciec 1 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 16/32</td>
+            </tr>
+        </table>
+
+        <p>Wartość sił montażowego naciągu śrub</p>
+        <div class="formula-box">
+            N<sub>m1</sub> = πD<sub>u</sub>U<sub>cz</sub>σ<sub>m</sub> = πx26,3x12,4x21 = 21515N<br><br>
+            N<sub>m2</sub> = CN<sub>r</sub> = 1,2x33445 = 40134N<br><br>
+            N<sub>m</sub> = max(N<sub>m1</sub>; N<sub>m2</sub>) = 40134N
+        </div>
+
+        <p>- Obliczenie średnicy rdzenia śruby</p>
+        <div class="formula-box">
+            d<sub>sm</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>m</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>1</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">40134</span><span class="bottom">1x4x272,7</span></span>) = 6,85mm<br><br>
+            d<sub>sr</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>r</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>2</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">33445</span><span class="bottom">1x4x140</span></span>) = 8,73mm
+        </div>
+        <p>wymagana średnica śrub = max(d<sub>sr</sub>; d<sub>sm</sub>) = 8,73 ≤ d<sub>s</sub> = 9,698mm</p>
+
+        <p>- Naprężenia zastępcze w kryzie</p>
+        <p>przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>m</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x40134x(75 - 13,6 - 2x9,2)</span><span class="bottom">πx(105 - 2x14)x18<sup>2</sup></span></span> = 44,03MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>kr</sub> = <span class="fraction"><span class="top">2N<sub>r</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x33445x(75 - 13,6 - 2x9,2)</span><span class="bottom">πx(105 - 2x14)x18<sup>2</sup></span></span> = 36,7MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>naprężenia zastępcze w szyjce przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sm</sub> = <span class="fraction"><span class="top">M<sub>zm</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">977262,9</span><span class="bottom">25946</span></span> = 37,66MPa<br><br>
+            M<sub>zm</sub> = N<sub>m</sub>a<sub>u</sub> = 40134x24,35 = 977262,9Nmm<br><br>
+            σ<sub>sm</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sr</sub> = <span class="fraction"><span class="top">M<sub>zr</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">820447,8</span><span class="bottom">25946</span></span> = 31,6MPa<br><br>
+            M<sub>zr</sub> = N<sub>r</sub>a<sub>u</sub> + P(a<sub>n</sub> - a<sub>u</sub>) + P<sub>e</sub>(a<sub>e</sub> - a<sub>n</sub>) = 33445x24,35 + 1684(27,53 - 24,35) + 450,3(29,1 - 27,53) = 820447,8Nmm<br><br>
+            σ<sub>sr</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 17/32 — Króciec 2 DN40
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 17/32</td>
+            </tr>
+        </table>
+
+        <p>obliczenie wartości występujących w powyższych wzorach</p>
+        <div class="formula-box">
+            P<sub>e</sub> = <span class="fraction"><span class="top">πD<sub>w</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx13,6<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 450,3N<br><br>
+            a<sub>u</sub> = 0,5(D<sub>o</sub> - D<sub>u</sub>) = 0,5x(75 - 26,3) = 24,35mm<br><br>
+            a<sub>n</sub> = 0,25(2D<sub>o</sub> - D<sub>u</sub> - D<sub>w</sub>) = 0,25x(2x75 - 26,3 - 13,6) = 27,53mm<br><br>
+            a<sub>e</sub> = 0,5(D<sub>o</sub> - D<sub>w</sub> - g) = 0,5x(75 - 13,6 - 3,2) = 29,1mm
+        </div>
+        <p>W = 25946mm<sup>3</sup> wg PN/H-74710/08</p>
+
+        <h4>Króciec 2 DN40:</h4>
+        <table class="data-table">
+            <tr><td>- średnica zew. kołnierza</td><td>D<sub>z</sub>=170mm</td></tr>
+            <tr><td>- średnica wew.</td><td>D<sub>w</sub>=41,1mm</td></tr>
+            <tr><td>- średnica zew. rury</td><td>D<sub>z</sub>=48,3mm</td></tr>
+            <tr><td>- grubość nominalna szyjki</td><td>g<sub>n</sub>=3,6mm</td></tr>
+            <tr><td>- ilość śrub</td><td>n<sub>s</sub>=4</td></tr>
+            <tr><td>- rodzaj śruby</td><td>M20</td></tr>
+            <tr><td>- średnica rdzenia śruby</td><td>d<sub>s</sub>=16,712mm</td></tr>
+            <tr><td>- dokładność gwintu</td><td>ψ=1</td></tr>
+            <tr><td>- średnica osi otworów pod śruby</td><td>D<sub>0</sub>=125mm</td></tr>
+            <tr><td>- średnica otworów pod śruby</td><td>d<sub>0</sub>=22mm</td></tr>
+            <tr><td>- wysokość kryzy</td><td>h=23mm</td></tr>
+            <tr><td>- Nr konstrukcji uszczelnienia</td><td>6</td></tr>
+            <tr><td>- Średnica uszczelnienia</td><td>D<sub>r</sub>=75mm</td></tr>
+            <tr><td>- Współczynnik</td><td>b=2</td></tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczenie sił naciągu śrub</p>
+        <p>wartość sił ruchowego naciągu śrub</p>
+        <div class="formula-box">
+            D<sub>u</sub> = <span class="fraction"><span class="top">D<sub>r</sub> + D<sub>w</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">75 + 41,1</span><span class="bottom">2</span></span> = 58mm<br><br>
+            U<sub>cz</sub> = 3,47√U = 3,47√(<span class="fraction"><span class="top">D<sub>r</sub> - D<sub>w</sub></span><span class="bottom">2</span></span>) = 3,47√(<span class="fraction"><span class="top">75 - 41,1</span><span class="bottom">2</span></span>) = 14,3mm<br><br>
+            σ<sub>r</sub> = 5p<sub>o</sub> = 5x3,0 = 15MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 18/32 — Króciec 2 DN40 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 18/32</td>
+            </tr>
+        </table>
+
+        <div class="formula-box">
+            P = <span class="fraction"><span class="top">πD<sub>u</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx58<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 8190N<br><br>
+            S = πD<sub>u</sub>U<sub>cz</sub>σ<sub>r</sub> = πx58x14,3x15 = 40387N<br><br>
+            N<sub>r</sub> = P + bS = 8190 + 2x40387 = 88965N
+        </div>
+
+        <p>Wartość sił montażowego naciągu śrub</p>
+        <div class="formula-box">
+            N<sub>m1</sub> = πD<sub>u</sub>U<sub>cz</sub>σ<sub>m</sub> = πx58x14,3x21 = 54718N<br><br>
+            N<sub>m2</sub> = CN<sub>r</sub> = 1,2x88965 = 106758N<br><br>
+            N<sub>m</sub> = max(N<sub>m1</sub>; N<sub>m2</sub>) = 106758N
+        </div>
+
+        <p>- Obliczenie średnicy rdzenia śruby</p>
+        <div class="formula-box">
+            d<sub>sm</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>m</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>1</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">106758</span><span class="bottom">1x4x272,7</span></span>) = 11,2mm<br><br>
+            d<sub>sr</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>r</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>2</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">88965</span><span class="bottom">1x4x140</span></span>) = 14,25mm
+        </div>
+        <p>wymagana średnica śrub = max(d<sub>sr</sub>; d<sub>sm</sub>) = 14,25 ≤ d<sub>s</sub> = 16,712mm</p>
+
+        <p>- Naprężenia zastępcze w kryzie</p>
+        <p>przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>m</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x106758x(125 - 41,1 - 2x11,95)</span><span class="bottom">πx(170 - 2x22)x23<sup>2</sup></span></span> = 52,1MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>kr</sub> = <span class="fraction"><span class="top">2N<sub>r</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x88965x(125 - 41,1 - 2x11,95)</span><span class="bottom">πx(170 - 2x22)x23<sup>2</sup></span></span> = 43,4MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>naprężenia zastępcze w szyjce przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sm</sub> = <span class="fraction"><span class="top">M<sub>zm</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">3576393</span><span class="bottom">67194</span></span> = 53,22MPa<br><br>
+            M<sub>zm</sub> = N<sub>m</sub>a<sub>u</sub> = 106758x33,5 = 3576393Nmm<br><br>
+            σ<sub>sm</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 19/32 — Króciec 3 DN50
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 19/32</td>
+            </tr>
+        </table>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sr</sub> = <span class="fraction"><span class="top">M<sub>zr</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">3024802</span><span class="bottom">67194</span></span> = 45MPa<br><br>
+            M<sub>zr</sub> = N<sub>r</sub>a<sub>u</sub> + P(a<sub>n</sub> - a<sub>u</sub>) + P<sub>e</sub>(a<sub>e</sub> - a<sub>n</sub>) = 88965x33,5 + 8190(37,7 - 33,5) + 4113(40,15 - 37,7) = 3024802Nmm<br><br>
+            σ<sub>sr</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>obliczenie wartości występujących w powyższych wzorach</p>
+        <div class="formula-box">
+            P<sub>e</sub> = <span class="fraction"><span class="top">πD<sub>w</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx41,1<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 4113N<br><br>
+            a<sub>u</sub> = 0,5(D<sub>o</sub> - D<sub>u</sub>) = 0,5x(125 - 58) = 33,5mm<br><br>
+            a<sub>n</sub> = 0,25(2D<sub>o</sub> - D<sub>u</sub> - D<sub>w</sub>) = 0,25x(2x125 - 58 - 41,1) = 37,7mm<br><br>
+            a<sub>e</sub> = 0,5(D<sub>o</sub> - D<sub>w</sub> - g) = 0,5x(125 - 41,1 - 3,6) = 40,15mm
+        </div>
+        <p>W = 67194mm<sup>3</sup> wg PN/H-74710/08</p>
+
+        <h4>Króciec 3 DN50:</h4>
+        <table class="data-table">
+            <tr><td>- średnica zew. kołnierza</td><td>D<sub>z</sub>=180mm</td></tr>
+            <tr><td>- średnica wew.</td><td>D<sub>w</sub>=52,3mm</td></tr>
+            <tr><td>- średnica zew. rury</td><td>D<sub>z</sub>=60,3mm</td></tr>
+            <tr><td>- grubość nominalna szyjki</td><td>g<sub>n</sub>=4mm</td></tr>
+            <tr><td>- ilość śrub</td><td>n<sub>s</sub>=4</td></tr>
+            <tr><td>- rodzaj śruby</td><td>M20</td></tr>
+            <tr><td>- średnica rdzenia śruby</td><td>d<sub>s</sub>=16,712mm</td></tr>
+            <tr><td>- dokładność gwintu</td><td>ψ=1</td></tr>
+            <tr><td>- średnica osi otworów pod śruby</td><td>D<sub>0</sub>=135mm</td></tr>
+            <tr><td>- średnica otworów pod śruby</td><td>d<sub>0</sub>=22mm</td></tr>
+            <tr><td>- wysokość kryzy</td><td>h=23mm</td></tr>
+            <tr><td>- Nr konstrukcji uszczelnienia</td><td>6</td></tr>
+            <tr><td>- Średnica uszczelnienia</td><td>D<sub>r</sub>=83mm</td></tr>
+            <tr><td>- Współczynnik</td><td>b=2</td></tr>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 20/32 — Króciec 3 DN50 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 20/32</td>
+            </tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczenie sił naciągu śrub</p>
+        <p>wartość sił ruchowego naciągu śrub</p>
+        <div class="formula-box">
+            D<sub>u</sub> = <span class="fraction"><span class="top">D<sub>r</sub> + D<sub>w</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">83 + 52,3</span><span class="bottom">2</span></span> = 67,65mm<br><br>
+            U<sub>cz</sub> = 3,47√U = 3,47√(<span class="fraction"><span class="top">D<sub>r</sub> - D<sub>w</sub></span><span class="bottom">2</span></span>) = 3,47√(<span class="fraction"><span class="top">83 - 52,3</span><span class="bottom">2</span></span>) = 13,6mm<br><br>
+            σ<sub>r</sub> = 5p<sub>o</sub> = 5x3,0 = 15MPa<br><br>
+            P = <span class="fraction"><span class="top">πD<sub>u</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx67,65<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 11143N<br><br>
+            S = πD<sub>u</sub>U<sub>cz</sub>σ<sub>r</sub> = πx67,65x13,6x15 = 44801N<br><br>
+            N<sub>r</sub> = P + bS = 11143 + 2x44801 = 100745N
+        </div>
+
+        <p>Wartość sił montażowego naciągu śrub</p>
+        <div class="formula-box">
+            N<sub>m1</sub> = πD<sub>u</sub>U<sub>cz</sub>σ<sub>m</sub> = πx67,65x13,6x21 = 60698N<br><br>
+            N<sub>m2</sub> = CN<sub>r</sub> = 1,2x100745 = 120894N<br><br>
+            N<sub>m</sub> = max(N<sub>m1</sub>; N<sub>m2</sub>) = 120894N
+        </div>
+
+        <p>- Obliczenie średnicy rdzenia śruby</p>
+        <div class="formula-box">
+            d<sub>sm</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>m</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>1</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">120894</span><span class="bottom">1x4x272,7</span></span>) = 11,9mm<br><br>
+            d<sub>sr</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>r</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>2</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">100745</span><span class="bottom">1x4x140</span></span>) = 15,2mm
+        </div>
+        <p>wymagana średnica śrub = max(d<sub>sr</sub>; d<sub>sm</sub>) = 15,2 ≤ d<sub>s</sub> = 16,712mm</p>
+
+        <p>- Naprężenia zastępcze w kryzie</p>
+        <p>przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>m</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x120894x(135 - 52,3 - 2x14,85)</span><span class="bottom">πx(180 - 2x22)x23<sup>2</sup></span></span> = 56,7MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 21/32 — Króciec 3 DN50 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 21/32</td>
+            </tr>
+        </table>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>kr</sub> = <span class="fraction"><span class="top">2N<sub>r</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x100745x(135 - 52,3 - 2x14,85)</span><span class="bottom">πx(180 - 2x22)x23<sup>2</sup></span></span> = 47,2MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>naprężenia zastępcze w szyjce przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sm</sub> = <span class="fraction"><span class="top">M<sub>zm</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">4074123</span><span class="bottom">68631</span></span> = 59,4MPa<br><br>
+            M<sub>zm</sub> = N<sub>m</sub>a<sub>u</sub> = 120894x33,7 = 4074123Nmm<br><br>
+            σ<sub>sm</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sr</sub> = <span class="fraction"><span class="top">M<sub>zr</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">3450104</span><span class="bottom">68631</span></span> = 50,3MPa<br><br>
+            M<sub>zr</sub> = N<sub>r</sub>a<sub>u</sub> + P(a<sub>n</sub> - a<sub>u</sub>) + P<sub>e</sub>(a<sub>e</sub> - a<sub>n</sub>) = 100745x33,7 + 11143(37,5 - 33,7) + 6660(39,4 - 37,5) = 3450104Nmm<br><br>
+            σ<sub>sr</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>obliczenie wartości występujących w powyższych wzorach</p>
+        <div class="formula-box">
+            P<sub>e</sub> = <span class="fraction"><span class="top">πD<sub>w</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx52,3<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 6660N<br><br>
+            a<sub>u</sub> = 0,5(D<sub>o</sub> - D<sub>u</sub>) = 0,5x(135 - 67,65) = 33,7mm<br><br>
+            a<sub>n</sub> = 0,25(2D<sub>o</sub> - D<sub>u</sub> - D<sub>w</sub>) = 0,25x(2x135 - 67,65 - 52,3) = 37,5mm<br><br>
+            a<sub>e</sub> = 0,5(D<sub>o</sub> - D<sub>w</sub> - g) = 0,5x(135 - 52,3 - 4) = 39,4mm
+        </div>
+        <p>W = 68631mm<sup>3</sup> wg PN/H-74710/08</p>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 22/32 — Króciec 4 DN100
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 22/32</td>
+            </tr>
+        </table>
+
+        <h4>Króciec 4 DN100:</h4>
+        <table class="data-table">
+            <tr><td>- średnica zew. kołnierza</td><td>D<sub>z</sub>=250mm</td></tr>
+            <tr><td>- średnica wew.</td><td>D<sub>w</sub>=95,4mm</td></tr>
+            <tr><td>- średnica zew. rury</td><td>D<sub>z</sub>=108mm</td></tr>
+            <tr><td>- grubość nominalna szyjki</td><td>g<sub>n</sub>=6,3mm</td></tr>
+            <tr><td>- ilość śrub</td><td>n<sub>s</sub>=8</td></tr>
+            <tr><td>- rodzaj śruby</td><td>M24</td></tr>
+            <tr><td>- średnica rdzenia śruby</td><td>d<sub>s</sub>=20,054mm</td></tr>
+            <tr><td>- dokładność gwintu</td><td>ψ=1</td></tr>
+            <tr><td>- średnica osi otworów pod śruby</td><td>D<sub>0</sub>=200mm</td></tr>
+            <tr><td>- średnica otworów pod śruby</td><td>d<sub>0</sub>=26mm</td></tr>
+            <tr><td>- wysokość kryzy</td><td>h=27mm</td></tr>
+            <tr><td>- Nr konstrukcji uszczelnienia</td><td>6</td></tr>
+            <tr><td>- Średnica zew. uszczelnienia</td><td>D<sub>zu</sub>=135mm</td></tr>
+            <tr><td>- Średnica wew. uszczelnienia</td><td>D<sub>wu</sub>=111mm</td></tr>
+            <tr><td>- Współczynnik</td><td>b=2</td></tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczenie sił naciągu śrub</p>
+        <p>wartość sił ruchowego naciągu śrub</p>
+        <div class="formula-box">
+            D<sub>u</sub> = <span class="fraction"><span class="top">D<sub>zu</sub> + D<sub>wu</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">135 + 111</span><span class="bottom">2</span></span> = 123mm<br><br>
+            U<sub>cz</sub> = <span class="fraction"><span class="top">D<sub>zu</sub> - D<sub>wu</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">135 - 111</span><span class="bottom">2</span></span> = 12mm<br><br>
+            σ<sub>r</sub> = 5p<sub>o</sub> = 5x3,0 = 15MPa<br><br>
+            P = <span class="fraction"><span class="top">πD<sub>u</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx123<sup>2</sup></span><span class="bottom">4</span></span> x3,0 = 35,6kN<br><br>
+            S = πD<sub>u</sub>U<sub>cz</sub>σ<sub>r</sub> = πx123x12x15 = 69,6kN<br><br>
+            N<sub>r</sub> = P + bS = 35,6 + 2x69,6 = 174,8kN
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 23/32 — Króciec 4 DN100 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 23/32</td>
+            </tr>
+        </table>
+
+        <p>Wartość sił montażowego naciągu śrub</p>
+        <div class="formula-box">
+            N<sub>m1</sub> = πD<sub>u</sub>U<sub>cz</sub>σ<sub>m</sub> = πx123x12x21 = 97,4kN<br><br>
+            N<sub>m2</sub> = CN<sub>r</sub> = 1,2x174,8 = 209,8kN<br><br>
+            N<sub>m</sub> = max(N<sub>m1</sub>; N<sub>m2</sub>) = 209,8kN
+        </div>
+
+        <p>- Obliczenie średnicy rdzenia śruby</p>
+        <div class="formula-box">
+            d<sub>sm</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>m</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>1</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">209800</span><span class="bottom">1x8x272,7</span></span>) = 11,1mm<br><br>
+            d<sub>sr</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>r</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>2</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">174800</span><span class="bottom">1x8x140</span></span>) = 14,1mm
+        </div>
+        <p>wymagana średnica śrub = max(d<sub>sr</sub>; d<sub>sm</sub>) = 14,1 ≤ d<sub>s</sub> = 20,054mm</p>
+
+        <p>- Naprężenia zastępcze w kryzie</p>
+        <p>przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>m</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x209800x(200 - 95,4 - 2x18,3)</span><span class="bottom">πx(250 - 2x26)x27<sup>2</sup></span></span> = 62,92MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>kr</sub> = <span class="fraction"><span class="top">2N<sub>r</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x174800x(200 - 95,4 - 2x18,3)</span><span class="bottom">πx(250 - 2x26)x27<sup>2</sup></span></span> = 52,4MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>naprężenia zastępcze w szyjce przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sm</sub> = <span class="fraction"><span class="top">M<sub>zm</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">8077300</span><span class="bottom">128510</span></span> = 62,9MPa<br><br>
+            M<sub>zm</sub> = N<sub>m</sub>a<sub>u</sub> = 209800x38,5 = 8077300Nmm<br><br>
+            σ<sub>sm</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sr</sub> = <span class="fraction"><span class="top">M<sub>zr</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">7055840</span><span class="bottom">128510</span></span> = 54,9MPa<br><br>
+            M<sub>zr</sub> = N<sub>r</sub>a<sub>u</sub> + P(a<sub>n</sub> - a<sub>u</sub>) + P<sub>e</sub>(a<sub>e</sub> - a<sub>n</sub>) = 174800x38,5 + 35600(45,4 - 38,5) + 21440(49,15 - 45,4) = 7055840Nmm<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 24/32 — Króciec 5 DN150
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 24/32</td>
+            </tr>
+        </table>
+
+        <p>obliczenie wartości występujących w powyższych wzorach</p>
+        <div class="formula-box">
+            P<sub>e</sub> = <span class="fraction"><span class="top">πD<sub>w</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx95,4<sup>2</sup></span><span class="bottom">4</span></span> x3 = 21,44kN<br><br>
+            a<sub>u</sub> = 0,5(D<sub>o</sub> - D<sub>u</sub>) = 0,5x(200 - 123) = 38,5mm<br><br>
+            a<sub>n</sub> = 0,25(2D<sub>o</sub> - D<sub>u</sub> - D<sub>w</sub>) = 0,25x(2x200 - 123 - 95,4) = 45,4mm<br><br>
+            a<sub>e</sub> = 0,5(D<sub>o</sub> - D<sub>w</sub> - g) = 0,5x(200 - 95,4 - 6,3) = 49,15mm
+        </div>
+        <p>W = 128510mm<sup>3</sup> wg PN/H-74710/08</p>
+
+        <h4>Króciec 5 DN150:</h4>
+        <table class="data-table">
+            <tr><td>- średnica zew. kołnierza</td><td>D<sub>z</sub>=345mm</td></tr>
+            <tr><td>- średnica wew.</td><td>D<sub>w</sub>=144,8mm</td></tr>
+            <tr><td>- średnica zew. rury</td><td>D<sub>z</sub>=159mm</td></tr>
+            <tr><td>- grubość nominalna szyjki</td><td>g<sub>n</sub>=7,1mm</td></tr>
+            <tr><td>- ilość śrub</td><td>n<sub>s</sub>=8</td></tr>
+            <tr><td>- rodzaj śruby</td><td>M30</td></tr>
+            <tr><td>- średnica rdzenia śruby</td><td>d<sub>s</sub>=25,395mm</td></tr>
+            <tr><td>- dokładność gwintu</td><td>ψ=1</td></tr>
+            <tr><td>- średnica osi otworów pod śruby</td><td>D<sub>0</sub>=280mm</td></tr>
+            <tr><td>- średnica otworów pod śruby</td><td>d<sub>0</sub>=33mm</td></tr>
+            <tr><td>- wysokość kryzy</td><td>h=33mm</td></tr>
+            <tr><td>- Nr konstrukcji uszczelnienia</td><td>6</td></tr>
+            <tr><td>- Średnica zew. uszczelnienia</td><td>D<sub>zu</sub>=185mm</td></tr>
+            <tr><td>- Średnica wew. uszczelnienia</td><td>D<sub>wu</sub>=161mm</td></tr>
+            <tr><td>- Współczynnik</td><td>b=2</td></tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczenie sił naciągu śrub</p>
+        <p>wartość sił ruchowego naciągu śrub</p>
+        <div class="formula-box">
+            D<sub>u</sub> = <span class="fraction"><span class="top">D<sub>zu</sub> + D<sub>wu</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">185 + 161</span><span class="bottom">2</span></span> = 173mm<br><br>
+            U<sub>cz</sub> = <span class="fraction"><span class="top">D<sub>zu</sub> - D<sub>wu</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">185 - 161</span><span class="bottom">2</span></span> = 12mm<br><br>
+            σ<sub>r</sub> = 5p<sub>o</sub> = 5x3,0 = 15MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 25/32 — Króciec 5 DN150 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 25/32</td>
+            </tr>
+        </table>
+
+        <div class="formula-box">
+            P = <span class="fraction"><span class="top">πD<sub>u</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx173<sup>2</sup></span><span class="bottom">4</span></span> x3 = 70,5kN<br><br>
+            S = πD<sub>u</sub>U<sub>cz</sub>σ<sub>r</sub> = πx173x12x15 = 97,8kN<br><br>
+            N<sub>r</sub> = P + bS = 70,5 + 2x97,8 = 266,1kN
+        </div>
+
+        <p>Wartość sił montażowego naciągu śrub</p>
+        <div class="formula-box">
+            N<sub>m1</sub> = πD<sub>u</sub>U<sub>cz</sub>σ<sub>m</sub> = πx173x12x21 = 137kN<br><br>
+            N<sub>m2</sub> = CN<sub>r</sub> = 1,2x266,1 = 319,3kN<br><br>
+            N<sub>m</sub> = max(N<sub>m1</sub>; N<sub>m2</sub>) = 319,3kN
+        </div>
+
+        <p>- Obliczenie średnicy rdzenia śruby</p>
+        <div class="formula-box">
+            d<sub>sm</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>m</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>1</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">319300</span><span class="bottom">1x8x272,7</span></span>) = 13,7mm<br><br>
+            d<sub>sr</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>r</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>2</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">266100</span><span class="bottom">1x8x140</span></span>) = 17,4mm
+        </div>
+        <p>wymagana średnica śrub = max(d<sub>sr</sub>; d<sub>sm</sub>) = 20,3 ≤ d<sub>s</sub> = 25,395mm</p>
+
+        <p>- Naprężenia zastępcze w kryzie</p>
+        <p>przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>m</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x319300x(280 - 144,8 - 2x23,6)</span><span class="bottom">πx(345 - 2x33)x33<sup>2</sup></span></span> = 58,9MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>kr</sub> = <span class="fraction"><span class="top">2N<sub>r</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x266100x(280 - 144,8 - 2x23,6)</span><span class="bottom">πx(345 - 2x33)x33<sup>2</sup></span></span> = 49,1MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>naprężenia zastępcze w szyjce przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sm</sub> = <span class="fraction"><span class="top">M<sub>zm</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">17082550</span><span class="bottom">266644</span></span> = 64MPa<br><br>
+            M<sub>zm</sub> = N<sub>m</sub>a<sub>u</sub> = 319300x53,5 = 17082550Nmm<br><br>
+            σ<sub>sm</sub> ≤ k<sub>1</sub> = 196MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 26/32 — Króciec 5 DN150 — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 26/32</td>
+            </tr>
+        </table>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sr</sub> = <span class="fraction"><span class="top">M<sub>zr</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">1490385</span><span class="bottom">266644</span></span> = 55,9MPa<br><br>
+            M<sub>zr</sub> = N<sub>r</sub>a<sub>u</sub> + P(a<sub>n</sub> - a<sub>u</sub>) + P<sub>e</sub>(a<sub>e</sub> - a<sub>n</sub>) = 266100x53,5 + 70500(60,55 - 53,5) + 49400(64 - 60,55) = 14903805Nmm<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 61,7MPa
+        </div>
+
+        <p>obliczenie wartości występujących w powyższych wzorach</p>
+        <div class="formula-box">
+            P<sub>e</sub> = <span class="fraction"><span class="top">πD<sub>w</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx144,8<sup>2</sup></span><span class="bottom">4</span></span> x3 = 49,4kN<br><br>
+            a<sub>u</sub> = 0,5(D<sub>o</sub> - D<sub>u</sub>) = 0,5x(280 - 173) = 53,5mm<br><br>
+            a<sub>n</sub> = 0,25(2D<sub>o</sub> - D<sub>u</sub> - D<sub>w</sub>) = 0,25x(2x280 - 173 - 144,8) = 60,55mm<br><br>
+            a<sub>e</sub> = 0,5(D<sub>o</sub> - D<sub>w</sub> - g) = 0,5x(280 - 144,8 - 7,1) = 64mm
+        </div>
+        <p>W = 266644mm<sup>3</sup> wg PN/H-74710/08</p>
+
+        <h3>Kołnierz komory parowej:</h3>
+        <p><strong>Dane ogólne:</strong></p>
+        <table class="data-table">
+            <tr><td>- Ciśnienie obliczeniowe</td><td>p<sub>o</sub>=3,0 MPa</td></tr>
+            <tr><td>- Temperatura obliczeniowa</td><td>t<sub>o</sub>=398°C</td></tr>
+            <tr><td>- Materiał</td><td>R45</td></tr>
+            <tr><td>- Wsp. bezp.: dla montażowego naciągu śrub</td><td>x<sub>1</sub>=1,3</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dla ruchowego naciągu śrub</td><td>x<sub>2</sub>=1,55</td></tr>
+            <tr><td>- Granica plastyczności w temp.</td><td>R<sub>e</sub><sup>t=20°C</sup> = 260MPa<br>R<sub>e</sub><sup>t=398°C</sup> = 122MPa</td></tr>
+            <tr><td>- Naprężenia dopuszczalne dla:</td><td>k<sub>1</sub> = <span class="fraction"><span class="top">R<sub>e</sub></span><span class="bottom">x<sub>1</sub></span></span> = 200MPa<br><br>k<sub>2</sub> = <span class="fraction"><span class="top">R<sub>et</sub></span><span class="bottom">x<sub>2</sub></span></span> = 78,7MPa</td></tr>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 27/32 — Kołnierz komory parowej
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 27/32</td>
+            </tr>
+        </table>
+
+        <p>- Śruby <span style="float: right; text-align: right; font-size: 0.9em;">brak danych co do<br>materiału 40HMF przyjęto do obliczeń materiał 40H</span></p>
+        <table class="data-table" style="clear: both;">
+            <tr><td>- Temperatura obliczeniowa dla śrub</td><td>t<sub>o</sub>=398°C</td></tr>
+            <tr><td>- Wsp. bezp. dla śrub: dla montażowego naciągu</td><td>x<sub>1</sub>=1,1</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dla ruchowego naciągu</td><td>x<sub>2</sub>=1,5</td></tr>
+            <tr><td>- Granica plastyczności w temp.</td><td>R<sub>e</sub><sup>t=20°C</sup> = 650MPa<br>R<sub>e</sub><sup>t=398°C</sup> = 450MPa</td></tr>
+        </table>
+
+        <p>- Naprężenia dopuszczalne</p>
+        <div class="formula-box">
+            k<sub>1</sub> = <span class="fraction"><span class="top">R<sub>e</sub></span><span class="bottom">x<sub>1</sub></span></span> = 590MPa<br><br>
+            k<sub>2</sub> = <span class="fraction"><span class="top">R<sub>et</sub></span><span class="bottom">x<sub>2</sub></span></span> = 300MPa
+        </div>
+
+        <table class="data-table">
+            <tr><td>- średnica zew. kołnierza</td><td>D<sub>z</sub>=1930mm</td></tr>
+            <tr><td>- średnica wew.</td><td>D<sub>w</sub>=1540mm</td></tr>
+            <tr><td>- średnica zew. rury</td><td>D<sub>z</sub>=1600mm</td></tr>
+            <tr><td>- grubość nominalna szyjki</td><td>g<sub>n</sub>=30mm</td></tr>
+            <tr><td>- ilość śrub</td><td>n<sub>s</sub>=32</td></tr>
+            <tr><td>- rodzaj śruby</td><td>M48</td></tr>
+            <tr><td>- średnica rdzenia śruby</td><td>d<sub>s</sub>=41,421mm</td></tr>
+            <tr><td>- dokładność gwintu</td><td>ψ=0,75</td></tr>
+            <tr><td>- średnica osi otworów pod śruby</td><td>D<sub>0</sub>=1820mm</td></tr>
+            <tr><td>- średnica otworów pod śruby</td><td>d<sub>0</sub>=52mm</td></tr>
+            <tr><td>- wysokość kryzy</td><td>h=18mm</td></tr>
+            <tr><td>- Nr konstrukcji uszczelnienia</td><td>6</td></tr>
+            <tr><td>- Średnica zew. uszczelnienia</td><td>D<sub>zu</sub>=1560mm</td></tr>
+            <tr><td>- Średnica wew. uszczelnienia</td><td>D<sub>wu</sub>=1540mm</td></tr>
+            <tr><td>- Współczynnik</td><td>b=2</td></tr>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 28/32 — Rysunek kołnierza
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 28/32</td>
+            </tr>
+        </table>
+
+        <div style="border: 1px solid #ccc; padding: 20px; text-align: center; background-color: #fafafa;">
+            <p><em>[W tym miejscu w oryginalnym dokumencie znajduje się rysunek techniczny kołnierza komory parowej z wymiarami: D2=1724, Dz=1600, Dw=1540, do=52, h=100, 25, 150, 285, g=2, u=10, Du=1550, D7=1560, Do=1820, Dzk=1930]</em></p>
+        </div>
+
+        <p style="text-align: center; font-weight: bold; margin-top: 20px;">Rys. Kołnierz komory parowej</p>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 29/32 — Kołnierz komory parowej — obliczenia
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 29/32</td>
+            </tr>
+        </table>
+
+        <p><strong>Obliczenia:</strong></p>
+        <p>- Obliczenie sił naciągu śrub</p>
+        <p>wartość sił ruchowego naciągu śrub</p>
+        <div class="formula-box">
+            D<sub>u</sub> = <span class="fraction"><span class="top">D<sub>zu</sub> + D<sub>wu</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">1560 + 1540</span><span class="bottom">2</span></span> = 1550 mm<br><br>
+            U<sub>cz</sub> = <span class="fraction"><span class="top">D<sub>zu</sub> - D<sub>wu</sub></span><span class="bottom">2</span></span> = <span class="fraction"><span class="top">1560 - 1540</span><span class="bottom">2</span></span> = 10mm<br><br>
+            σ<sub>r</sub> = 5p<sub>o</sub> = 5x3,0 = 15MPa<br><br>
+            P = <span class="fraction"><span class="top">πD<sub>u</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx1550<sup>2</sup></span><span class="bottom">4</span></span> x3 = 5661kN<br><br>
+            S = πD<sub>u</sub>U<sub>cz</sub>σ<sub>r</sub> = πx1550x10x15 = 730,4kN<br><br>
+            N<sub>r</sub> = P + bS = 5661 + 2x730,4 = 7121,8kN
+        </div>
+
+        <p>Wartość sił montażowego naciągu śrub</p>
+        <div class="formula-box">
+            N<sub>m1</sub> = πD<sub>u</sub>U<sub>cz</sub>σ<sub>m</sub> = πx1550x10x21 = 1022,6kN<br><br>
+            N<sub>m2</sub> = CN<sub>r</sub> = 1,4x7121,8 = 9970,5kN<br><br>
+            N<sub>m</sub> = max(N<sub>m1</sub>; N<sub>m2</sub>) = 9970,5kN
+        </div>
+
+        <p>- Obliczenie średnicy rdzenia śruby</p>
+        <div class="formula-box">
+            d<sub>sm</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>m</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>1</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">9970500</span><span class="bottom">0,75x32x590</span></span>) = 29,98mm<br><br>
+            d<sub>sr</sub> = 1,13√(<span class="fraction"><span class="top">N<sub>r</sub></span><span class="bottom">ψ<sub>m</sub>k<sub>2</sub></span></span>) = 1,13√(<span class="fraction"><span class="top">7121800</span><span class="bottom">0,75x32x300</span></span>) = 35,54mm
+        </div>
+        <p>wymagana średnica śrub = max(d<sub>sr</sub>; d<sub>sm</sub>) = 35,54 ≤ d<sub>s</sub> = 41,421mm</p>
+
+        <p>- Naprężenia zastępcze w kryzie</p>
+        <p>przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>m</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x9970500x(1820 - 1540 - 2x92)</span><span class="bottom">πx(1930 - 2x52)x100<sup>2</sup></span></span> = 33,4MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>1</sub> = 200MPa
+        </div>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 30/32 — Kołnierz komory parowej — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 30/32</td>
+            </tr>
+        </table>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>km</sub> = <span class="fraction"><span class="top">2N<sub>r</sub>(D<sub>o</sub> - D<sub>w</sub> - 2g<sub>s</sub>)</span><span class="bottom">π(D<sub>zk</sub> - 2d<sub>o</sub>)h<sup>2</sup></span></span> = <span class="fraction"><span class="top">2x7121800x(1820 - 1540 - 2x92)</span><span class="bottom">πx(1930 - 2x52)x100<sup>2</sup></span></span> = 23,9MPa<br><br>
+            σ<sub>km</sub> ≤ k<sub>2</sub> = 78,7MPa
+        </div>
+
+        <p>naprężenia zastępcze w szyjce przy montażowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sm</sub> = <span class="fraction"><span class="top">M<sub>zm</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">1346x10<sup>6</sup></span><span class="bottom">11,51x10<sup>6</sup></span></span> = 117MPa<br><br>
+            M<sub>zm</sub> = N<sub>m</sub>a<sub>u</sub> = 9970500x135 = 1346x10<sup>6</sup> Nmm<br><br>
+            σ<sub>sm</sub> ≤ k<sub>1</sub> = 200MPa
+        </div>
+
+        <p>przy ruchowym naciągu śrub</p>
+        <div class="formula-box">
+            σ<sub>sr</sub> = <span class="fraction"><span class="top">M<sub>zr</sub></span><span class="bottom">W</span></span> = <span class="fraction"><span class="top">905,7x10<sup>6</sup></span><span class="bottom">11,51x10<sup>6</sup></span></span> = 78,6MPa<br><br>
+            M<sub>zr</sub> = N<sub>r</sub>a<sub>u</sub> + P(a<sub>n</sub> - a<sub>u</sub>) + P<sub>e</sub>(a<sub>e</sub> - a<sub>n</sub>) = 7121800x135 + 5661000(137,5 - 135) + 5588000(125 - 137,5) = 905,7x10<sup>6</sup> Nmm<br><br>
+            σ<sub>sr</sub> ≤ k<sub>2</sub> = 78,7MPa
+        </div>
+
+        <p>obliczenie wartości występujących w powyższych wzorach</p>
+        <div class="formula-box">
+            P<sub>e</sub> = <span class="fraction"><span class="top">πD<sub>w</sub><sup>2</sup></span><span class="bottom">4</span></span> p<sub>o</sub> = <span class="fraction"><span class="top">πx1540<sup>2</sup></span><span class="bottom">4</span></span> x3 = 5588N<br><br>
+            a<sub>u</sub> = 0,5(D<sub>o</sub> - D<sub>u</sub>) = 0,5x(1820 - 1550) = 135mm<br><br>
+            a<sub>n</sub> = 0,25(2D<sub>o</sub> - D<sub>u</sub> - D<sub>w</sub>) = 0,25x(2x1820 - 1550 - 1540) = 137,5mm<br><br>
+            a<sub>e</sub> = 0,5(D<sub>o</sub> - D<sub>w</sub> - g) = 0,5x(1820 - 1540 - 30) = 125mm
+        </div>
+        <p>W<sub>min</sub> = 11,51x10<sup>6</sup> mm<sup>3</sup></p>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 31/32 — Wnioski i zalecenia
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 31/32</td>
+            </tr>
+        </table>
+
+        <h3>6. WNIOSKI I ZALECENIA</h3>
+        <p>Podgrzewacz PWP – 2 może zostać dopuszczony do pracy na nowe parametry pod warunkiem spełnienia poniższych zaleceń:</p>
+
+        <p><strong>6.1.</strong> Należy przeprowadzić badania ultradźwiękowe zgodnie z normą PN/M-69777 „Klasyfikacja wadliwości złącz spawanych na podstawie wyników badań ultradźwiękowych". Badania wykonać dla spoin wzdłużnych i obwodowych płaszcza podgrzewacza. Jakość złącz spawanych wg Warunków technicznych Dozoru Technicznego „Wytwarzanie" DT-UT-90 WO-W/11 pkt. 2.4.</p>
+
+        <p><strong>6.2.</strong> Należy przeprowadzić badania grubości ścianki płaszcza. Grubość mierzona nie może być mniejsza od grubości obliczeniowej elementu.</p>
+
+        <p><strong>6.3.</strong> Należy sprawdzić grubość nakładki wzmacniającej na króćcu wlotowym pary (króciec φ159). Minimalna grubość nakładki wzmacniającej powinna wynosić g<sub>w</sub>=30mm. W przypadku stwierdzenia mniejszej grubości nakładki należy wykonać nową. Nakładkę wykonać z blachy St41K.</p>
+
+        <p><strong>6.4.</strong> Obliczenia połączeń śrubowo-kołnierzowych przeprowadzono dla śrub dokładnych wykonanych z materiału 15HM. Z powodu braku danych w dokumentacji należy sprawdzić istniejące śruby i w przypadku stwierdzenia śrub o niższej klasie własności mechanicznych należy:
+            <ul>
+                <li>wymienić je na śruby w wykonaniu dokładnym (A) z materiału 15HM lub 45</li>
+                <li>nakrętki w wykonaniu dokładnym z materiału 35</li>
+            </ul>
+        </p>
+
+        <p><strong>6.5.</strong> Śruby na połączeniu komory parowej i wodnej pozostawić zgodnie z dokumentacją.</p>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         STRONA 32/32 — Wnioski i zalecenia — cd.
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21271<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 32/32</td>
+            </tr>
+        </table>
+
+        <p><strong>6.6.</strong> Z powodu braku danych w dokumentacji o zastosowanych uszczelkach należy sprawdzić uszczelki i w przypadku stwierdzenia uszczelki o niższej klasie należy zmienić uszczelki na nowe. Dla wszystkich połączeń śrubowo-kołnierzowych komory parowej zastosować uszczelki spełniające następujące parametry:<br>
+        temperatura max – t<sub>max</sub>=398°C<br>
+        ciśnienie – p=3,0MPa.<br>
+        Przykładowa uszczelka: GRAFITOWA z wkładką metalową – POLONIT.</p>
+
+        <p><strong>6.7.</strong> Z powodu przekroczonych naprężeń dopuszczalnych dla kołnierza DN100 należy zastosować uszczelkę o wymiarach D<sub>z</sub>=135mm, D<sub>w</sub>=111mm, g=2mm i parametrach jak w p.6.6. Dopuszcza się zastosowanie uszczelek o grubości g=3mm.</p>
+
+        <p><strong>6.8.</strong> Z powodu przekroczonych naprężeń dopuszczalnych dla kołnierza DN150 należy zastosować uszczelkę o wymiarach: D<sub>z</sub>=185mm, D<sub>w</sub>=161mm, g=2mm. i parametrach jak w p.6.6. Dopuszcza się zastosowanie uszczelek o grubości g=3mm.</p>
+
+        <p><strong>6.9.</strong> Z powodu przekroczonych naprężeń dopuszczalnych dla kołnierza na połączeniu komory wodnej i parowej należy zastosować uszczelkę o wymiarach D<sub>z</sub>=1560mm, D<sub>w</sub>=1540mm, g=2mm i parametrach jak w p.6.6. Dopuszcza się zastosowanie uszczelek o grubości g=3mm.</p>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/T/400/T/450/21271</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ============================================================
+         LISTA ELEMENTÓW — Strona tytułowa 1/3
+         ============================================================ -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21350<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 1/3</td>
+            </tr>
+        </table>
+
+        <p><strong>Tytuł opracowania:</strong><br>
+        PW wykonania obliczeń wytrzymałościowych dla podgrzewaczy regeneracyjnych PNP1, PNP2, PWP1, PWP2 przy TZ4 w związku z modernizacją turbiny i zmianą parametrów pary upustowej.<br>
+        <strong>Zeszyt 4:</strong> Obliczenia wytrzymałościowe podgrzewacza PWP – 1 typ PWS 200 – 4 w obrębie turbozespołu TZ-4.<br>
+        <strong>Zamawiający:</strong> ZEC ŁÓDŹ S.A., 90-975 Łódź, ul. Andrzejewskiej 5<br>
+        <strong>Inwestor:</strong> ZEC ŁÓDŹ S.A., 90-975 Łódź, ul. Andrzejewskiej 5</p>
+
+        <hr style="margin: 40px 0;">
+        <h2 style="text-align: center;">LISTA ELEMENTÓW DLA PODGRZEWACZA PWP – 2</h2>
+        <hr style="margin: 40px 0;">
+
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/R/200/R/220/21350</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- LISTA ELEMENTÓW (Tabela 2/3) - POPRAWIONA -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21350<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 2/3</td>
+            </tr>
+        </table>
+
+        <h3 style="text-align: center;">LISTA ELEMENTÓW</h3>
+        <table class="bom-table">
+            <thead>
+                <tr>
+                    <th>Lp</th>
+                    <th>Poz.<br>wg rys.</th>
+                    <th>Wyszczególnienie</th>
+                    <th>Jedn.</th>
+                    <th>Ilość</th>
+                    <th>Mat.</th>
+                    <th>Norma<br>Nr rys.</th>
+                    <th>Masa [kg]<br>Jedn.</th>
+                    <th>Masa [kg]<br>Całk.</th>
+                    <th>Uwagi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td><td></td><td>Śruba dwustronna SA M12x70 - A</td><td>szt.</td><td>16</td><td>15HM</td><td>PN-68/<br>H-74302</td><td>0,044</td><td>0,70</td><td></td>
+                </tr>
+                <tr>
+                    <td>2</td><td></td><td>Śruba dwustronna SA M20x100 - A</td><td>szt.</td><td>12</td><td>15HM</td><td>PN-68/<br>H-74302</td><td>0,188</td><td>2,26</td><td></td>
+                </tr>
+                <tr>
+                    <td>3</td><td></td><td>Śruba dwustronna SA M24x120 - A</td><td>szt.</td><td>8</td><td>15HM</td><td>PN-68/<br>H-74302</td><td>0,31</td><td>2,48</td><td></td>
+                </tr>
+                <tr>
+                    <td>4</td><td></td><td>Śruba dwustronna SA M30x150 - A</td><td>szt.</td><td>8</td><td>15HM</td><td>PN-68/<br>H-74302</td><td>0,62</td><td>4,96</td><td></td>
+                </tr>
+                <tr>
+                    <td>5</td><td></td><td>Nakrętka T M12 - A</td><td>szt.</td><td>32</td><td>15HM</td><td>PN-68/<br>H-74303</td><td>0,028</td><td>0,90</td><td></td>
+                </tr>
+                <tr>
+                    <td>6</td><td></td><td>Nakrętka T M20 - A</td><td>szt.</td><td>24</td><td>15HM</td><td>PN-68/<br>H-74303</td><td>0,09</td><td>2,16</td><td></td>
+                </tr>
+                <tr>
+                    <td>7</td><td></td><td>Nakrętka T M24 - A</td><td>szt.</td><td>16</td><td>15HM</td><td>PN-68/<br>H-74303</td><td>0,127</td><td>2,03</td><td></td>
+                </tr>
+                <tr>
+                    <td>8</td><td></td><td>Nakrętka T M30 - A</td><td>szt.</td><td>16</td><td>15HM</td><td>PN-68/<br>H-74303</td><td>0,266</td><td>4,26</td><td></td>
+                </tr>
+                <tr>
+                    <td>9</td><td></td><td>Uszczelka DN15 PN40</td><td>szt.</td><td>4</td><td>POLONIT<br>GRAFITOWA<br>z wkładką metal.</td><td>PN-86/<br>H-74374/04</td><td></td><td></td><td></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/R/200/R/220/21350</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- LISTA ELEMENTÓW (Tabela 3/3) - POPRAWIONA -->
+    <div class="page-content">
+        <table class="header-table">
+            <tr>
+                <td><strong>PRO-TECH Sp. z o.o.</strong> Łódź</td>
+                <td style="text-align: right;"><strong>Umowa:</strong> P - 725<br><strong>Nr arch:</strong> 21350<br><strong>Data:</strong> IX 2003<br><strong>Nr strony:</strong> 3/3</td>
+            </tr>
+        </table>
+
+        <table class="bom-table">
+            <thead>
+                <tr>
+                    <th>Lp</th>
+                    <th>Poz.<br>wg rys.</th>
+                    <th>Wyszczególnienie</th>
+                    <th>Jedn.</th>
+                    <th>Ilość</th>
+                    <th>Mat.</th>
+                    <th>Norma<br>Nr rys.</th>
+                    <th>Masa [kg]<br>Jedn.</th>
+                    <th>Masa [kg]<br>Całk.</th>
+                    <th>Uwagi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td><td></td><td>Uszczelka DN40 PN40</td><td>szt.</td><td>2</td><td>POLONIT<br>GRAFITOWA<br>z wkładką metal.</td><td>PN-86/<br>H-74374/04</td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>11</td><td></td><td>Uszczelka DN50 PN40</td><td>szt.</td><td>1</td><td>POLONIT<br>GRAFITOWA<br>z wkładką metal.</td><td>PN-86/<br>H-74374/04</td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>12</td><td></td><td>Uszczelka DN100 PN40<br>Dz=135mm, Dw=111mm, g=2mm</td><td>szt.</td><td>1</td><td>POLONIT<br>GRAFITOWA<br>z wkładką metal.</td><td>PN-86/<br>H-74374/04</td><td></td><td></td><td>wg zaleceń</td>
+                </tr>
+                <tr>
+                    <td>13</td><td></td><td>Uszczelka DN150 PN40<br>Dz=185mm, Dw=161mm, g=2mm</td><td>szt.</td><td>1</td><td>POLONIT<br>GRAFITOWA<br>z wkładką metal.</td><td>PN-86/<br>H-74374/04</td><td></td><td></td><td>wg zaleceń</td>
+                </tr>
+                <tr>
+                    <td>14</td><td></td><td>Uszczelka DN1600 PN40<br>Dz=1560mm, Dw=1540mm, g=2mm</td><td>szt.</td><td>1</td><td>POLONIT<br>GRAFITOWA<br>z wkładką metal.</td><td></td><td></td><td></td><td>wg zaleceń</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align: right; font-size: 0.8em;">CAD File: P-725/PRU/R/200/R/220/21350</p>
+    </div>
+
+</body>
+</html>
