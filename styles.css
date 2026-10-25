@@ -523,7 +523,7 @@ tbody tr:hover { background: #fafafa; }
   display: flex; gap: 6px 16px; flex-wrap: wrap; }
 
 .tabs { display: flex; border-bottom: 1px solid rgba(0,0,0,0.14);
-  margin-bottom: 24px; gap: 0; overflow-x: auto; }
+  margin-bottom: 24px; gap: 0; overflow-x: auto; overflow-y: hidden; }
 .tab { padding: 12px 18px; font-size: 0.7rem; letter-spacing: 0.1em;
   text-transform: uppercase; border: none; background: none;
   cursor: pointer; opacity: 0.55; border-bottom: 2px solid transparent;
