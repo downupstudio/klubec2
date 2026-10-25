@@ -10,6 +10,15 @@
         { "typ": "dokument", "id": "obliczenia-pws-200-5-1966" },
         { "typ": "dokument", "id": "p-725-21271" }
       ]
+    },
+    {
+      "id": "2-1-19-PM2-36-101",
+      "sygnatura": "2-1/19 PM2-36/101",
+      "rok": "2005",
+      "opis": "Skoroszyt z dokumentacją modernizacji układu zabezpieczeń podgrzewaczy PWP1 i PWP2 (Tom 4).",
+      "zawartosc": [
+        { "typ": "dokument", "id": "projekt-wykonawczy-pwp1-pwp2-2005" }
+      ]
     }
   ],
   "dokumenty": {
@@ -95,6 +104,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/umowa-7-00-ec-2000.html", "label": "Pełna transkrypcja (30 stron)" }
+      ],
+      "skany": []
+    },
+    "projekt-wykonawczy-pwp1-pwp2-2005": {
+      "tytul": "Projekt Wykonawczy: Modernizacja zabezpieczeń PWP1 i PWP2",
+      "sygnatura": "2-1/19 PM2-36/101",
+      "data": "V 2005",
+      "autor": "Przedsiębiorstwo Usługowo-Produkcyjne K.G.K.",
+      "typ": "Projekt wykonawczy",
+      "strony": "15",
+      "analiza": [
+        "Prezentowany dokument to Projekt Wykonawczy (Tom 4) z maja 2005 roku, opracowany przez Łódzkie Przedsiębiorstwo Usługowo-Produkcyjne K.G.K. na zlecenie Zespołu Elektrociepłowni w Łodzi S.A. Dotyczy on modernizacji układu zabezpieczeń przed wzrostem poziomu skroplin w podgrzewaczach PWP nr 1 i 2 turbiny TZ-4 w EC-2.",
+        "Zakres prac obejmował wymianę starych elektrozaworów na nowe typu EMS3 (firmy SEMPELL) oraz integrację nowych sygnałów ciśnienia z systemem sterowania Ovation. Dokument zawiera szczegółowy opis techniczny, logiczne założenia sterowania (m.in. użycie przekaźników czasowych RTx-133), zestawienie niezbędnych kabli i materiałów (w tym szafy zasilania 4LW1) oraz komplet schematów elektrycznych.",
+        "Ciekawostką archiwalną jest fakt, że w dokumencie zachowały się również stare, przekreślone rysunki z poprzednich wersji systemu, z odręcznymi adnotacjami o ich anulowaniu i zastąpieniu nowymi schematami."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/projekt-wykonawczy-pwp1-pwp2-2005.html", "label": "Pełna transkrypcja (15 stron)" }
       ],
       "skany": []
     }

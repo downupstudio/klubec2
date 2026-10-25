@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt Wykonawczy: Modernizacja zabezpieczeń PWP1 i PWP2 (2005)</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; margin: 40px; color: #333; background-color: #f4f4f4; }
+        .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 1000px; margin: auto; }
+        h1, h2, h3, h4 { color: #222; border-bottom: 2px solid #444; padding-bottom: 5px; margin-top: 30px; }
+        .page { border-bottom: 2px dashed #aaa; padding-bottom: 30px; margin-bottom: 30px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.85em; }
+        th, td { border: 1px solid #333; padding: 6px; text-align: left; vertical-align: top; }
+        th { background-color: #eaeaea; text-align: center; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .bold { font-weight: bold; }
+        .handwritten { color: #a00; font-style: italic; }
+        .crossed-out { text-decoration: line-through; color: #777; }
+        .drawing-placeholder { border: 1px dashed #666; padding: 20px; background: #f9f9f9; text-align: center; font-style: italic; color: #555; margin: 20px 0; }
+        .title-block { border: 2px solid #000; padding: 10px; font-size: 0.85em; margin-top: 20px; background: #fff; }
+        .title-block td { border: none; padding: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="doc-container">
+    <div class="page" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
+        <p style="font-size: 1.1em; font-weight: bold;">PRZEDSIĘBIORSTWO USŁUGOWO-PRODUKCYJNE</p>
+        <h2 style="border: none; font-size: 1.8em; letter-spacing: 2px;">K.G.K.</h2>
+        <p>91-070 Łódź, ul. Legionów 71/73-8<br>tel/fax 0-42-633-21-24</p>
+        
+        <div style="color: red; font-size: 1.5em; font-weight: bold; margin: 20px 0; font-family: 'Comic Sans MS', cursive;">
+            2-1/19 PM2-36/101
+        </div>
+
+        <table style="width: 90%; margin: 40px auto; border: none; text-align: left;">
+            <tr><td style="width: 30%;"><strong>Inwestor:</strong></td><td>Zespół Elektrociepłowni w Łodzi SA<br>90-975 Łódź, ul. J. Andrzejewskiej 5</td></tr>
+            <tr><td><strong>Zamawiający:</strong></td><td>EC-2 Łódź</td></tr>
+            <tr><td><strong>Nr umowy:</strong></td><td>2/2005</td></tr>
+            <tr><td><strong>Tytuł projektu:</strong></td><td>PW modernizacji układu zabezpieczeń przed wzrostem poziomu skroplin w podgrzewaczach PWP nr 1 i 2 turbiny TZ-4 w EC-2 Łódź</td></tr>
+            <tr><td colspan="2" style="text-align: center; padding-top: 30px;">
+                <strong>Tom 4</strong><br><br>
+                Projekt wykonawczy<br>
+                Lista kompletacji dostaw<br>
+                Kosztorys - nakłady rzeczowe
+            </td></tr>
+            <tr><td><strong>Branża:</strong></td><td>AKPiA</td></tr>
+        </table>
+
+        <table style="width: 80%; margin: 40px auto; border: none; text-align: left;">
+            <tr><td><strong>Projektował:</strong></td><td>mgr inż. Zygmunt Kudlik</td><td><em class="handwritten">[podpis]</em></td></tr>
+            <tr><td><strong>Kosztorysowała</strong></td><td>Zdzisława Jaśkiewicz</td><td><em class="handwritten">[podpis]</em></td></tr>
+        </table>
+
+        <br><br><br><br>
+        <p>Łódź, maj 2005</p>
+        <div style="text-align: right; font-size: 1.5em; color: #a00; font-weight: bold; margin-top: 50px;">2</div>
+    </div>
+
+    <div class="page">
+        <h3 class="text-center" style="border: none;">ZAWARTOŚĆ PROJEKTU</h3>
+        
+        <p><strong>1.0. OPIS TECHNICZNY</strong></p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>1.1. Podstawa opracowania</li>
+            <li>1.2. Przedmiot i zakres projektu</li>
+            <li>1.3. Założenia do projektu</li>
+            <li>1.4. Zasilanie</li>
+            <li>1.5. Sterowanie</li>
+            <li>1.6. Połączenia z systemem Ovation</li>
+            <li>1.7. Instalacje</li>
+            <li>1.8. Ochrona przeciwporażeniowa</li>
+        </ul>
+        <p><strong>2.0. LISTA KABLI</strong></p>
+        <p><strong>3.0. SPECYFIKACJA MATERIAŁOWA</strong></p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>3.1. Szafa zasilania i zabezpieczeń 4LW1 – uzupełnienie</li>
+            <li>3.2. Instalacje na obiekcie</li>
+        </ul>
+        <p><strong>4.0. LISTA KOMPLETACJI DOSTAW</strong></p>
+        <p><strong>5.0. RYSUNKI</strong></p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li><strong>5.1. Rysunki nowe:</strong><br>
+            1. 418.01 – Układ sterowania elektrozaworem obejścia wodnego podgrzewacza PWP1<br>
+            2. 418.02 – Układ sterowania elektrozaworem obejścia wodnego podgrzewacza PWP2<br>
+            3. 418.03 – Szafa zasilania i zabezpieczeń 4LW1. Schemat montażowy<br>
+            4. 418.04 – Urządzenia zainstalowane na obiekcie. Schemat montażowy</li>
+            <li style="margin-top: 10px;"><strong>5.2. Rysunki anulowane:</strong><br>
+            1. 9801-R05-06 – Układ sterowania elektrozaworami obejścia wodnego podgrzewaczy PWP1 – PWP2. Schemat montażowy<br>
+            2. 9801-LS7-E01 – Skrzynka zbiorcza 4LS7. Schemat montażowy</li>
+            <li style="margin-top: 10px;"><strong>5.3. Rysunki aktualizowane:</strong><br>
+            1. 9801-LW1-E03 – Szafa zasilania i zabezpieczeń 4LW1. Połączenia na listwach zacisk. (ark. 2 i ark. 3)</li>
+        </ul>
+        <p><strong>6.0. KOSZTORYS – NAKŁADY RZECZOWE</strong></p>
+    </div>
+
+    <div class="page">
+        <div class="text-center" style="margin-bottom: 20px;">2</div>
+        <h3>1.0. OPIS TECHNICZNY</h3>
+        <h4>1.1. Podstawa opracowania</h4>
+        <p>Projekt wykonano na podstawie umowy 2/2005 zawartej pomiędzy Zespołem Elektrociepłowni w Łodzi S.A., a Przedsiębiorstwem Usługowo – Produkcyjnym K.G.K.</p>
+
+        <h4>1.2. Przedmiot i zakres opracowania</h4>
+        <p>Przedmiotem opracowania jest modernizacja układów sterowania elektrozaworami obejść wodnych podgrzewaczy PWP1 i PWP2, związana z projektowaną wymianą istniejących elektrozaworów na nowe typu EMS3 firmy SEMPELL. Zakres opracowania został rozszerzony w stosunku do istniejącego o dwa sygnalizatory ciśnień wody nad tłokami zaworów głównych 3-drogowych i powiązania tych sygnałów z systemem Ovation.</p>
+
+        <h4>1.3. Założenia do projektu</h4>
+        <p>Projekt opracowano na podstawie:</p>
+        <ul>
+            <li>założeń uzyskanych od projektanta branży cieplno-mechanicznej;</li>
+            <li>uzgodnień z przedstawicielami Działów UC-2 i UA-2 w dniu 10.06.2005r.</li>
+            <li>inwentaryzacji obiektu.</li>
+        </ul>
+
+        <h4>1.4. Zasilanie</h4>
+        <p>Zasilanie układów sterowniczych będzie się odbywało napięciem stałym 220V poprzez istniejące wyłączniki nadmiarowe S191C-2, oznaczone na schemacie symbolami ZOW1F i ZOW2F.<br>
+        Moc cewki elektrozaworu przy zasilaniu napięciem 220V DC wynosi 280W.</p>
+
+        <h4>1.5. Sterowanie</h4>
+        <p>Przyjęty typ elektrozaworu EMS3 działa na zasadzie: „brak napięcia – zawór elektromagnetyczny jest otwarty”. W czasie przepływu wody zasilającej przez podgrzewacz zawór ten musi być zamknięty, a więc cewka musi być załączona. Wzrost poziomu skroplin w podgrzewaczu do max 2 (lub max 3) powoduje wyłączenie tej cewki. Elektrozawór otwiera się pod wpływem działania sprężyny powodując obniżenie ciśnienia pod tłokiem zaworu głównego i jego przełączenie na obejście podgrzewacza. Zawory główne po przełączeniu na „obejście” pozostają w tym położeniu niezależnie od stanu otwarcia czy zamknięcia elektrozaworu – aż do momentu przesterowania ich na przepływ wody przez podgrzewacz za pomocą ręcznie otwieranych zaworów. Jeśli elektrozawór przez cały ten</p>
+    </div>
+
+    <div class="page">
+        <div class="text-center" style="margin-bottom: 20px;">3</div>
+        <p>czas pozostanie otwarty, to przepływająca przez niego woda będzie powodowała uszkodzenia erozyjne.</p>
+        <p>W związku z tym, zdecydowano o jego ponownym zamknięciu po czasie zapewniającym przełączenie zaworów głównych na „obejście”, to jest na około 60s. W tym celu przewidziano w układzie sterowania przekaźnik czasowy RTx-133 o zakresie czasowym 10...120s i funkcji „załączanie na nastawiony czas”. W obwodzie zasilania elektrozaworu włączony jest styk bierny tego przekaźnika. Przy wzroście poziomu skroplin w podgrzewaczu do max 2 (lub max 3), następuje wzbudzenie przekaźnika czasowego i rozwarcie powyższego styku, a następnie ponowne jego zwarcie po odmierzeniu nastawionego czasu. Reasumując, elektrozawór jest załączony w sposób ciągły z wyjątkiem wyżej wymienionej przerwy, niezbędnej dla przełączenia zaworów głównych na „obejście”.</p>
+        <p>Ponadto, dla ograniczenia przepięć i szkodliwego działania łuku elektrycznego na styk przekaźnika czasowego przy wyłączaniu elektrozaworu, należy przyłączyć równolegle do jego cewki diodę gaszącą, powodującą rozładowanie energii pola magnetycznego.</p>
+
+        <h4>1.6. Połączenia z systemem Ovation</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Wejście</th>
+                    <th>Sygnał</th>
+                    <th>Wartość</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="4"><strong>1. Wejścia istniejące.</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Lokalizacja: 4E02 – H1 (2.8.1.)</strong></td></tr>
+                <tr><td>A7</td><td>B12</td><td>Elektrozawór ZOW1 (podgrzewacz PWP1) – brak gotowości elektrycznej</td><td>1</td></tr>
+                <tr><td>A9</td><td>B12</td><td>Elektrozawór ZOW1 (podgrzewacz PWP1) – otwarty</td><td>1</td></tr>
+                <tr><td>A10</td><td>B12</td><td>Elektrozawór ZOW2 (podgrzewacz PWP2) – brak gotowości elektrycznej</td><td>1</td></tr>
+                <tr><td>A12</td><td>B12</td><td>Elektrozawór ZOW2 (podgrzewacz PWP2) – otwarty</td><td>1</td></tr>
+                <tr><td colspan="4"><strong>2. Wejścia projektowane.</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Lokalizacja: 4E02 – F6 (2.6.6.)</strong></td></tr>
+                <tr><td>A3</td><td>B3</td><td>Niskie ciśnienie wody nad tłokiem (podgrzewacz PWP1)</td><td>1</td></tr>
+                <tr><td>A4</td><td>B3</td><td>Niskie ciśnienie wody nad tłokiem (podgrzewacz PWP2)</td><td>1</td></tr>
+            </tbody>
+        </table>
+
+        <p>Funkcje wejść A7 i A10 pozostają aktualne. Wejścia A9 i a12 wykorzystane są obecnie do wizualizacji załączenia „obejść” podgrzewaczy PWP1 lub PWP2. Jest to możliwe, gdyż istniejący elektrozawór jest otwarty przez cały czas trwania danego „obejścia”.</p>
+        <p>Jak opisano wyżej, projektowane elektrozawory otwierają się tylko na około 60s przy przełączaniu na „obejście” i przez pozostały czas trwania tego „obejścia” są zamknięte. Dla utrzymania obecnej wizualizacji istnienia „obejścia” każdego podgrzewacza, zaprojektowano sygnalizatory spadku ciśnienia nad tłokami zaworów głównych. Spadek ciśnienia wody w tej przestrzeni występuje jedynie w czasie ręcznego przełączania (zaworem) z „obejścia” na normalny przepływ przez podgrzewacz.</p>
+    </div>
+
+    <div class="page">
+        <div class="text-center" style="margin-bottom: 20px;">4</div>
+        <p>W związku z powyższym, sygnał „1” na wejściu A9 winien załączyć symbol obejścia podgrzewacza PWP1 na schemacie wizualizacji i stan ten zapamiętać do czasu pojawienia się sygnału „1” na wejściu A3, który tę pamięć resetuje.</p>
+        <p>Analogicznie, sygnał „1” na wejściu A12 winien załączyć symbol obejścia podgrzewacza PWP2 na schemacie wizualizacji i stan ten zapamiętać do czasu pojawienia się sygnału „1” na wejściu A4, który tę pamięć resetuje.</p>
+
+        <h4>1.7. Instalacje</h4>
+        <p>Istniejące przewody wyprowadzone z szafy 4LW1 do szaf systemu Ovation 4R01 i 4E02 oraz do skrzynki zbiorczej 4LS7 pozostają. Należy jedynie wykonać przełączenia na listwach zaciskowych – jak pokazano na schematach montażowych, na rysunkach 418.03 i 418.04.</p>
+        <p>W projekcie ujęto nowy przewód z szafy 4LW1 do szafy 4E02 oraz wymianę wszystkich przewodów wyprowadzonych ze skrzynki 4LS7 do urządzeń na obiekcie. Istniejące przewody należy zdemontować. Przewody należy układać w istniejących korytkach przewodowych.</p>
+
+        <h4>1.8. Ochrona przeciwporażeniowa</h4>
+        <p>Wszystkie urządzenia elektryczne objęte niniejszym projektem posiadają obudowy o stopniu szczelności minimum IP55. Zasilane są napięciem stałym o wartości 220V (uzyskiwanym z baterii akumulatorów) z oboma biegunami izolowanymi względem ziemi. Urządzenia te nie wymagają ochrony dodatkowej.</p>
+    </div>
+
+    <div class="page">
+        <div class="text-center" style="margin-bottom: 20px;">5</div>
+        <h3>2.0. LISTA KABLI</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">L.p.</th>
+                    <th rowspan="2">Oznaczenie</th>
+                    <th colspan="2">Trasa</th>
+                    <th rowspan="2">Typ kabla</th>
+                    <th rowspan="2">Ilość<br>m</th>
+                </tr>
+                <tr>
+                    <th>Skąd</th>
+                    <th>Dokąd</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>4LW1-08</td><td>4LW1</td><td>4R01</td><td>Istniejący</td><td>-</td></tr>
+                <tr><td>2</td><td>4LW1-33</td><td>4LW1</td><td>4E02 (H1)</td><td>Istniejący</td><td>-</td></tr>
+                <tr><td>3</td><td>4LW1-34</td><td>4LW1</td><td>4E02 (F6)</td><td>LIYCY4x0,75mm<sup>2</sup>; 500V</td><td>15</td></tr>
+                <tr><td>4</td><td>4LS7-21</td><td>4LS7</td><td>4LW1</td><td>Istniejący (5x1,5mm<sup>2</sup>)</td><td>-</td></tr>
+                <tr><td>5</td><td>4LS7-21a</td><td>4LS7</td><td>4LW1</td><td>Istniejący (7x2,5mm<sup>2</sup>)</td><td>-</td></tr>
+                <tr><td>6</td><td>4LS7-01</td><td>4LS7</td><td>4ZOW1</td><td>HLGs3x1mm<sup>2</sup>; 300/500V</td><td>5</td></tr>
+                <tr><td>7</td><td>4LS7-02</td><td>4LS7</td><td>4ZOW1Z</td><td>HLGs3x1mm<sup>2</sup>; 300/500V</td><td>5</td></tr>
+                <tr><td>8</td><td>4LS7-03</td><td>4LS7</td><td>4ZOW1B</td><td>HLGs3x1mm<sup>2</sup>; 300/500V</td><td>5</td></tr>
+                <tr><td>9</td><td>4LS7-04</td><td>4LS7</td><td>4ZOW2</td><td>HLGs3x1mm<sup>2</sup>; 300/500V</td><td>10</td></tr>
+                <tr><td>10</td><td>4LS7-05</td><td>4LS7</td><td>4ZOW2Z</td><td>HLGs3x1mm<sup>2</sup>; 300/500V</td><td>10</td></tr>
+                <tr><td>11</td><td>4LS7-06</td><td>4LS7</td><td>4ZOW2B</td><td>HLGs3x1mm<sup>2</sup>; 300/500V</td><td>5</td></tr>
+            </tbody>
+        </table>
+
+        <h3>3.0. SPECYFIKACJA MATERIAŁOWA</h3>
+        <h4>3.1. Szafa zasilania i zabezpieczeń 4LW1 – uzupełnienie</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>L.p.</th>
+                    <th>Oznacz.</th>
+                    <th>Wyszczególnienie</th>
+                    <th>Producent</th>
+                    <th>Ilość</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1.1</td><td>ZOW1K1<br>ZOW2K1</td><td>Przekaźnik czasowy RTx-133. Napięcie zasilania 220V DC<br>Zakres czasowy 10...120 sekund.</td><td>ALSTOM</td><td>2szt.</td></tr>
+                <tr><td>1.2</td><td>-</td><td>Gniazdo wtykowe GS11B</td><td>ALSTOM</td><td>2szt.</td></tr>
+                <tr><td>1.3</td><td>ZOW1K3<br>ZOW2K3</td><td>Przekaźnik R15, 4p. Napięcie cewki 220V DC<br>Kod: R15-1014-23-1220-L</td><td>RELPOL</td><td>2szt.</td></tr>
+                <tr><td>1.4</td><td>-</td><td>Gniazdo wtykowe GZ14U</td><td>RELPOL</td><td>2szt.</td></tr>
+            </tbody>
+        </table>
+
+        <h4>3.2. Instalacja na obiekcie</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>L.p.</th>
+                    <th>Oznacz.</th>
+                    <th>Wyszczególnienie</th>
+                    <th>Producent</th>
+                    <th>Ilość</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2.1</td><td>ZOW1B<br>ZOW2B</td><td>Sygnalizator ciśnienia (presostat) typ PK250bar<br>Zakres pomiarowy +25...+250bar. (nastawa ~100bar)</td><td>TRAFAG</td><td>2szt.</td></tr>
+                <tr><td>2.2</td><td>-</td><td>Łącznik do połączenia PK250 z zaworem manometrycznym,<br>Z gwintami zewnętrznymi G1/4” i M20x1,5<br>Materiał: 1.4435/316L.</td><td>TRAFAG</td><td>2szt.</td></tr>
+                <tr><td>2.3</td><td>D1, D2</td><td>Dioda 1N5408, 3A, 800V</td><td>-</td><td>2szt.</td></tr>
+                <tr><td>2.4</td><td>-</td><td>Przewód LIYCY4x0,75mm<sup>2</sup>; 500V</td><td>ZAŁOM</td><td>15m</td></tr>
+                <tr><td>2.5.</td><td>-</td><td>Kabel HLGs3x1mm<sup>2</sup>; 300/500V</td><td>ZAŁOM</td><td>40m</td></tr>
+                <tr><td>2.6</td><td>-</td><td>Dławik kompletny Db13,5</td><td>-</td><td>2szt.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="text-center" style="margin-bottom: 20px;">6</div>
+        <h3>4.0. LISTA KOMPLETACJI DOSTAW</h3>
+        <p>W projekcie nie występują żadne prefabrykaty.</p>
+        <ol>
+            <li>Szafa 4LW1 – uzupełnienie: wg specyfikacji materiałowej p. 3.1. &nbsp;&nbsp;&nbsp;&nbsp; 1kpl</li>
+            <li>Materiały instalacyjne: wg specyfikacji materiałowej p. 3.2. &nbsp;&nbsp;&nbsp;&nbsp; 1kpl</li>
+        </ol>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder">
+            [W tym miejscu znajduje się schemat elektryczny: Otwieranie obejścia wodnego podgrzewacza PWP1]<br>
+            Zawiera elementy: ZOW1F, 4R01 H5R11, L409K1 R04-01, ZOW1K1, ZOW1, ZOW1Z, ZOW1B, ZOW1K2, ZOW1K3, RTx-133, R15-4p-L. <br>
+            Zaznaczono sekcję "Wejścia sygnałów do systemu OVATION" (Brak gotowości elektrycznej, Otwarcia zaworu sterującego, Spadku ciśnienia wody nad tłokiem zaworu 3-drog.)
+        </div>
+        <p class="handwritten">[Odręczne adnotacje na schemacie:] Data 22.06.2005. Rzeczoznawca do spraw zabezpieczeń przeciwporażeniowych mgr. bryg. mgr inż. Sławomir Matczak. Łódź, 22.06.2005. Zgodność projektu z wymogami ochrony przeciwporażeniowej stwierdzam [podpis].</p>
+        <p><strong>Uwaga:</strong> Niniejszy rysunek zastępuje rysunek nr -9801 – R05-06</p>
+        
+        <table class="title-block">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Układ sterowania elektrozaworem obejścia wodnego podgrzewacza PWP1</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.5em; font-weight: bold;">K.G.K.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> PW modernizacji układu zabezpieczeń przed wzrostem poziomu skroplin w podgrzewaczach PWP1 i 2 turbiny TZ-4</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>TZ-4</td>
+                <td><strong>Umowa</strong><br>2/2005</td>
+                <td><strong>Projektował</strong><br>mgr inż. Z. Kudlik</td>
+                <td><strong>Data</strong><br>06.2005r</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right; font-size: 0.8em;">Arkusz -</td>
+                <td style="text-align: center; font-weight: bold;">Nr rys.<br>418.01</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder">
+            [W tym miejscu znajduje się schemat elektryczny: Otwieranie obejścia wodnego podgrzewacza PWP2]<br>
+            Zawiera elementy analogiczne do rysunku 418.01, ale dla układu PWP2: ZOW2F, 4R01 H5R12, L411K1 R04-01, ZOW2K1, ZOW2, ZOW2Z, ZOW2B, ZOW2K2, ZOW2K3, RTx-133, R15-4p-L. <br>
+            Sekcja "Wejścia sygnałów do systemu OVATION" z analogowymi sygnałami.
+        </div>
+        <p><strong>Uwaga:</strong> Niniejszy rysunek zastępuje rysunek nr -9801 – R05-06</p>
+        
+        <table class="title-block">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Układ sterowania elektrozaworem obejścia wodnego podgrzewacza PWP2</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.5em; font-weight: bold;">K.G.K.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> PW modernizacji układu zabezpieczeń przed wzrostem poziomu skroplin w podgrzewaczach PWP1 i 2 turbiny TZ-4</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>TZ-4</td>
+                <td><strong>Umowa</strong><br>2/2005</td>
+                <td><strong>Projektował</strong><br>mgr inż. Z. Kudlik</td>
+                <td><strong>Data</strong><br>06.2005r</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right; font-size: 0.8em;">Arkusz -</td>
+                <td style="text-align: center; font-weight: bold;">Nr rys.<br>418.02</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder">
+            [W tym miejscu znajduje się schemat montażowy szafy 4LW1]<br>
+            Przedstawia widok listwy zaciskowej (4LW1X12, 4LW1X16, 4LW1X cd). Zawiera oznaczenia aparatury (ZOW1F, ZOW2F, L409K1, L411K1, ZOW1K1, ZOW1K2, ZOW1K3, ZOW2K1, ZOW2K2, ZOW2K3).<br>
+            W uwagach podano m.in.: "Lokalizacja aparatów... pozostaje bez zmian", "Istniejące w szafie 4LW1 wyłączniki nadmiarowe ZE61F do ZE65F należy zgrupować w lewej części listwy montażowej i w zwolnionym miejscu zamontować przekaźniki ZOW1K1, ZOW1K3, ZOW2K1, ZOW2K3".
+        </div>
+        
+        <table class="title-block">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Szafa zasilania i zabezpieczeń 4LW1 - schemat montażowy</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.5em; font-weight: bold;">K.G.K.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> PW modernizacji układu zabezpieczeń przed wzrostem poziomu skroplin w podgrzewaczach PWP1 i 2 turbiny TZ-4</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>TZ-4</td>
+                <td><strong>Umowa</strong><br>2/2005</td>
+                <td><strong>Projektował</strong><br>mgr inż. Z. Kudlik</td>
+                <td><strong>Data</strong><br>06.2005r</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right; font-size: 0.8em;">Arkusz -</td>
+                <td style="text-align: center; font-weight: bold;">Nr rys.<br>418.03</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder">
+            [W tym miejscu znajduje się schemat montażowy urządzeń na obiekcie]<br>
+            Przedstawia skrzynkę 4LS7 oraz podłączone do niej urządzenia w obrębie PWP1 i PWP2: 4ZOW1, 4ZOW1Z, 4ZOW1B, 4ZOW2, 4ZOW2Z, 4ZOW2B. <br>
+            Uwagi zawierają parametry diod (1N5407, U=800V, J=3A) i kabli (HLGs - U=300/500V, temp -25 do 85 st C, odporność na ogień).
+        </div>
+        <p><strong>Uwaga:</strong> Niniejszy rysunek zastępuje rys. 9801-LS7-E01</p>
+
+        <table class="title-block">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Urządzenia zainstalowane na obiekcie - schemat montażowy</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.5em; font-weight: bold;">K.G.K.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> PW modernizacji układu zabezpieczeń przed wzrostem poziomu skroplin w podgrzewaczach PWP1 i 2 turbiny TZ-4</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>TZ-4</td>
+                <td><strong>Umowa</strong><br>2/2005</td>
+                <td><strong>Projektował</strong><br>mgr inż. Z. Kudlik</td>
+                <td><strong>Data</strong><br>06.2005r</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right; font-size: 0.8em;">Arkusz -</td>
+                <td style="text-align: center; font-weight: bold;">Nr rys.<br>418.04</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder" style="border-color: red;">
+            [W tym miejscu znajduje się stary schemat elektryczny]<br>
+            Widoczne duże przekreślenie na całej stronie.
+        </div>
+        
+        <div style="text-align: right; font-size: 1.5em; font-family: 'Comic Sans MS', cursive; font-weight: bold; transform: rotate(-10deg); margin-bottom: 20px;">
+            Niniejszy rysunek został zastąpiony rysunkami nr 418.01 i 418.02.
+        </div>
+        
+        <table class="title-block" style="border-color: #777;">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Układ sterowania elektrozaworami obejścia wodnego podgrzewaczy PWP1 - PWP2. Schemat montażowy.</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.2em; font-weight: bold;">ZPDA-ZAP<br>Biuro Projektów<br>i Technicznych<br>Ostrów Wlkp.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> -</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>Turbozespół TZ-4</td>
+                <td><strong>Opracował</strong><br>B. Osipluk</td>
+                <td><strong>Projektował</strong><br>mgr inż. J. Mróz</td>
+                <td><strong>Data</strong><br>1999r.</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; font-size: 0.8em;">Nr proj. 9801 &nbsp;&nbsp;&nbsp; Część Tom Zesz.</td>
+                <td style="text-align: center; font-weight: bold;">Nr rysunku<br>R05-06</td>
+                <td style="text-align: center; font-weight: bold;">Ark.<br>A</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder" style="border-color: red;">
+            [W tym miejscu znajduje się stary schemat skrzynki zbiorczej 4LS7]<br>
+            Widoczne duże przekreślenie na całej stronie.
+        </div>
+        
+        <div style="text-align: right; font-size: 1.5em; font-family: 'Comic Sans MS', cursive; font-weight: bold; transform: rotate(-10deg); margin-bottom: 20px;">
+            Niniejszy rysunek został zastąpiony rys. 418.04.
+        </div>
+
+        <table class="title-block" style="border-color: #777;">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Skrzynka zbiorcza 4LS7. Schemat montażowy</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.2em; font-weight: bold;">ZPDA-ZAP<br>Biuro Projektów<br>i Technicznych<br>Ostrów Wlkp.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> -</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>Turbozespół TZ-4</td>
+                <td><strong>Opracował</strong><br>B. Osipluk</td>
+                <td><strong>Projektował</strong><br>mgr inż. J. Mróz</td>
+                <td><strong>Data</strong><br>1999r.</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; font-size: 0.8em;">Nr proj. 9801 &nbsp;&nbsp;&nbsp; Część Tom Zesz.</td>
+                <td style="text-align: center; font-weight: bold;">Nr rysunku<br>LS7 - E01</td>
+                <td style="text-align: center; font-weight: bold;">Ark.<br>A</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder" style="border-color: red;">
+            [W tym miejscu znajduje się stary schemat połączeń na listwach zaciskowych]<br>
+            Widoczne duże przekreślenie na całej stronie.
+        </div>
+        
+        <div style="text-align: right; font-size: 1.5em; font-family: 'Comic Sans MS', cursive; font-weight: bold; transform: rotate(-10deg); margin-bottom: 20px;">
+            Aktualna lista 4LW1/E znajduje się na rys. 418.03.
+        </div>
+
+        <table class="title-block" style="border-color: #777;">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Szafa zasilania i zabezpieczeń 4LW1. Połączenia na listwach zaciskowych. Schemat montażowy</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.2em; font-weight: bold;">ZPDA-ZAP<br>Biuro Projektów<br>i Technicznych<br>Ostrów Wlkp.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> -</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>Turbozespół TZ-4</td>
+                <td><strong>Opracował</strong><br>B. Osipluk</td>
+                <td><strong>Projektował</strong><br>mgr inż. J. Mróz</td>
+                <td><strong>Data</strong><br>1999r.</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; font-size: 0.8em;">Nr proj. 9801 &nbsp;&nbsp;&nbsp; Część Tom Zesz.</td>
+                <td style="text-align: center; font-weight: bold;">Nr rysunku<br>LW1 - E03</td>
+                <td style="text-align: center; font-weight: bold;">Ark.<br>2</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <div class="drawing-placeholder" style="border-color: red;">
+            [W tym miejscu znajduje się dalsza część starego schematu połączeń na listwach zaciskowych]<br>
+            Widoczne duże przekreślenie na całej stronie.
+        </div>
+        
+        <div style="text-align: right; font-size: 1.5em; font-family: 'Comic Sans MS', cursive; font-weight: bold; transform: rotate(-10deg); margin-bottom: 20px;">
+            Aktualne adresy zasilania w szafie 4LW1/E są na rys. 418.03.
+        </div>
+
+        <table class="title-block" style="border-color: #777;">
+            <tr>
+                <td colspan="4"><strong>Tytuł rys.</strong> Szafa zasilania i zabezpieczeń 4LW1. Połączenia na listwach zaciskowych. Schemat montażowy</td>
+                <td rowspan="2" style="text-align: center; font-size: 1.2em; font-weight: bold;">ZPDA-ZAP<br>Biuro Projektów<br>i Technicznych<br>Ostrów Wlkp.</td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>Tytuł projektu</strong> -</td>
+            </tr>
+            <tr>
+                <td><strong>Inwestor</strong><br>EC-2 Łódź</td>
+                <td><strong>Obiekt</strong><br>Turbozespół TZ-4</td>
+                <td><strong>Opracował</strong><br>B. Osipluk</td>
+                <td><strong>Projektował</strong><br>mgr inż. J. Mróz</td>
+                <td><strong>Data</strong><br>1999r.</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; font-size: 0.8em;">Nr proj. 9801 &nbsp;&nbsp;&nbsp; Część Tom Zesz.</td>
+                <td style="text-align: center; font-weight: bold;">Nr rysunku<br>LW1 - E03</td>
+                <td style="text-align: center; font-weight: bold;">Ark.<br>3</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
