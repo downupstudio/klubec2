@@ -63,7 +63,26 @@
         { "src": "dokumenty/p-725-21271.html", "label": "Pełna transkrypcja (32 strony + lista elementów)" }
       ],
       "skany": []
+    },
+    "aneks-master-3-2004": {
+      "tytul": "Aneks do instrukcji obsługi - MASTER 3 (UNIMAT-3M)",
+      "sygnatura": "2127-600",
+      "data": "I 2004",
+      "autor": "Instytut Automatyki Systemów Energetycznych",
+      "typ": "Instrukcja obsługi",
+      "strony": "19",
+      "analiza": [
+        "Prezentowany dokument to 'Aneks do instrukcji obsługi' wydany w styczniu 2004 roku przez Instytut Automatyki Systemów Energetycznych (IASE) z Wrocławia. Dotyczy on modernizacji cyfrowego układu regulacji i zabezpieczeń turbiny TC-25 (UNIMAT-3M) pracującej w EC-2 Łódź na turbozespole TZ-4.",
+        "Aneks szczegółowo opisuje nowe funkcje regulatora, logikę działania układów bezpieczeństwa (m.in. głosowanie 2 z 3), tabele sygnałów analogowych wejściowych, listę kodów awarii oraz procedury testowania (np. test wyłącznika krańcowego, próby szczelności).",
+        "Dokument zawiera również zrzuty ekranów z pulpitu operatorskiego EMT-1 (system MASTER 3), stanowiąc niezwykle cenny materiał ukazujący, jak zaawansowana cyfrowa automatyka zarządzała infrastrukturą EC-2 na początku XXI wieku."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/aneks-master-3-2004.html", "label": "Pełna transkrypcja (19 stron)" }
+      ],
+      "skany": []
     }
   },
-  "dokumenty_bez_skoroszytu": []
+  "dokumenty_bez_skoroszytu": [
+    "aneks-master-3-2004"
+  ]
 }
