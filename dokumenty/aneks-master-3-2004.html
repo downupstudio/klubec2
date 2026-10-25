@@ -11,20 +11,24 @@
         .typewriter { font-family: "Courier New", Courier, monospace; font-size: 0.95em; }
         .unreadable { background-color: #eee; color: #777; font-style: italic; padding: 0 4px; }
         .footer-box { border: 1px solid #000; padding: 10px; font-size: 0.8em; margin-top: 20px; font-family: monospace; text-align: center; background: #fafafa; }
-        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.9em; }
-        th, td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }
-        th { background-color: #eee; text-align: center; }
+        
+        /* Zwykłe tabele z danymi */
+        table.data-table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.9em; }
+        table.data-table th, table.data-table td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }
+        table.data-table th { background-color: #eee; text-align: center; }
+
+        /* Tabela dla spisu treści (naprawia zawijanie tekstu) */
+        table.toc-table { width: 100%; border-collapse: collapse; font-family: "Courier New", Courier, monospace; font-size: 0.95em; margin-bottom: 0; border: none; }
+        table.toc-table td { border: none; padding: 4px 0; vertical-align: bottom; }
+        .toc-text { white-space: normal; word-break: break-word; }
+        .toc-dots { width: 100%; }
+        .toc-dots .dots { border-bottom: 1px dotted #333; position: relative; bottom: 4px; }
+        .toc-page { width: 1%; white-space: nowrap; text-align: right; padding-left: 10px !important; }
+
         .screen-mock { border: 2px solid #333; padding: 10px; font-family: monospace; background: #eef; margin-bottom: 20px; font-size: 0.85em; }
         .screen-header { text-align: center; font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px; }
         ul { padding-left: 20px; }
         .sig-list { column-count: 2; column-gap: 40px; font-family: monospace; font-size: 0.9em; }
-        
-        /* Nowe style dla spisu treści */
-        .toc-list { font-family: "Courier New", Courier, monospace; font-size: 0.95em; line-height: 1.8; margin: 0; padding: 0; list-style: none; }
-        .toc-row { display: flex; align-items: flex-end; width: 100%; margin-bottom: 10px; }
-        .toc-text { min-width: 0; margin-right: 10px; word-break: break-word; }
-        .toc-dots { flex-grow: 1; border-bottom: 1px dotted #333; position: relative; bottom: 4px; margin-right: 10px; min-width: 30px; }
-        .toc-page { white-space: nowrap; flex-shrink: 0; }
     </style>
 </head>
 <body>
@@ -55,12 +59,12 @@
             Data wydania: <strong>10-01-2004r.</strong>
         </p>
 
-        <table style="width: 70%; margin: 40px auto; text-align: center;">
-            <tr><td></td><td><strong>Opracował:</strong></td><td><strong>Sprawdził:</strong></td><td><strong>Zatwierdził:</strong></td></tr>
-            <tr><td><strong>Data</strong></td><td>12-01-2004r.</td><td></td><td></td></tr>
-            <tr><td><strong>Nazwisko</strong></td><td>mgr inż. A. Makaś</td><td>mgr inż. J. Kmiecik</td><td>mgr inż. J. Kmiecik</td></tr>
-            <tr><td><strong>Komórka org.</strong></td><td>WK-E</td><td>WK-E</td><td>WK-E</td></tr>
-            <tr><td><strong>Podpis</strong></td><td><em>[A. Makaś]</em></td><td><em>[podpis]</em></td><td><em>[podpis]</em></td></tr>
+        <table class="data-table" style="width: 70%; margin: 40px auto; text-align: center;">
+            <tr><td style="border: none;"></td><td style="border: none;"><strong>Opracował:</strong></td><td style="border: none;"><strong>Sprawdził:</strong></td><td style="border: none;"><strong>Zatwierdził:</strong></td></tr>
+            <tr><td style="border: none;"><strong>Data</strong></td><td style="border: none;">12-01-2004r.</td><td style="border: none;"></td><td style="border: none;"></td></tr>
+            <tr><td style="border: none;"><strong>Nazwisko</strong></td><td style="border: none;">mgr inż. A. Makaś</td><td style="border: none;">mgr inż. J. Kmiecik</td><td style="border: none;">mgr inż. J. Kmiecik</td></tr>
+            <tr><td style="border: none;"><strong>Komórka org.</strong></td><td style="border: none;">WK-E</td><td style="border: none;">WK-E</td><td style="border: none;">WK-E</td></tr>
+            <tr><td style="border: none;"><strong>Podpis</strong></td><td style="border: none;"><em>[A. Makaś]</em></td><td style="border: none;"><em>[podpis]</em></td><td style="border: none;"><em>[podpis]</em></td></tr>
         </table>
 
         <br>
@@ -76,22 +80,22 @@
         </div>
         <h3>Spis treści</h3>
         
-        <div class="toc-list">
-            <div class="toc-row"><span class="toc-text">1. Ogólny opis regulatora</span><span class="toc-dots"></span><span class="toc-page">4</span></div>
-            <div class="toc-row"><span class="toc-text">2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
-            <div class="toc-row"><span class="toc-text">3. Funkcje regulatora</span><span class="toc-dots"></span><span class="toc-page">12</span></div>
-            <div class="toc-row"><span class="toc-text">4. <em>Regulacja automatyczna.</em></span><span class="toc-dots"></span><span class="toc-page">12</span></div>
-            <div class="toc-row"><span class="toc-text">5. <em>Ograniczniki.</em></span><span class="toc-dots"></span><span class="toc-page">12</span></div>
-            <div class="toc-row"><span class="toc-text">6. Układ zabezpieczeń.</span><span class="toc-dots"></span><span class="toc-page">12</span></div>
-            <div class="toc-row"><span class="toc-text">7. Pulpit sterowniczy EMT-1.</span><span class="toc-dots"></span><span class="toc-page">13</span></div>
-            <div class="toc-row"><span class="toc-text">8. Próby zabezpieczeń i testy.</span><span class="toc-dots"></span><span class="toc-page">13</span></div>
-            <div class="toc-row"><span class="toc-text">9. <em>Próba wytrzasku elektronicznego.</em></span><span class="toc-dots"></span><span class="toc-page">13</span></div>
-            <div class="toc-row"><span class="toc-text">10. <em>Sprawdzenie działania zaworu odcinającego WP - MAA11AA211</em></span><span class="toc-dots"></span><span class="toc-page">13</span></div>
-            <div class="toc-row"><span class="toc-text">11. <em>Próby przetworników ciśnienia oleju smarnego</em></span><span class="toc-dots"></span><span class="toc-page">13</span></div>
-            <div class="toc-row"><span class="toc-text">12. <em>Próba szczelności zaworów</em></span><span class="toc-dots"></span><span class="toc-page">14</span></div>
-            <div class="toc-row"><span class="toc-text">13. <em>Sterowanie napędem pompy lewarowej.</em></span><span class="toc-dots"></span><span class="toc-page">15</span></div>
-            <div class="toc-row"><span class="toc-text">14. <em>Sterowanie napędem pomp oleju regulacyjnego.</em></span><span class="toc-dots"></span><span class="toc-page">15</span></div>
-        </div>
+        <table class="toc-table">
+            <tr><td class="toc-text">1. Ogólny opis regulatora</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">4</td></tr>
+            <tr><td class="toc-text">2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">5</td></tr>
+            <tr><td class="toc-text">3. Funkcje regulatora</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
+            <tr><td class="toc-text">4. <em>Regulacja automatyczna.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
+            <tr><td class="toc-text">5. <em>Ograniczniki.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
+            <tr><td class="toc-text">6. Układ zabezpieczeń.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
+            <tr><td class="toc-text">7. Pulpit sterowniczy EMT-1.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
+            <tr><td class="toc-text">8. Próby zabezpieczeń i testy.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
+            <tr><td class="toc-text">9. <em>Próba wytrzasku elektronicznego.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
+            <tr><td class="toc-text">10. <em>Sprawdzenie działania zaworu odcinającego WP - MAA11AA211</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
+            <tr><td class="toc-text">11. <em>Próby przetworników ciśnienia oleju smarnego</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
+            <tr><td class="toc-text">12. <em>Próba szczelności zaworów</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">14</td></tr>
+            <tr><td class="toc-text">13. <em>Sterowanie napędem pompy lewarowej.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">15</td></tr>
+            <tr><td class="toc-text">14. <em>Sterowanie napędem pomp oleju regulacyjnego.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">15</td></tr>
+        </table>
     </div>
 
     <!-- STRONA 3 (Spis rysunków) -->
@@ -101,19 +105,19 @@
         </div>
         <h3>Spis rysunków.</h3>
         
-        <div class="toc-list">
-            <div class="toc-row"><span class="toc-text">Rys. 1 Tablica operacyjna MENU GŁÓWNE</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 2 Tablica operacyjna REGULACJA Pu</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 3 Tablica operacyjna REGULACJA Pc i Tw.</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OŁ. REGULAC.</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ</span><span class="toc-dots"></span><span class="toc-page">19</span></div>
-            <div class="toc-row"><span class="toc-text">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU</span><span class="toc-dots"></span><span class="toc-page">19</span></div>
-        </div>
+        <table class="toc-table">
+            <tr><td class="toc-text">Rys. 1 Tablica operacyjna MENU GŁÓWNE</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">16</td></tr>
+            <tr><td class="toc-text">Rys. 2 Tablica operacyjna REGULACJA Pu</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">16</td></tr>
+            <tr><td class="toc-text">Rys. 3 Tablica operacyjna REGULACJA Pc i Tw.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">16</td></tr>
+            <tr><td class="toc-text">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">17</td></tr>
+            <tr><td class="toc-text">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">17</td></tr>
+            <tr><td class="toc-text">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">17</td></tr>
+            <tr><td class="toc-text">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">18</td></tr>
+            <tr><td class="toc-text">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">18</td></tr>
+            <tr><td class="toc-text">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OŁ. REGULAC.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">18</td></tr>
+            <tr><td class="toc-text">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">19</td></tr>
+            <tr><td class="toc-text">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">19</td></tr>
+        </table>
     </div>
 
     <!-- STRONA 4 -->
@@ -150,7 +154,7 @@
         
         <h4>2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora.</h4>
         <p>W poniższej tabeli zebrano zakresy pomiarowe analogowych sygnałów wejściowych:</p>
-        <table>
+        <table class="data-table">
             <tr><th>Nazwa sygnału</th><th>Zakres pomiarowy</th></tr>
             <tr><td>Ciśnienie pary świeżej, tor 1, 1151GP<br><strong>LBA10CP201</strong></td><td>0-12MPa</td></tr>
             <tr><td>Ciśnienie pary świeżej, tor 2, 1151GP<br><strong>LBA10CP202</strong></td><td>0-12MPa</td></tr>
@@ -169,7 +173,7 @@
         <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
             INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 6/19
         </div>
-        <table>
+        <table class="data-table">
             <tr><th>Nazwa sygnału</th><th>Zakres pomiarowy</th></tr>
             <tr><td>Moc czynna generatora, for 2, TMW4<br><strong>MKA10CE202</strong></td><td>0-30MW</td></tr>
             <tr><td>Ciśnienie pary upustowej (SP) for 1,<br><strong>LBC10CP201</strong></td><td>0-2MPa</td></tr>
@@ -359,7 +363,7 @@
             INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 10/19
         </div>
         <p>W ogniwie regulatora głównego RG i w drugim ogniwie regulatora zabezpieczeń RZ2 zainstalowano rejestratory zdarzeń (moduły RAM-karty). Sygnały rejestrowane w ogniwie głównym RG są następujące:</p>
-        <table>
+        <table class="data-table">
             <tr><th>Lp.</th><th>Nazwa sygnału</th><th>Opis sygnału</th><th>Adres</th></tr>
             <tr><td>1.</td><td>N</td><td>Moc elektryczna</td><td>A000</td></tr>
             <tr><td>2.</td><td>Pu</td><td>P pary upustu 3</td><td>A0E2</td></tr>
@@ -400,7 +404,7 @@
         <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
             INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 11/19
         </div>
-        <table>
+        <table class="data-table">
             <tr><th colspan="4">Sygnały rejestrowane w ogniwie zabezpieczeń RZ1 są następujące</th></tr>
             <tr><th>Lp.</th><th>Nazwa sygnału</th><th>Opis sygnału</th><th>Adres</th></tr>
             <tr><td>1.</td><td>Psw tor1</td><td>P pary świeżej tor1</td><td>A210</td></tr>
