@@ -446,3 +446,27 @@ tbody tr:hover { background: #fafafa; }
   .lightbox__bar { padding: 12px 14px; }
   .lightbox__foot { padding: 12px 14px 20px; }
 }
+
+.hero__eyebrow {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
+.hero__text .hero__lead {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  font-weight: 500;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+.section__note {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}

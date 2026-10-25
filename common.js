@@ -3,9 +3,9 @@
 
   function updateFavicon() {
     const favicon = document.getElementById('favicon');
-    if (favicon) favicon.href = darkModeMedia.matches ? 'logo_biale.png' : 'logo_czarne.png';
-    const logoImg = document.getElementById('logo-img');
-    if (logoImg) logoImg.src = darkModeMedia.matches ? 'logo_biale.png' : 'logo_czarne.png';
+    if (favicon) {
+      favicon.href = darkModeMedia.matches ? 'logo_biale.png' : 'logo_czarne.png';
+    }
   }
 
   async function loadFragment(selector, url) {
