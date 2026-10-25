@@ -20,6 +20,15 @@
         { "typ": "dokument", "id": "projekt-wykonawczy-pwp1-pwp2-2005" },
         { "typ": "dokument", "id": "kosztorys-pwp1-pwp2-2005" }
       ]
+    },
+    {
+      "id": "2-1-14-PK2-44-12",
+      "sygnatura": "2-1/14 PK2-44/12",
+      "rok": "1998",
+      "opis": "Skoroszyt z dokumentacją techniczną budowlaną nastawni kotłów K7 ÷ K9.",
+      "zawartosc": [
+        { "typ": "dokument", "id": "odtworzenie-nawierzchni-1998" }
+      ]
     }
   ],
   "dokumenty": {
@@ -139,6 +148,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/kosztorys-pwp1-pwp2-2005.html", "label": "Pełna transkrypcja (5 stron)" }
+      ],
+      "skany": []
+    },
+    "odtworzenie-nawierzchni-1998": {
+      "tytul": "Projekt Wykonawczy: Odtworzenie nawierzchni drogowej",
+      "sygnatura": "P-363 / Tom 15",
+      "data": "VI 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Projekt wykonawczy",
+      "strony": "7",
+      "analiza": [
+        "Prezentowany dokument to Tom 15 Projektu Wykonawczego (Faza: PW) z czerwca 1998 roku, opracowany przez łódzką firmę PRO-TECH Sp. z o.o. na zlecenie Zespołu Elektrociepłowni w Łodzi S.A. (umowa P-363). Dokument dotyczy odtworzenia nawierzchni drogowej i ciągów pieszych w rejonie budynku nastawni kotłów K7÷K9 w EC-2.",
+        "Inwestycja była konsekwencją zniszczeń infrastruktury spowodowanych budową nowego bloku kotłowego z galerią. Opracowanie zawiera szczegółowy opis techniczny konstrukcji warstw nawierzchni (beton B20, podbudowa z betonu B15, podsypka piaskowa), parametry techniczne krawężników i chodników, a także inżynierskie sprawdzenie nośności nawierzchni pod kątem obciążeń kołowych.",
+        "Dokument wieńczy metryka z podpisem projektanta, mgr inż. arch. R. Baryckiego, stanowiąc cenny dowód na ciągły rozwój i modernizację układu komunikacyjnego EC-2 pod koniec lat 90."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/odtworzenie-nawierzchni-1998.html", "label": "Pełna transkrypcja (7 stron)" }
       ],
       "skany": []
     }

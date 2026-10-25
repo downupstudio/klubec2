@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt Wykonawczy: Odtworzenie nawierzchni drogowej (1998)</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; margin: 40px; color: #333; background-color: #f4f4f4; }
+        .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 1000px; margin: auto; }
+        h1, h2, h3, h4 { color: #222; border-bottom: 2px solid #444; padding-bottom: 5px; margin-top: 30px; }
+        .page { border-bottom: 2px dashed #aaa; padding-bottom: 30px; margin-bottom: 30px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.9em; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }
+        th { background-color: #eaeaea; text-align: center; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .bold { font-weight: bold; }
+        .formula { font-family: "Courier New", Courier, monospace; font-size: 1.1em; margin: 15px 0; display: block; text-align: center; }
+        .meta-table td { border: none; padding: 4px 10px; }
+        .header-box { border: 1px solid #000; padding: 10px; margin-bottom: 20px; font-size: 0.85em; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+<div class="doc-container">
+    <!-- STRONA 1 (Okładka) -->
+    <div class="page" style="text-align: center; padding-top: 50px; padding-bottom: 50px; border: 2px solid #000; margin-bottom: 30px;">
+        <p style="font-size: 1.1em; font-weight: bold; margin-bottom: 5px;">PRZEDSIĘBIORSTWO PRODUKCYJNO - USŁUGOWE</p>
+        <h1 style="border: none; font-size: 2em; margin: 0; letter-spacing: 2px;">PRO-TECH SP. Z O. O.</h1>
+        <p style="font-size: 0.9em; margin-top: 5px;">90-608 ŁÓDŹ UL. WÓLCZAŃSKA 55 / 59 &nbsp;&nbsp; TEL. (0-42) 33-54-52 , TEL. / FAX (0-42) 37-12-01</p>
+        
+        <table style="width: 90%; margin: 40px auto; border: 1px solid #000;">
+            <tr>
+                <td style="width: 33%; border: 1px solid #000; text-align: left;"><strong>Nr tomu :</strong> 15</td>
+                <td style="width: 33%; border: 1px solid #000; text-align: left;"><strong>Umowa :</strong> P - 363</td>
+                <td style="width: 34%; border: 1px solid #000; text-align: left;"><strong>Nr arch.:</strong> 6979</td>
+            </tr>
+        </table>
+
+        <div style="color: blue; font-family: 'Comic Sans MS', cursive; font-size: 1.4em; text-align: left; padding-left: 10%; margin-bottom: 20px;">
+            nr arch 2-1/14 (Ck2- 44/ 98
+        </div>
+
+        <table style="width: 90%; margin: 0 auto; border: 1px solid #000; text-align: left;">
+            <tr>
+                <td style="width: 30%; border: 1px solid #000; padding: 15px;"><strong>Inwestor :</strong></td>
+                <td style="border: 1px solid #000; padding: 15px;">ZESPÓŁ ELEKTROCIEPŁOWNI W ŁODZI S.A.<br>ul. J. Andrzejewskiej 5, 90-972 Łódź</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 15px;"><strong>Zamawiający :</strong></td>
+                <td style="border: 1px solid #000; padding: 15px;">ZESPÓŁ ELEKTROCIEPŁOWNI W ŁODZI S.A.<br>ul. J. Andrzejewskiej 5, 90-972 Łódź</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 15px;"><strong>Tytuł opracowania :</strong></td>
+                <td style="border: 1px solid #000; padding: 15px;"><strong>EC-2 ŁÓDŹ<br>DOKUMENTACJA TECHNICZNA BUDOWLANA NASTAWNI KOTŁÓW K7 ÷ K9</strong></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 15px;"><strong>Tytuł tomu :</strong></td>
+                <td style="border: 1px solid #000; padding: 15px;"><strong>PROJEKT ODTWORZENIA NAWIERZCHNI DROGOWEJ W REJONIE BUDYNKU NASTAWNI KOTŁÓW Z KOSZTORYSEM INWESTORSKIM.</strong></td>
+            </tr>
+        </table>
+
+        <table style="width: 90%; margin: 20px auto; border: 1px solid #000;">
+            <tr>
+                <td style="width: 50%; border: 1px solid #000; padding: 10px; text-align: center;"><strong>Część : BUDOWLANA</strong></td>
+                <td style="width: 50%; border: 1px solid #000; padding: 10px; text-align: center;"><strong>Faza : PW</strong></td>
+            </tr>
+        </table>
+
+        <table style="width: 90%; margin: 0 auto; border: 1px solid #000;">
+            <tr>
+                <td style="width: 40%; border: 1px solid #000; padding: 10px; text-align: left;">Projektował :<br><small>Nr uprawnień bud. :</small></td>
+                <td style="width: 30%; border: 1px solid #000; padding: 10px; text-align: center;"><strong>mgr inż. arch. R. BARYCKI</strong><br>49 / 67</td>
+                <td style="width: 30%; border: 1px solid #000; padding: 10px; text-align: center;"><em style="font-family: 'Comic Sans MS', cursive; font-size: 1.5em;">Barycki</em></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 10px; text-align: left;">Sprawdził :<br><small>Nr uprawnień bud. :</small></td>
+                <td style="border: 1px solid #000; padding: 10px;"></td>
+                <td style="border: 1px solid #000; padding: 10px;"></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 10px; text-align: left;">Gł. Projektant :</td>
+                <td style="border: 1px solid #000; padding: 10px; text-align: center;"><strong>mgr inż. arch. R. BARYCKI</strong></td>
+                <td style="border: 1px solid #000; padding: 10px; text-align: center;"><em style="font-family: 'Comic Sans MS', cursive; font-size: 1.5em;">Barycki</em></td>
+            </tr>
+        </table>
+
+        <h3 style="border: none; margin-top: 30px;">ŁÓDŹ CZERWIEC 1998</h3>
+        <p style="font-size: 0.7em; text-align: center; margin-top: 40px;">ROZWIĄZANIA ZAWARTE W NINIEJSZYM OPRACOWANIU STANOWIĄ WYŁĄCZNĄ WŁASNOŚĆ P.P.U. „PRO-TECH” SP. Z O. O. W ŁODZI I MOGĄ BYĆ STOSOWANE, POWIELANE ORAZ UDOSTĘPNIANE OSOBOM TRZECIM, ZARÓWNO W CZĘŚCI JAK I W CAŁOŚCI, JEDYNIE NA PODSTAWIE PISEMNEGO ZEZWOLENIA WW PRZEDSIĘBIORSTWA Z ZASTRZEŻENIEM WSZELKICH SKUTKÓW PRAWNYCH</p>
+        <div style="text-align: right; color: blue; font-size: 1.5em; font-weight: bold;">3</div>
+    </div>
+
+    <!-- STRONA 2 (Spis treści) -->
+    <div class="page">
+        <div class="header-box">
+            <div><strong>PPU „PRO-TECH”</strong><br>Sp. z o.o. ŁÓDŹ</div>
+            <div><strong>Umowa :</strong> P - 363</div>
+            <div><strong>Branża :</strong><br>drogi</div>
+            <div><strong>Nr arch.</strong> 6979<br><strong>Strona :</strong> 2</div>
+        </div>
+
+        <h2 class="text-center" style="border: 1px solid #000; padding: 10px;">SPIS ZAWARTOŚCI TOMU NR 15</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Lp.</th>
+                    <th style="width: 75%;">Wyszczególnienie</th>
+                    <th style="width: 15%;">Nr arch.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="text-center">1.</td><td>STRONA TYTUŁOWA.</td><td></td></tr>
+                <tr><td class="text-center">2.</td><td>SPIS ZAWARTOŚCI TOMU NR 15.</td><td></td></tr>
+                <tr>
+                    <td class="text-center">3.</td>
+                    <td>OPIS TECHNICZNY.<br><br>
+                        1. Przedmiot i zakres opracowania.<br>
+                        2. Podstawa opracowania.<br>
+                        3. Opis dróg i chodników.
+                    </td>
+                    <td class="text-center">6979</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="bold">RYSUNKI:</td>
+                </tr>
+                <tr><td class="text-center">4.</td><td>Plan sytuacyjny dróg i chodników.</td><td class="text-center">7180</td></tr>
+                <tr><td class="text-center">5.</td><td>Przekroje nawierzchni.</td><td class="text-center">7181</td></tr>
+                <tr>
+                    <td colspan="3" class="bold">KOSZTORYSY:</td>
+                </tr>
+                <tr><td class="text-center">6.</td><td>Nakładczy rzeczowy.</td><td class="text-center">K 1</td></tr>
+                <tr><td class="text-center">7.</td><td>Kosztorys inwestorski.</td><td class="text-center">K 2</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- STRONA 3 (Opis techniczny - str 1) -->
+    <div class="page">
+        <div class="header-box">
+            <div><strong>PPU „PRO-TECH”</strong><br>Sp. z o.o. ŁÓDŹ</div>
+            <div><strong>Umowa :</strong> P - 363</div>
+            <div><strong>Branża :</strong><br>drogi</div>
+            <div><strong>Nr arch.</strong> 6979<br><strong>Strona :</strong> 3</div>
+        </div>
+
+        <h2 class="text-center" style="border: none; text-decoration: underline;">OPIS TECHNICZNY.</h2>
+        
+        <h3>1. Przedmiot i zakres opracowania.</h3>
+        <p>Przedmiotem opracowania jest projekt wykonawczy odtworzenia dróg i placów pomiędzy budynkiem nastawni kotłów a istniejącym kompleksem budynków elektrociepłowni, wyburzonych lub zniszczonych w związku z budową budynku nastawni kotłów K7÷K9 z galerią.</p>
+        <p>W ramach projektu przewidziano opaskę i ciąg pieszy przy budynku nastawni z płyt betonowych na podsypce piaskowej.</p>
+        <p>Opracowanie zakresem obejmuje:</p>
+        <ul>
+            <li>wykonanie obrzeży drogowych z krawężników betonowych w sąsiedztwie budynków istniejących i budynku projektowanego dla uzyskania tzw. „odbojów komunikacyjnych” (przyjęto 100% wykonania krawężników),</li>
+            <li>odtworzenie nawierzchni drogowej zniszczonej w związku z wyburzeniem bocznicy kolejowej i stacji żużla nr 3, oraz budową nastawni kotłów (przyjęto 80% nawierzchni do odtworzenia),</li>
+            <li>wykonanie ciągu pieszego i opaski wokół budynku nastawni kotłów.</li>
+        </ul>
+    </div>
+
+    <!-- STRONA 4 (Opis techniczny - str 2) -->
+    <div class="page">
+        <div class="header-box">
+            <div><strong>PPU „PRO-TECH”</strong><br>Sp. z o.o. ŁÓDŹ</div>
+            <div><strong>Umowa :</strong> P - 363</div>
+            <div><strong>Branża :</strong><br>drogi</div>
+            <div><strong>Nr arch.</strong> 6979<br><strong>Strona :</strong> 4</div>
+        </div>
+
+        <h3>2. Podstawa opracowania.</h3>
+        <p>2.1. Zlecenie ZEC w Łodzi SA z dnia 15.01.1998r. znak: RP/PL/UC-2/UA-2/228/98, oraz umowa Nr P-363 z dnia 29.01.1998r.</p>
+        <p>2.2. Projekty budowlane podstawowe nastawni kotłów z galerią - tomy nr 2, 4, 5 opracowane w ramach niniejszej umowy.</p>
+        <p>2.3. Projekt demontażu stacji żużla nr 3 z pozwoleniem na rozbiórkę - tomy nr 16, 17 opracowane w ramach niniejszej umowy.</p>
+
+        <h3>3. Opis dróg i chodników.</h3>
+        <h4>3.1. Nawierzchnia drogowa.</h4>
+        <p>Projektowany odcinek drogi wykonany będzie z warstwy nawierzchniowej z betonu B20 gr. 8cm, na podbudowie z betonu B15 gr. 17cm i na warstwie z piasku gr. 15cm. W miejscu podbudowy z betonu można zastosować płyty drogowe betonowe lub żelbetowe z odzysku.</p>
+        <p>Nawierzchnia drogowa ograniczona będzie krawężnikami drogowymi 30x15cm, ułożonymi na ławach z betonu B10. Ławy pod krawężniki wykonane będą z tzw. „oporem”.</p>
+    </div>
+
+    <!-- STRONA 5 (Opis techniczny - str 3) -->
+    <div class="page">
+        <div class="header-box">
+            <div><strong>PPU „PRO-TECH”</strong><br>Sp. z o.o. ŁÓDŹ</div>
+            <div><strong>Umowa :</strong> P - 363</div>
+            <div><strong>Branża :</strong><br>drogi</div>
+            <div><strong>Nr arch.</strong> 6979<br><strong>Strona :</strong> 5</div>
+        </div>
+
+        <p>Projektowaną jezdnię włączyć w układ dróg istniejących z zachowaniem istniejącego spadku drogi i istniejących rzędnych pokryw rewizyjnych na studniach kanalizacyjnych i kablowych.</p>
+        <p>Na odtworzonej jezdni nie projektuje się instalacji odwadniającej podziemnej i pozostawia się spadek grawitacyjny nawierzchni od budynków do terenów nieutwardzonych (z północy na południe).</p>
+        
+        <table style="width: 80%; margin: 20px auto; border: none;">
+            <tr><td>Powierzchnia dróg do odtworzenia:</td><td>P = 400x0,80 = 320m<sup>2</sup>.</td></tr>
+            <tr><td>Długość krawężników drogowych:</td><td>L = 145mb.</td></tr>
+        </table>
+
+        <h4>3.2. Chodniki.</h4>
+        <p>Zaprojektowano nawierzchnię z płyt betonowych 50x50x7cm na warstwie z piasku gr. 10cm na ciągu dla pieszych o szer. 1,50m i jako opaska wokół budynku nastawni kotłów o szer. 0,50m.</p>
+        <p>Chodnik na ciągu dla pieszych ograniczony będzie dwustronnie obrzeżem betonowym 30x8cm ułożonym na podsypce piaskowej.</p>
+
+        <table style="width: 80%; margin: 20px auto; border: none;">
+            <tr><td>Powierzchnia nawierzchni z płyt:</td><td>P = 40m<sup>2</sup>.</td></tr>
+            <tr><td>Długość krawężników:</td><td>L = 25m.</td></tr>
+        </table>
+    </div>
+
+    <!-- STRONA 6 (Obliczenia - str 1) -->
+    <div class="page">
+        <div class="header-box">
+            <div><strong>PPU „PRO-TECH”</strong><br>Sp. z o.o. ŁÓDŹ</div>
+            <div><strong>Umowa :</strong> P - 363</div>
+            <div><strong>Branża :</strong><br>drogi</div>
+            <div><strong>Nr arch.</strong> 6979<br><strong>Strona :</strong> 6</div>
+        </div>
+
+        <h3>4. Sprawdzenie nośności nawierzchni.</h3>
+        
+        <p><strong>Założenia:</strong></p>
+        <ul style="list-style-type: none;">
+            <li>- nośność utwardzonej jezdni:</li>
+            <li>- obciążenie przypadające na koło:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;P<sub>1</sub> = 200kN,</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;P<sub>2</sub> = 50kN,</li>
+            <li>- grubość betonu B15 (R<sub>p</sub>=4,1; E<sub>b</sub>=225000): G<sub>b</sub> = 25cm,</li>
+            <li>- podsypka filtracyjna: G<sub>p</sub> = 15cm,</li>
+            <li>- podłoże piaste:</li>
+            <li>- współczynnik pewności:</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;K<sub>1</sub> = 4,</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;K<sub>2</sub> = 2.</li>
+        </ul>
+
+        <p><strong>Promień powierzchni styku opony koła z płytą:</strong></p>
+        <div class="formula">
+            r = &radic;( 5000 / (3,14 &middot; 5,75) ) = 13cm.
+        </div>
+
+        <p><strong>Współczynnik giętkości płyty nośnej:</strong></p>
+        <div class="formula">
+            L = 0,541 &middot; <sup>4</sup>&radic;( (225000 &middot; 25<sup>2</sup>) / 4 ) = 93cm.
+        </div>
+
+        <p><strong>Obliczeniowy promień koła z warstwą płyty gr. 3cm:</strong></p>
+        <div class="formula">
+            r<sub>p</sub> = 13 + 3 = 16cm.
+        </div>
+    </div>
+
+    <!-- STRONA 7 (Obliczenia - str 2) -->
+    <div class="page">
+        <div class="header-box">
+            <div><strong>PPU „PRO-TECH”</strong><br>Sp. z o.o. ŁÓDŹ</div>
+            <div><strong>Umowa :</strong> P - 363</div>
+            <div><strong>Branża :</strong><br>drogi</div>
+            <div><strong>Nr arch.</strong> 6979<br><strong>Strona :</strong> 7</div>
+        </div>
+
+        <p><strong>Stosunek promienia do giętkości płyty:</strong></p>
+        <div class="formula">
+            r<sub>p</sub> / L = 16 / 93 = 0,17 &nbsp;&#10230;&nbsp; k<sub>s</sub> = 0,125.
+        </div>
+
+        <p><strong>Obliczeniowy moment zginający:</strong></p>
+        <div class="formula">
+            M<sub>p</sub> = 0,125 &middot; 5000 &middot; 1,20 = 750kGcm/cm bieżący płyty.
+        </div>
+
+        <p><strong>Grubość płyty:</strong></p>
+        <div class="formula">
+            h = 1,87 &middot; &radic;( 750 / 5,1 ) &asymp; 23cm &lt; 25cm przyjętej.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
