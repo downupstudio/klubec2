@@ -29,6 +29,17 @@
       ]
     },
     {
+      "id": "2-1-14-PK2-44-13",
+      "sygnatura": "2-1/14 PK2-44/13",
+      "projekt": "Nastawnia kotłów K7÷K9 — konstrukcja galerii",
+      "tom": "Tom 5",
+      "rok": "1998",
+      "opis": "Skoroszyt z dokumentacją techniczną konstrukcji stalowej galerii łączącej nastawnię kotłów z kotłownią. Umowa P-363 (1998).",
+      "zawartosc": [
+        { "typ": "dokument", "id": "projekt-konstrukcji-galerii-1998" }
+      ]
+    },
+    {
       "id": "2-1-19-PM2-36-101",
       "sygnatura": "2-1/19 PM2-36/101",
       "projekt": "Modernizacja zabezpieczeń PWP1 i PWP2",
@@ -243,6 +254,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/kosztorys-inwestorski-odtworzenie-drog-1998.html", "label": "Pełna transkrypcja (12 stron)" }
+      ],
+      "skany": []
+    },
+    "projekt-konstrukcji-galerii-1998": {
+      "tytul": "Projekt Konstrukcji Galerii (Tom 5)",
+      "sygnatura": "Tom 5 / 7352",
+      "data": "VII 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Projekt wykonawczy",
+      "strony": "6",
+      "analiza": [
+        "Prezentowany dokument to Tom 5 Dokumentacji Technicznej (Faza: Projekt Podstawowy i Wykonawczy) z lipca 1998 roku, opracowany przez firmę PRO-TECH Sp. z o.o. na zlecenie ZEC Łódź. Dotyczy on kluczowego elementu infrastruktury podczas rozbudowy EC-2 – projektu konstrukcji stalowej galerii łączącej nowo budowaną nastawnię kotłów K7÷K9 z istniejącym budynkiem kotłowni.",
+        "Dokument szczegółowo precyzuje rozwiązania inżynierskie: od ogólnego opisu konstrukcji nośnej (wykorzystanie stali St3SX), przez specyfikację dachu z blachy fałdowej T-55, aż po wytyczne dotyczące spawania (elektrody ER-150) i zabezpieczeń antykorozyjnych (malowanie farbami epoksydowymi i chlorokauczukowymi).",
+        "Dokument zawiera również koordynację międzybranżową oraz spis rysunków wykonawczych (m.in. kratownice, stężenia, schematy montażowe), stanowiąc cenny zapis myśli technicznej towarzyszącej modernizacji zakładu pod koniec lat 90."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/projekt-konstrukcji-galerii-1998.html", "label": "Pełna transkrypcja (6 stron)" }
       ],
       "skany": []
     }
