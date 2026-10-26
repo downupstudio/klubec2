@@ -36,7 +36,8 @@
       "rok": "1998",
       "opis": "Skoroszyt z dokumentacją techniczną konstrukcji stalowej galerii łączącej nastawnię kotłów z kotłownią. Umowa P-363 (1998).",
       "zawartosc": [
-        { "typ": "dokument", "id": "projekt-konstrukcji-galerii-1998" }
+        { "typ": "dokument", "id": "projekt-konstrukcji-galerii-1998" },
+        { "typ": "dokument", "id": "rysunek-7353-1998" }
       ]
     },
     {
@@ -271,6 +272,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/projekt-konstrukcji-galerii-1998.html", "label": "Pełna transkrypcja (6 stron)" }
+      ],
+      "skany": []
+    },
+    "rysunek-7353-1998": {
+      "tytul": "Rysunek 7353: Schematy montażowe - przekroje",
+      "sygnatura": "7353",
+      "data": "IV 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to Rysunek nr 7353 z kwietnia 1998 roku, wchodzący w skład Tomu 5 (Projekt Konstrukcji Galerii) dokumentacji nastawni kotłów K7÷K9. Został on opracowany przez zespół P.P.U. PRO-TECH (m.in. mgr inż. J. Szydłowskiego, mgr inż. E. Bartykę, mgr inż. A. Żyłkę oraz tech. B. Szeląga).",
+        "Arkusz zatytułowany „SCHEMATY MONTAŻOWE - PRZEKROJE” w skali 1:50 stanowi kluczowy element wykonawczy, precyzujący geometrię stalowej konstrukcji nośnej galerii. Rysunek szczegółowo przedstawia dwa główne przekroje poprzeczne w osiach 4a i 5a, ukazując układy kratownic (K-1, K-2), stężeń (SK-1, SK-2) i belek stropowych (BS-1, BS-2, BS-3).",
+        "Zawiera również niezbędne rzędne wysokościowe (od posadowienia na poziomie +4,660 aż po dach na +10,84) oraz wymiary gabarytowe elementów, co czyni go niezbędnym materiałem dla ówczesnych konstruktorów i montażystów."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7353-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }
