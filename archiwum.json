@@ -22,7 +22,8 @@
       "opis": "Skoroszyt z dokumentacją techniczną budowlaną nastawni kotłów K7 ÷ K9. Umowa P-363 (1998).",
       "zawartosc": [
         { "typ": "dokument", "id": "odtworzenie-nawierzchni-1998" },
-        { "typ": "dokument", "id": "rysunek-7180-1998" }
+        { "typ": "dokument", "id": "rysunek-7180-1998" },
+        { "typ": "dokument", "id": "rysunek-7181-1998" }
       ]
     },
     {
@@ -189,6 +190,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/rysunek-7180-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
+      ],
+      "skany": []
+    },
+    "rysunek-7181-1998": {
+      "tytul": "Rysunek 7181: Przekroje nawierzchni",
+      "sygnatura": "7181",
+      "data": "VI 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to Rysunek nr 7181 (Przekroje nawierzchni) z czerwca 1998 roku, opracowany w fazie Projektu Budowlanego (PB) przez firmę PRO-TECH. Stanowi on integralną część Tomu 15 dokumentacji technicznej budowy nastawni kotłów K7-K9 w EC-2.",
+        "Rysunek w skali 1:10 szczegółowo obrazuje konstrukcję warstwową projektowanej infrastruktury drogowej. Górna część przedstawia przekrój odtwarzanej nawierzchni drogowej, precyzując grubość warstwy betonu B-20, podbudowy z betonu B-15 oraz podsypki piaskowej, a także sposób osadzenia krawężnika na ławie betonowej z oporem.",
+        "Dolna część dokumentu wizualizuje przekrój chodnika, uwzględniając ułożenie płyt betonowych 50x50x7 na zaprawie i podsypce piaskowej, ograniczonych obrzeżem betonowym. Rysunek stanowi cenne, wizualne dopełnienie opisów inżynierskich z tego okresu, ukazując standardy budownictwa drogowego stosowane na terenie elektrociepłowni pod koniec lat 90."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7181-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }
