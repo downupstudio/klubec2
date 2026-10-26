@@ -37,7 +37,8 @@
       "opis": "Skoroszyt z dokumentacją techniczną konstrukcji stalowej galerii łączącej nastawnię kotłów z kotłownią. Umowa P-363 (1998).",
       "zawartosc": [
         { "typ": "dokument", "id": "projekt-konstrukcji-galerii-1998" },
-        { "typ": "dokument", "id": "rysunek-7353-1998" }
+        { "typ": "dokument", "id": "rysunek-7353-1998" },
+        { "typ": "dokument", "id": "rysunek-7354-1998" }
       ]
     },
     {
@@ -289,6 +290,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/rysunek-7353-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
+      ],
+      "skany": []
+    },
+    "rysunek-7354-1998": {
+      "tytul": "Rysunek 7354: Schematy montażowe - rzuty",
+      "sygnatura": "7354",
+      "data": "IV 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to Rysunek nr 7354 z kwietnia 1998 roku, zatytułowany „SCHEMATY MONTAŻOWE - RZUTY”, będący kontynuacją dokumentacji wykonawczej (Tom V) dla budowy galerii łączącej nastawnię kotłów K7÷K9 z istniejącą kotłownią w EC-2.",
+        "Arkusz w skali 1:50 szczegółowo przedstawia trzy kluczowe widoki z góry (rzuty w przekrojach 1-1, 2-2 oraz 3-3). Rysunek precyzyjnie lokalizuje elementy konstrukcyjne (kratownice K-1 i K-2, belki stropowe BS-1, BS-2, BS-3, stężenia SK-1) względem osi budynku (4a i 5a) oraz istniejącej ściany kotłowni.",
+        "Zawiera również niezbędne wymiary gabarytowe (np. całkowita długość konstrukcji 10900 mm) i rozstawy podparć, stanowiąc nieocenione źródło wiedzy o ówczesnych technologiach montażu konstrukcji stalowych na terenie zakładu."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7354-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }
