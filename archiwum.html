@@ -258,9 +258,54 @@
         parts.forEach(function (part) {
           const wrap = document.createElement('div');
           wrap.className = 'transcription-part';
-          wrap.innerHTML =
-            '<div class="transcription-part__label">' + esc(part.label || 'Transkrypcja') + '</div>'
-            + '<iframe class="transcription-frame" src="' + esc(part.src) + '" title="' + esc(part.label || 'Transkrypcja') + '" loading="lazy"></iframe>';
+          
+          const label = document.createElement('div');
+          label.className = 'transcription-part__label';
+          label.textContent = part.label || 'Transkrypcja';
+          wrap.appendChild(label);
+
+          const iframe = document.createElement('iframe');
+          iframe.className = 'transcription-frame';
+          iframe.src = part.src;
+          iframe.title = part.label || 'Transkrypcja';
+          iframe.loading = 'lazy';
+          
+          iframe.addEventListener('load', function() {
+            try {
+              const docIframe = iframe.contentDocument || iframe.contentWindow.document;
+              if (docIframe && !docIframe.getElementById('mobile-fix-style')) {
+                const style = docIframe.createElement('style');
+                style.id = 'mobile-fix-style';
+                style.textContent = `
+                  @media (max-width: 800px) {
+                    body { margin: 12px !important; font-size: 14px !important; }
+                    h1 { font-size: 1.4em !important; margin-top: 15px !important; }
+                    h2 { font-size: 1.2em !important; margin-top: 15px !important; }
+                    h3, h4 { font-size: 1.1em !important; margin-top: 15px !important; }
+                    table { display: block !important; width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; margin-bottom: 15px !important; border: 1px solid #ccc !important; }
+                    th, td { padding: 6px !important; font-size: 13px !important; min-width: 80px !important; }
+                    .header-table { display: block !important; border: none !important; margin-bottom: 10px !important; }
+                    .header-table tbody { display: block !important; }
+                    .header-table tr { display: flex !important; flex-direction: column !important; }
+                    .header-table td { border: none !important; padding: 2px 0 !important; text-align: left !important; min-width: 0 !important; }
+                    .header-table td[style*="text-align: right"] { text-align: left !important; }
+                    .data-table, .bom-table, table[style] { display: block !important; overflow-x: auto !important; }
+                    .formula, .formula-box { font-size: 12px !important; padding: 10px !important; overflow-x: auto !important; white-space: pre-wrap !important; word-break: break-word !important; }
+                    .page { padding-bottom: 20px !important; margin-bottom: 20px !important; }
+                    .signature-box { flex-direction: column !important; gap: 20px !important; }
+                    .signature { width: 100% !important; margin: 0 !important; }
+                    .typewriter { white-space: pre-wrap !important; word-break: break-word !important; }
+                    .fraction { transform: scale(0.8); display: inline-block; }
+                  }
+                `;
+                docIframe.head.appendChild(style);
+              }
+            } catch (e) {
+              console.warn('Nie można wstrzyknąć stylów do iframe:', e);
+            }
+          });
+
+          wrap.appendChild(iframe);
           tabContent.appendChild(wrap);
         });
       }
