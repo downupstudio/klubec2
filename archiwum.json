@@ -39,7 +39,8 @@
         { "typ": "dokument", "id": "projekt-konstrukcji-galerii-1998" },
         { "typ": "dokument", "id": "rysunek-7353-1998" },
         { "typ": "dokument", "id": "rysunek-7354-1998" },
-        { "typ": "dokument", "id": "rysunek-7355-1998" }
+        { "typ": "dokument", "id": "rysunek-7355-1998" },
+        { "typ": "dokument", "id": "rysunek-7356-1998" }
       ]
     },
     {
@@ -325,6 +326,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/rysunek-7355-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
+      ],
+      "skany": []
+    },
+    "rysunek-7356-1998": {
+      "tytul": "Rysunek 7356: Szczegóły konstrukcyjne",
+      "sygnatura": "7356",
+      "data": "IV 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to Rysunek nr 7356 z kwietnia 1998 roku, zatytułowany „SZCZEGÓŁY KONSTRUKCYJNE”, opracowany w skali 1:10 przez zespół P.P.U. PRO-TECH (J. Szydłowski, E. Bartyka, B. Sztelak, A. Żyłka). Arkusz stanowi niezwykle istotne uzupełnienie projektu konstrukcji stalowej galerii łączącej nastawnię kotłów K7÷K9 z kotłownią.",
+        "Zamiast ogólnych rzutów, rysunek ten skupia się na detalach węzłów montażowych, pokazując sposoby posadowienia i mocowania dźwigarów (K-1, K-2) do słupów żelbetowych (RW), belek stropowych (B-6, B-13) oraz istniejących ścian kotłowni. Dokument precyzyjnie specyfikuje geometrię połączeń, wymiary otworów wierconych w ścianach (Ø 22) oraz szczegółowy wykaz niezbędnych łączników (śruby M20 o różnych długościach, podkładki klinowe i sprężyste).",
+        "W bloku uwag znalazło się kluczowe dla bezpieczeństwa konstrukcji zalecenie: „ELEMENTY SPAWAĆ NA CAŁEJ DŁUGOŚCI ZŁĄCZA” oraz specyfikacja elektrod (ER-150), co doskonale oddaje rzemieślniczą precyzję wymaganą przy tego typu budowach przemysłowych."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7356-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }
