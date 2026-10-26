@@ -19,12 +19,13 @@
       "projekt": "Nastawnia kotłów K7÷K9 — odtworzenie dróg",
       "tom": "Tom 15",
       "rok": "1998",
-      "opis": "Skoroszyt z dokumentacją techniczną budowlaną nastawni kotłów K7 ÷ K9. Umowa P-363 (1998).",
+      "opis": "Skoroszyt z dokumentacją techniczną budowlaną nastawni kotłów K7 ÷ K9. Umowa P-363 (1998). Zawiera 5 pozycji.",
       "zawartosc": [
         { "typ": "dokument", "id": "odtworzenie-nawierzchni-1998" },
         { "typ": "dokument", "id": "rysunek-7180-1998" },
         { "typ": "dokument", "id": "rysunek-7181-1998" },
-        { "typ": "dokument", "id": "kosztorys-odtworzenie-drog-1998" }
+        { "typ": "dokument", "id": "kosztorys-odtworzenie-drog-1998" },
+        { "typ": "dokument", "id": "kosztorys-inwestorski-odtworzenie-drog-1998" }
       ]
     },
     {
@@ -225,6 +226,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/kosztorys-odtworzenie-drog-1998.html", "label": "Pełna transkrypcja (12 stron)" }
+      ],
+      "skany": []
+    },
+    "kosztorys-inwestorski-odtworzenie-drog-1998": {
+      "tytul": "Kosztorys Inwestorski (Tom 15/K2)",
+      "sygnatura": "Tom 15/K2",
+      "data": "VII 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Kosztorys",
+      "strony": "12",
+      "analiza": [
+        "Prezentowany dokument to Kosztorys Inwestorski (Tom 15/K2) z lipca 1998 roku, stanowiący finansowe zwieńczenie dokumentacji odtworzenia dróg i placów przy nastawni kotłów K7-K9. Został opracowany przez tech. Annę Szalek pod kierownictwem głównego projektanta, mgr inż. arch. R. Baryckiego z firmy PRO-TECH.",
+        "Dokument zawiera szczegółowe, klasyczne zestawienie kosztów inwestycji (tabelę elementów, zapotrzebowanie na robociznę, materiały i sprzęt, przedmiar robót oraz wycenę końcową). Całkowity koszt netto robót oszacowano na kwotę 56 433,02 zł.",
+        "Warto odnotować ciekawostkę archiwalną: w nagłówkach wydruku z systemu RODOS-KS po raz kolejny powtórzył się błąd drukarski, polegający na konsekwentnym oznaczaniu inwestycji jako „EC-3 Łódź” (zamiast prawidłowego EC-2), co sugeruje, że szablon wydruku został przygotowany na potrzeby innej inwestycji i nie został poprawnie zmodyfikowany."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/kosztorys-inwestorski-odtworzenie-drog-1998.html", "label": "Pełna transkrypcja (12 stron)" }
       ],
       "skany": []
     }
