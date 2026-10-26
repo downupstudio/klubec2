@@ -38,7 +38,8 @@
       "zawartosc": [
         { "typ": "dokument", "id": "projekt-konstrukcji-galerii-1998" },
         { "typ": "dokument", "id": "rysunek-7353-1998" },
-        { "typ": "dokument", "id": "rysunek-7354-1998" }
+        { "typ": "dokument", "id": "rysunek-7354-1998" },
+        { "typ": "dokument", "id": "rysunek-7355-1998" }
       ]
     },
     {
@@ -307,6 +308,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/rysunek-7354-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
+      ],
+      "skany": []
+    },
+    "rysunek-7355-1998": {
+      "tytul": "Rysunek 7355: Stężenia SK-1, SK-2",
+      "sygnatura": "7355",
+      "data": "IV 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to Rysunek nr 7355 z kwietnia 1998 roku, zatytułowany „STĘŻENIA SK-1, SK-2”, wykonany w skali 1:20 przez zespół P.P.U. PRO-TECH (T. Szydłowski, E. Bartyka, B. Sztelak, A. Żyłka). Stanowi on integralną część projektu konstrukcji stalowej galerii łączącej nastawnię kotłów K7÷K9 z kotłownią.",
+        "Arkusz szczegółowo przedstawia elementy usztywniające (stężenia) dla dwóch głównych osi konstrukcyjnych (4a i 5a). Rysunek ukazuje rozrysowane pręty stężeń z podziałem na węzły montażowe (oznaczone cyframi 1, 2, 3 oraz symbolami A.3, A.4) i precyzyjnie określa ich długości (np. L=8090, L=6050).",
+        "Dodatkowo zawiera widoki przekrojów A-A i B-B, ukazujące geometrię połączeń. W bloku uwag znalazły się kluczowe dla wykonawcy informacje: specyfikacja stali (St3SX), rodzaj elektrod (ER-150) oraz bezwzględny nakaz spawania elementów na całej długości złącza, co świadczy o wysokich wymaganiach wytrzymałościowych dla tej części konstrukcji."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7355-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }
