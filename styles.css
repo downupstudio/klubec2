@@ -570,3 +570,12 @@ tbody tr:hover { background: #fafafa; }
     margin: 0 16px 10px; 
   }
 }
+
+.archive-card__projekt {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}

@@ -3,6 +3,8 @@
     {
       "id": "2-1-19-PM2-8-106",
       "sygnatura": "2-1/19 PM2-8/106",
+      "projekt": "Dokumentacja techniczna podgrzewaczy regeneracyjnych",
+      "tom": "",
       "rok": "1954–2003",
       "opis": "Skoroszyt z dokumentacją techniczną podgrzewaczy regeneracyjnych EC2. Zawiera 3 pozycje — zdygitalizowano wszystkie dokumenty.",
       "zawartosc": [
@@ -12,22 +14,27 @@
       ]
     },
     {
-      "id": "2-1-19-PM2-36-101",
-      "sygnatura": "2-1/19 PM2-36/101",
-      "rok": "2005",
-      "opis": "Skoroszyt z dokumentacją modernizacji układu zabezpieczeń podgrzewaczy PWP1 i PWP2 (Tom 4).",
+      "id": "2-1-14-PK2-44-12",
+      "sygnatura": "2-1/14 PK2-44/12",
+      "projekt": "Nastawnia kotłów K7÷K9 — odtworzenie dróg",
+      "tom": "Tom 15",
+      "rok": "1998",
+      "opis": "Skoroszyt z dokumentacją techniczną budowlaną nastawni kotłów K7 ÷ K9. Umowa P-363 (1998).",
       "zawartosc": [
-        { "typ": "dokument", "id": "projekt-wykonawczy-pwp1-pwp2-2005" },
-        { "typ": "dokument", "id": "kosztorys-pwp1-pwp2-2005" }
+        { "typ": "dokument", "id": "odtworzenie-nawierzchni-1998" },
+        { "typ": "dokument", "id": "rysunek-7180-1998" }
       ]
     },
     {
-      "id": "2-1-14-PK2-44-12",
-      "sygnatura": "2-1/14 PK2-44/12",
-      "rok": "1998",
-      "opis": "Skoroszyt z dokumentacją techniczną budowlaną nastawni kotłów K7 ÷ K9.",
+      "id": "2-1-19-PM2-36-101",
+      "sygnatura": "2-1/19 PM2-36/101",
+      "projekt": "Modernizacja zabezpieczeń PWP1 i PWP2",
+      "tom": "Tom 4",
+      "rok": "2005",
+      "opis": "Skoroszyt z dokumentacją modernizacji układu zabezpieczeń podgrzewaczy PWP1 i PWP2. Umowa 2/2005 (2005).",
       "zawartosc": [
-        { "typ": "dokument", "id": "odtworzenie-nawierzchni-1998" }
+        { "typ": "dokument", "id": "projekt-wykonawczy-pwp1-pwp2-2005" },
+        { "typ": "dokument", "id": "kosztorys-pwp1-pwp2-2005" }
       ]
     }
   ],
@@ -165,6 +172,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/odtworzenie-nawierzchni-1998.html", "label": "Pełna transkrypcja (7 stron)" }
+      ],
+      "skany": []
+    },
+    "rysunek-7180-1998": {
+      "tytul": "Rysunek 7180: Plan Sytuacyjny Dróg i Chodników",
+      "sygnatura": "7180",
+      "data": "VI 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Rysunek techniczny",
+      "strony": "1",
+      "analiza": [
+        "Prezentowany dokument to rozkładany Rysunek nr 7180 (Plan Sytuacyjny) z czerwca 1998 roku, wykonany w fazie Projektu Budowlanego (PB) przez mgr inż. arch. Ryszarda Baryckiego z firmy PRO-TECH na zlecenie ZEC Łódź. Rysunek ten (stanowiący integralną część Tomu 15 dokumentacji nastawni kotłów K7÷K9) przedstawia szczegółowy plan zagospodarowania terenu w rejonie nowo projektowanego budynku nastawni.",
+        "Zawiera on naniesioną siatkę istniejącej i projektowanej infrastruktury podziemnej (kable, rurociągi, sieci kanalizacyjne), a także precyzyjnie wytycza trasy planowanych dróg, placów manewrowych i ciągów pieszych. Legenda rysunku w czytelny sposób dzieli obiekty na projektowane, przebudowywane, istniejące bez zmian oraz przeznaczone do wyburzenia.",
+        "Arkusz wieńczy zestawienie tabelaryczne z wyliczoną powierzchnią dróg (320 m²) i chodników (40 m²) oraz łączną długością krawężników (145 metrów bieżących)."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/rysunek-7180-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }

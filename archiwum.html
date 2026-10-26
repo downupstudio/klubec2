@@ -112,10 +112,16 @@
           btn.type = 'button';
           btn.className = 'archive-card';
           const docCount = (s.zawartosc || []).filter(function (i) { return i.typ === 'dokument'; }).length;
+
+          let metaParts = [];
+          if (s.rok) metaParts.push(s.rok);
+          if (s.tom) metaParts.push(s.tom);
+
           btn.innerHTML =
             '<div class="archive-card__sig">' + esc(s.sygnatura) + '</div>'
+            + (s.projekt ? '<div class="archive-card__projekt">' + esc(s.projekt) + '</div>' : '')
             + '<div class="archive-card__meta">'
-            +   (s.rok ? '<span>' + esc(s.rok) + '</span>' : '')
+            +   metaParts.map(function (p) { return '<span>' + esc(p) + '</span>'; }).join('')
             + '</div>'
             + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
             + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumenty') + '</div>';
