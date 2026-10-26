@@ -556,6 +556,17 @@ tbody tr:hover { background: #fafafa; }
 .archive-section-title::after { content: ''; flex: 1; height: 1px; background: rgba(0,0,0,0.08); }
 
 @media (max-width: 640px) {
-  .archive-list { grid-template-columns: 1fr; }
-  .transcription-frame { min-height: 70vh; }
+  .transcription-frame { 
+    min-height: 75vh; 
+    border-left: none; 
+    border-right: none; 
+    width: 100%; 
+  }
+  .transcription-part { 
+    margin-left: -16px; 
+    margin-right: -16px; 
+  }
+  .transcription-part__label { 
+    margin: 0 16px 10px; 
+  }
 }
