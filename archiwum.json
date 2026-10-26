@@ -23,7 +23,8 @@
       "zawartosc": [
         { "typ": "dokument", "id": "odtworzenie-nawierzchni-1998" },
         { "typ": "dokument", "id": "rysunek-7180-1998" },
-        { "typ": "dokument", "id": "rysunek-7181-1998" }
+        { "typ": "dokument", "id": "rysunek-7181-1998" },
+        { "typ": "dokument", "id": "kosztorys-odtworzenie-drog-1998" }
       ]
     },
     {
@@ -207,6 +208,23 @@
       ],
       "transkrypcja": [
         { "src": "dokumenty/rysunek-7181-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
+      ],
+      "skany": []
+    },
+    "kosztorys-odtworzenie-drog-1998": {
+      "tytul": "Kosztorys Nakładów Rzeczowych (Tom 15/K1)",
+      "sygnatura": "Tom 15/K1",
+      "data": "VII 1998",
+      "autor": "PRO-TECH Sp. z o.o.",
+      "typ": "Kosztorys",
+      "strony": "12",
+      "analiza": [
+        "Prezentowany dokument to Kosztorys Nakładów Rzeczowych (Tom 15/K1) z lipca 1998 roku, sporządzony przez technika Annę Szalek pod nadzorem głównego projektanta, mgr inż. arch. R. Baryckiego z firmy PRO-TECH. Stanowi on integralną, finansowo-rozliczeniową część dokumentacji odtworzenia dróg i chodników w rejonie nastawni kotłów K7-K9 w EC-2.",
+        "Dokument szczegółowo wycenia poszczególne etapy prac: od wyburzeń i wykopów, aż po układanie warstw betonowych nawierzchni, montaż krawężników i płyt chodnikowych. Zawiera klasyczne zestawienia kosztorysowe: tabelę elementów, zapotrzebowanie na robociznę (w roboczogodzinach), szczegółowy wykaz materiałów (tony cementu, metry sześcienne betonów B-10, B-15, B-20) oraz niezbędny sprzęt (walce wibracyjne, samochody skrzyniowe).",
+        "Ciekawostką archiwalną jest fakt, że w nagłówkach wydruku komputerowego z 1998 roku (system RODOS-KS) wkradł się błąd druku, konsekwentnie oznaczający inwestycję jako „EC-3 Łódź” (zamiast prawidłowego EC-2). Dokument doskonale ukazuje strukturę kosztów i technologię robót drogowych z końca lat 90. na terenie elektrociepłowni."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/kosztorys-odtworzenie-drog-1998.html", "label": "Pełna transkrypcja (12 stron)" }
       ],
       "skany": []
     }
