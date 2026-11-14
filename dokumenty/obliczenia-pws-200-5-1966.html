@@ -16,9 +16,20 @@
         .bold { font-weight: bold; }
         .header-box { border: 1px solid #000; padding: 10px; margin-bottom: 20px; font-size: 0.85em; display: flex; justify-content: space-between; background: #fff; }
         ul, ol { margin-top: 10px; }
-        .math { font-family: 'Times New Roman', Times, serif; font-style: italic; font-size: 1.1em; }
-        .note { font-size: 0.85em; color: #c00; font-style: italic; background-color: #fff3f3; padding: 5px; border-left: 3px solid #c00; }
-        .sketch-desc { border: 1px dashed #666; padding: 10px; background-color: #fafafa; font-size: 0.9em; }
+        
+        /* Nowa klasa dla obliczeń - czysta i czytelna */
+        .calc { 
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 1.1em; 
+            margin: 10px 0 10px 20px; 
+            background-color: #f9f9f9;
+            padding: 5px 10px;
+            border-left: 3px solid #666;
+            display: inline-block;
+        }
+        
+        .note { font-size: 0.85em; color: #c00; font-style: italic; background-color: #fff3f3; padding: 5px; border-left: 3px solid #c00; margin: 10px 0; }
+        .sketch-desc { border: 1px dashed #666; padding: 10px; background-color: #fafafa; font-size: 0.9em; margin: 15px 0; }
     </style>
 </head>
 <body>
@@ -46,12 +57,12 @@
             </li>
             <li><strong>Obliczenia układu rurowego</strong> pracującego przy ciśnieniu roboczym 180 at. i temperaturze ścianki 265°C.
                 <ul>
-                    <li>a) Obliczenie grubości ścianki rury centralnej \(\phi\) 241.</li>
-                    <li>b) Obliczenie grubości ścianki komory zbiorczej \(\phi\) 171.</li>
-                    <li>c) Obliczenie grubości ścianki denka płaskiego \(\phi\) 171.</li>
+                    <li>a) Obliczenie grubości ścianki rury centralnej &phi; 241.</li>
+                    <li>b) Obliczenie grubości ścianki komory zbiorczej &phi; 171.</li>
+                    <li>c) Obliczenie grubości ścianki denka płaskiego &phi; 171.</li>
                     <li>d) Sprawdzenie naprężeń w spoinach.</li>
-                    <li>e) Obliczenie [nieczytelne] spiralnej \(\phi\) 32.</li>
-                    <li>f) Obliczenie kołnierza \(\phi\) 200.</li>
+                    <li>e) Obliczenie [nieczytelne] spiralnej &phi; 32.</li>
+                    <li>f) Obliczenie kołnierza &phi; 200.</li>
                 </ul>
             </li>
         </ol>
@@ -63,24 +74,24 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Materiał - blacha kotłowa [nieczytelne] 7000 [nieczytelne] 0,5</li>
-            <li>Średnica zewnętrzna \(D_p = 1800\) mm</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
-            <li>Temperatura obliczeniowa \(t_0 = 390^\circ\)C</li>
-            <li>Obliczeniowa granica plastyczności materiału B41K w temp. 380°C \(Q_{rto} = 14,8\) kg/mm²</li>
-            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x_0 = 1,5\)</li>
-            <li>Dopuszczalne naprężenia \(K_s = \frac{Q_{rto}}{x_0} = \frac{14,8}{1,5} = 9,87\) kg/mm²</li>
+            <li>Średnica zewnętrzna D<sub>p</sub> = 1800 mm</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 30 at.</li>
+            <li>Temperatura obliczeniowa t<sub>0</sub> = 390&deg;C</li>
+            <li>Obliczeniowa granica plastyczności materiału B41K w temp. 380&deg;C Q<sub>rto</sub> = 14,8 kg/mm&sup2;</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>0</sub> = 1,5</li>
+            <li>Dopuszczalne naprężenia K<sub>s</sub> = Q<sub>rto</sub> / x<sub>0</sub> = 14,8 / 1,5 = 9,87 kg/mm&sup2;</li>
             <li>Współczynnik wytrzymałościowy [nieczytelne]</li>
-            <li>Naddatek grubości materiału płaszcza \(c = 1\) mm</li>
+            <li>Naddatek grubości materiału płaszcza c = 1 mm</li>
         </ol>
         <p>Obliczeniowa grubość materiału płaszcza:</p>
-        <p class="math">
-            \(g_0 = \frac{D_p \cdot p_0}{2 \cdot K_s} = \frac{1800 \cdot 30}{2 \cdot 9,87} = 27,3\) mm
-        </p>
-        <p class="math">
-            \(g = g_0 + c = 27,3 + 1 = 28,3\) mm
-        </p>
+        <div class="calc">
+            g<sub>0</sub> = (D<sub>p</sub> &middot; p<sub>0</sub>) / (2 &middot; K<sub>s</sub>) = (1800 &middot; 30) / (2 &middot; 9,87) = 27,3 mm
+        </div>
+        <div class="calc">
+            g = g<sub>0</sub> + c = 27,3 + 1 = 28,3 mm
+        </div>
         <p>W konstrukcji przyjęto:</p>
-        <p class="math">\(g_0 = 30\) mm</p>
+        <div class="calc">g<sub>0</sub> = 30 mm</div>
     </div>
 
     <div class="page">
@@ -88,38 +99,40 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Materiał - blacha kotłowa [nieczytelne]</li>
-            <li>Średnica zewnętrzna \(D_z = 1600\) mm</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
-            <li>Średnica otworu \(d = 1000\) mm</li>
-            <li>Obliczeniowa granica plastyczności materiału \(Q_{rto} = 14,8\) kg/mm²</li>
-            <li>Współczynnik bezpieczeństwa \(x_0 = 1,5\)</li>
-            <li>Dopuszczalne naprężenia \(K_r = \frac{Q_{rto}}{x_0} = 9,87\) kg/mm²</li>
-            <li>Grubość ścianki płaszcza \(g = 30\) mm</li>
-            <li>Materiał króćca - rura \(\phi\) 159 x 10, materiał R35</li>
+            <li>Średnica zewnętrzna D<sub>z</sub> = 1600 mm</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 30 at.</li>
+            <li>Średnica otworu d = 1000 mm</li>
+            <li>Obliczeniowa granica plastyczności materiału Q<sub>rto</sub> = 14,8 kg/mm&sup2;</li>
+            <li>Współczynnik bezpieczeństwa x<sub>0</sub> = 1,5</li>
+            <li>Dopuszczalne naprężenia K<sub>r</sub> = Q<sub>rto</sub> / x<sub>0</sub> = 9,87 kg/mm&sup2;</li>
+            <li>Grubość ścianki płaszcza g = 30 mm</li>
+            <li>Materiał króćca - rura &phi; 159 x 10, materiał R35</li>
         </ol>
-        <p>Obliczeniowa granica plastyczności materiału R35 w temp. 300°C \(Q_{rto} = 110,8\) kg/cm²</p>
-        <p>Dopuszczalne naprężenie \(K_r = \frac{110,8}{1,5} = 73,8\) kg/cm² = 7,38 kg/mm²</p>
-        <p>Przekrój osłabienia \(F_o = 141 \times 25 = 3525\) mm²</p>
-        <p>Naddatek grubości płaszcza \(c = 4,5\) mm</p>
-        <p class="math">\(F_1 = 2 \times 59,5 \times 30 - (25 + 1) \times 4,5 = 3570 - 117 = 3453\) mm²</p>
+        <p>Obliczeniowa granica plastyczności materiału R35 w temp. 300&deg;C Q<sub>rto</sub> = 110,8 kg/cm&sup2;</p>
+        <p>Dopuszczalne naprężenie K<sub>r</sub> = 110,8 / 1,5 = 73,8 kg/cm&sup2; = 7,38 kg/mm&sup2;</p>
+        <p>Przekrój osłabienia F<sub>o</sub> = 141 &times; 25 = 3525 mm&sup2;</p>
+        <p>Naddatek grubości płaszcza c = 4,5 mm</p>
+        <div class="calc">
+            F<sub>1</sub> = 2 &times; 59,5 &times; 30 - (25 + 1) &times; 4,5 = 3570 - 117 = 3453 mm&sup2;
+        </div>
     </div>
 
     <div class="page">
         <h3>Wzmocnienie otworu w przestrzeni zbiornikowej</h3>
         <p>Obliczenia:</p>
-        <p class="math">
-            \(\delta_p = 2 \cdot 2,5 \cdot 10^{-3} \left[ \frac{10^{-3}}{2,5} \right] \cdot 295\) mm²
-        </p>
+        <div class="calc">
+            &delta;<sub>p</sub> = 2 &middot; 2,5 &middot; 10<sup>-3</sup> [ 10<sup>-3</sup> / 2,5 ] &middot; 295 mm&sup2;
+        </div>
         <p>Minimalny przekrój [nieczytelne] blachy wzmocnienia:</p>
-        <p class="math">
-            \(F_{wb} \ge F_o = \frac{F_1 + F_2}{2} = 3525 \cdot \frac{475}{295} = 2750\) mm²
-        </p>
+        <div class="calc">
+            F<sub>wb</sub> &ge; F<sub>o</sub> = (F<sub>1</sub> + F<sub>2</sub>) / 2 = 3525 &middot; (475 / 295) = 2750 mm&sup2;
+        </div>
         <p>Grubość blachy wzmocnienia:</p>
-        <p class="math">
-            \(\delta_p = \frac{2755}{138 - 20} = 23,35\) mm
-        </p>
+        <div class="calc">
+            &delta;<sub>p</sub> = 2755 / (138 - 20) = 23,35 mm
+        </div>
         <p>W konstrukcji przyjęto:</p>
-        <p class="math">\(\delta_p = 25\) mm</p>
+        <div class="calc">&delta;<sub>p</sub> = 25 mm</div>
         <p>Hamowanie górnej i dolnej powierzchni [nieczytelne]</p>
         
         <div class="sketch-desc text-center">
@@ -133,41 +146,41 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Materiał - blacha kotłowa [nieczytelne]</li>
-            <li>Średnica zewnętrzna \(D_z = 1600\) mm</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
-            <li>Temperatura obliczeniowa \(t_0 = 380^\circ\)C</li>
-            <li>Obliczeniowa granica plastyczności materiału w temp. 380°C \(Q_{rto} = 14,8\) kg/mm²</li>
-            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x_0 = 1,5\)</li>
-            <li>Dopuszczalne naprężenia \(K_g = \frac{Q_{rto}}{x_0} = 9,87\) kg/mm²</li>
-            <li>Stosunek \(H_z / D_z = 0,275\)</li>
-            <li>Współczynnik kształtu dna \(y = 1,15\)</li>
-            <li>Naddatek grubości ścianki dna \(c = 2\) mm</li>
+            <li>Średnica zewnętrzna D<sub>z</sub> = 1600 mm</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 30 at.</li>
+            <li>Temperatura obliczeniowa t<sub>0</sub> = 380&deg;C</li>
+            <li>Obliczeniowa granica plastyczności materiału w temp. 380&deg;C Q<sub>rto</sub> = 14,8 kg/mm&sup2;</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>0</sub> = 1,5</li>
+            <li>Dopuszczalne naprężenia K<sub>g</sub> = Q<sub>rto</sub> / x<sub>0</sub> = 9,87 kg/mm&sup2;</li>
+            <li>Stosunek H<sub>z</sub> / D<sub>z</sub> = 0,275</li>
+            <li>Współczynnik kształtu dna y = 1,15</li>
+            <li>Naddatek grubości ścianki dna c = 2 mm</li>
         </ol>
         <p>Obliczeniowa grubość ścianki dna:</p>
-        <p class="math">
-            \(g_0 = \frac{D_z \cdot p_0 \cdot y}{200 \cdot K_g} = \frac{1600 \cdot 30 \cdot 1,15}{200 \cdot 9,87} = 27,9\) mm
-        </p>
-        <p class="math">
-            \(g = g_0 + c = 27,9 + 2 = 29,9\) mm
-        </p>
+        <div class="calc">
+            g<sub>0</sub> = (D<sub>z</sub> &middot; p<sub>0</sub> &middot; y) / (200 &middot; K<sub>g</sub>) = (1600 &middot; 30 &middot; 1,15) / (200 &middot; 9,87) = 27,9 mm
+        </div>
+        <div class="calc">
+            g = g<sub>0</sub> + c = 27,9 + 2 = 29,9 mm
+        </div>
         <p>Wg wytycznych konstrukcyjnych przyjęto grubość dna [nieczytelne] i górnego:</p>
-        <p class="math">\(g_{rz} = 36\) mm</p>
+        <div class="calc">g<sub>rz</sub> = 36 mm</div>
     </div>
 
     <div class="page">
         <h3>Wzmocnienie otworu w dnie</h3>
         <p>Obliczenia:</p>
         <p>Odbudowa grubości rury [nieczytelne] i wstępne:</p>
-        <p class="math">Wymiary: \(\delta_0 = 17,4\) mm (blacha obiegowa)</p>
+        <div class="calc">Wymiary: &delta;<sub>0</sub> = 17,4 mm (blacha obiegowa)</div>
         <p>Przekrój osłabienia:</p>
-        <p class="math">\(F_0 = 208 \cdot 23,0 = 4784\) mm²</p>
+        <div class="calc">F<sub>0</sub> = 208 &middot; 23,0 = 4784 mm&sup2;</div>
         <p>Przekrój wzmocnienia:</p>
         <ul>
             <li>A. [nieczytelne]</li>
-            <li>B. Naddatek grubości blachy: \(F_1 = 2 \cdot 80 \cdot 36 = 5760 \cdot 1 = 5760\) mm²</li>
-            <li>C. Naddatek rury centralnej: \(F_2 = 4 \cdot 2,5 \cdot 22 \cdot 22 = 4840\) mm²</li>
-            <li>D. Wymienione wzmocnienie: \(F_3 = 2 \cdot 60 \cdot 25 = 3000\) mm²</li>
-            <li>E. Wymienione wzmocnienie: \(F_4 = 2 \cdot 60 \cdot 25 = 3000\) mm²</li>
+            <li>B. Naddatek grubości blachy: F<sub>1</sub> = 2 &middot; 80 &middot; 36 = 5760 &middot; 1 = 5760 mm&sup2;</li>
+            <li>C. Naddatek rury centralnej: F<sub>2</sub> = 4 &middot; 2,5 &middot; 22 &middot; 22 = 4840 mm&sup2;</li>
+            <li>D. Wymienione wzmocnienie: F<sub>3</sub> = 2 &middot; 60 &middot; 25 = 3000 mm&sup2;</li>
+            <li>E. Wymienione wzmocnienie: F<sub>4</sub> = 2 &middot; 60 &middot; 25 = 3000 mm&sup2;</li>
         </ul>
     </div>
 
@@ -179,65 +192,68 @@
             <li>Materiał 22K - do obliczeń przyjęto dane jak dla materiału R45 (materiał 22K ma nieco lepsze właściwości)</li>
             <li>Materiał na śruby 40HMF</li>
             <li>Materiał na uszczelkę [nieczytelne]</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
-            <li>Temperatura czynnika \(t_w = 380^\circ\)C</li>
-            <li>Temperatura obliczeniowa \(t_0 = 260^\circ\)C</li>
-            <li>Temperatura obliczeniowa dla śrub \(t_{os} = 350^\circ\)C</li>
-            <li>Maksymalna różnica temperatur \(\Delta t = 10^\circ\)C</li>
-            <li>Granica plastyczności materiału kołnierzowego w temp. 360°C \(Q_{r} = 14,6\) kg/mm²</li>
-            <li>Granica plastyczności mat. 40HMF w temperaturze 350°C \(Q_{r} = 45,8\) kg/mm²</li>
-            <li>Współczynnik [nieczytelne] materiału kołnierzowego i śrubowego w stosunku do \(Q_{rto}\)</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 30 at.</li>
+            <li>Temperatura czynnika t<sub>w</sub> = 380&deg;C</li>
+            <li>Temperatura obliczeniowa t<sub>0</sub> = 260&deg;C</li>
+            <li>Temperatura obliczeniowa dla śrub t<sub>os</sub> = 350&deg;C</li>
+            <li>Maksymalna różnica temperatur &Delta;t = 10&deg;C</li>
+            <li>Granica plastyczności materiału kołnierzowego w temp. 360&deg;C Q<sub>r</sub> = 14,6 kg/mm&sup2;</li>
+            <li>Granica plastyczności mat. 40HMF w temperaturze 350&deg;C Q<sub>r</sub> = 45,8 kg/mm&sup2;</li>
+            <li>Współczynnik [nieczytelne] materiału kołnierzowego i śrubowego w stosunku do Q<sub>rto</sub></li>
             <li>Współczynnik wytrzymałości dla [nieczytelne] = 1,8</li>
             <li>Współczynnik wytrzymałości dla [nieczytelne] = 1,7</li>
             <li>Dokładna obróbka śruby</li>
-            <li>Moduł sprężystości materiału śrubowego \(E = 19500\) kg/mm²</li>
-            <li>Liniowy współczynnik rozszerzalności materiału kołnierzowego \(\alpha = 13,35 \cdot 10^{-6}\)</li>
-            <li>Naprężenia ściskające w uszczelce od siły \(S_1\)</li>
-            <li>Naprężenie ściskające w uszczelce od siły \(S_2\)</li>
+            <li>Moduł sprężystości materiału śrubowego E = 19500 kg/mm&sup2;</li>
+            <li>Liniowy współczynnik rozszerzalności materiału kołnierzowego &alpha; = 13,35 &middot; 10<sup>-6</sup></li>
+            <li>Naprężenia ściskające w uszczelce od siły S<sub>1</sub></li>
+            <li>Naprężenie ściskające w uszczelce od siły S<sub>2</sub></li>
         </ol>
     </div>
 
     <div class="page">
-        <p>24. Nacisk na uszczelkę [nieczytelne] wywołany w niej naprężeniem \(q_1\):</p>
-        <p class="math">\(S_1 = \pi \cdot D_u \cdot U_{sz} \cdot q_1 = \pi \cdot 192 \cdot 10 \cdot 9,8 = 59000\) kg</p>
+        <p>24. Nacisk na uszczelkę [nieczytelne] wywołany w niej naprężeniem q<sub>1</sub>:</p>
+        <div class="calc">S<sub>1</sub> = &pi; &middot; D<sub>u</sub> &middot; U<sub>sz</sub> &middot; q<sub>1</sub> = &pi; &middot; 192 &middot; 10 &middot; 9,8 = 59000 kg</div>
         
-        <p>25. Nacisk na uszczelkę wywołany w niej naprężeniem \(q_2\):</p>
-        <p class="math">\(S_2 = \pi \cdot D_u \cdot U_{sz} \cdot q_2 = \pi \cdot 192 \cdot 10 \cdot 17 \cdot 1 = 103000\) kg</p>
+        <p>25. Nacisk na uszczelkę wywołany w niej naprężeniem q<sub>2</sub>:</p>
+        <div class="calc">S<sub>2</sub> = &pi; &middot; D<sub>u</sub> &middot; U<sub>sz</sub> &middot; q<sub>2</sub> = &pi; &middot; 192 &middot; 10 &middot; 17 &middot; 1 = 103000 kg</div>
 
         <p>26. Napór czynnika na połączenie kołnierzowe:</p>
-        <p class="math">\(P = \frac{\pi \cdot D_u^2}{4} \cdot p_0 = \frac{\pi \cdot 192^2}{4} \cdot 30 = 869000\) kg <em>[Obliczenie w oryginale ma błąd, wynik to ok. 86,9 t]</em></p>
+        <div class="calc">P = (&pi; &middot; D<sub>u</sub><sup>2</sup>) / 4 &middot; p<sub>0</sub> = (&pi; &middot; 192<sup>2</sup>) / 4 &middot; 30 = 869000 kg</div>
+        <p class="note">[Obliczenie w oryginale ma błąd, wynik to ok. 86,9 t]</p>
 
         <div class="sketch-desc text-center">
             <p><strong>Rysunek schematyczny kołnierza:</strong></p>
-            <p>Wymiary: \(\phi 241\), \(D_w = 192\), \(D_z = 231\), \(D_0 = 394\), \(\phi 485\), \(h = 89\), \(\delta_0 = 46\).</p>
+            <p>Wymiary: &phi; 241, D<sub>w</sub> = 192, D<sub>z</sub> = 231, D<sub>0</sub> = 394, &phi; 485, h = 89, &delta;<sub>0</sub> = 46.</p>
         </div>
     </div>
 
     <div class="page">
-        <p>27. Naciąg montażowy śrub wywołany działaniem siły \(P\):</p>
-        <p class="math">\(N_{m1} = S_2 + P = 103000 + 869000 = 972000\) kg <em>[W oryginale wynik błędnie 155200]</em></p>
+        <p>27. Naciąg montażowy śrub wywołany działaniem siły P:</p>
+        <div class="calc">N<sub>m1</sub> = S<sub>2</sub> + P = 103000 + 869000 = 972000 kg</div>
+        <p class="note">[W oryginale wynik błędnie 155200]</p>
 
-        <p>28. Dodatkowy naciąg śrub wywołany działaniem siły \(P\):</p>
-        <p class="math">\(\Delta P_y = 0,2 \cdot P = 0,2 \cdot 869000 = 173800\) kg</p>
+        <p>28. Dodatkowy naciąg śrub wywołany działaniem siły P:</p>
+        <div class="calc">&Delta;P<sub>y</sub> = 0,2 &middot; P = 0,2 &middot; 869000 = 173800 kg</div>
 
         <p>29. Dodatkowy naciąg śrub wywołany różnicą temperatur:</p>
-        <p class="math">\(\Delta N_t = \Delta t \cdot \alpha \cdot E \cdot F_r = 10 \cdot 13,35 \cdot 10^{-6} \cdot 19500 \cdot 15200 = 39500\) kg</p>
+        <div class="calc">&Delta;N<sub>t</sub> = &Delta;t &middot; &alpha; &middot; E &middot; F<sub>r</sub> = 10 &middot; 13,35 &middot; 10<sup>-6</sup> &middot; 19500 &middot; 15200 = 39500 kg</div>
 
         <p>30. Maksymalny naciąg śrub w połączeniu kołnierzowo-śrubowym:</p>
-        <p class="math">\(N_{max} = N_{m1} + \Delta P_y + \Delta N_t = 972000 + 173800 + 39500 = 1185300\) kg</p>
+        <div class="calc">N<sub>max</sub> = N<sub>m1</sub> + &Delta;P<sub>y</sub> + &Delta;N<sub>t</sub> = 972000 + 173800 + 39500 = 1185300 kg</div>
 
         <p>31. Średnica rdzenia śruby:</p>
-        <p class="math">\(d_s = 1,03 \sqrt{\frac{N_{max}}{\psi \cdot n \cdot k_1}} + 5,5 = 1,03 \sqrt{\frac{1185300}{1 \cdot 16 \cdot 25,4}} + 5,5 = 61,4\) mm <em>[Wynik w oryginale zniekształcony przez OCR]</em></p>
+        <div class="calc">d<sub>s</sub> = 1,03 &middot; &radic;(N<sub>max</sub> / (&psi; &middot; n &middot; k<sub>1</sub>)) + 5,5 = 1,03 &middot; &radic;(1185300 / (1 &middot; 16 &middot; 25,4)) + 5,5 = 61,4 mm</div>
+        <p class="note">[Wynik w oryginale zniekształcony przez OCR]</p>
 
         <p>32. Naprężenia styczne w kołnierzach w przekroju A-B:</p>
-        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{1185300}{394 \cdot 46} = 65,4\) kg/cm²</p>
+        <div class="calc">&tau; = N<sub>max</sub> / F = 1185300 / (394 &middot; 46) = 65,4 kg/cm&sup2;</div>
 
         <p>33. Naprężenia styczne w kołnierzach w przekroju B-C:</p>
-        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{1185300}{231 \cdot 46} = 111,5\) kg/cm²</p>
+        <div class="calc">&tau; = N<sub>max</sub> / F = 1185300 / (231 &middot; 46) = 111,5 kg/cm&sup2;</div>
     </div>
 
     <div class="page">
-        <p class="note">[Strona 10 jest całkowicie nieczytelna.].</p>
+        <p class="note">[Strona 10 jest całkowicie nieczytelna].</p>
     </div>
 
     <div class="page">
@@ -245,26 +261,26 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Materiał - rura kotłowa [nieczytelne] R45</li>
-            <li>Średnica zewnętrzna \(D_z = 241\) mm</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
-            <li>Temperatura podgrzanej wody \(t_w = 225^\circ\)C</li>
-            <li>Obliczeniowa temperatura ścianki \(t_0 = t_w + \Delta t + 30 = 225 + 10 + 30 = 265^\circ\)C</li>
-            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265°C \(Q_{rto} = 18,4\) kg/mm²</li>
-            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x = 1,8\)</li>
-            <li>Dopuszczalne naprężenia \(K_r = \frac{18,4}{1,8} = 10,22\) kg/mm²</li>
-            <li>Promień krzywizny osi zgiętej rury \(R = 600\) mm</li>
-            <li>Naddatek grubości ścianki \(c = 1\) mm</li>
+            <li>Średnica zewnętrzna D<sub>z</sub> = 241 mm</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 180 at.</li>
+            <li>Temperatura podgrzanej wody t<sub>w</sub> = 225&deg;C</li>
+            <li>Obliczeniowa temperatura ścianki t<sub>0</sub> = t<sub>w</sub> + &Delta;t + 30 = 225 + 10 + 30 = 265&deg;C</li>
+            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265&deg;C Q<sub>rto</sub> = 18,4 kg/mm&sup2;</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x = 1,8</li>
+            <li>Dopuszczalne naprężenia K<sub>r</sub> = 18,4 / 1,8 = 10,22 kg/mm&sup2;</li>
+            <li>Promień krzywizny osi zgiętej rury R = 600 mm</li>
+            <li>Naddatek grubości ścianki c = 1 mm</li>
         </ol>
         <p>Obliczeniowa grubość ścianki rury:</p>
-        <p class="math">\(g_0 = \frac{p_0 \cdot D_z}{230 \cdot K_r - p_0} = \frac{180 \cdot 241}{230 \cdot 10,22 - 180} = 17,1\) mm</p>
+        <div class="calc">g<sub>0</sub> = (p<sub>0</sub> &middot; D<sub>z</sub>) / (230 &middot; K<sub>r</sub> - p<sub>0</sub>) = (180 &middot; 241) / (230 &middot; 10,22 - 180) = 17,1 mm</div>
         
         <p>a/ Rura centralna - kolano:</p>
         <p>Rzeczywista grubość ścianki rury:</p>
-        <p class="math">\(g_{rz} = g_0 + c = 17,1 + 1 = 18,1\) mm</p>
+        <div class="calc">g<sub>rz</sub> = g<sub>0</sub> + c = 17,1 + 1 = 18,1 mm</div>
         
         <p>Ostateczna grubość ścianki rury po uwzględnieniu ścieniania przy zgięciu:</p>
-        <p class="math">\(g_{ost} = \frac{g_{rz}}{1 + \frac{D_z}{2R}} = \frac{18,1}{1 + \frac{241}{2 \cdot 600}} = 21,6\) mm</p>
-        <p>Przyjęto rurę kotłową \(\phi 241 \times 22\) - R45.</p>
+        <div class="calc">g<sub>ost</sub> = g<sub>rz</sub> / (1 + D<sub>z</sub> / (2R)) = 18,1 / (1 + 241 / (2 &middot; 600)) = 21,6 mm</div>
+        <p>Przyjęto rurę kotłową &phi; 241 &times; 22 - R45.</p>
     </div>
 
     <div class="page">
@@ -276,46 +292,49 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Materiał - rura kotłowa, blacha R45</li>
-            <li>Średnica zewnętrzna \(D_z = 171\) mm</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
-            <li>Obliczeniowa temperatura \(t_0 = 265^\circ\)C</li>
-            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265°C \(Q_{rto} = 18,4\) kg/mm²</li>
-            <li>Dopuszczalne naprężenia \(K_r = 10,22\) kg/mm²</li>
-            <li>Promień krzywizny \(R = 430\) mm</li>
-            <li>Podziałka między otworami w kierunku osi \(b_1 = 80\) mm</li>
-            <li>Podziałka między otworami na obwodzie \(b_2 = 150\) mm</li>
+            <li>Średnica zewnętrzna D<sub>z</sub> = 171 mm</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 180 at.</li>
+            <li>Obliczeniowa temperatura t<sub>0</sub> = 265&deg;C</li>
+            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265&deg;C Q<sub>rto</sub> = 18,4 kg/mm&sup2;</li>
+            <li>Dopuszczalne naprężenia K<sub>r</sub> = 10,22 kg/mm&sup2;</li>
+            <li>Promień krzywizny R = 430 mm</li>
+            <li>Podziałka między otworami w kierunku osi b<sub>1</sub> = 80 mm</li>
+            <li>Podziałka między otworami na obwodzie b<sub>2</sub> = 150 mm</li>
         </ol>
-        <p>Uwaga: Po [nieczytelne] króćca \(\phi 38 \times 10\) z osadzeniem [nieczytelne].</p>
-        <p class="math">\(\phi 38 \times 10, 0,5 \times ON-19\)</p>
+        <p>Uwaga: Po [nieczytelne] króćca &phi; 38 &times; 10 z osadzeniem [nieczytelne].</p>
+        <div class="calc">&phi; 38 &times; 10, 0,5 &times; ON-19</div>
     </div>
 
     <div class="page">
         <h3>Obliczeniowa grubość ścianki komory zbiorczej</h3>
         <p>Współczynnik wytrzymałości mostków osłabionych przez rząd otworów:</p>
-        <p class="math">\(z_1 = \frac{b_1 - d}{b_1} = \frac{80 - 24}{80} = 0,7\)</p>
+        <div class="calc">z<sub>1</sub> = (b<sub>1</sub> - d) / b<sub>1</sub> = (80 - 24) / 80 = 0,7</div>
+        
         <p>Współczynnik wytrzymałości mostków osłabionych przez rząd otworów:</p>
-        <p class="math">\(z_2 = \frac{b_2 - d}{b_2} = \frac{150 - 24}{150} = 0,84\)</p>
-        <p>Ponieważ \(z_1 < z_2\) dlatego przyjęto \(z = 0,7\)</p>
+        <div class="calc">z<sub>2</sub> = (b<sub>2</sub> - d) / b<sub>2</sub> = (150 - 24) / 150 = 0,84</div>
+        
+        <p>Ponieważ z<sub>1</sub> &lt; z<sub>2</sub> dlatego przyjęto z = 0,7</p>
 
         <div class="sketch-desc text-center">
             <p><strong>Rysunek schematyczny komory:</strong></p>
-            <p>Wymiary: \(\phi 171\), podziałka \(b_1 = 80\), \(b_2 = 150\), otwory \(\phi 24\). Kąt 33°.</p>
+            <p>Wymiary: &phi; 171, podziałka b<sub>1</sub> = 80, b<sub>2</sub> = 150, otwory &phi; 24. Kąt 33&deg;.</p>
         </div>
 
         <p>Obliczeniowa grubość ścianki komory zbiorczej:</p>
-        <p class="math">\(g_0 = \frac{p_0 \cdot D_z}{230 \cdot K_r \cdot z - p_0} = \frac{180 \cdot 171}{230 \cdot 10,22 \cdot 0,7 - 180} = 16,84\) mm</p>
+        <div class="calc">g<sub>0</sub> = (p<sub>0</sub> &middot; D<sub>z</sub>) / (230 &middot; K<sub>r</sub> &middot; z - p<sub>0</sub>) = (180 &middot; 171) / (230 &middot; 10,22 &middot; 0,7 - 180) = 16,84 mm</div>
     </div>
 
     <div class="page">
         <h3>4.4. Kołnierz komory zbiorczej</h3>
         <p>Obliczeniowa grubość ścianki komory zbiorczej:</p>
-        <p class="math">\(g_0 = \frac{16,84}{0,85} = 19,8\) mm <em>[Wartość odczytana z kontekstu, cyfry w oryginale zniekształcone]</em></p>
+        <div class="calc">g<sub>0</sub> = 16,84 / 0,85 = 19,8 mm</div>
+        <p class="note">[Wartość odczytana z kontekstu, cyfry w oryginale zniekształcone]</p>
         
         <p>Obliczeniowa grubość [nieczytelne]:</p>
-        <p class="math">\(g_0 = \frac{16,84}{2 \cdot 0,85} = 9,9\) mm</p>
+        <div class="calc">g<sub>0</sub> = 16,84 / (2 &middot; 0,85) = 9,9 mm</div>
         
         <p>Ostateczna grubość:</p>
-        <p class="math">\(g = 9,9 + 2,5 = 12,4\) mm</p>
+        <div class="calc">g = 9,9 + 2,5 = 12,4 mm</div>
     </div>
 
     <div class="page">
@@ -323,28 +342,28 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Materiał - odkuwka 22K</li>
-            <li>Grubość wewnętrzna \(h_1 = 125\) mm</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
-            <li>Obliczeniowa temperatura solanki \(t_0 = 265^\circ\)C</li>
-            <li>Obliczeniowa granica plastyczności w temperaturze 265°C \(Q_{rto} = 18,4\) kg/mm²</li>
+            <li>Grubość wewnętrzna h<sub>1</sub> = 125 mm</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 180 at.</li>
+            <li>Obliczeniowa temperatura solanki t<sub>0</sub> = 265&deg;C</li>
+            <li>Obliczeniowa granica plastyczności w temperaturze 265&deg;C Q<sub>rto</sub> = 18,4 kg/mm&sup2;</li>
         </ol>
         <p class="note">/Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze właściwości od materiału R45/.</p>
         
-        <p>6. Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x_g = 1,8\)</p>
+        <p>6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8</p>
         <p>Dopuszczalne naprężenia gnące:</p>
-        <p class="math">\(k_g = 1,4 \cdot \frac{Q_{rto}}{x_g} = 1,4 \cdot \frac{18,4}{1,8} = 14,32\) kg/mm²</p>
+        <div class="calc">k<sub>g</sub> = 1,4 &middot; (Q<sub>rto</sub> / x<sub>g</sub>) = 1,4 &middot; (18,4 / 1,8) = 14,32 kg/mm&sup2;</div>
         
         <p>Obliczeniowa grubość dna płaskiego:</p>
-        <p class="math">\(g_0 = 0,07 \cdot D_w \sqrt{\frac{p_0}{k_g}} = 0,07 \cdot 125 \sqrt{\frac{180}{14,32}} = 30,6\) mm</p>
+        <div class="calc">g<sub>0</sub> = 0,07 &middot; D<sub>w</sub> &middot; &radic;(p<sub>0</sub> / k<sub>g</sub>) = 0,07 &middot; 125 &middot; &radic;(180 / 14,32) = 30,6 mm</div>
         
         <p>Rzeczywista grubość dna płaskiego:</p>
-        <p class="math">\(g = g_0 + c = 30,6 + 1 = 31,6\) mm</p>
+        <div class="calc">g = g<sub>0</sub> + c = 30,6 + 1 = 31,6 mm</div>
         <p>W konstrukcji przyjęto:</p>
-        <p class="math">\(g_0 = 32\) mm</p>
+        <div class="calc">g<sub>0</sub> = 32 mm</div>
     </div>
 
     <div class="page">
-        <p class="note">[Strona 17 - całkowicie nieczytelna].</p>
+        <p class="note">[Strona 17 - nieczytelna].</p>
     </div>
 
     <div class="page">
@@ -352,38 +371,38 @@
         <p>Dane i obliczenia:</p>
         <ol>
             <li>Należy do [nieczytelne] rury [nieczytelne] NO 20.</li>
-            <li>Grubość ścianki \(g = 32\) mm</li>
-            <li>Temperatura \(t = 120^\circ\)C</li>
-            <li>Temperatura obliczeniowa \(t_0 = 265^\circ\)C</li>
-            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265°C</li>
-            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x = 1,0\) <em>[prawdopodobnie 1,8]</em></li>
+            <li>Grubość ścianki g = 32 mm</li>
+            <li>Temperatura t = 120&deg;C</li>
+            <li>Temperatura obliczeniowa t<sub>0</sub> = 265&deg;C</li>
+            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265&deg;C</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x = 1,0 <em>[prawdopodobnie 1,8]</em></li>
             <li>Najmniejszy promień krawędzi [nieczytelne]</li>
-            <li>Naddatek do stłoczenia \(c = 6,0\) mm</li>
-            <li>Dopuszczalne naprężenia \(K_r = 10,22\) kg/mm²</li>
+            <li>Naddatek do stłoczenia c = 6,0 mm</li>
+            <li>Dopuszczalne naprężenia K<sub>r</sub> = 10,22 kg/mm&sup2;</li>
         </ol>
     </div>
 
     <div class="page">
-        <h3>Kołnierz \(\phi\) 200 - dane i obliczenia</h3>
+        <h3>Kołnierz &phi; 200 - dane i obliczenia</h3>
         <ol>
             <li>Materiał kołnierzowy - odkuwka 22K</li>
             <li>/Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze właściwości od materiału R45/.</li>
             <li>Materiał na śruby - 40HMF</li>
-            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
-            <li>Temperatura wody \(t_w = 225^\circ\)C</li>
-            <li>Temperatura obliczeniowa [nieczytelne] \(t_0 = 260^\circ\)C</li>
-            <li>Temperatura obliczeniowa dla śrub \(t_{os} = 350^\circ\)C</li>
-            <li>Maksymalna różnica temperatur między kołnierzem a śrubami \(\Delta t = 10^\circ\)C</li>
-            <li>Granica plastyczności mat. 22K w temp. 260°C \(Q_{rto} = 14,6\) kg/mm²</li>
-            <li>Granica plastyczności mat. 40HMF w temp. 350°C \(Q_{rto} = 45,8\) kg/mm²</li>
-            <li>Współczynnik bezpieczeństwa dla materiału kołnierzowego i śrubowego w stosunku do \(Q_{rto}\) \(x = 1,8\)</li>
+            <li>Ciśnienie obliczeniowe p<sub>0</sub> = 180 at.</li>
+            <li>Temperatura wody t<sub>w</sub> = 225&deg;C</li>
+            <li>Temperatura obliczeniowa [nieczytelne] t<sub>0</sub> = 260&deg;C</li>
+            <li>Temperatura obliczeniowa dla śrub t<sub>os</sub> = 350&deg;C</li>
+            <li>Maksymalna różnica temperatur między kołnierzem a śrubami &Delta;t = 10&deg;C</li>
+            <li>Granica plastyczności mat. 22K w temp. 260&deg;C Q<sub>rto</sub> = 14,6 kg/mm&sup2;</li>
+            <li>Granica plastyczności mat. 40HMF w temp. 350&deg;C Q<sub>rto</sub> = 45,8 kg/mm&sup2;</li>
+            <li>Współczynnik bezpieczeństwa dla materiału kołnierzowego i śrubowego w stosunku do Q<sub>rto</sub> x = 1,8</li>
             <li>Współczynnik wytrzymałości [nieczytelne] = 1</li>
             <li>Dokładna obróbka śruby</li>
-            <li>Moduł sprężystości materiału śrubowego dla [nieczytelne] \(E = 19500\) kg/mm²</li>
-            <li>Liniowy współczynnik rozszerzalności materiału kołnierzowego \(\alpha = 13,35 \cdot 10^{-6}\)</li>
-            <li>Naprężenia ściskające w [nieczytelne] od siły \(S_1\)</li>
-            <li>Naprężenie ściskające w uszczelce od siły \(S_2\)</li>
-            <li>Grubość uszczelki \(S = 2\) mm</li>
+            <li>Moduł sprężystości materiału śrubowego dla [nieczytelne] E = 19500 kg/mm&sup2;</li>
+            <li>Liniowy współczynnik rozszerzalności materiału kołnierzowego &alpha; = 13,35 &middot; 10<sup>-6</sup></li>
+            <li>Naprężenia ściskające w [nieczytelne] od siły S<sub>1</sub></li>
+            <li>Naprężenie ściskające w uszczelce od siły S<sub>2</sub></li>
+            <li>Grubość uszczelki S = 2 mm</li>
         </ol>
     </div>
 
@@ -393,53 +412,54 @@
             <li>Czynna szerokość uszczelki</li>
             <li>Ilość śrub</li>
             <li>Rzeczywista średnica rdzenia śruby</li>
-            <li>Pole przekroju poprzecznego wszystkich śrub \(F_{sr} = \frac{\pi \cdot d^2}{4} \cdot n = \frac{\pi \cdot 40^2}{4} \cdot 12 = 15080\) mm²</li>
+            <li>Pole przekroju poprzecznego wszystkich śrub F<sub>sr</sub> = (&pi; &middot; d<sup>2</sup>) / 4 &middot; n = (&pi; &middot; 40<sup>2</sup>) / 4 &middot; 12 = 15080 mm&sup2;</li>
             <li>Pozostałe wymiary tożsame z poniższym rysunkiem.</li>
         </ol>
 
         <div class="sketch-desc text-center">
             <p><strong>Rysunek kołnierza:</strong></p>
-            <p>Wymiary: \(\phi 241\), \(D_w = 192\), \(D_z = 231\), \(D_0 = 394\), \(\phi 485\), \(h = 89\), \(\delta_0 = 46\), \(c = 3\), \(R = 8\).</p>
+            <p>Wymiary: &phi; 241, D<sub>w</sub> = 192, D<sub>z</sub> = 231, D<sub>0</sub> = 394, &phi; 485, h = 89, &delta;<sub>0</sub> = 46, c = 3, R = 8.</p>
         </div>
 
-        <p>24. Nacisk na uszczelkę wywołany w niej naprężeniem \(q_1\):</p>
-        <p class="math">\(S_1 = \pi \cdot D_u \cdot U_{sz} \cdot q_1 = \pi \cdot 192 \cdot 10 \cdot 9,8 = 59000\) kg</p>
+        <p>24. Nacisk na uszczelkę wywołany w niej naprężeniem q<sub>1</sub>:</p>
+        <div class="calc">S<sub>1</sub> = &pi; &middot; D<sub>u</sub> &middot; U<sub>sz</sub> &middot; q<sub>1</sub> = &pi; &middot; 192 &middot; 10 &middot; 9,8 = 59000 kg</div>
     </div>
 
     <div class="page">
-        <p>25. Nacisk na uszczelkę wywołany w niej naprężeniem \(q_2\):</p>
-        <p class="math">\(S_2 = \pi \cdot D_u \cdot U_{sz} \cdot q_2 = \pi \cdot 192 \cdot 10 \cdot 17 \cdot 1 = 103000\) kg</p>
+        <p>25. Nacisk na uszczelkę wywołany w niej naprężeniem q<sub>2</sub>:</p>
+        <div class="calc">S<sub>2</sub> = &pi; &middot; D<sub>u</sub> &middot; U<sub>sz</sub> &middot; q<sub>2</sub> = &pi; &middot; 192 &middot; 10 &middot; 17 &middot; 1 = 103000 kg</div>
 
         <p>26. Napór czynnika na połączenie kołnierzowe:</p>
-        <p class="math">\(P = \frac{\pi \cdot D_u^2}{4} \cdot p_0 = \frac{\pi \cdot 192^2}{4} \cdot 180 = 52200\) kg <em>[W oryginale liczba wygląda na 52200 lub 869000, OCR zniekształcił]</em></p>
+        <div class="calc">P = (&pi; &middot; D<sub>u</sub><sup>2</sup>) / 4 &middot; p<sub>0</sub> = (&pi; &middot; 192<sup>2</sup>) / 4 &middot; 180 = 52200 kg</div>
+        <p class="note">[W oryginale liczba wygląda na 52200 lub 869000, OCR zniekształcił]</p>
 
         <p>27. Naciąg montażowy śrub wywołany działaniem siły P:</p>
-        <p class="math">\(S_2 + P > S_1\)</p>
-        <p class="math">\(N_m = S_2 + P = 103000 + 52200 = 155200\) kg</p>
+        <div class="calc">S<sub>2</sub> + P &gt; S<sub>1</sub></div>
+        <div class="calc">N<sub>m</sub> = S<sub>2</sub> + P = 103000 + 52200 = 155200 kg</div>
 
         <p>28. Dodatkowy naciąg śrub wywołany działaniem siły P:</p>
-        <p class="math">\(\Delta P = 0,2 \cdot P = 0,2 \cdot 52200 = 10440\) kg</p>
+        <div class="calc">&Delta;P = 0,2 &middot; P = 0,2 &middot; 52200 = 10440 kg</div>
 
         <p>29. Dodatkowy naciąg śrub wywołany różnicami temperatur:</p>
-        <p class="math">\(\Delta N_t = \Delta t \cdot \alpha \cdot E \cdot F_r = 10 \cdot 12 \cdot 10^{-6} \cdot 19500 \cdot 15200 = 35500\) kg</p>
+        <div class="calc">&Delta;N<sub>t</sub> = &Delta;t &middot; &alpha; &middot; E &middot; F<sub>r</sub> = 10 &middot; 12 &middot; 10<sup>-6</sup> &middot; 19500 &middot; 15200 = 35500 kg</div>
 
         <p>30. Maksymalny naciąg śrub w połączeniu kołnierzowo-śrubowym:</p>
-        <p class="math">\(N_{max} = N_m + \Delta P + \Delta N_t = 155200 + 10440 + 35500 = 201540\) kg</p>
+        <div class="calc">N<sub>max</sub> = N<sub>m</sub> + &Delta;P + &Delta;N<sub>t</sub> = 155200 + 10440 + 35500 = 201540 kg</div>
 
         <p>31. Średnica rdzenia śruby:</p>
-        <p class="math">\(d_s = 1,03 \sqrt{\frac{N_{max}}{\psi \cdot n \cdot k_1}} + 5,5 = 1,03 \sqrt{\frac{201540}{1 \cdot 12 \cdot 25,4}} + 5,5 = 30,1\) mm</p>
-        <p class="math">\(d_s < d_{s,rzecz}\)</p>
+        <div class="calc">d<sub>s</sub> = 1,03 &middot; &radic;(N<sub>max</sub> / (&psi; &middot; n &middot; k<sub>1</sub>)) + 5,5 = 1,03 &middot; &radic;(201540 / (1 &middot; 12 &middot; 25,4)) + 5,5 = 30,1 mm</div>
+        <div class="calc">d<sub>s</sub> &lt; d<sub>s,rzecz</sub></div>
 
         <p>32. Naprężenia styczne w kołnierzach w przekroju A-B:</p>
-        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{201540}{394 \cdot 46} = 11,1\) kg/cm²</p>
+        <div class="calc">&tau; = N<sub>max</sub> / F = 201540 / (394 &middot; 46) = 11,1 kg/cm&sup2;</div>
 
         <p>33. Naprężenia styczne w kołnierzach w przekroju B-C:</p>
-        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{201540}{231 \cdot 46} = 19,0\) kg/cm²</p>
+        <div class="calc">&tau; = N<sub>max</sub> / F = 201540 / (231 &middot; 46) = 19,0 kg/cm&sup2;</div>
     </div>
 
     <div class="page">
-        <p class="math">\(K_g = 1,4 \cdot \frac{Q_{rto}}{x_g} = 1,4 \cdot \frac{18,4}{1,8} = 14,32\) kg/mm²</p>
-        <p class="math">\(K_g > \tau_{max}\)</p>
+        <div class="calc">K<sub>g</sub> = 1,4 &middot; (Q<sub>rto</sub> / x<sub>g</sub>) = 1,4 &middot; (18,4 / 1,8) = 14,32 kg/mm&sup2;</div>
+        <div class="calc">K<sub>g</sub> &gt; &tau;<sub>max</sub></div>
         <p class="text-center">Warunek spełniony.</p>
     </div>
 
