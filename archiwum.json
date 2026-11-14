@@ -124,7 +124,7 @@
         { "src": "dokumenty/aneks-master-3-2004.html", "label": "Pełna transkrypcja (19 stron)" }
       ],
       "skany": [
-        { "src": "skany/2127-600/aneksturbina.pdf", "label": "Pełny skan umowy" }
+        { "src": "skany/2127-600/aneksturbina.pdf", "label": "Pełny skan dokumentu" }
       ]
     },
     "umowa-7-00-ec-2000": {
@@ -143,7 +143,7 @@
         { "src": "dokumenty/umowa-7-00-ec-2000.html", "label": "Pełna transkrypcja (30 stron)" }
       ],
       "skany": [
-        { "src": "skany/7-00-ec-2000/umowa-7-00-EC.pdf", "label": "Pełny skan umowy" }
+        { "src": "skany/7-00-ec-2000/umowa-7-00-EC.pdf", "label": "Pełny skan dokumentu" }
       ]
     },
     "projekt-wykonawczy-pwp1-pwp2-2005": {
@@ -161,7 +161,9 @@
       "transkrypcja": [
         { "src": "dokumenty/projekt-wykonawczy-pwp1-pwp2-2005.html", "label": "Pełna transkrypcja (15 stron)" }
       ],
-      "skany": []
+      "skany": [
+        { "src": "skany/36101/main.pdf", "label": "Pełny skan dokumentu" }
+      ]
     },
     "kosztorys-pwp1-pwp2-2005": {
       "tytul": "Kosztorys - Nakłady Rzeczowe (Modernizacja PWP1 i PWP2)",
@@ -178,7 +180,9 @@
       "transkrypcja": [
         { "src": "dokumenty/kosztorys-pwp1-pwp2-2005.html", "label": "Pełna transkrypcja (5 stron)" }
       ],
-      "skany": []
+      "skany": [
+        { "src": "skany/36101/kosztorys.pdf", "label": "Pełny skan dokumentu" }
+      ]
     },
     "odtworzenie-nawierzchni-1998": {
       "tytul": "Projekt Wykonawczy: Odtworzenie nawierzchni drogowej",
