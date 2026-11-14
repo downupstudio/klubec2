@@ -892,3 +892,25 @@ tbody tr:hover { background: #fafafa; }
     font-size: 0.72rem;
   }
 }
+
+.archive-provenance {
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.14);
+}
+
+.archive-provenance .archive-section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.archive-provenance .prose p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.archive-provenance .prose p:last-child {
+  margin-bottom: 0;
+}
