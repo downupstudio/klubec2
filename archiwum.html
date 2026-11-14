@@ -336,7 +336,9 @@
           const src = typeof scan === 'string' ? scan : scan.src;
           const label = typeof scan === 'string' ? 'Dokument PDF' : (scan.label || 'Dokument PDF');
           const absoluteUrl = new URL(src, window.location.href).href;
-          const viewerUrl = 'https://docs.google.com/viewer?url=' + encodeURIComponent(absoluteUrl) + '&embedded=true';
+          
+          const viewerUrl = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=' + encodeURIComponent(absoluteUrl);
+          
           const wrap = document.createElement('div');
           wrap.className = 'scan-pdf-wrap';
           wrap.innerHTML =
