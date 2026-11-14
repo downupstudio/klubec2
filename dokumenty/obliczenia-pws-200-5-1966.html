@@ -2,644 +2,445 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Transkrypcja: Obliczenia wytrzymałościowe PWS-200-5</title>
+    <title>Obliczenia wytrzymałościowe podgrzewacza PWS-200-5</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.5; margin: 40px; color: #333; background-color: #f4f4f4; }
-        .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
-        h1, h2, h3 { color: #222; border-bottom: 2px solid #444; padding-bottom: 5px; margin-top: 30px; }
+        .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 1000px; margin: auto; }
+        h1, h2, h3, h4 { color: #222; border-bottom: 2px solid #444; padding-bottom: 5px; margin-top: 30px; }
         .page { border-bottom: 2px dashed #aaa; padding-bottom: 30px; margin-bottom: 30px; }
-        .typewriter { font-family: "Courier New", Courier, monospace; font-size: 0.95em; white-space: pre-wrap; }
-        .unreadable { background-color: #eee; color: #777; font-style: italic; padding: 0 4px; }
-        .footer-box { border: 1px solid #000; padding: 10px; font-size: 0.8em; margin-top: 20px; font-family: monospace; text-align: center; }
-        ul { margin-top: 5px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.9em; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }
+        th { background-color: #eaeaea; text-align: center; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .bold { font-weight: bold; }
+        .header-box { border: 1px solid #000; padding: 10px; margin-bottom: 20px; font-size: 0.85em; display: flex; justify-content: space-between; background: #fff; }
+        ul, ol { margin-top: 10px; }
+        .math { font-family: 'Times New Roman', Times, serif; font-style: italic; font-size: 1.1em; }
+        .note { font-size: 0.85em; color: #c00; font-style: italic; background-color: #fff3f3; padding: 5px; border-left: 3px solid #c00; }
+        .sketch-desc { border: 1px dashed #666; padding: 10px; background-color: #fafafa; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
 <div class="doc-container">
-    <h1>Obliczenia wytrzymałościowe podgrzewacza wysokoprężnego PWS-200-5</h1>
-    <p><strong>Jednostka:</strong> Centralne Biuro Konstrukcji Kotłów, Tarnowskie Góry</p>
-    <p><strong>Rysunek bazowy:</strong> 0-51311</p>
 
-    <!-- STRONA 1 -->
     <div class="page">
-        <h2>Obliczenia wytrzymałościowe podgrzewacza wysokoprężnego PWS-200-5</h2>
-        <p class="typewriter">Wykonanego wg. rys. Nr. 0-51311</p>
-        
-        <h3>W skład obliczeń wchodzą:</h3>
-        <div class="typewriter">
-1. Obliczenia komory parowej pracującej przy ciśnieniu roboczym 30 atn i temp. 380°C:
-   a) Obliczenie grubości płaszcza zbiornika
-   b) Obliczenie wzmocnienia króćca w płaszczu zbiornika
-   c) Obliczenie grubości dna wypukłego
-   d) Obliczenie wzmocnienia króćca w dnie wypukłym
-   e) Obliczenie kołnierza płaszcza komory parowej.
+        <h2 class="text-center">Obliczenia wytrzymałościowe podgrzewacza wysokoprężnego PWS-200-5</h2>
+        <p class="text-center">Wykonanego wg rys. Nr 0-5131<br>
+        Nr [nieczytelne] w Katowicach</p>
 
-2. Obliczenia układu rurowego pracującego przy ciśnieniu roboczym 180 atn. i obliczeniowej temperaturze ścianki 265°C:
-   a) Obliczenie grubości ścianki rury centralnej Ø 241
-   b) Obliczenie grubości ścianki komory zbiorczej Ø 171
-   c) Obliczenie grubości ścianki denka płaskiego Ø 122
-   d) Sprawdzenie naprężeń w spoinach
-   e) Obliczenie wytrzymałościowe śrub
-   f) Obliczenie kołnierza dn. 200
+        <h3 class="text-center">ZAŁĄCZNIK Nr 10</h3>
+        <p class="text-center">podgrzewacza wysokoprężnego</p>
 
-Obliczenia wykonano wg. Przepisów o budowie i odbiorze technicznym stałych zbiorników ciśnieniowych - Projekt - V/V
-        </div>
+        <h4>W skład obliczeń wchodzą:</h4>
+        <ol>
+            <li><strong>Obliczenia komory parowej</strong> pracującej przy ciśnieniu roboczym 300 at. i temp. 380°C.
+                <ul>
+                    <li>Obliczenie grubości ścianki zbiornika [nieczytelne]</li>
+                    <li>Obliczenie wytrzymałości [nieczytelne] płaszcza zbiornika [nieczytelne]</li>
+                    <li>Obliczenie grubości dla [nieczytelne]</li>
+                    <li>Obliczenie wytrzymałości [nieczytelne]</li>
+                    <li>Obliczenie kołnierza płaszcza komory parowej.</li>
+                </ul>
+            </li>
+            <li><strong>Obliczenia układu rurowego</strong> pracującego przy ciśnieniu roboczym 180 at. i temperaturze ścianki 265°C.
+                <ul>
+                    <li>a) Obliczenie grubości ścianki rury centralnej \(\phi\) 241.</li>
+                    <li>b) Obliczenie grubości ścianki komory zbiorczej \(\phi\) 171.</li>
+                    <li>c) Obliczenie grubości ścianki denka płaskiego \(\phi\) 171.</li>
+                    <li>d) Sprawdzenie naprężeń w spoinach.</li>
+                    <li>e) Obliczenie [nieczytelne] spiralnej \(\phi\) 32.</li>
+                    <li>f) Obliczenie kołnierza \(\phi\) 200.</li>
+                </ul>
+            </li>
+        </ol>
+        <p>Obliczenia wykonano wg Przepisów i Warunków technicznych Dozoru Technicznego [nieczytelne].</p>
+    </div>
+
+    <div class="page">
+        <h3>Płaszcz [nieczytelne]</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał - blacha kotłowa [nieczytelne] 7000 [nieczytelne] 0,5</li>
+            <li>Średnica zewnętrzna \(D_p = 1800\) mm</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
+            <li>Temperatura obliczeniowa \(t_0 = 390^\circ\)C</li>
+            <li>Obliczeniowa granica plastyczności materiału B41K w temp. 380°C \(Q_{rto} = 14,8\) kg/mm²</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x_0 = 1,5\)</li>
+            <li>Dopuszczalne naprężenia \(K_s = \frac{Q_{rto}}{x_0} = \frac{14,8}{1,5} = 9,87\) kg/mm²</li>
+            <li>Współczynnik wytrzymałościowy [nieczytelne]</li>
+            <li>Naddatek grubości materiału płaszcza \(c = 1\) mm</li>
+        </ol>
+        <p>Obliczeniowa grubość materiału płaszcza:</p>
+        <p class="math">
+            \(g_0 = \frac{D_p \cdot p_0}{2 \cdot K_s} = \frac{1800 \cdot 30}{2 \cdot 9,87} = 27,3\) mm
+        </p>
+        <p class="math">
+            \(g = g_0 + c = 27,3 + 1 = 28,3\) mm
+        </p>
+        <p>W konstrukcji przyjęto:</p>
+        <p class="math">\(g_0 = 30\) mm</p>
+    </div>
+
+    <div class="page">
+        <h3>Wzmocnienie otworu</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał - blacha kotłowa [nieczytelne]</li>
+            <li>Średnica zewnętrzna \(D_z = 1600\) mm</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
+            <li>Średnica otworu \(d = 1000\) mm</li>
+            <li>Obliczeniowa granica plastyczności materiału \(Q_{rto} = 14,8\) kg/mm²</li>
+            <li>Współczynnik bezpieczeństwa \(x_0 = 1,5\)</li>
+            <li>Dopuszczalne naprężenia \(K_r = \frac{Q_{rto}}{x_0} = 9,87\) kg/mm²</li>
+            <li>Grubość ścianki płaszcza \(g = 30\) mm</li>
+            <li>Materiał króćca - rura \(\phi\) 159 x 10, materiał R35</li>
+        </ol>
+        <p>Obliczeniowa granica plastyczności materiału R35 w temp. 300°C \(Q_{rto} = 110,8\) kg/cm²</p>
+        <p>Dopuszczalne naprężenie \(K_r = \frac{110,8}{1,5} = 73,8\) kg/cm² = 7,38 kg/mm²</p>
+        <p>Przekrój osłabienia \(F_o = 141 \times 25 = 3525\) mm²</p>
+        <p>Naddatek grubości płaszcza \(c = 4,5\) mm</p>
+        <p class="math">\(F_1 = 2 \times 59,5 \times 30 - (25 + 1) \times 4,5 = 3570 - 117 = 3453\) mm²</p>
+    </div>
+
+    <div class="page">
+        <h3>Wzmocnienie otworu w przestrzeni zbiornikowej</h3>
+        <p>Obliczenia:</p>
+        <p class="math">
+            \(\delta_p = 2 \cdot 2,5 \cdot 10^{-3} \left[ \frac{10^{-3}}{2,5} \right] \cdot 295\) mm²
+        </p>
+        <p>Minimalny przekrój [nieczytelne] blachy wzmocnienia:</p>
+        <p class="math">
+            \(F_{wb} \ge F_o = \frac{F_1 + F_2}{2} = 3525 \cdot \frac{475}{295} = 2750\) mm²
+        </p>
+        <p>Grubość blachy wzmocnienia:</p>
+        <p class="math">
+            \(\delta_p = \frac{2755}{138 - 20} = 23,35\) mm
+        </p>
+        <p>W konstrukcji przyjęto:</p>
+        <p class="math">\(\delta_p = 25\) mm</p>
+        <p>Hamowanie górnej i dolnej powierzchni [nieczytelne]</p>
         
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-2
+        <div class="sketch-desc text-center">
+            <p><strong>Rysunek schematyczny (szkic):</strong></p>
+            <p>Przekrój osłabienia i przekrój wzmocnienia. Wymiary: 160, 159, 30, 10.</p>
         </div>
     </div>
 
-    <!-- STRONA 2 -->
     <div class="page">
-        <h2>Płaszcz zbiornika</h2>
-        <div class="typewriter">
-1. Materiał - Blacha kotłowa marki <span class="unreadable">[nieczytelne]</span>
-2. Średnica zewnętrzna D<sub>z</sub> = 1600 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 30 at
-4. Temperatura obliczeniowa t<sub>o</sub> = 380°C
-5. Obliczeniowa granica plastyczności materiału <span class="unreadable">[nieczytelne]</span> w temp. 380°C Q<sub>rto</sub> = <span class="unreadable">[nieczytelne]</span>
-6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-7. Dopuszczalne naprężenia k<sub>r</sub> = Q<sub>rto</sub>/x<sub>g</sub> = <span class="unreadable">[nieczytelne]</span>
-8. Naddatek grubości ścianki płaszcza c = 1 mm
+        <h3>Dno wypukłe dolne i górne</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał - blacha kotłowa [nieczytelne]</li>
+            <li>Średnica zewnętrzna \(D_z = 1600\) mm</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
+            <li>Temperatura obliczeniowa \(t_0 = 380^\circ\)C</li>
+            <li>Obliczeniowa granica plastyczności materiału w temp. 380°C \(Q_{rto} = 14,8\) kg/mm²</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x_0 = 1,5\)</li>
+            <li>Dopuszczalne naprężenia \(K_g = \frac{Q_{rto}}{x_0} = 9,87\) kg/mm²</li>
+            <li>Stosunek \(H_z / D_z = 0,275\)</li>
+            <li>Współczynnik kształtu dna \(y = 1,15\)</li>
+            <li>Naddatek grubości ścianki dna \(c = 2\) mm</li>
+        </ol>
+        <p>Obliczeniowa grubość ścianki dna:</p>
+        <p class="math">
+            \(g_0 = \frac{D_z \cdot p_0 \cdot y}{200 \cdot K_g} = \frac{1600 \cdot 30 \cdot 1,15}{200 \cdot 9,87} = 27,9\) mm
+        </p>
+        <p class="math">
+            \(g = g_0 + c = 27,9 + 2 = 29,9\) mm
+        </p>
+        <p>Wg wytycznych konstrukcyjnych przyjęto grubość dna [nieczytelne] i górnego:</p>
+        <p class="math">\(g_{rz} = 36\) mm</p>
+    </div>
 
-Obliczeniowa grubość ścianki płaszcza:
-g<sub>o</sub> = (p<sub>o</sub> * D<sub>z</sub>) / (2,3 * k<sub>r</sub> * z + p<sub>o</sub>) = (30 * 1600) / (2,3 * <span class="unreadable">[nieczytelne]</span> + 30) = <span class="unreadable">[nieczytelne]</span> mm
+    <div class="page">
+        <h3>Wzmocnienie otworu w dnie</h3>
+        <p>Obliczenia:</p>
+        <p>Odbudowa grubości rury [nieczytelne] i wstępne:</p>
+        <p class="math">Wymiary: \(\delta_0 = 17,4\) mm (blacha obiegowa)</p>
+        <p>Przekrój osłabienia:</p>
+        <p class="math">\(F_0 = 208 \cdot 23,0 = 4784\) mm²</p>
+        <p>Przekrój wzmocnienia:</p>
+        <ul>
+            <li>A. [nieczytelne]</li>
+            <li>B. Naddatek grubości blachy: \(F_1 = 2 \cdot 80 \cdot 36 = 5760 \cdot 1 = 5760\) mm²</li>
+            <li>C. Naddatek rury centralnej: \(F_2 = 4 \cdot 2,5 \cdot 22 \cdot 22 = 4840\) mm²</li>
+            <li>D. Wymienione wzmocnienie: \(F_3 = 2 \cdot 60 \cdot 25 = 3000\) mm²</li>
+            <li>E. Wymienione wzmocnienie: \(F_4 = 2 \cdot 60 \cdot 25 = 3000\) mm²</li>
+        </ul>
+    </div>
 
-Rzeczywista grubość ścianki:
-g = g<sub>o</sub> + c = <span class="unreadable">[nieczytelne]</span> + 1 = <span class="unreadable">[nieczytelne]</span> mm
+    <div class="page">
+        <h3>Kołnierz Komory Parowej</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał kołnierzowy - odkuwka 22K</li>
+            <li>Materiał 22K - do obliczeń przyjęto dane jak dla materiału R45 (materiał 22K ma nieco lepsze właściwości)</li>
+            <li>Materiał na śruby 40HMF</li>
+            <li>Materiał na uszczelkę [nieczytelne]</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 30\) at.</li>
+            <li>Temperatura czynnika \(t_w = 380^\circ\)C</li>
+            <li>Temperatura obliczeniowa \(t_0 = 260^\circ\)C</li>
+            <li>Temperatura obliczeniowa dla śrub \(t_{os} = 350^\circ\)C</li>
+            <li>Maksymalna różnica temperatur \(\Delta t = 10^\circ\)C</li>
+            <li>Granica plastyczności materiału kołnierzowego w temp. 360°C \(Q_{r} = 14,6\) kg/mm²</li>
+            <li>Granica plastyczności mat. 40HMF w temperaturze 350°C \(Q_{r} = 45,8\) kg/mm²</li>
+            <li>Współczynnik [nieczytelne] materiału kołnierzowego i śrubowego w stosunku do \(Q_{rto}\)</li>
+            <li>Współczynnik wytrzymałości dla [nieczytelne] = 1,8</li>
+            <li>Współczynnik wytrzymałości dla [nieczytelne] = 1,7</li>
+            <li>Dokładna obróbka śruby</li>
+            <li>Moduł sprężystości materiału śrubowego \(E = 19500\) kg/mm²</li>
+            <li>Liniowy współczynnik rozszerzalności materiału kołnierzowego \(\alpha = 13,35 \cdot 10^{-6}\)</li>
+            <li>Naprężenia ściskające w uszczelce od siły \(S_1\)</li>
+            <li>Naprężenie ściskające w uszczelce od siły \(S_2\)</li>
+        </ol>
+    </div>
 
-W konstrukcji przyjęto:
-g<sub>rz</sub> = 30 mm
-        </div>
+    <div class="page">
+        <p>24. Nacisk na uszczelkę [nieczytelne] wywołany w niej naprężeniem \(q_1\):</p>
+        <p class="math">\(S_1 = \pi \cdot D_u \cdot U_{sz} \cdot q_1 = \pi \cdot 192 \cdot 10 \cdot 9,8 = 59000\) kg</p>
         
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-3
+        <p>25. Nacisk na uszczelkę wywołany w niej naprężeniem \(q_2\):</p>
+        <p class="math">\(S_2 = \pi \cdot D_u \cdot U_{sz} \cdot q_2 = \pi \cdot 192 \cdot 10 \cdot 17 \cdot 1 = 103000\) kg</p>
+
+        <p>26. Napór czynnika na połączenie kołnierzowe:</p>
+        <p class="math">\(P = \frac{\pi \cdot D_u^2}{4} \cdot p_0 = \frac{\pi \cdot 192^2}{4} \cdot 30 = 869000\) kg <em>[Obliczenie w oryginale ma błąd, wynik to ok. 86,9 t]</em></p>
+
+        <div class="sketch-desc text-center">
+            <p><strong>Rysunek schematyczny kołnierza:</strong></p>
+            <p>Wymiary: \(\phi 241\), \(D_w = 192\), \(D_z = 231\), \(D_0 = 394\), \(\phi 485\), \(h = 89\), \(\delta_0 = 46\).</p>
         </div>
     </div>
 
-    <!-- STRONA 3 -->
     <div class="page">
-        <h2>Wzmocnienie króćca w płaszczu zbiornika</h2>
-        <div class="typewriter">
-1. Materiał - blacha kotłowa marki <span class="unreadable">[nieczytelne]</span>
-2. Średnica zewnętrzna D<sub>z</sub> = 1600 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 30 at
-4. Temperatura obliczeniowa t<sub>o</sub> = 380°C
-5. Obliczeniowa granica plastyczności materiału <span class="unreadable">[nieczytelne]</span> w temp. 380°C Q<sub>rto</sub> = <span class="unreadable">[nieczytelne]</span>
-6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-7. Dopuszczalne naprężenia k<sub>r</sub> = <span class="unreadable">[nieczytelne]</span>
-8. Współczynnik wytrzymałości z = 1
+        <p>27. Naciąg montażowy śrub wywołany działaniem siły \(P\):</p>
+        <p class="math">\(N_{m1} = S_2 + P = 103000 + 869000 = 972000\) kg <em>[W oryginale wynik błędnie 155200]</em></p>
 
-Obliczeniowa grubość ścianki płaszcza:
-g<sub>o</sub> = (p<sub>o</sub> * D<sub>z</sub>) / (2,3 * k<sub>r</sub> * z + p<sub>o</sub>) = <span class="unreadable">[nieczytelne]</span> = 27 mm
+        <p>28. Dodatkowy naciąg śrub wywołany działaniem siły \(P\):</p>
+        <p class="math">\(\Delta P_y = 0,2 \cdot P = 0,2 \cdot 869000 = 173800\) kg</p>
 
-Obliczeniowa grubość króćca Ø 159 x 10:
-Materiał - R35
-Obliczeniowa granica plastyczności materiału R35 w temp. 380°C Q<sub>rto</sub> = <span class="unreadable">[nieczytelne]</span>
-Dopuszczalne naprężenia k<sub>r</sub> = Q<sub>rto</sub> / x<sub>g</sub> = <span class="unreadable">[nieczytelne]</span> = <span class="unreadable">[nieczytelne]</span> KG/mm²
+        <p>29. Dodatkowy naciąg śrub wywołany różnicą temperatur:</p>
+        <p class="math">\(\Delta N_t = \Delta t \cdot \alpha \cdot E \cdot F_r = 10 \cdot 13,35 \cdot 10^{-6} \cdot 19500 \cdot 15200 = 39500\) kg</p>
 
-g<sub>ok</sub> = (p<sub>o</sub> * d<sub>w</sub>) / (2,3 * k<sub>r</sub> * z - p<sub>o</sub>) = <span class="unreadable">[nieczytelne]</span> = 3,71 mm
+        <p>30. Maksymalny naciąg śrub w połączeniu kołnierzowo-śrubowym:</p>
+        <p class="math">\(N_{max} = N_{m1} + \Delta P_y + \Delta N_t = 972000 + 173800 + 39500 = 1185300\) kg</p>
 
-Przekrój osłabienia:
-F<sub>o</sub> = 141 * 25 = 3525 mm²
+        <p>31. Średnica rdzenia śruby:</p>
+        <p class="math">\(d_s = 1,03 \sqrt{\frac{N_{max}}{\psi \cdot n \cdot k_1}} + 5,5 = 1,03 \sqrt{\frac{1185300}{1 \cdot 16 \cdot 25,4}} + 5,5 = 61,4\) mm <em>[Wynik w oryginale zniekształcony przez OCR]</em></p>
 
-Przekrój wzmocnienia:
-a/ Naddatek grubości płaszcza
-F<sub>1</sub> = 2 * 59,5 * (30 - 27) = 475 mm²
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-4
-        </div>
+        <p>32. Naprężenia styczne w kołnierzach w przekroju A-B:</p>
+        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{1185300}{394 \cdot 46} = 65,4\) kg/cm²</p>
+
+        <p>33. Naprężenia styczne w kołnierzach w przekroju B-C:</p>
+        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{1185300}{231 \cdot 46} = 111,5\) kg/cm²</p>
     </div>
 
-    <!-- STRONA 4 -->
     <div class="page">
-        <h2>cd. Wzmocnienie króćca w płaszczu zbiornika</h2>
-        <div class="typewriter">
-b/ Przekrój króćca o wysokości h = 25
-F<sub>2</sub> = 2 * 25 * 10 = 500 mm²
-
-Maksymalny przekrój jaki powinien być wzmocniony:
-F<sub>wzm</sub> ≥ F<sub>o</sub> - (F<sub>1</sub> + F<sub>2</sub>) = 3525 - (475 + 500) = 2550 mm²
-
-Grubość blachy wzmacniającej:
-g<sub>b</sub> = 2550 / (139 * 20) = 23,1 mm (Błąd rachunkowy w oryginale, powinno być ~0,9 mm, pozostawiono oryginalny zapis)
-
-W konstrukcji przyjęto:
-g<sub>b</sub> = 25 mm
-
-[W tym miejscu znajduje się rysunek techniczny przekroju króćca z wymiarami: 30, Ø139, 141, 160, 139, 139]
-
-Legenda:
-[Kratka] - przekrój osłabienia
-[Kratka podwójna] - przekrój wzmocnienia
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-9
-        </div>
+        <p class="note">[Strona 10 jest całkowicie nieczytelna.].</p>
     </div>
 
-    <!-- STRONA 5 -->
     <div class="page">
-        <h2>Dno wypukłe dolne i górne</h2>
-        <div class="typewriter">
-1. Materiał - blacha kotłowa marki KCD20 <span class="unreadable">[nieczytelne]</span>
-2. Średnica wewnętrzna dna D<sub>w</sub> = 1600 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 30 at
-4. Temperatura obliczeniowa t<sub>o</sub> = 380°C
-5. Obliczeniowa granica plastyczności materiału K w temp. 380°C Q<sub>rto</sub> = <span class="unreadable">[nieczytelne]</span>
-6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-7. Dopuszczalne naprężenia ścinające K<sub>r</sub> = 1,5 * Q<sub>rto</sub> / x<sub>g</sub> = 1,4 * <span class="unreadable">[nieczytelne]</span> = <span class="unreadable">[nieczytelne]</span> KG/mm²
-8. Stosunek h<sub>z</sub> / D<sub>z</sub> = 1000 / 1600 = 0,275
-9. Współczynnik kształtu dna y = 1,38
-10. Naddatek grubości ścianki dna c = 2 mm
-
-Grubość ścianki dna wypukłego:
-g = g<sub>o</sub> + c
-g<sub>o</sub> = (D<sub>z</sub> * p<sub>o</sub> * y) / (200 * K<sub>r</sub>) = (1600 * 30 * 1,38) / (200 * <span class="unreadable">[nieczytelne]</span>) = 23,8 mm
-
-g = 23,8 + 2 = 25,8 mm
-
-Ze względów konstrukcyjnych przyjęto grubość dna / wypukłego dolnego i górnego:
-g<sub>rz</sub> = 36 mm.
-        </div>
+        <h3>Rura centralna</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał - rura kotłowa [nieczytelne] R45</li>
+            <li>Średnica zewnętrzna \(D_z = 241\) mm</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
+            <li>Temperatura podgrzanej wody \(t_w = 225^\circ\)C</li>
+            <li>Obliczeniowa temperatura ścianki \(t_0 = t_w + \Delta t + 30 = 225 + 10 + 30 = 265^\circ\)C</li>
+            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265°C \(Q_{rto} = 18,4\) kg/mm²</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x = 1,8\)</li>
+            <li>Dopuszczalne naprężenia \(K_r = \frac{18,4}{1,8} = 10,22\) kg/mm²</li>
+            <li>Promień krzywizny osi zgiętej rury \(R = 600\) mm</li>
+            <li>Naddatek grubości ścianki \(c = 1\) mm</li>
+        </ol>
+        <p>Obliczeniowa grubość ścianki rury:</p>
+        <p class="math">\(g_0 = \frac{p_0 \cdot D_z}{230 \cdot K_r - p_0} = \frac{180 \cdot 241}{230 \cdot 10,22 - 180} = 17,1\) mm</p>
         
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-5
-        </div>
+        <p>a/ Rura centralna - kolano:</p>
+        <p>Rzeczywista grubość ścianki rury:</p>
+        <p class="math">\(g_{rz} = g_0 + c = 17,1 + 1 = 18,1\) mm</p>
+        
+        <p>Ostateczna grubość ścianki rury po uwzględnieniu ścieniania przy zgięciu:</p>
+        <p class="math">\(g_{ost} = \frac{g_{rz}}{1 + \frac{D_z}{2R}} = \frac{18,1}{1 + \frac{241}{2 \cdot 600}} = 21,6\) mm</p>
+        <p>Przyjęto rurę kotłową \(\phi 241 \times 22\) - R45.</p>
     </div>
 
-    <!-- STRONA 7 -->
     <div class="page">
-        <h2>Obliczenie wzmocnienia dla wylotu pary</h2>
-        <div class="typewriter">
-Obliczeniowa grubość rury wylotowej g<sub>o</sub> = 17,4 mm (podać oblicz. wytrzymałościowych)
-Przekrój osłabienia:
-F<sub>o</sub> = 208 * 23,0 = 4900 mm²
-
-Przekrój wzmocnienia:
-a/ Naddatek grubości płaszcza:
-F<sub>1</sub> = 2 * 80 * (36 - 23,8) = 1952 mm²
-
-b/ Część rury centralnej o wysokości h<sub>2</sub> = 22
-F<sub>2</sub> = 4 * 2,5 * 22 * <span class="unreadable">[nieczytelne]</span> = 860 mm²
-
-c/ Powierzchnia wzmocnienia:
-F<sub>3</sub> = 2 * 80 * <span class="unreadable">[nieczytelne]</span> = 4000 mm²
-
-F<sub>wzm</sub> = F<sub>1</sub> + F<sub>2</sub> + F<sub>3</sub> = 1796 + 860 + 4000 = 6656 mm²
-F<sub>wzm</sub> > F<sub>o</sub>
-
-[W tym miejscu znajduje się rysunek techniczny przekroju z wyszczególnionymi wymiarami: 624, 22, 145, 208, 206, 430, 158]
-
-Legenda:
-[Kratka] - przekrój osłabienia
-[Kratka podwójna] - przekrój wzmocnienia
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-6
-        </div>
+        <p class="note">[Strona 12 jest całkowicie nieczytelna].</p>
     </div>
 
-    <!-- STRONA 8 -->
     <div class="page">
-        <h2>Kołnierz płaszcza komory parowej</h2>
-        <div class="typewriter">
-Dane i obliczenia:
-1. Materiał kołnierza - odkuwka 22K
-Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla mat. R45, mającego nieco gorsze własności od mat. 22K.
-2. Materiał na śruby 40 HMF / 25H /
-3. Materiał na uszczelkę AK
-4. Ciśnienie obliczeniowe p<sub>o</sub> = 30 atm.
-5. Temperatura czynnika t<sub>cz</sub> = 380°C
-6. Temperatura obliczeniowa t<sub>o</sub> = 350°C
-7. Temperatura obliczeniowa dla śrub t<sub>ośr</sub> = 350°C
-8. Maksymalna różnica temperatur pomiędzy kołnierzem a śrubami Δt = 10°C
-9. Granica plastyczności materiału kołnierzowego w temp. 350°C Q<sub>rto</sub> = 14,6 KG/mm²
-10. Granica plastyczności mat. 40 HMF w temperaturze 350°C Q<sub>rto</sub> = 45,0 KG/mm²
-11. Współczynnik bezpieczeństwa materiału kołnierzowego i śrubowego w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-12. Współczynnik wytrzymałości dla dokładnie obrobionych śrub ψ = 1
-13. Moduł sprężystości materiału śrubowego dla temp. E<sub>śr</sub> = 18000 KG/mm²
-14. Liniowy współczynnik rozszerzalności materiału kołnierzowego α = 13,26 * 10<sup>-6</sup>
-15. Naprężenia ściskające w uszczelce od siły S<sub>1</sub> σ<sub>c</sub> = 3,15 KG/mm²
-16. Naprężenia ściskające w uszczelce od siły S<sub>2</sub> σ<sub>c</sub> = 5 * p<sub>o</sub> / 100 = 5,30 / 1,5 KG/mm²
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-8
-        </div>
+        <h3>Komora zbiorcza</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał - rura kotłowa, blacha R45</li>
+            <li>Średnica zewnętrzna \(D_z = 171\) mm</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
+            <li>Obliczeniowa temperatura \(t_0 = 265^\circ\)C</li>
+            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265°C \(Q_{rto} = 18,4\) kg/mm²</li>
+            <li>Dopuszczalne naprężenia \(K_r = 10,22\) kg/mm²</li>
+            <li>Promień krzywizny \(R = 430\) mm</li>
+            <li>Podziałka między otworami w kierunku osi \(b_1 = 80\) mm</li>
+            <li>Podziałka między otworami na obwodzie \(b_2 = 150\) mm</li>
+        </ol>
+        <p>Uwaga: Po [nieczytelne] króćca \(\phi 38 \times 10\) z osadzeniem [nieczytelne].</p>
+        <p class="math">\(\phi 38 \times 10, 0,5 \times ON-19\)</p>
     </div>
 
-    <!-- STRONA 9 -->
     <div class="page">
-        <h2>cd. Kołnierz płaszcza komory parowej</h2>
-        <div class="typewriter">
-17. Obliczenie szerokości uszczelki.
-Przyjęta szerokość uszczelki <span class="unreadable">[nieczytelne]</span> = 15 mm
+        <h3>Obliczeniowa grubość ścianki komory zbiorczej</h3>
+        <p>Współczynnik wytrzymałości mostków osłabionych przez rząd otworów:</p>
+        <p class="math">\(z_1 = \frac{b_1 - d}{b_1} = \frac{80 - 24}{80} = 0,7\)</p>
+        <p>Współczynnik wytrzymałości mostków osłabionych przez rząd otworów:</p>
+        <p class="math">\(z_2 = \frac{b_2 - d}{b_2} = \frac{150 - 24}{150} = 0,84\)</p>
+        <p>Ponieważ \(z_1 < z_2\) dlatego przyjęto \(z = 0,7\)</p>
 
-19. Obliczenie wysokości kołnierza h<sub>k</sub> = <span class="unreadable">[nieczytelne]</span>
-20. Ilość śrub n = <span class="unreadable">[nieczytelne]</span>
-21. Rzeczywista średnica rdzenia śruby d<sub>rz</sub> = <span class="unreadable">[nieczytelne]</span>
-22. Pole przekroju poprzecznego wszystkich śrub:
-F<sub>śr</sub> = (π * d<sub>rz</sub><sup>2</sup>) / 4 * n = <span class="unreadable">[nieczytelne]</span> = 13200 mm²
-23. Rozkład temperatur w kołnierzu
-[W tym miejscu znajduje się rysunek przekroju kołnierza z wymiarami: 158, Ø241, Ø188, 44, 4, 46, 20, Ø170, Du-192, Ø213, Dz-231, Do-394, Dz-485]
-24. Nacisk na uszczelkę celem wywołania w niej naprężeń σ<sub>c</sub>'
-S<sub>1</sub> = π * D<sub>u</sub> * U<sub>cz</sub> * σ<sub>c</sub> = π * 192 * 10 * 9,8 = 59000 KG
+        <div class="sketch-desc text-center">
+            <p><strong>Rysunek schematyczny komory:</strong></p>
+            <p>Wymiary: \(\phi 171\), podziałka \(b_1 = 80\), \(b_2 = 150\), otwory \(\phi 24\). Kąt 33°.</p>
         </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-7 (lub 21)
-        </div>
+
+        <p>Obliczeniowa grubość ścianki komory zbiorczej:</p>
+        <p class="math">\(g_0 = \frac{p_0 \cdot D_z}{230 \cdot K_r \cdot z - p_0} = \frac{180 \cdot 171}{230 \cdot 10,22 \cdot 0,7 - 180} = 16,84\) mm</p>
     </div>
 
-    <!-- STRONA 10 -->
     <div class="page">
-        <h2>cd. Kołnierz</h2>
-        <div class="typewriter">
-25. Nacisk na uszczelkę celem wywołania w niej naprężeń σ<sub>c</sub>
-S<sub>2</sub> = π * D<sub>u</sub> * U<sub>cz</sub> * σ<sub>c</sub> = π * 192 * 10 * 17,1 = 103000 KG
-26. Napór czynnika na połączenie kołnierzowe
-P = (π * D<sub>u</sub><sup>2</sup>) / 4 * p<sub>o</sub> = (π * 192<sup>2</sup>) / 4 * 180 = 52200 KG
-27. Naciąg montażowy śrub wywołany działaniem siły P
-S<sub>2</sub> + P > S<sub>1</sub>
-N<sub>m</sub> = S<sub>2</sub> + P = 103000 + 52200 = 155200 KG
-28. Dodatkowy naciąg śrub wywołany działaniem siły P
-ΔN<sub>p</sub> = 0,2 * P = 0,2 * 52200 = 10440 KG
-29. Dodatkowy naciąg śrub wywołany różnicą temperatur
-ΔN<sub>t</sub> = <span class="unreadable">[nieczytelne]</span>
-N<sub>t</sub> = Δt * α * E<sub>śr</sub> * F<sub>śr</sub> = 10 * 12 * 1,10<sup>-6</sup> * 19500 * 15200 = 35900
-30. Maksymalny naciąg śrub w połączeniu kołnierzowo-śrubowym
-N<sub>max</sub> = N<sub>m</sub> + ΔN<sub>p</sub> + ΔN<sub>t</sub> = 155200 + 10440 + 35900 = 201540 KG
-31. Średnica rdzenia śruby
-δ<sub>r</sub> = 1,03 * √(N<sub>max</sub> / (ψ * k<sub>r1</sub> * n)) + 5,5 = <span class="unreadable">[nieczytelne]</span>
-δ<sub>r</sub> = 1,03 * √(201540 / (1 * 29,3 * 12)) + 5,5 = 24,6 + 5,5 = 30,1
-δ<sub>r</sub> < δ<sub>rz</sub>
-32. Naprężenia gnęce w kołnierzu w przekroju A-B
-σ<sub>g</sub>' = (3 * N<sub>max</sub> * (D<sub>o</sub> - D<sub>u</sub>)) / (π * D<sub>u</sub> * h<sup>2</sup>) = (3 * 201540 * (394 - 292)) / (π * 292 * 44<sup>2</sup>) = 8,15 KG/mm²
-33. Naprężenia gnęce w kołnierzu w przekroju D-C
-σ<sub>g</sub>'' = (3 * N<sub>max</sub> * (D<sub>o</sub> - D<sub>z</sub>)) / (π * D<sub>z</sub> * h<sup>2</sup>) = (3 * 201540 * (394 - 292)) / (π * 231 * 44<sup>2</sup>) = 10,3 KG/mm²
-        </div>
+        <h3>4.4. Kołnierz komory zbiorczej</h3>
+        <p>Obliczeniowa grubość ścianki komory zbiorczej:</p>
+        <p class="math">\(g_0 = \frac{16,84}{0,85} = 19,8\) mm <em>[Wartość odczytana z kontekstu, cyfry w oryginale zniekształcone]</em></p>
         
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-9
-        </div>
+        <p>Obliczeniowa grubość [nieczytelne]:</p>
+        <p class="math">\(g_0 = \frac{16,84}{2 \cdot 0,85} = 9,9\) mm</p>
+        
+        <p>Ostateczna grubość:</p>
+        <p class="math">\(g = 9,9 + 2,5 = 12,4\) mm</p>
     </div>
 
-    <!-- STRONA 11 -->
     <div class="page">
-        <h2>[Brak czytelnego nagłówka]</h2>
-        <div class="typewriter">
-<span class="unreadable">[Strona jest prawie w całości nieczytelna z powodu bardzo słabej jakości skanu / naświetlenia. Widoczne są jedynie szczątkowe fragmenty tekstu, których nie można logicznie połączyć. Poniżej pojedyncze wyrazy]</span>
-
-<span class="unreadable">[nieczytelne]</span> ... przedmuchania ...
-<span class="unreadable">[nieczytelne]</span> ... staliwo ...
-<span class="unreadable">[nieczytelne]</span> ... ciśnienia ...
-        </div>
+        <h3>Dna płaskie dla komory zbiorczej</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Materiał - odkuwka 22K</li>
+            <li>Grubość wewnętrzna \(h_1 = 125\) mm</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
+            <li>Obliczeniowa temperatura solanki \(t_0 = 265^\circ\)C</li>
+            <li>Obliczeniowa granica plastyczności w temperaturze 265°C \(Q_{rto} = 18,4\) kg/mm²</li>
+        </ol>
+        <p class="note">/Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze właściwości od materiału R45/.</p>
         
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | <span class="unreadable">[nieczytelne]</span>
-        </div>
+        <p>6. Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x_g = 1,8\)</p>
+        <p>Dopuszczalne naprężenia gnące:</p>
+        <p class="math">\(k_g = 1,4 \cdot \frac{Q_{rto}}{x_g} = 1,4 \cdot \frac{18,4}{1,8} = 14,32\) kg/mm²</p>
+        
+        <p>Obliczeniowa grubość dna płaskiego:</p>
+        <p class="math">\(g_0 = 0,07 \cdot D_w \sqrt{\frac{p_0}{k_g}} = 0,07 \cdot 125 \sqrt{\frac{180}{14,32}} = 30,6\) mm</p>
+        
+        <p>Rzeczywista grubość dna płaskiego:</p>
+        <p class="math">\(g = g_0 + c = 30,6 + 1 = 31,6\) mm</p>
+        <p>W konstrukcji przyjęto:</p>
+        <p class="math">\(g_0 = 32\) mm</p>
     </div>
 
-    <!-- STRONA 12 -->
     <div class="page">
-        <h2>Rura centralna</h2>
-        <div class="typewriter">
-1. Materiał - rura kotłowa marki 20G denote R45 <span class="unreadable">[nieczytelne]</span>
-2. Średnica wewnętrzna D<sub>w</sub> = 241 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 180 at.
-4. Temperatura podgrzanej wody t<sub>w</sub> = 225°C
-5. Obliczeniowa temperatura ścianki t<sub>o</sub> = t<sub>w</sub> + Δt + 30 = 225 + 10 + 30 = 265°C
-6. Obliczeniowa granica plastyczności mat. R45 w temp. 265°C Q<sub>rto</sub> = 18,4 KG/mm²
-7. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-8. Dopuszczalne naprężenia k<sub>r</sub> = Q<sub>rto</sub> / x<sub>g</sub> = 10,22 KG/mm²
-9. Promień krzywizny osi zgiętej rury R = 600 mm
-Naddatek grubości ścianki c = 1 mm
-
-Obliczeniowa grubość ścianki rury:
-g<sub>o</sub> = (p<sub>o</sub> * D<sub>z</sub>) / (230 * k<sub>r</sub> + p<sub>o</sub>) = (180 * 241) / (230 * 10,22 + 180) = 17,1 mm
-
-a/ Rura centralna - kolano:
-Rzeczywista grubość ścianki rury
-g<sub>rz</sub> = g<sub>o</sub> + c = 17,1 + 1 = 18,1 mm
-
-Ostateczna grubość ścianki rury po uwzględnieniu ścieniania ścianki przy zgięciu
-g<sub>zgięta</sub> = g<sub>rz</sub> * (1 + D<sub>z</sub>/(2R)) = 18,1 * (1 + 241 / (2 * 600)) = 21,6 mm
-
-Przyjęto rurę kotłową Ø 241 x 22 - R45 bez dolnej odchyłki grubości ścianki rury.
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-12
-        </div>
+        <p class="note">[Strona 17 - całkowicie nieczytelna].</p>
     </div>
 
-    <!-- STRONA 13 -->
     <div class="page">
-        <h2>cd. Rura centralna</h2>
-        <div class="typewriter">
-b/ Rura centralna odcinek na wylocie <span class="unreadable">[nieczytelne]</span>
-temperatura <span class="unreadable">[nieczytelne]</span> określa <span class="unreadable">[nieczytelne]</span>
-dla <span class="unreadable">[nieczytelne]</span> 265°C.
-
-Dla R45 w temp. 265°C Q<sub>rto</sub> = <span class="unreadable">[nieczytelne]</span>
-
-Rzeczywista grubość ścianki rury:
-g<sub>rz</sub> = <span class="unreadable">[nieczytelne]</span> = 20,1 mm
-
-Przyjęto rurę kotłową Ø 241 x 22 - R45
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-13
-        </div>
+        <h3>Wzmocnienie króćca</h3>
+        <p>Dane i obliczenia:</p>
+        <ol>
+            <li>Należy do [nieczytelne] rury [nieczytelne] NO 20.</li>
+            <li>Grubość ścianki \(g = 32\) mm</li>
+            <li>Temperatura \(t = 120^\circ\)C</li>
+            <li>Temperatura obliczeniowa \(t_0 = 265^\circ\)C</li>
+            <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265°C</li>
+            <li>Współczynnik bezpieczeństwa w stosunku do \(Q_{rto}\) \(x = 1,0\) <em>[prawdopodobnie 1,8]</em></li>
+            <li>Najmniejszy promień krawędzi [nieczytelne]</li>
+            <li>Naddatek do stłoczenia \(c = 6,0\) mm</li>
+            <li>Dopuszczalne naprężenia \(K_r = 10,22\) kg/mm²</li>
+        </ol>
     </div>
 
-    <!-- STRONA 14 -->
     <div class="page">
-        <h2>Kształtka</h2>
-        <div class="typewriter">
-1. Materiał - rura kotłowa marki <span class="unreadable">[nieczytelne]</span> denote R45
-2. Średnica zewnętrzna D<sub>z</sub> = 171 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 180 at.
-4. Obliczeniowa temperatura ścianki t<sub>o</sub> = 265°C
-5. Obliczeniowa granica plastyczności mat. R45 w temp. 265°C Q<sub>rto</sub> = 18,4 KG/mm²
-6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-7. Dopuszczalne naprężenia k<sub>r</sub> = 10,22 KG/mm²
-8. Promień krzywizny osi zgiętej rury R = 430 mm
-9. Odległość między otworami w kierunku osi wzdłużnej t<sub>1</sub> = 80 mm
-10. Podstawa pod oczy otworów na średniej średnicy komory zbiorczej t<sub>2</sub> = 150 mm
-
-[W tym miejscu znajduje się rysunek króćca Ø38x10 z wymiarami 18, Ø24, 20]
-
-Uwaga:
-Po przyspawaniu króćca Ø38x10 zostaje on przecięty wraz z komorą na Ø24
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-14
-        </div>
+        <h3>Kołnierz \(\phi\) 200 - dane i obliczenia</h3>
+        <ol>
+            <li>Materiał kołnierzowy - odkuwka 22K</li>
+            <li>/Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze właściwości od materiału R45/.</li>
+            <li>Materiał na śruby - 40HMF</li>
+            <li>Ciśnienie obliczeniowe \(p_0 = 180\) at.</li>
+            <li>Temperatura wody \(t_w = 225^\circ\)C</li>
+            <li>Temperatura obliczeniowa [nieczytelne] \(t_0 = 260^\circ\)C</li>
+            <li>Temperatura obliczeniowa dla śrub \(t_{os} = 350^\circ\)C</li>
+            <li>Maksymalna różnica temperatur między kołnierzem a śrubami \(\Delta t = 10^\circ\)C</li>
+            <li>Granica plastyczności mat. 22K w temp. 260°C \(Q_{rto} = 14,6\) kg/mm²</li>
+            <li>Granica plastyczności mat. 40HMF w temp. 350°C \(Q_{rto} = 45,8\) kg/mm²</li>
+            <li>Współczynnik bezpieczeństwa dla materiału kołnierzowego i śrubowego w stosunku do \(Q_{rto}\) \(x = 1,8\)</li>
+            <li>Współczynnik wytrzymałości [nieczytelne] = 1</li>
+            <li>Dokładna obróbka śruby</li>
+            <li>Moduł sprężystości materiału śrubowego dla [nieczytelne] \(E = 19500\) kg/mm²</li>
+            <li>Liniowy współczynnik rozszerzalności materiału kołnierzowego \(\alpha = 13,35 \cdot 10^{-6}\)</li>
+            <li>Naprężenia ściskające w [nieczytelne] od siły \(S_1\)</li>
+            <li>Naprężenie ściskające w uszczelce od siły \(S_2\)</li>
+            <li>Grubość uszczelki \(S = 2\) mm</li>
+        </ol>
     </div>
 
-    <!-- STRONA 15 -->
     <div class="page">
-        <h2>Komora zbiorcza</h2>
-        <div class="typewriter">
-Współczynnik wytrzymałości materiału osłabionego przez rząd otworów
-z<sub>1</sub> = (t<sub>1</sub> - d) / t<sub>1</sub> = (80 - 24) / 80 = 0,7
+        <ol start="18">
+            <li>Rzeczywista szerokość uszczelki</li>
+            <li>Czynna szerokość uszczelki</li>
+            <li>Ilość śrub</li>
+            <li>Rzeczywista średnica rdzenia śruby</li>
+            <li>Pole przekroju poprzecznego wszystkich śrub \(F_{sr} = \frac{\pi \cdot d^2}{4} \cdot n = \frac{\pi \cdot 40^2}{4} \cdot 12 = 15080\) mm²</li>
+            <li>Pozostałe wymiary tożsame z poniższym rysunkiem.</li>
+        </ol>
 
-Współczynnik wytrzymałości materiału osłabionego przez rząd otworów
-z<sub>2</sub> = (t<sub>2</sub> - d) / t<sub>2</sub> = (150 - 24) / 150 = 0,84
-
-Ponieważ z<sub>1</sub> < z<sub>2</sub> dlatego z<sub>1</sub> = z = 0,7
-
-[W tym miejscu znajdują się dwa rysunki: widok z boku rozwijanej blachy z otworami (wymiary 80, 80) oraz przekrój A-A (średnice Ø171x20, kąty 35°, 15°)]
-
-Obliczeniowa grubość ścianki komory zbiorczej:
-g<sub>o</sub> = (p<sub>o</sub> * D<sub>z</sub>) / (230 * k<sub>r</sub> * z + p<sub>o</sub>) = (180 * 171) / (230 * 10,22 * 0,7 + 180) = 16,84 mm
-
-Dopuszczalna odchyłka grubości ścianki rury wg BN-74/4220 /projekt/ dla rury o średnicy zewnętrznej Ø 171 wynosi +/- 15%
+        <div class="sketch-desc text-center">
+            <p><strong>Rysunek kołnierza:</strong></p>
+            <p>Wymiary: \(\phi 241\), \(D_w = 192\), \(D_z = 231\), \(D_0 = 394\), \(\phi 485\), \(h = 89\), \(\delta_0 = 46\), \(c = 3\), \(R = 8\).</p>
         </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-15
-        </div>
+
+        <p>24. Nacisk na uszczelkę wywołany w niej naprężeniem \(q_1\):</p>
+        <p class="math">\(S_1 = \pi \cdot D_u \cdot U_{sz} \cdot q_1 = \pi \cdot 192 \cdot 10 \cdot 9,8 = 59000\) kg</p>
     </div>
 
-    <!-- STRONA 16 -->
     <div class="page">
-        <h2>cd. Komora zbiorcza</h2>
-        <div class="typewriter">
-Rzeczywista grubość ścianki komory zbiorczej
-g<sub>rz</sub> = 16,84 / 0,85 = 19,8 mm
+        <p>25. Nacisk na uszczelkę wywołany w niej naprężeniem \(q_2\):</p>
+        <p class="math">\(S_2 = \pi \cdot D_u \cdot U_{sz} \cdot q_2 = \pi \cdot 192 \cdot 10 \cdot 17 \cdot 1 = 103000\) kg</p>
 
-Obliczeniowa grubość ścianki komory zbiorczej na zgięciu:
-g<sub>oz</sub> = (180 * 171) / (230 * 10,22 + 180) = 12,17 mm
+        <p>26. Napór czynnika na połączenie kołnierzowe:</p>
+        <p class="math">\(P = \frac{\pi \cdot D_u^2}{4} \cdot p_0 = \frac{\pi \cdot 192^2}{4} \cdot 180 = 52200\) kg <em>[W oryginale liczba wygląda na 52200 lub 869000, OCR zniekształcił]</em></p>
 
-Rzeczywista grubość ścianki komory zbiorczej na zgięciu z uwzględnieniem odchyłki:
-g<sub>rz</sub> = 12,17 / 0,85 = 14,6 mm
+        <p>27. Naciąg montażowy śrub wywołany działaniem siły P:</p>
+        <p class="math">\(S_2 + P > S_1\)</p>
+        <p class="math">\(N_m = S_2 + P = 103000 + 52200 = 155200\) kg</p>
 
-Ostateczna grubość ścianki komory zbiorczej po uwzględnieniu ścienienia ścianki przy zgięciu:
-g<sub>zg</sub> = g<sub>rz</sub> * (1 + D<sub>z</sub> / 2R) = 14,6 * (1 + 171 / 860) = 17,52 mm
+        <p>28. Dodatkowy naciąg śrub wywołany działaniem siły P:</p>
+        <p class="math">\(\Delta P = 0,2 \cdot P = 0,2 \cdot 52200 = 10440\) kg</p>
 
-Przyjęto rurę kotłową Ø 171 x 20 - R45
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-16
-        </div>
+        <p>29. Dodatkowy naciąg śrub wywołany różnicami temperatur:</p>
+        <p class="math">\(\Delta N_t = \Delta t \cdot \alpha \cdot E \cdot F_r = 10 \cdot 12 \cdot 10^{-6} \cdot 19500 \cdot 15200 = 35500\) kg</p>
+
+        <p>30. Maksymalny naciąg śrub w połączeniu kołnierzowo-śrubowym:</p>
+        <p class="math">\(N_{max} = N_m + \Delta P + \Delta N_t = 155200 + 10440 + 35500 = 201540\) kg</p>
+
+        <p>31. Średnica rdzenia śruby:</p>
+        <p class="math">\(d_s = 1,03 \sqrt{\frac{N_{max}}{\psi \cdot n \cdot k_1}} + 5,5 = 1,03 \sqrt{\frac{201540}{1 \cdot 12 \cdot 25,4}} + 5,5 = 30,1\) mm</p>
+        <p class="math">\(d_s < d_{s,rzecz}\)</p>
+
+        <p>32. Naprężenia styczne w kołnierzach w przekroju A-B:</p>
+        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{201540}{394 \cdot 46} = 11,1\) kg/cm²</p>
+
+        <p>33. Naprężenia styczne w kołnierzach w przekroju B-C:</p>
+        <p class="math">\(\tau = \frac{N_{max}}{F} = \frac{201540}{231 \cdot 46} = 19,0\) kg/cm²</p>
     </div>
 
-    <!-- STRONA 17 -->
     <div class="page">
-        <h2>Denko płaskie komory zbiorczej</h2>
-        <div class="typewriter">
-1. Materiał - odkuwka 22K
-2. Średnica wewnętrzna D<sub>w</sub> = 122 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 180 at.
-4. Obliczeniowa temperatura ścianki t<sub>o</sub> = 265°C
-5. Obliczeniowa granica plastyczności w temperaturze 265°C Q<sub>rto</sub> = 18,4 KG/mm²
-Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze własności od mat. R45.
-6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-Dopuszczalne naprężenia gnące
-k<sub>g</sub> = 1,4 * Q<sub>rto</sub> / x<sub>g</sub> = 1,4 * 18,4 / 1,8 = 14,32 KG/mm²
-
-Obliczeniowa grubość denka płaskiego
-g<sub>o</sub> = 0,07 * D<sub>w</sub> * √(p<sub>o</sub> / k<sub>g</sub>) = 0,07 * 122 * √(180 / 14,32) = 30,5 mm
-
-Rzeczywista grubość denka płaskiego:
-g = g<sub>o</sub> + c = 30,5 + 1 = 31,5 mm
-
-W konstrukcji przyjęto:
-g<sub>rz</sub> = 32 mm
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-17
-        </div>
-    </div>
-
-    <!-- STRONA 18 (POPRAWIONA NA PODSTAWIE ZBLIŻENIA) -->
-    <div class="page">
-        <h2>Sprawdzenie spoiny</h2>
-        <div class="typewriter">
-1. Materiał spoin - <span class="unreadable">[nieczytelne]</span> /<span class="unreadable">[nieczytelne]</span>/
-2. Ciśnienie obliczeniowe p<sub>o</sub> = 180 at.
-3. Średnica zewnętrzna D<sub>z</sub> = <span class="unreadable">[nieczytelne]</span>
-4. <span class="unreadable">[nieczytelne]</span> wewnętrzna D<sub>w</sub> = <span class="unreadable">[nieczytelne]</span>
-5. Temperatura obliczeniowa ścianki <span class="unreadable">[nieczytelne]</span>
-6. Obliczeniowa granica plastyczności <span class="unreadable">[nieczytelne]</span>
-7. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-8. Najlepsza wytrzymałość spoiny <span class="unreadable">[nieczytelne]</span>
-
-[W tym miejscu znajduje się rysunek spoiny z wymiarami 38x10, 18, Ø24, 20]
-
-Uwaga:
-Po przyspawaniu króćca Ø38x10 zostaje on przecięty wraz z komorą na Ø24
-
-Siła rozciągająca spoinę:
-P = (π * D<sub>n</sub><sup>2</sup>) / 4 * p<sub>o</sub> = (π * 24<sup>2</sup>) / 4 * 180 = 81450 KG
-
-Powierzchnia przekroju spoiny
-F = π * D<sub>z</sub> * a = 5,8 * π * 0,8 = 14,5 mm²
-
-Naprężenia rozciągające w spoinie
-σ<sub>roz</sub> = P / F = 81450 / 14,5 = 5617 KG/cm²
-
-Dopuszczalne naprężenia rozciągające
-σ<sub>dop</sub> = 0,65 * k<sub>r</sub> = 0,65 * 10,22 = 6,64 KG/mm²
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-17
-        </div>
-    </div>
-
-    <!-- STRONA 19 (POPRAWIONA Z ODRĘCZNĄ NOTATKĄ) -->
-    <div class="page">
-        <h2>Rura wylotowa</h2>
-        <div class="typewriter">
-1. Materiał - rura kotłowa <span class="unreadable">[nieczytelne]</span> R45
-2. Średnica zewnętrzna D<sub>z</sub> = 74 mm
-3. Ciśnienie obliczeniowe p<sub>o</sub> = 180 at.
-4. Temperatura obliczeniowa ścianki t<sub>o</sub> = 265°C
-5. Obliczeniowa granica plastyczności mat. R45 w temp. 265°C Q<sub>rto</sub> = 18,4 KG/mm²
-6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-7. Najmniejszy promień krzywizny osi zgiętej rury R = 60 mm
-8. Naddatek do obliczeniowej grubości ścianki c = 1 mm
-
-Dopuszczalne naprężenia rozciągające:
-k<sub>r</sub> = Q<sub>rto</sub> / x<sub>g</sub> = 18,4 / 1,8 = 10,22 KG/mm²
-
-Obliczeniowa grubość ścianki rury
-g<sub>o</sub> = (p<sub>o</sub> * D<sub>z</sub>) / (230 * k<sub>r</sub> + p<sub>o</sub>) = (180 * 74) / (230 * 10,22 + 180) = 5,28 mm
-
-Rzeczywista grubość ścianki rury
-g = g<sub>o</sub> + c = 5,28 + 1 = 6,28 mm
-
-Ostateczna grubość ścianki po uwzględnieniu ścienienia ścianki przy zgięciu
-g<sub>zg</sub> = g * (1 + D<sub>z</sub> / (2R)) = 6,28 * (1 + 74 / (120)) = 10,1 mm (z odręczną korektą w oryginale)
-
-Przyjęto rurę kotłową Ø 52 x 4 - R45
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-19
-        </div>
-    </div>
-
-    <!-- STRONA 20 -->
-    <div class="page">
-        <h2>Kołnierz Ø200 - 40 atm. /wg BN-64/H-74355/</h2>
-        <div class="typewriter">
-Dane i obliczenia:
-1. Materiał kołnierza - odkuwka 22K
-Ze względu na brak bliższych danych wytrzymałościowych materiału 22K w niniejszych warunkach przyjęto dane jak dla materiału R45, mającego nieco gorsze własności od mat. 22K.
-2. Materiał na śruby 40 HMF / 25H /
-3. Uszczelka płaska - <span class="unreadable">[nieczytelne]</span>
-4. Ciśnienie obliczeniowe p<sub>o</sub> = 180 at.
-5. Temperatura wody t<sub>w</sub> = 225°C
-6. Temperatura obliczeniowa kołnierza t<sub>o</sub> = 209°C
-7. Temperatura obliczeniowa dla śrub t<sub>ośr</sub> = 190°C
-8. Maksymalna różnica temperatur pomiędzy kołnierzem a śrubami Δt = 10°C
-9. Granica plastyczności materiału kołnierzowego w temp. 209°C Q<sub>rto</sub> = <span class="unreadable">[nieczytelne]</span> KG/mm²
-10. Granica plastyczności mat. śrubowego w temp. t<sub>ośr</sub> Q<sub>rto</sub> = 52 KG/mm²
-11. Współczynnik bezpieczeństwa dla materiału kołnierzowego i śrubowego w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8
-12. Współczynnik wytrzymałości dla dokładnie obrobionych śrub ψ = 1
-13. Moduł sprężystości materiału śrubowego dla temp. E<sub>śr</sub> = 20500 KG/mm²
-14. Liniowy współczynnik rozszerzalności materiału kołnierzowego α = 12,1 * 10<sup>-6</sup>
-15. Naprężenia ściskające w uszczelce od siły S<sub>1</sub> σ<sub>c</sub> = 9,8 KG/mm²
-16. Naprężenia ściskające w uszczelce od siły S<sub>2</sub> σ<sub>c</sub> = (p<sub>o</sub> * p<sub>o</sub>) / 100 = 14,8 KG/mm²
-17. Grubość uszczelki s = 2 mm
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-20
-        </div>
-    </div>
-
-    <!-- STRONA 21 -->
-    <div class="page">
-        <h2>cd. Kołnierz Ø200</h2>
-        <div class="typewriter">
-18. Rzeczywista szerokość uszczelki U = 20 mm
-19. Czynna szerokość uszczelki U<sub>cz</sub> = U/2 = 10 mm
-20. Ilość śrub n = 12 szt.
-21. Rzeczywista średnica rdzenia śruby d<sub>rz</sub> = 40 mm
-22. Pole przekroju poprzecznego wszystkich śrub
-F<sub>śr</sub> = (π * d<sub>rz</sub><sup>2</sup>) / 4 * n = (π * 40<sup>2</sup>) / 4 * 12 = 15000 mm²
-23. Rozkład temperatur w kołnierzu
-[W tym miejscu znajduje się rysunek przekroju kołnierza z wymiarami: δ<sub>o</sub> = 46, h = 89, 3, 6, 20, Ø170, Du-192, Ø213, Dz-231, Do-394, Dz-485]
-24. Nacisk na uszczelkę celem wywołania w niej naprężeń σ<sub>c</sub>'
-S<sub>1</sub> = π * D<sub>u</sub> * U<sub>cz</sub> * σ<sub>c</sub> = π * 192 * 10 * 9,8 = 59000 KG
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-21
-        </div>
-    </div>
-
-    <!-- STRONA 22 -->
-    <div class="page">
-        <h2>cd. Kołnierz</h2>
-        <div class="typewriter">
-25. Nacisk na uszczelkę celem wywołania w niej naprężeń σ<sub>c</sub>
-S<sub>2</sub> = π * D<sub>u</sub> * U<sub>cz</sub> * σ<sub>c</sub> = π * 192 * 10 * 17,1 = 103000 KG
-26. Napór czynnika na połączenie kołnierzowe
-P = (π * D<sub>u</sub><sup>2</sup>) / 4 * p<sub>o</sub> = (π * 192<sup>2</sup>) / 4 * 180 = 52200 KG
-27. Naciąg montażowy śrub wywołany działaniem siły P
-S<sub>2</sub> + P > S<sub>1</sub>
-N<sub>m</sub> = S<sub>2</sub> + P = 103000 + 52200 = 155200 KG
-28. Dodatkowy naciąg śrub wywołany działaniem siły P
-ΔN<sub>p</sub> = 0,2 * P = 0,2 * 52200 = 10440 KG
-29. Dodatkowy naciąg śrub wywołany różnicą temperatur
-ΔN<sub>t</sub> = <span class="unreadable">[nieczytelne]</span>
-N<sub>t</sub> = Δt * α * E<sub>śr</sub> * F<sub>śr</sub> = 10 * 12 * 1,10<sup>-6</sup> * 19500 * 15200 = 35900
-30. Maksymalny naciąg śrub w połączeniu kołnierzowo-śrubowym
-N<sub>max</sub> = N<sub>m</sub> + ΔN<sub>p</sub> + ΔN<sub>t</sub> = 155200 + 10440 + 35900 = 201540 KG
-31. Średnica rdzenia śruby
-δ<sub>r</sub> = 1,03 * √(N<sub>max</sub> / (ψ * k<sub>r1</sub> * n)) + 5,5 = <span class="unreadable">[nieczytelne]</span>
-δ<sub>r</sub> = 1,03 * √(201540 / (1 * 29,3 * 12)) + 5,5 = 24,6 + 5,5 = 30,1
-δ<sub>r</sub> < δ<sub>rz</sub>
-32. Naprężenia gnęce w kołnierzu w przekroju A-B
-σ<sub>g</sub>' = (3 * N<sub>max</sub> * (D<sub>o</sub> - D<sub>u</sub>)) / (π * D<sub>u</sub> * h<sup>2</sup>) = (3 * 201540 * (394 - 292)) / (π * 292 * 44<sup>2</sup>) = 8,15 KG/mm²
-33. Naprężenia gnęce w kołnierzu w przekroju D-C
-σ<sub>g</sub>'' = (3 * N<sub>max</sub> * (D<sub>o</sub> - D<sub>z</sub>)) / (π * D<sub>z</sub> * h<sup>2</sup>) = (3 * 201540 * (394 - 292)) / (π * 231 * 44<sup>2</sup>) = 10,3 KG/mm²
-        </div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-22
-        </div>
-    </div>
-
-    <!-- STRONA 23 (Ostatnia) -->
-    <div class="page">
-        <h2>cd. Kołnierz</h2>
-        <div class="typewriter">
-34. Dopuszczalne naprężenia gnące dla materiału
-k<sub>g</sub> = 1,4 * Q<sub>rto</sub> / x<sub>g</sub> = 1,4 * <span class="unreadable">[nieczytelne]</span> = <span class="unreadable">[nieczytelne]</span> KG/mm²
-k<sub>g</sub> > σ<sub>g</sub>' oraz σ<sub>g</sub>''
-        </div>
-        
-        <div style="text-align: right; margin-top: 50px; border: 2px solid #333; padding: 10px; display: inline-block; float: right;">
-            <strong>SOSNOWIECKIE ZAKŁADY BUDOWY MASZYN<br>
-            IM. REWOLUCJI 1905R.</strong><br>
-            Przedsiębiorstwo Państwowe<br>
-            <br>
-            <em>Kazimierz Wolski</em><br>
-            <strong>Dyrektor Zakładu</strong>
-        </div>
-        <div style="clear: both;"></div>
-        
-        <div class="footer-box">
-            Tarnowskie Góry | Data: 27.9.66 r. | Wykonał: [nieczytelne] | Data: 5.10.66 r. | Sprawdził: [nieczytelne] | Data: 14.10.66 r. | Zatwierdził: [nieczytelne] | PWS-200-5 | 04-23
-        </div>
+        <p class="math">\(K_g = 1,4 \cdot \frac{Q_{rto}}{x_g} = 1,4 \cdot \frac{18,4}{1,8} = 14,32\) kg/mm²</p>
+        <p class="math">\(K_g > \tau_{max}\)</p>
+        <p class="text-center">Warunek spełniony.</p>
     </div>
 
 </div>
