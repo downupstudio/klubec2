@@ -2,451 +2,487 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Aneks do instrukcji obsługi - MASTER 3 (UNIMAT-3M)</title>
+    <title>Aneks do instrukcji obsługi - Turbina TC-25 UNIMAT-3M</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.5; margin: 40px; color: #333; background-color: #f4f4f4; }
-        .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
+        .doc-container { background-color: white; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 1100px; margin: auto; }
         h1, h2, h3, h4 { color: #222; border-bottom: 2px solid #444; padding-bottom: 5px; margin-top: 30px; }
         .page { border-bottom: 2px dashed #aaa; padding-bottom: 30px; margin-bottom: 30px; }
-        .typewriter { font-family: "Courier New", Courier, monospace; font-size: 0.95em; }
-        .unreadable { background-color: #eee; color: #777; font-style: italic; padding: 0 4px; }
-        .footer-box { border: 1px solid #000; padding: 10px; font-size: 0.8em; margin-top: 20px; font-family: monospace; text-align: center; background: #fafafa; }
-        
-        /* Zwykłe tabele z danymi */
-        table.data-table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.9em; }
-        table.data-table th, table.data-table td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }
-        table.data-table th { background-color: #eee; text-align: center; }
-
-        /* Tabela dla spisu treści - NAPRAWIONA */
-        table.toc-table { width: 100%; border-collapse: collapse; font-family: "Courier New", Courier, monospace; font-size: 0.95em; margin-bottom: 0; border: none; }
-        table.toc-table td { border: none; padding: 4px 0; vertical-align: bottom; }
-        .toc-text { padding-right: 10px; }
-        .toc-dots { width: 100%; }
-        .toc-dots .dots { border-bottom: 1px dotted #333; position: relative; bottom: 4px; height: 1px; }
-        .toc-page { width: 1%; white-space: nowrap; text-align: right; padding-left: 10px; }
-
-        .screen-mock { border: 2px solid #333; padding: 10px; font-family: monospace; background: #eef; margin-bottom: 20px; font-size: 0.85em; }
-        .screen-header { text-align: center; font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px; }
-        ul { padding-left: 20px; }
-        .sig-list { column-count: 2; column-gap: 40px; font-family: monospace; font-size: 0.9em; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 0.85em; }
+        th, td { border: 1px solid #333; padding: 6px; text-align: left; vertical-align: top; }
+        th { background-color: #eaeaea; text-align: center; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .bold { font-weight: bold; }
+        .header-box { border: 1px solid #000; padding: 10px; margin-bottom: 20px; font-size: 0.85em; display: flex; justify-content: space-between; background: #fff; }
+        ul, ol { margin-top: 10px; }
+        .note { font-size: 0.85em; color: #c00; font-style: italic; background-color: #fff3f3; padding: 5px; border-left: 3px solid #c00; margin: 10px 0; }
+        .screenshot { border: 2px solid #333; background-color: #f9f9f9; padding: 15px; font-family: 'Courier New', Courier, monospace; margin-bottom: 20px; }
+        .screenshot-title { text-align: center; font-weight: bold; margin-bottom: 10px; background: #333; color: white; padding: 5px; }
+        .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .screenshot-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     </style>
 </head>
 <body>
 
 <div class="doc-container">
-    <!-- STRONA 1 (Okładka) -->
-    <div class="page" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
-        <h2 style="border: none;">Instytut Automatyki Systemów Energetycznych</h2>
-        <p class="typewriter">ul. Wystawowa 1<br>51-618 Wrocław<br>tel.centr. (071) 348 42 21<br>tel. dyr. (071) 372 99 34, 347 72 94<br>fax (071) 348 21 83, 348 50 34<br>Dział Marketingu tel/fax (071) 347 72 25</p>
-        
-        <div style="text-align: right; margin-top: -150px;">
-            <strong>IASE</strong><br>
-            Rok założenia 1949<br>
-            <em>[Logo TÜV CERT DIN EN ISO 9001]</em>
+
+    <!-- Strona 1 -->
+    <div class="page">
+        <div class="text-center">
+            <h2>Instytut Automatyki Systemów Energetycznych</h2>
+            <p>ul. Wystawowa 1<br>
+            51-618 Wrocław<br>
+            tel. centr. (071) 348 42 21<br>
+            tel. dyr. (071) 372 99 34, 347 72 94<br>
+            tel. dyr. (071) 372 99 34, 347 72 84<br>
+            fax (071) 348 21 83, 348 50 34<br>
+            Dział Marketingu tel/fax (071) 347 72 25</p>
+            
+            <p>Rok założenia 1949<br>
+            DNV EN ISO 9001<br>
+            Zet - Nr. 011009732017</p>
         </div>
 
-        <br><br><br><br>
-        <h1 style="font-size: 1.8em;">MASTER 3</h1>
-        <h2 style="border: none; font-size: 1.2em;">Elektrohydrauliczny układ regulacji turbiny TC-25<br>UNIMAT-3M.</h2>
-        <p style="font-size: 1.1em;"><strong>EC 2 Łódź TZ-4</strong></p>
-        <br>
-        <p style="font-size: 1.1em;"><strong>Aneks do instrukcji obsługi.</strong></p>
-        
-        <br><br>
-        <p class="typewriter">
-            Nr dok. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2127-600</strong><br>
-            Wydanie: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>drugie</strong><br>
-            Data wydania: <strong>10-01-2004r.</strong>
-        </p>
+        <h1 class="text-center">MASTER 3</h1>
+        <h3 class="text-center">Elektrohydrauliczny układ regulacji turbiny TC-25 UNIMAT-3M.<br>EC 2 Łódź TZ-4</h3>
+        <h4 class="text-center">Aneks do instrukcji obsługi.</h4>
 
-        <table class="data-table" style="width: 70%; margin: 40px auto; text-align: center;">
-            <tr><td style="border: none;"></td><td style="border: none;"><strong>Opracował:</strong></td><td style="border: none;"><strong>Sprawdził:</strong></td><td style="border: none;"><strong>Zatwierdził:</strong></td></tr>
-            <tr><td style="border: none;"><strong>Data</strong></td><td style="border: none;">12-01-2004r.</td><td style="border: none;"></td><td style="border: none;"></td></tr>
-            <tr><td style="border: none;"><strong>Nazwisko</strong></td><td style="border: none;">mgr inż. A. Makaś</td><td style="border: none;">mgr inż. J. Kmiecik</td><td style="border: none;">mgr inż. J. Kmiecik</td></tr>
-            <tr><td style="border: none;"><strong>Komórka org.</strong></td><td style="border: none;">WK-E</td><td style="border: none;">WK-E</td><td style="border: none;">WK-E</td></tr>
-            <tr><td style="border: none;"><strong>Podpis</strong></td><td style="border: none;"><em>[A. Makaś]</em></td><td style="border: none;"><em>[podpis]</em></td><td style="border: none;"><em>[podpis]</em></td></tr>
+        <table style="width: 60%; margin: 30px auto;">
+            <tr><td><strong>Nr dok.</strong></td><td>2127-600</td></tr>
+            <tr><td><strong>Wydanie:</strong></td><td>drugie</td></tr>
+            <tr><td><strong>Data wydania:</strong></td><td>10-01-2004r.</td></tr>
         </table>
 
-        <br>
-        <p style="font-size: 0.9em;">Niniejsze opracowanie jest własnością IASE i nie może być<br>kopiowane, powielane i udostępniane bez zgody właściciela.</p>
-        <br><br>
-        <h3 style="border: none;">Wrocław, styczeń 2004r.</h3>
+        <table style="width: 80%; margin: 0 auto;">
+            <tr>
+                <th></th>
+                <th>Opracował:</th>
+                <th>Sprawdził:</th>
+                <th>Zatwierdził:</th>
+            </tr>
+            <tr>
+                <td><strong>Data</strong></td>
+                <td>12-01-2004r.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Nazwisko</strong></td>
+                <td>mgr inż. A. Makaś</td>
+                <td>mgr inż. J. Kmiecik</td>
+                <td>mgr inż. J. Kmiecik</td>
+            </tr>
+            <tr>
+                <td><strong>Komórka organizacyjna</strong></td>
+                <td>WK-E</td>
+                <td>WK-E</td>
+                <td>WK-E</td>
+            </tr>
+            <tr>
+                <td><strong>Podpis</strong></td>
+                <td>A. Makaś</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <p class="text-center" style="margin-top: 50px; font-size: 0.8em;">Niniejsze opracowanie jest własnością IASE i nie może być kopiowane, powielane i udostępniane bez zgody właściciela.</p>
+        <p class="text-center">Wrocław, styczeń 2004r.</p>
     </div>
 
-    <!-- STRONA 2 (Spis treści) -->
+    <!-- Strona 2 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 2/19
+        <div class="header-box">
+            <div><strong>INSTYTUT AUTOMATYKI<br>SYSTEMÓW<br>ENERGETYCZNYCH</strong></div>
+            <div><strong>Nazwa:</strong> Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź</div>
+            <div><strong>Nr wydzielone:</strong> 2127-600</div>
+            <div><strong>Strona:</strong> 2<br><strong>Stron:</strong> 19</div>
         </div>
-        <h3>Spis treści</h3>
-        
-        <table class="toc-table">
-            <tr><td class="toc-text">1. Ogólny opis regulatora</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">4</td></tr>
-            <tr><td class="toc-text">2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">5</td></tr>
-            <tr><td class="toc-text">3. Funkcje regulatora</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
-            <tr><td class="toc-text">4. <em>Regulacja automatyczna.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
-            <tr><td class="toc-text">5. <em>Ograniczniki.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
-            <tr><td class="toc-text">6. Układ zabezpieczeń.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">12</td></tr>
-            <tr><td class="toc-text">7. Pulpit sterowniczy EMT-1.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
-            <tr><td class="toc-text">8. Próby zabezpieczeń i testy.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
-            <tr><td class="toc-text">9. <em>Próba wytrzasku elektronicznego.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
-            <tr><td class="toc-text">10. <em>Sprawdzenie działania zaworu odcinającego WP - MAA11AA211</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
-            <tr><td class="toc-text">11. <em>Próby przetworników ciśnienia oleju smarnego</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">13</td></tr>
-            <tr><td class="toc-text">12. <em>Próba szczelności zaworów</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">14</td></tr>
-            <tr><td class="toc-text">13. <em>Sterowanie napędem pompy lewarowej.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">15</td></tr>
-            <tr><td class="toc-text">14. <em>Sterowanie napędem pomp oleju regulacyjnego.</em></td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">15</td></tr>
+
+        <h3>Spis treści:</h3>
+        <ol>
+            <li>Ogólny opis regulatora. <span class="text-right">4</span></li>
+            <li>Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora <span class="text-right">5</span></li>
+            <li>Funkcje regulatora. <span class="text-right">12</span>
+                <ul>
+                    <li>2.1. Regulacja automatyczna. <span class="text-right">12</span></li>
+                    <li>2.2. Ograniczniki. <span class="text-right">12</span></li>
+                </ul>
+            </li>
+            <li>Układ zabezpieczeń. <span class="text-right">12</span></li>
+            <li>Pulpit sterowniczy EMT-1. <span class="text-right">13</span></li>
+            <li>Próby zabezpieczeń i testy. <span class="text-right">13</span>
+                <ul>
+                    <li>5.1 Próba wytrzasku elektronicznego. <span class="text-right">13</span></li>
+                    <li>5.2 Sprawdzenie działania zaworu odcinającego WP-MAA11AA211 <span class="text-right">13</span></li>
+                    <li>5.3 Próby przetworników ciśnienia oleju smarnego <span class="text-right">13</span></li>
+                    <li>5.4 Próba szczelności zaworów <span class="text-right">14</span></li>
+                    <li>5.5 Sterowanie napędem pompy lewarowej. <span class="text-right">15</span></li>
+                    <li>5.6 Sterowanie napędem pomp oleju regulacyjnego. <span class="text-right">15</span></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Strona 3 -->
+    <div class="page">
+        <h3>Spis rysunków:</h3>
+        <table>
+            <tr><td>Rys. 1 Tablica operacyjna MENU GŁÓWNE</td><td class="text-right">16</td></tr>
+            <tr><td>Rys. 2 Tablica operacyjna REGULACJA Pu</td><td class="text-right">16</td></tr>
+            <tr><td>Rys. 3 Tablica operacyjna REGULACJA Puc i Tw.</td><td class="text-right">16</td></tr>
+            <tr><td>Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</td><td class="text-right">17</td></tr>
+            <tr><td>Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz. I</td><td class="text-right">17</td></tr>
+            <tr><td>Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz. II</td><td class="text-right">17</td></tr>
+            <tr><td>Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</td><td class="text-right">18</td></tr>
+            <tr><td>Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</td><td class="text-right">18</td></tr>
+            <tr><td>Rys. 9 Tablica operacyjna STEROWNIE NAPĘDAMI POMP OL. REGULAC.</td><td class="text-right">18</td></tr>
+            <tr><td>Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ</td><td class="text-right">19</td></tr>
+            <tr><td>Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU</td><td class="text-right">19</td></tr>
         </table>
     </div>
 
-    <!-- STRONA 3 (Spis rysunków) -->
+    <!-- Strona 4 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 3/19
-        </div>
-        <h3>Spis rysunków.</h3>
-        
-        <table class="toc-table">
-            <tr><td class="toc-text">Rys. 1 Tablica operacyjna MENU GŁÓWNE</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">16</td></tr>
-            <tr><td class="toc-text">Rys. 2 Tablica operacyjna REGULACJA Pu</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">16</td></tr>
-            <tr><td class="toc-text">Rys. 3 Tablica operacyjna REGULACJA Pc i Tw.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">16</td></tr>
-            <tr><td class="toc-text">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">17</td></tr>
-            <tr><td class="toc-text">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">17</td></tr>
-            <tr><td class="toc-text">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">17</td></tr>
-            <tr><td class="toc-text">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">18</td></tr>
-            <tr><td class="toc-text">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">18</td></tr>
-            <tr><td class="toc-text">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OŁ. REGULAC.</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">18</td></tr>
-            <tr><td class="toc-text">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">19</td></tr>
-            <tr><td class="toc-text">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU</td><td class="toc-dots"><div class="dots"></div></td><td class="toc-page">19</td></tr>
-        </table>
-    </div>
-
-    <!-- STRONA 4 -->
-    <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 4/19
-        </div>
         <h3>1. Ogólny opis regulatora.</h3>
-        <p>Regulator przeznaczony jest do regulacji turbiny parowo-cieplnej typu TC25 o nominalnej mocy 25MW. Cztery zawory WP turbiny i dwie tarcze regulacyjne na upustach:</p>
+        <p>Regulator przeznaczony jest do regulacji turbiny parowo-ciepłowniczej typu TC25 o nominalnej mocy 25MW. Cztery zawory WP turbiny i dwie tarcze regulacyjne na upustach:</p>
         <ul>
             <li>LBC10 (regulacja w zakresie ciśnień 0,12 ÷ 0,25 MPa abs),</li>
             <li>LBD10 (regulacja w zakresie ciśnień 0,70 ÷ 1,03 MPa abs),</li>
         </ul>
         <p>sterowane są poprzez 6 wzmacniaczy PID f-my Vickers i zawory proporcjonalne.</p>
         <p>Zmodernizowany układ regulatora elektronicznego UNIMAT składa się z:</p>
-        <p>a) dwóch kaszet zawierających regulator główny RG i potrojony układ zabezpieczeń RZ1, RZ2 i RZ3 (regulator bezpieczeństwa RB turbiny jest zabudowany wspólnie z regulatorem RZ1),</p>
-        <p>b) dwóch zespołów zasilających typu PS-803 (zespół górny zasila regulatory RG i RZ, zespół dolny – wzmacniacze PID),</p>
-        <p>c) kasety wzmacniaczy PID.</p>
+        <ul>
+            <li>a) dwóch kaset zawierających regulator główny RG i potrojony układ zabezpieczeń RZ1, RZ2 i RZ3 (regulator bezpieczeństwa RB turbiny jest zabudowany wspólnie z regulatorem RZ1),</li>
+            <li>b) dwóch zespołów zasilających typu PS-803 (zespół górny zasila regulatory RG i RZ, zespół dolny – wzmacniacze PID),</li>
+            <li>c) kasety wzmacniaczy PID.</li>
+        </ul>
         <p>Obecnie wszystkie pomiary, istotne dla układu regulacji i zabezpieczeń, zostały podwojone, a układ pomiaru ciśnienia oleju sterującego – potrojony.</p>
         <p>W przypadku zaistnienia uszkodzeń elementów regulatora lub torów pomiarowych podawany jest sygnał alarmowy oraz informacja na pulpicie sterowniczym o rodzaju niesprawności. Uszkodzenie analogowego toru pomiarowego (4-20mA) jest sygnalizowane wtedy, gdy wartość tego sygnału będzie mniejsza od 3.75mA lub większa od 20.25mA.</p>
         <p>W zależności od wagi uszkodzenia może nastąpić przełączenie na „awaryjne sterowanie ręczne” lub wyłączenie turbiny.</p>
-        <p>Pomiar obrotów odbywa się trzema czujnikami, mierzącymi czas jednego obrotu turbiny wg następującej zasady: jeżeli rozbieżność między przynajmniej dwoma (z trzech) sygnałami wejściowymi nie przekracza dopuszczalnej wartości (100μs tj. 15 obr./min. przy 3000 obr./min.) - wyjście przyjmuje wartość średnią tych sygnałów, a ewentualny sygnał odbiegający od wartości dwóch pozostałych sygnalizowany jest jako uszkodzony. Jeżeli rozbieżność między wszystkimi sygnałami przekracza dopuszczalną wartość - sygnał wyjściowy powstaje przez wybór największej wartości obrotów. Na ekranie zjawia się informacja o braku wiarygodności pomiaru obrotów („Brak.wiar.obr.”).</p>
-        <p>Pomiary dwutorowe przetwarzane są wg następującej zasady: jeśli różnica w torach jest większa niż 10% zakresu pomiarowego, to wartość bezpieczniejsza dla pracy bloku (a będzie to sygnał minimalny lub maksymalny) jest traktowana jako poprawna. Stan ten jest sygnalizowany na pulpicie komunikatem „Różne pomiary .....”.</p>
+        <p>Pomiar obrotów odbywa się trzema czujnikami, mierzącymi czas jednego obrotu turbiny wg następującej zasady: jeżeli rozbieżność między przynajmniej dwoma (z trzech) sygnałami wejściowymi nie przekracza dopuszczalnej wartości (100µs tj. 15 obr./min. przy 3000 obr./min.) - wyjście przyjmuje wartość średnią tych sygnałów, a ewentualny sygnał odbiegający od wartości dwóch pozostałych sygnalizowany jest jako uszkodzony. Jeżeli rozbieżność między wszystkimi sygnałami przekracza dopuszczalną wartość - sygnał wyjściowy powstaje przez wybór największej wartości obrotów. Na ekranie zjawia się informacja o braku wiarygodności pomiaru obrotów („Brak.wiar.obr.”).</p>
+        <p>Pomiary dwutorowe przetwarzane są wg następującej zasady: jeśli różnica w torach jest większa niż 10% zakresu pomiarowego, to wartość bezpieczniejsza dla pracy bloku (a będzie to sygnał minimalny lub maksymalny) jest traktowana jako poprawna. Stan ten jest sygnalizowany na pulpicie komunikatem „Różne pomiary ......”.</p>
         <p>Jeżeli wykryte zostanie uszkodzenie jednego z torów pomiarowych, to „pomiar” z tego toru zostanie odrzucony, drugi tor natomiast zostanie potraktowany jako poprawny. Oczywiście fakt uszkodzenia jednego z torów pomiarowych jest sygnalizowany na pulpicie.</p>
     </div>
 
-    <!-- STRONA 5 -->
+    <!-- Strona 5 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 5/19
-        </div>
         <p>System zabezpieczeń jest trójkanalowy, i działa na zasadzie oddziaływania na układ hydrauliczny poprzez zawory i rozdzielacze elektrohydrauliczne. Sygnał wyłączenia turbiny jest wypracowywany przez układ zabezpieczeń bloku energetycznego (system zabezpieczeń elektrycznych i generatora, system zabezpieczeń kotła, zabezpieczenia turbiny (pomiary specjalne, regulator elektroniczny)). Elementami wykonawczymi systemu zabezpieczeń turbiny są elektromagnetyczne zawory zdalnego wyłączenia turbiny MAX71AA001/002/003. Zawory te są sterowane z trzech niezależnych sterowników regulatora elektronicznego. Wyłączenie turbiny jest zrealizowane w oparciu o zasadę wyboru 2 z 3, wybór jest realizowany po stronie hydraulicznej (tzn. turbina będzie wyłączona, jeżeli co najmniej dwa elektrozawory z trzech (MAX71AA001/002/003) zostaną wyłączone).</p>
-        <p>Obecnie turbina posiada dwa elektroniczne zabezpieczenia od zwyżki obrotów. Jeden z tych układów wykorzystuje trzy czujniki obrotów istniejące do tej pory na turbinie i działające w układzie regulatorów RG/RB turbiny oraz w potrojonym układzie zabezpieczeń RZ. Poziom wytrzasku dla tego zabezpieczenia ustalono na 3280obr/min. Drugi (nowy) zestaw 3 czujników obrotów działa niezależnie od regulatora turbiny RG i ogniw zabezpieczeń RZ - generując sygnał na wyłączenie turbozespołu na poziomie 3300obr/min. według reguły 2z3.</p>
-        
-        <h4>2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora.</h4>
+        <p>Obecnie turbina posiada dwa elektroniczne zabezpieczenia od zwyżki obrotów. Jeden z tych układów wykorzystuje trzy czujniki obrotów istniejące do tej pory na turbinie i działające w układzie regulatorów RG/RB turbiny oraz w potrojonym układzie zabezpieczeń RZ. Poziom wytrzasku dla tego zabezpieczenia ustalono na 3280obr/min. Drugi (nowy) zestaw 3 czujników obrotów działa niezależnie od regulatora turbiny RG i ogniw zabezpieczeń RZ - generując sygnał na wyłączenie turbozespołu na poziomie 3300obr/min. według reguły 2 z 3.</p>
+
+        <h3>2. Zestawienie wejściowych sygnałów analogowych i sygnałów do rejestracji w modułach RAM-karty. Sygnalizacja uszkodzeń i stanów pracy regulatora.</h3>
         <p>W poniższej tabeli zebrano zakresy pomiarowe analogowych sygnałów wejściowych:</p>
-        <table class="data-table">
-            <tr><th>Nazwa sygnału</th><th>Zakres pomiarowy</th></tr>
-            <tr><td>Ciśnienie pary świeżej, tor 1, 1151GP<br><strong>LBA10CP201</strong></td><td>0-12MPa</td></tr>
-            <tr><td>Ciśnienie pary świeżej, tor 2, 1151GP<br><strong>LBA10CP202</strong></td><td>0-12MPa</td></tr>
-            <tr><td>Ciśnienie pary upustowej (NP); tor 1, 1151AP<br><strong>LBD10CP201</strong></td><td>0-0.3MPa abs</td></tr>
-            <tr><td>Ciśnienie pary upustowej (NP); tor 2, 1151AP<br><strong>LBD10CP202</strong></td><td>0-0.3MPa abs</td></tr>
-            <tr><td>Ciśnienie pary wylotowej; tor 1, 1151AP<br><strong>LBE10CP201</strong></td><td>0-100kPa abs</td></tr>
-            <tr><td>Ciśnienie pary wylotowej; tor 2, 1151AP<br><strong>LBE10CP202</strong></td><td>0-100kPa abs</td></tr>
-            <tr><td>Temperatura wody za wymiennikiem ciepłowniczym, tor 1, TOPGN1<br><strong>NDA10CT201</strong></td><td>0-150°C</td></tr>
-            <tr><td>Temperatura wody za wymiennikiem ciepłowniczym, tor 2, TOPGN12<br><strong>NDA10CT202</strong></td><td>0-150°C</td></tr>
-            <tr><td>Moc czynna generatora tor 1, TMW4,<br><strong>MKA10CE201</strong></td><td>0-30MW</td></tr>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa sygnału</th>
+                    <th>Zakres pomiarowy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Ciśnienie pary świeżej, tor 1, 1151GP<br>LBA10CP201</td><td>0-12MPa</td></tr>
+                <tr><td>Ciśnienie pary świeżej, tor 2, 1151GP<br>LBA10CP202</td><td>0-12MPa</td></tr>
+                <tr><td>Ciśnienie pary upustowej (NP); tor 1, 1151AP<br>LBD10CP201</td><td>0-0.3MPa abs</td></tr>
+                <tr><td>Ciśnienie pary upustowej (NP); tor 2, 1151AP<br>LBD10CP202</td><td>0-0.3MPa abs</td></tr>
+                <tr><td>Ciśnienie pary wylotowej; tor 1, 1151AP<br>LBE10CP201</td><td>0-100kPa abs</td></tr>
+                <tr><td>Ciśnienie pary wylotowej, tor 2, 1151AP<br>LBE10CP202</td><td>0-100kPa abs</td></tr>
+                <tr><td>Temperatura wody za wymiennikiem ciepłowniczym, tor 1, TOPGN1<br>NDA10CT201</td><td>0-150°C</td></tr>
+                <tr><td>Temperatura wody za wymiennikiem ciepłowniczym, tor 2, TOPGN12<br>NDA10CT202</td><td>0-150°C</td></tr>
+                <tr><td>Moc czynna generatora tor 1, TMW4, MKA10CE201</td><td>0-30MW</td></tr>
+            </tbody>
         </table>
     </div>
 
-    <!-- STRONA 6 -->
+    <!-- Strona 6 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 6/19
-        </div>
-        <table class="data-table">
-            <tr><th>Nazwa sygnału</th><th>Zakres pomiarowy</th></tr>
-            <tr><td>Moc czynna generatora, for 2, TMW4<br><strong>MKA10CE202</strong></td><td>0-30MW</td></tr>
-            <tr><td>Ciśnienie pary upustowej (SP) for 1,<br><strong>LBC10CP201</strong></td><td>0-2MPa</td></tr>
-            <tr><td>Ciśnienie pary upustowej, for 2, (SP)<br><strong>LBC10CP202</strong></td><td>0-2MPa</td></tr>
-            <tr><td>Temperatura pary wylotowej tor 1,<br><strong>MAC10CT201</strong></td><td>0-200°C</td></tr>
-            <tr><td>Temperatura pary wylotowej, tor 2,<br><strong>MAC10CT202</strong></td><td>0-200°C</td></tr>
-            <tr><td>Spadek ciśnienia na filtrze oleju lewarowego<br><strong>MAV52CP201</strong></td><td>0-0.25MPa</td></tr>
-            <tr><td>Poziom oleju w zbiorniku MAX09CL201</td><td>270-530mm</td></tr>
-            <tr><td>Temp. metalu kadłuba WP - góra - średnio (TZ70), APU-012; MAA10CT202</td><td>0-600°C</td></tr>
-            <tr><td>Temp. metalu kadłuba WP - dół - średnio (TZ71), APU-01, MAA10CT203</td><td>20-600°C</td></tr>
-            <tr><td>Temp. metalu kołnierza strona lewa - średnio (TZ68), APU-012; MAB10CT202</td><td>0-600°C</td></tr>
-            <tr><td>Temp. metalu kołnierza; strona lewa - płytko (TZ66), APU-012; MAB10CT201</td><td>0-600°C</td></tr>
-            <tr><td>Temp. metalu kołnierza strona prawa - średnio (TZ69), APU-012; MAB10CT203</td><td>0-600°C</td></tr>
-            <tr><td>Temp. pary w komorze zaworu odcinającego WP (TZ18), APU-012; MAA11CT201</td><td>0-600°C</td></tr>
-            <tr><td>Temp. metalu w komorze zaworu odcinającego WP (TZ19), APU-012; MAA11CT202</td><td>0-600°C</td></tr>
-            <tr><td>Wydłużenia względne</td><td>-2,0...+2,0mm</td></tr>
-            <tr><td>Położenie tarczy regulacyjnej SP<br><strong>MAB10CG111</strong></td><td>0-100%</td></tr>
-            <tr><td>Położenie tarczy regulacyjnej NP.<br><strong>MAC10CG111</strong></td><td>0-100%</td></tr>
-            <tr><td>Ciśnienie oleju regulacyjnego<br><strong>MAX09CP201</strong></td><td>0-25MPa</td></tr>
-            <tr><td>Temperatura oleju w zbiorniku oleju<br><strong>MAX09CT201</strong></td><td>0-100°C</td></tr>
-            <tr><td>Ciśnienie oleju roboczego WP; MAX50CP201</td><td>0-20MPa</td></tr>
-            <tr><td>Położenie serwomotoru ZR.WP1<br><strong>MAA11CG111</strong></td><td>0-100%</td></tr>
-            <tr><td>Położenie serwomotoru ZR.WP2<br><strong>MAA12CG111</strong></td><td>0-100%</td></tr>
-            <tr><td>Położenie serwomotoru ZR.WP3<br><strong>MAA21CG111</strong></td><td>0-100%</td></tr>
-            <tr><td>Położenie serwomotoru ZR.WP4<br><strong>MAA22CG111</strong></td><td>0-100%</td></tr>
-            <tr><td>Ciśnienie oleju smarnego for 1,<br><strong>MAV04CP201</strong></td><td>0-0,16MPa</td></tr>
-            <tr><td>Ciśnienie oleju smarnego for 2,<br><strong>MAV04CP202</strong></td><td>0-0,16MPa</td></tr>
-            <tr><td>Ciśnienie oleju smarnego for 3,<br><strong>MAV04CP203</strong></td><td>0-0,16MPa</td></tr>
+        <table>
+            <tbody>
+                <tr><td>Moc czynna generatora, tor 2, TMW4<br>MKA10CE202</td><td>0-30MW</td></tr>
+                <tr><td>Ciśnienie pary upustowej (SP) tor 1,<br>LBC10CP201</td><td>0-2MPa</td></tr>
+                <tr><td>Ciśnienie pary upustowej, tor 2, (SP)<br>LBC10CP202</td><td>0-2MPa</td></tr>
+                <tr><td>Temperatura pary wylotowej tor 1,<br>MAC10CT201</td><td>0-200°C</td></tr>
+                <tr><td>Temperatura pary wylotowej, tor 2,<br>MAC10CT202</td><td>0-200°C</td></tr>
+                <tr><td>Spadek ciśnienia na filtrze oleju lewarowego<br>MAV52CP201</td><td>0-0.25MPa</td></tr>
+                <tr><td>Poziom oleju w zbiorniku MAX09CL201</td><td>270-530mm</td></tr>
+                <tr><td>Temp. metalu kadłuba WP - góra - średnio (T270),<br>APU-012; MAA10CT202</td><td>0-600°C</td></tr>
+                <tr><td>Temp. metalu kadłuba WP - dół - średnio (T271),<br>APU-01; MAA10CT203</td><td>20-600°C</td></tr>
+                <tr><td>Temp. metalu kołnierza strona lewa - średnio<br>(T268), APU-012; MAB10CT202</td><td>0-600°C</td></tr>
+                <tr><td>Temp. metalu kołnierza; strona lewa - płytko<br>(T266), APU-012; MAB10CT201</td><td>0-600°C</td></tr>
+                <tr><td>Temp. metalu kołnierza strona prawa - średnio<br>(T269), APU-012; MAB10CT203</td><td>0-600°C</td></tr>
+                <tr><td>Temp. pary w komorze zaworu odcinającego WP (T318),<br>APU-012; MAA11CT201</td><td>0-600°C</td></tr>
+                <tr><td>Temp. metalu w komorze zaworu odcinającego WP (T319),<br>APU-012; MAA11CT202</td><td>0-600°C</td></tr>
+                <tr><td>Wydłużenia względne</td><td>-2,0...+2,0mm</td></tr>
+                <tr><td>Położenie tarczy regulacyjnej SP<br>MAB10CG111</td><td>0-100%</td></tr>
+                <tr><td>Położenie tarczy regulacyjnej NP.<br>MAC10CG111</td><td>0-100%</td></tr>
+                <tr><td>Ciśnienie oleju regulacyjnego<br>MAX09CP201</td><td>0-25MPa</td></tr>
+                <tr><td>Temperatura oleju w zbiorniku oleju<br>MAX09CT201</td><td>0-100°C</td></tr>
+                <tr><td>Ciśnienie oleju roboczego WP; MAX50CP201</td><td>0-20MPa</td></tr>
+                <tr><td>Położenie serwomotoru ZR.WP1<br>MAA11CG111</td><td>0-100%</td></tr>
+                <tr><td>Położenie serwomotoru ZR.WP2<br>MAA12CG111</td><td>0-100%</td></tr>
+                <tr><td>Położenie serwomotoru ZR.WP3<br>MAA21CG111</td><td>0-100%</td></tr>
+                <tr><td>Położenie serwomotoru ZR.WP4<br>MAA22CG111</td><td>0-100%</td></tr>
+                <tr><td>Ciśnienie oleju smarnego tor 1,<br>MAV04CP201</td><td>0-0,16MPa</td></tr>
+                <tr><td>Ciśnienie oleju smarnego tor 2,<br>MAV04CP202</td><td>0-0,16MPa</td></tr>
+                <tr><td>Ciśnienie oleju smarnego tor 3,<br>MAV04CP203</td><td>0-0,16MPa</td></tr>
+            </tbody>
         </table>
     </div>
 
-    <!-- STRONA 7 -->
+    <!-- Strona 7 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 7/19
-        </div>
         <p>Uszkodzenia sygnałów wejściowych w regulatorze turbiny i układzie zabezpieczeń sygnalizowane są w polu uszkodzeń na pulpicie ekranu EMT-1. Lista sygnalizowanych uszkodzeń przedstawia się następująco:</p>
-        <div class="sig-list">
-            1.) Uszk. 1 tor obr.<br>
-            2.) Uszk. 2 tor obr.<br>
-            3.) Uszk. 3 tor obr.<br>
-            4.) Brak wiar. Obr.<br>
-            5.) Uszk pom. mocy t1<br>
-            6.) Uszk pom. mocy t2<br>
-            7.) Uszk. Twody s. t1<br>
-            8.) Uszk. Twody s. t2<br>
-            9.) Uszk. Tkorp.GÓRA śr<br>
-            10.) Uszk. Tkorp.DÓŁ śr<br>
-            11.) Uszk. Tpary w Z.O.<br>
-            12.) Uszk. Tmet. Z.O.<br>
-            13.) Uszk. Tkołn. Lśr.<br>
-            14.) Uszk. Tkołn. Lpł.<br>
-            15.) Uszk. Tkołn. Pśr.<br>
-            16.) Uszk. P pary śśw.1<br>
-            17.) Uszk. P pary śśw.2<br>
-            18.) Uszk. Pup. NP t1<br>
-            19.) Uszk. Pup. NP t2<br>
-            20.) Uszk. Pwyl. t1<br>
-            21.) Pwyl. t2<br>
-            22.) Brak kompl. gen.<br>
-            23.) Uszk. wydł. wzgl.<br>
-            24.) Uszk.pom.Ister-WP1<br>
-            25.) Uszk.pom.Ister-WP2<br>
-            26.) Uszk.pom.Ister-WP3<br>
-            27.) Uszk.pom.Ister-WP4<br>
-            28.) Uszk.pom.Ister-NP.<br>
-            29.) Uszk.pom.Ister-SP<br>
-            30.) Uszk. P pary SP t1<br>
-            31.) Uszk. Tpary wyl t1<br>
-            32.) Uszk.dP filtr ol.<br>
-            33.) Uszk. P pary SP t2<br>
-            34.) Uszk. Tpary wyl t2<br>
-            35.) Uszk.L w zb.oleju<br>
-            36.) Uszk. Wydł wzgl.<br>
-            37.) Uszk. Poł. SP<br>
-            38.) Uszk. Poł. NP.<br>
-            39.) Uszk. P ol. reg.
+        <div style="column-count: 2;">
+            <ol>
+                <li>Uszk. 1 tor obr.</li>
+                <li>Uszk. 2 tor obr.</li>
+                <li>Uszk. 3 tor obr.</li>
+                <li>Brak wiar. Obr.</li>
+                <li>Uszk.pom. mocy t1</li>
+                <li>Uszk.pom. mocy t2</li>
+                <li>Uszk. Twody s. t1</li>
+                <li>Uszk. Twody s. t2</li>
+                <li>Uszk.Tkorp.GÓRA śr</li>
+                <li>Uszk. Tkorp.DÓŁ śr</li>
+                <li>Uszk. Tpary w Z.O.</li>
+                <li>Uszk. Tmet. Z.O.</li>
+                <li>Uszk. Tkołn. Lśr.</li>
+                <li>Uszk. Tkołn. Lpł.</li>
+                <li>Uszk. Tkołn. Pśr.</li>
+                <li>Uszk. P pary św.1</li>
+                <li>Uszk. P pary św.2</li>
+                <li>Uszk. Pup. NP t1</li>
+                <li>Uszk. Pup. NP t2</li>
+                <li>Uszk. Pwyl. t1</li>
+                <li>Pwyl. t2</li>
+                <li>Brak kompl. gen.</li>
+                <li>Uszk. wydł. wzgl.</li>
+                <li>Uszk.pom.Ister-WP1</li>
+                <li>Uszk.pom.Ister-WP2</li>
+                <li>Uszk.pom.Ister-WP3</li>
+                <li>Uszk.pom.Ister-WP4</li>
+                <li>Uszk.pom.Ister-NP.</li>
+                <li>Uszk.pom.Ister-SP</li>
+                <li>Uszk. P pary SP t1</li>
+                <li>Uszk. Tpary wyl t1</li>
+                <li>Uszk.dP filtr ol.</li>
+                <li>Uszk. P pary SP t2</li>
+                <li>Uszk. Tpary wyl t2</li>
+                <li>Uszk.L w zb.oleju</li>
+                <li>Uszk.Wydł.wzgl.</li>
+                <li>Uszk. Poł. SP</li>
+                <li>Uszk. Poł. NP.</li>
+                <li>Uszk. P ol. reg.</li>
+            </ol>
         </div>
     </div>
 
-    <!-- STRONA 8 -->
+    <!-- Strona 8 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 8/19
-        </div>
-        <div class="sig-list">
-            40.) Uszk. T ol. w zb.<br>
-            41.) Uszk. P ol. rob.<br>
-            42.) Uszk. Poł. WP1<br>
-            43.) Uszk. Poł. WP2<br>
-            44.) Uszk. Poł. WP3<br>
-            45.) Uszk. Poł. WP4<br>
-            46.) Różne pom Pup SP<br>
-            47.) Różne pom Pśw.<br>
-            48.) Różne pom.Pup NP.<br>
-            49.) Różne pom Pwyl.<br>
-            50.) ZAS_A doziemienie<br>
-            51.) ZAS_A brak U bat.<br>
-            52.) ZAS_A ZAŁ zas.awr.<br>
-            53.) ZAS_A BRAK Upodst.<br>
-            54.) ZAS_A BRAK Urez.<br>
-            55.) ZAS_B doziemienie<br>
-            56.) ZAS_B brak U bat.<br>
-            57.) ZAS_B ZAŁ zas.awr.<br>
-            58.) ZAS_B BRAK Upodst.<br>
-            59.) ZAS_B BRAK Urez.<br>
-            60.) Uszk.Pśw. t1 Z1<br>
-            61.) Uszk.Pup.NP t1 Z1<br>
-            62.) Uszk.Pwyl.t1 Z1<br>
-            63.) Uszk.Pup.SP t1 Z1<br>
-            64.) Uszk.Twyl.t1 Z1<br>
-            65.) Uszk.Pol.sm.t1 Z1<br>
-            66.) Uszk.Pol.sm.t2 Z1<br>
-            67.) Uszk.Pśw. t2 Z1<br>
-            68.) Uszk.Pup.NP t2 Z1<br>
-            69.) Uszk.Pwyl.t2 Z1<br>
-            70.) Uszk.Pup.SP t2 Z1<br>
-            71.) Uszk.Twyl.t2 Z1<br>
-            72.) Uszk.Pol.sm.t3 Z1<br>
-            73.) Uszk. obr. t1 Z1<br>
-            74.) Uszk. obr. t2 Z1<br>
-            75.) Uszk. obr. t3 Z1<br>
-            76.) Uszk.Pśw. t1 Z2<br>
-            77.) Uszk.Pup.NP t1 Z2<br>
-            78.) Uszk.Pwyl.t1 Z2<br>
-            79.) Uszk.Pup.SP t1 Z2<br>
-            80.) Uszk.Twyl.t1 Z2<br>
-            81.) Uszk.Pol.sm.t1 Z2
+        <div style="column-count: 2;">
+            <ol start="40">
+                <li>Uszk. T ol. w zb.</li>
+                <li>Uszk. P ol. rob.</li>
+                <li>Uszk. Pol. WP1</li>
+                <li>Uszk. Pol. WP2</li>
+                <li>Uszk. Pol. WP3</li>
+                <li>Uszk. Pol. WP4</li>
+                <li>Różne pom.Pup SP</li>
+                <li>Różne pom.Pśw.</li>
+                <li>Różne pom.Pup NP.</li>
+                <li>Różne pom.Pwyl.</li>
+                <li>ZAS_A doziemienie</li>
+                <li>ZAS_A brak U bat.</li>
+                <li>ZAS_A ZAL zas.awr.</li>
+                <li>ZAS_A BRAK Upodst.</li>
+                <li>ZAS_A BRAK Urez.</li>
+                <li>ZAS_B doziemienie</li>
+                <li>ZAS_B brak U bat.</li>
+                <li>ZAS_B ZAL zas.awr.</li>
+                <li>ZAS_B BRAK Upodst.</li>
+                <li>ZAS_B BRAK Urez.</li>
+                <li>Uszk.Pśw. t1 Z1</li>
+                <li>Uszk.Pup.NP t1 Z1</li>
+                <li>Uszk.Pwyl.t1 Z1</li>
+                <li>Uszk.Pup.SP t1 Z1</li>
+                <li>Uszk.Twyl.t1 Z1</li>
+                <li>Uszk.Pol.sm.t1 Z1</li>
+                <li>Uszk.Pol.sm.t2 Z1</li>
+                <li>Uszk.Pśw. t2 Z1</li>
+                <li>Uszk.Pup.NP t2 Z1</li>
+                <li>Uszk.Pwyl.t2 Z1</li>
+                <li>Uszk.Pup.SP t2 Z1</li>
+                <li>Uszk.Twyl.t2 Z1</li>
+                <li>Uszk.Pol.sm.t3 Z1</li>
+                <li>Uszk. obr. t1 Z1</li>
+                <li>Uszk. obr. t2 Z1</li>
+                <li>Uszk. obr. t3 Z1</li>
+                <li>Uszk.Pśw. t1 Z2</li>
+                <li>Uszk.Pup.NP t1 Z2</li>
+                <li>Uszk.Pwyl.t1 Z2</li>
+                <li>Uszk.Pup.SP t1 Z2</li>
+                <li>Uszk.Twyl.t1 Z2</li>
+                <li>Uszk.Pol.sm.t1 Z2</li>
+            </ol>
         </div>
     </div>
 
-    <!-- STRONA 9 -->
+    <!-- Strona 9 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 9/19
+        <div style="column-count: 2;">
+            <ol start="82">
+                <li>Uszk.Pol.sm.t2 Z2</li>
+                <li>Uszk.Pśw. t2 Z2</li>
+                <li>Uszk.Pup.NP t2 Z2</li>
+                <li>Uszk.Pwyl.t2 Z2</li>
+                <li>Uszk.Pup.SP t2 Z2</li>
+                <li>Uszk.Twyl.t2 Z2</li>
+                <li>Uszk.Pol.sm.t3 Z2</li>
+                <li>Uszk. obr. t1 Z2</li>
+                <li>Uszk. obr. t2 Z2</li>
+                <li>Uszk. obr. t3 Z2</li>
+                <li>Uszk.Pśw. t1 Z3</li>
+                <li>Uszk.Pup.NP t1 Z3</li>
+                <li>Uszk.Pwyl.t1 Z3</li>
+                <li>Uszk.Pup.SP t1 Z3</li>
+                <li>Uszk.Twyl.t1 Z3</li>
+                <li>Uszk.Pol.sm.t1 Z3</li>
+                <li>Uszk.Pol.sm.t2 Z3</li>
+                <li>Uszk.Pśw. t2 Z3</li>
+                <li>Uszk.Pup.NP t2 Z3</li>
+                <li>Uszk.Pwyl.t2 Z3</li>
+                <li>Uszk.Pup.SP t2 Z3</li>
+                <li>Uszk.Twyl.t2 Z3</li>
+                <li>Uszk.Pol.sm.t3 Z3</li>
+                <li>Uszk. obr. t1 Z3</li>
+                <li>Uszk. obr. t2 Z3</li>
+                <li>Uszk. obr. t3 Z3</li>
+            </ol>
         </div>
-        <div class="sig-list">
-            82.) Uszk.Pol.sm.t2 Z2<br>
-            83.) Uszk.Pśw. t2 Z2<br>
-            84.) Uszk.Pup.NP t2 Z2<br>
-            85.) Uszk.Pwyl.t2 Z2<br>
-            86.) Uszk.Pup.SP t2 Z2<br>
-            87.) Uszk.Twyl.t2 Z2<br>
-            88.) Uszk.Pol.sm.t3 Z2<br>
-            89.) Uszk. obr. t1 Z2<br>
-            90.) Uszk. obr. t2 Z2<br>
-            91.) Uszk. obr. t3 Z2<br>
-            92.) Uszk.Pśw. t1 Z1<br>
-            93.) Uszk.Pup.NP t1 Z1<br>
-            94.) Uszk.Pwyl.t1 Z1<br>
-            95.) Uszk.Pup.SP t1 Z1<br>
-            96.) Uszk.Twyl.t1 Z1<br>
-            97.) Uszk.Pol.sm.t1 Z1<br>
-            98.) Uszk.Pol.sm.t2 Z1<br>
-            99.) Uszk.Pśw. t2 Z1<br>
-            100.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pup.NP t2 Z1<br>
-            101.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pwyl.t2 Z1<br>
-            102.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pup.SP t2 Z1<br>
-            103.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Twyl.t2 Z1<br>
-            104.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk.Pol.sm.t3 Z1<br>
-            105.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk. obr. t1 Z3<br>
-            106.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk. obr. t2 Z3<br>
-            107.) &nbsp;&nbsp;&nbsp;&nbsp;Uszk. obr. t3 Z3
-        </div>
-        <br>
+
         <p>W polu statusowym na pulpicie EMT-1 sygnalizowane są szczególne stany pracy regulatora:</p>
-        <div class="typewriter">
-            1.) TURB. NIEUZB.<br>
-            2.) OGR.REG.BEZP.<br>
-            3.) OBR.KRYTYCZNE<br>
-            4.) Ogr. od Pwyl.<br>
-            5.) Par. ogr. Mocy<br>
-            6.) Ogr. od Pu<br>
-            7.) ZAWORY MAX.<br>
-            8.) Ogr.nabór mocy<br>
-            9.) Ogr.mocy MAX<br>
-            10.) BOT p-m Z.O.WP<br>
-            11.) BOT kp.G-kLśr<br>
-            12.) BOT korpus G-D<br>
-            13.) BOT wydł.wzgl.
+        <div style="column-count: 2;">
+            <ol>
+                <li>TURB. NIEUZB.</li>
+                <li>OGR.REG.BEZP.</li>
+                <li>OBR.KRYTYCZNE</li>
+                <li>Ogr. od Pwyl.</li>
+                <li>Par. ogr. Mocy</li>
+                <li>Ogr. od Pu</li>
+                <li>ZAWORY MAX.</li>
+                <li>Ogr.nabór mocy</li>
+                <li>Ogr.mocy MAX</li>
+                <li>BOT p-m Z.O.WP</li>
+                <li>BOT kp.G-kłLśr</li>
+                <li>BOT korpus G-D</li>
+                <li>BOT wydł.wzgl.</li>
+                <li>BOT gr.Z.O.WP</li>
+                <li>BOT gr.korp.WP</li>
+                <li>BOT kp.G-kłPśr</li>
+                <li>BOT kł.Lsr-Ppł</li>
+            </ol>
         </div>
     </div>
 
-    <!-- STRONA 10 -->
+    <!-- Strona 10 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 10/19
-        </div>
         <p>W ogniwie regulatora głównego RG i w drugim ogniwie regulatora zabezpieczeń RZ2 zainstalowano rejestratory zdarzeń (moduły RAM-karty). Sygnały rejestrowane w ogniwie głównym RG są następujące:</p>
-        <table class="data-table">
-            <tr><th>Lp.</th><th>Nazwa sygnału</th><th>Opis sygnału</th><th>Adres</th></tr>
-            <tr><td>1.</td><td>N</td><td>Moc elektryczna</td><td>A000</td></tr>
-            <tr><td>2.</td><td>Pu</td><td>P pary upustu 3</td><td>A0E2</td></tr>
-            <tr><td>3.</td><td>Psw</td><td>P pary świeżej</td><td>A100</td></tr>
-            <tr><td>4.</td><td>Pc</td><td>P pary upustu 4</td><td>A0E0</td></tr>
-            <tr><td>5.</td><td>Pw</td><td>P pary wylotowej</td><td>A143</td></tr>
-            <tr><td>6.</td><td>Obroty</td><td>Obroty turbiny</td><td>A003</td></tr>
-            <tr><td>7.</td><td>ster</td><td>Sygnał sterujący</td><td>A133</td></tr>
-            <tr><td>8.</td><td>sterSP</td><td>Sygnał sterujący tarczą SP</td><td>A22A</td></tr>
-            <tr><td>9.</td><td>P ol.reg.</td><td>P oleju regulacyjnego</td><td>A22C</td></tr>
-            <tr><td>10.</td><td>Pol.WP1</td><td>Położenie zaworu WP1</td><td>A230</td></tr>
-            <tr><td>11.</td><td>Pol.WP2</td><td>Położenie zaworu WP2</td><td>A231</td></tr>
-            <tr><td>12.</td><td>Pol.WP3</td><td>Położenie zaworu WP3</td><td>A232</td></tr>
-            <tr><td>13.</td><td>Pol.WP4</td><td>Położenie zaworu WP4</td><td>A233</td></tr>
-            <tr><td>14.</td><td>Pol.SP</td><td>Położenie tarczy SP</td><td>A228</td></tr>
-            <tr><td>15.</td><td>Pol.NP</td><td>Położenie tarczy NP</td><td>A229</td></tr>
-            <tr><td>16.</td><td>BY_Pc</td><td>Działa ogran. P pary ciepl.</td><td>B302</td></tr>
-            <tr><td>17.</td><td>BY_Psw</td><td>Działa ogran. P pary świeżej</td><td>B306</td></tr>
-            <tr><td>18.</td><td>BY_Pu</td><td>Działa ogran. P pary upust.</td><td>B304</td></tr>
-            <tr><td>19.</td><td>BI_PEH_pom</td><td>Działa ogran. z reg. bezp.</td><td>B116</td></tr>
-            <tr><td>10.</td><td>dn/dt>3%</td><td>Działa ogran. przysp. obrotów</td><td>B076</td></tr>
-            <tr><td>21.</td><td>uszk.n t3</td><td>Uszk. tor 3 obrotów</td><td>B513</td></tr>
-            <tr><td>22.</td><td>uszk.n t2</td><td>Uszk. tor 2 obrotów</td><td>B512</td></tr>
-            <tr><td>23.</td><td>uszk.n t1</td><td>Uszk. tor 1 obrotów</td><td>B511</td></tr>
-            <tr><td>24.</td><td>Z ukl.zab.</td><td>Zadziałanie ukł. zabezpieczeń</td><td>B118</td></tr>
-            <tr><td>25.</td><td>Sam.R</td><td>Załączenie samocz. ster. ręcznego</td><td>B021</td></tr>
-            <tr><td>26.</td><td>Gener.wyl.</td><td>Wyłączenie generatora</td><td>B500</td></tr>
-            <tr><td>27.</td><td>Brak komp.</td><td>Brak komplement. syg. wyłącz. gen.</td><td>B003</td></tr>
-            <tr><td>28.</td><td>Ster "A"</td><td>Załączone sterowanie AUTO</td><td>B50A</td></tr>
-            <tr><td>29.</td><td>Pr.N_z</td><td>Zał. program mocy</td><td>B185</td></tr>
-            <tr><td>30.</td><td>Pr.Pu</td><td>Zał. program reg. P upust.</td><td>B231</td></tr>
-            <tr><td>31.</td><td>Obr.n.wia.</td><td>Niewiarygodny pom. Obrotów</td><td>B508</td></tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Nazwa sygnału</th>
+                    <th>Opis sygnału</th>
+                    <th>Adres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1.</td><td>N</td><td>Moc elektryczna</td><td>A000</td></tr>
+                <tr><td>2.</td><td>Pu</td><td>P pary upustu 3</td><td>A0E2</td></tr>
+                <tr><td>3.</td><td>Psw</td><td>P pary świeżej</td><td>A100</td></tr>
+                <tr><td>4.</td><td>Pc</td><td>P pary upustu 4</td><td>A0E0</td></tr>
+                <tr><td>5.</td><td>Pw</td><td>P pary wylotowej</td><td>A143</td></tr>
+                <tr><td>6.</td><td>Obroty</td><td>Obroty turbiny</td><td>A003</td></tr>
+                <tr><td>7.</td><td>ster</td><td>Sygnał sterujący</td><td>A133</td></tr>
+                <tr><td>8.</td><td>sterSP</td><td>Sygnał sterujący tarczą SP</td><td>A22A</td></tr>
+                <tr><td>9.</td><td>P ol.reg.</td><td>P oleju regulacyjnego</td><td>A22C</td></tr>
+                <tr><td>10.</td><td>Pol.WP1</td><td>Położenie zaworu WP1</td><td>A230</td></tr>
+                <tr><td>11.</td><td>Pol.WP2</td><td>Położenie zaworu WP2</td><td>A231</td></tr>
+                <tr><td>12.</td><td>Pol.WP3</td><td>Położenie zaworu WP3</td><td>A232</td></tr>
+                <tr><td>13.</td><td>Pol.WP4</td><td>Położenie zaworu WP4</td><td>A233</td></tr>
+                <tr><td>14.</td><td>Pol.SP</td><td>Położenie tarczy SP</td><td>A228</td></tr>
+                <tr><td>15.</td><td>Pol.NP</td><td>Położenie tarczy NP</td><td>A229</td></tr>
+                <tr><td>16.</td><td>BY_Pc</td><td>Działa ogran. P pary ciepł.</td><td>B302</td></tr>
+                <tr><td>17.</td><td>BY_Psw</td><td>Działa ogran. P pary świeżej</td><td>B306</td></tr>
+                <tr><td>18.</td><td>BY_Pu</td><td>Działa ogran. P pary upust.</td><td>B304</td></tr>
+                <tr><td>19.</td><td>BI PEH pom</td><td>Działa ogran. z reg. bezp.</td><td>B116</td></tr>
+                <tr><td>20.</td><td>dn/dt&gt;3%</td><td>Działa ogran. przysp. obrotów</td><td>B076</td></tr>
+                <tr><td>21.</td><td>uszk.n t3</td><td>Uszk. tor 3 obrotów</td><td>B513</td></tr>
+                <tr><td>22.</td><td>uszk.n t2</td><td>Uszk. tor 2 obrotów</td><td>B512</td></tr>
+                <tr><td>23.</td><td>uszk.n t1</td><td>Uszk. tor 1 obrotów</td><td>B511</td></tr>
+                <tr><td>24.</td><td>Z ukl.zab.</td><td>Zadziałanie ukł. zabezpieczeń</td><td>B118</td></tr>
+                <tr><td>25.</td><td>Sam.R</td><td>Załączenie samocz. ster. ręcznego</td><td>B021</td></tr>
+                <tr><td>26.</td><td>Gener.wyl.</td><td>Wyłączenie generatora</td><td>B500</td></tr>
+                <tr><td>27.</td><td>Brak komp.</td><td>Brak komplement. syg. wyłącz. gen.</td><td>B003</td></tr>
+                <tr><td>28.</td><td>Ster "A"</td><td>Załączone sterowanie AUTO</td><td>B50A</td></tr>
+                <tr><td>29.</td><td>Pr.N_z</td><td>Zał. program mocy</td><td>B185</td></tr>
+                <tr><td>30.</td><td>Pr.Pu</td><td>Zał. program reg. P upust.</td><td>B231</td></tr>
+                <tr><td>31.</td><td>Obr.n.wia.</td><td>Niewiarygodny pom. Obrotów</td><td>B508</td></tr>
+            </tbody>
         </table>
     </div>
 
-    <!-- STRONA 11 -->
+    <!-- Strona 11 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 11/19
-        </div>
-        <table class="data-table">
-            <tr><th colspan="4">Sygnały rejestrowane w ogniwie zabezpieczeń RZ1 są następujące</th></tr>
-            <tr><th>Lp.</th><th>Nazwa sygnału</th><th>Opis sygnału</th><th>Adres</th></tr>
-            <tr><td>1.</td><td>Psw tor1</td><td>P pary świeżej tor1</td><td>A210</td></tr>
-            <tr><td>2.</td><td>PupNP tor1</td><td>P pary upustowej NP tor1</td><td>A211</td></tr>
-            <tr><td>3.</td><td>Pwy tor1</td><td>P pary wylotowej tor1</td><td>A212</td></tr>
-            <tr><td>4.</td><td>PupSP tor1</td><td>P pary upustowej SP tor1</td><td>A213</td></tr>
-            <tr><td>5.</td><td>Twy tor1</td><td>T pary wylotowej tor1</td><td>A214</td></tr>
-            <tr><td>6.</td><td>Pol.sm t.1</td><td>P oleju smarnego tor1</td><td>A215</td></tr>
-            <tr><td>7.</td><td>Pol.sm t.3</td><td>P oleju smarnego tor3</td><td>A216</td></tr>
-            <tr><td>8.</td><td>Psw tor2</td><td>P pary świeżej tor2</td><td>A218</td></tr>
-            <tr><td>9.</td><td>PupNP tor2</td><td>P pary upustowej NP tor2</td><td>A219</td></tr>
-            <tr><td>10.</td><td>Pwy tor2</td><td>P pary wylotowej tor2</td><td>A21A</td></tr>
-            <tr><td>11.</td><td>PupSP tor2</td><td>P pary upustowej SP tor2</td><td>A21B</td></tr>
-            <tr><td>12.</td><td>Twy tor2</td><td>T pary wylotowej tor2</td><td>A21C</td></tr>
-            <tr><td>12.</td><td>Pol.sm t.2</td><td>P oleju smarnego tor2</td><td>A21D</td></tr>
-            <tr><td>13.</td><td>Hol.zb</td><td>Poziom ol. w zbiorniku olejowym</td><td>A21E</td></tr>
-            <tr><td>14.</td><td>Pol.sm.2z3</td><td>P oleju smarnego po wyb. 2z3</td><td>A417</td></tr>
-            <tr><td>15.</td><td>Zab.tech.</td><td>Zadz. zabezp. technologicznych</td><td>B410</td></tr>
-            <tr><td>16.</td><td>Zab.gen.</td><td>Zadz. zabezp. generatora</td><td>B411</td></tr>
-            <tr><td>17.</td><td>MIN L ol.</td><td>Zadz. zabezp. od min. poziomu oleju</td><td>B412</td></tr>
-            <tr><td>18.</td><td>Pwy>MAX1</td><td>Zadz. zabezp. od max. P pary wylot.</td><td>B413</td></tr>
-            <tr><td>19.</td><td>PupNP>MAX1</td><td>Zadz. zabezp. od max. P pary up. NP</td><td>B414</td></tr>
-            <tr><td>20.</td><td>Po.sm.<50a</td><td>Zadz. zabezp. od max.2 P ol. smarn.</td><td>B427</td></tr>
-            <tr><td>21.</td><td>Po.sm.<30a</td><td>Zadz. zabezp. od max.1 P ol. smarn.</td><td>B416</td></tr>
-            <tr><td>22.</td><td>Obroty 1</td><td>Zadz. zabezp. od nadobr. 3270</td><td>B417</td></tr>
-            <tr><td>23.</td><td>Obroty 2</td><td>Zadz. zabezp. od nadobr. 3300</td><td>B419</td></tr>
-            <tr><td>24.</td><td>PupSP>MAX1</td><td>Zadz. zabezp. od max. P pary up. SP</td><td>B418</td></tr>
-            <tr><td>25.</td><td>Proba toru</td><td>Próba toru zabezpieczeń</td><td>B41E</td></tr>
-            <tr><td>26.</td><td>Zab.Pwyl</td><td>Zadz. zabezp. od max. P pary wylot.</td><td>B459</td></tr>
-            <tr><td>27.</td><td>Po.sm.<70a</td><td>Zadz. zabezp. od max.3 P ol. smarn.</td><td>B454</td></tr>
-            <tr><td>28.</td><td>MAX71CG501</td><td>Zadziałanie toru 1 wybicia</td><td>BD50</td></tr>
-            <tr><td>29.</td><td>MAX71CG502</td><td>Zadziałanie toru 2 wybicia</td><td>BD60</td></tr>
-            <tr><td>30.</td><td>MAX71CG503</td><td>Zadziałanie toru 3 wybicia</td><td>BD70</td></tr>
-            <tr><td>31.</td><td></td><td></td><td>B301</td></tr>
+        <p>Sygnały rejestrowane w ogniwie zabezpieczeń RZ1 są następujące:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Nazwa sygnału</th>
+                    <th>Opis sygnału</th>
+                    <th>Adres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1.</td><td>Psw tor1</td><td>P pary świeżej tor1</td><td>A210</td></tr>
+                <tr><td>2.</td><td>PupNP tor1</td><td>P pary upustowej NP tor1</td><td>A211</td></tr>
+                <tr><td>3.</td><td>Pwy tor1</td><td>P pary wylotowej tor1</td><td>A212</td></tr>
+                <tr><td>4.</td><td>PupSP tor1</td><td>P pary upustowej SP tor1</td><td>A213</td></tr>
+                <tr><td>5.</td><td>Twy tor1</td><td>T pary wylotowej tor1</td><td>A214</td></tr>
+                <tr><td>6.</td><td>Pol.sm t.1</td><td>P oleju smarnego tor1</td><td>A215</td></tr>
+                <tr><td>7.</td><td>Pol.sm t.3</td><td>P oleju smarnego tor3</td><td>A216</td></tr>
+                <tr><td>8.</td><td>Psw tor2</td><td>P pary świeżej tor2</td><td>A218</td></tr>
+                <tr><td>9.</td><td>PupNP tor2</td><td>P pary upustowej NP tor2</td><td>A219</td></tr>
+                <tr><td>10.</td><td>Pwy tor2</td><td>P pary wylotowej tor2</td><td>A21A</td></tr>
+                <tr><td>11.</td><td>PupSP tor2</td><td>P pary upustowej SP tor2</td><td>A21B</td></tr>
+                <tr><td>12.</td><td>Twy tor2</td><td>T pary wylotowej tor2</td><td>A21C</td></tr>
+                <tr><td>13.</td><td>Pol.sm t.2</td><td>P oleju smarnego tor2</td><td>A21D</td></tr>
+                <tr><td>14.</td><td>Pol.zb</td><td>Poziom ol. w zbiorniku olejowym</td><td>A21E</td></tr>
+                <tr><td>15.</td><td>Pol.sm. 2 z 3</td><td>P oleju smarnego po wyb. 2 z 3</td><td>A417</td></tr>
+                <tr><td>16.</td><td>Zab.tech.</td><td>Zadz. zabezp. technologicznych</td><td>B410</td></tr>
+                <tr><td>17.</td><td>Zab.gen.</td><td>Zadz. zabezp. generatora</td><td>B411</td></tr>
+                <tr><td>18.</td><td>MIN L ol.</td><td>Zadz. zabezp. od min. poziomu oleju</td><td>B412</td></tr>
+                <tr><td>19.</td><td>Pwy&gt;MAX1</td><td>Zadz. zabezp. od max. P pary wylot.</td><td>B413</td></tr>
+                <tr><td>20.</td><td>PupNP&gt;MAX1</td><td>Zadz. zabezp. od max. P pary up. NP</td><td>B414</td></tr>
+                <tr><td>21.</td><td>Po.sm.&lt;50a</td><td>Zadz. zabezp. od max. 2 P ol. smarn.</td><td>B427</td></tr>
+                <tr><td>22.</td><td>Po.sm.&lt;30a</td><td>Zadz. zabezp. od max. 1 P ol. smarn.</td><td>B416</td></tr>
+                <tr><td>23.</td><td>Obroty 1</td><td>Zadz. zabezp. od nadobr. 3270</td><td>B417</td></tr>
+                <tr><td>24.</td><td>Obroty 2</td><td>Zadz. zabezp. od nadobr. 3300</td><td>B419</td></tr>
+                <tr><td>25.</td><td>PupSP&gt;MAX1</td><td>Zadz. zabezp. od max. P pary up. SP</td><td>B418</td></tr>
+                <tr><td>26.</td><td>Proba toru</td><td>Próba toru zabezpieczeń</td><td>B41E</td></tr>
+                <tr><td>27.</td><td>Zab.Pwyl</td><td>Zadz. zabezp. od max. P pary wylot.</td><td>B459</td></tr>
+                <tr><td>28.</td><td>Po.sm.&lt;70a</td><td>Zadz. zabezp. od max. 3 P ol. smarn.</td><td>B454</td></tr>
+                <tr><td>29.</td><td>MAX71CG501</td><td>Zadziałanie toru 1 wybicia</td><td>BD50</td></tr>
+                <tr><td>30.</td><td>MAX71CG502</td><td>Zadziałanie toru 2 wybicia</td><td>BD60</td></tr>
+                <tr><td>31.</td><td>MAX71CG503</td><td>Zadziałanie toru 3 wybicia</td><td>BD70</td></tr>
+            </tbody>
         </table>
     </div>
 
-    <!-- STRONA 12 -->
+    <!-- Strona 12 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 12/19
-        </div>
         <h3>3. Funkcje regulatora.</h3>
         <p>Widok zmodernizowanych tablic operacyjnych prezentowanych na pulpicie operatorskim EMT-1 pokazują rysunki od 1 do 11.</p>
         
@@ -461,31 +497,28 @@
         <ul>
             <li>od zabezpieczeń technologicznych,</li>
             <li>od zabezpieczeń generatora,</li>
-            <li>od minimalnego poziomu oleju w zbiorniku olejowym,</li>
+            <li>od minimalnego poziom oleju w zbiorniku olejowym,</li>
             <li>od przekroczenia dopuszczalnego ciśnienia pary na upuście regulowanym LBC10,</li>
             <li>od przekroczenia dopuszczalnego ciśnienia pary na upuście regulowanym LBD10,</li>
             <li>od przekroczenia dopuszczalnego ciśnienia na wylocie turbiny,</li>
             <li>od spadku ciśnienia oleju smarnego,</li>
             <li>od nadobrotów turbiny.</li>
         </ul>
-        <p>Zabezpieczenia są aktywne w pracy automatycznej i sterowaniu ręcznym. Każdy z układów zabezpieczeń generuje sygnał na jeden z trzech zaworów elektromagnetycznych wyłączenia turbiny. Głosowanie na wybicie turbiny według reguły 2z3 odbywa się po stronie hydraulicznej. Pozostałe sygnały, sterujące innymi urządzeniami, powstają na drodze elektronicznego wyboru 2z3, w zabudowanych bloczkach typu W2z3 produkcji IASE. Każdy z tych elementów steruje przekażnikiem wykonawczym, będącym w stanie normalnej pracy pod napięciem. Zadziałanie zabezpieczenia lub całkowita utrata zasilania układu spowoduje wówczas wytrzask turbiny lub pobudzenie układów powiązanych.</p>
+        <p>Zabezpieczenia są aktywne w pracy automatycznej i sterowaniu ręcznym. Każdy z układów zabezpieczeń generuje sygnał na jeden z trzech zaworów elektromagnetycznych wyłączenia turbiny. Głosowanie na wybicie turbiny według reguły 2 z 3 odbywa się po stronie hydraulicznej. Pozostałe sygnały, sterujące innymi urządzeniami, powstają na drodze elektronicznego wyboru 2 z 3, w zabudowanych bloczkach typu W2z3 produkcji IASE. Każdy z tych elementów steruje przekażnikiem wykonawczym, będącym w stanie normalnej pracy pod napięciem. Zadziałanie zabezpieczenia lub całkowita utrata zasilania układu spowoduje wówczas wytrzask turbiny lub pobudzenie układów powiązanych.</p>
         <p>Stan układów zabezpieczeń poszczególnych ogniw, widoczny jest po wejściu do menu „Układu Zabezpieczeń” przez jednoczesne wciśnięcie „Fn” i „F” (rys. 20).</p>
     </div>
 
-    <!-- STRONA 13 -->
+    <!-- Strona 13 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 13/19
-        </div>
         <h3>5. Pulpit sterowniczy EMT-1.</h3>
-        <p>Pulpit sterowniczy umożliwia obecnie na drugiej stacyce uzbrojenie turbiny i zdalne otwarcie zaworu szybkozamykającego WP.</p>
+        <p>Pulpit sterowniczy umożliwia obecnie na drugiej stacyjce uzbrojenie turbiny i zdalne otwarcie zaworu szybkozamykającego WP.</p>
 
         <h3>6. Próby zabezpieczeń i testy.</h3>
         <h4>5.1 Próba wytrzasku elektronicznego.</h4>
-        <p>Próby wytrzasków turbiny należy przeprowadzić analogicznie jak dotychczas, pamiętając, że <strong>wytrzask mechanicznych</strong> został obecnie usunięty i jego odpowiednikiem funkcjonalnym jest drugi z układów elektronicznych.</p>
+        <p>Próby wytrzasków turbiny należy przeprowadzić analogicznie jak dotychczas, pamiętając, że wytrzask mechaniczny został obecnie usunięty i jego odpowiednikiem funkcjonalnym jest drugi z układów elektronicznych.</p>
 
         <h4>5.2 Sprawdzenie działania zaworu odcinającego WP - MAA11AA211</h4>
-        <p><u>Próba ruchliwości (częściowego przymknięcia) serwomotoru zaworu odcinającego</u></p>
+        <p>Próba ruchliwości (częściowego przymknięcia) serwomotoru zaworu odcinającego.</p>
         <p>Serwomotor zaworu odcinającego jest wyposażony w zawór elektromagnetyczny MAA11AA252, który służy do przeprowadzania prób ruchliwości zaworu odcinającego podczas pracy turbiny.</p>
         <p>Po załączeniu próby z pulpitu sterowniczego (rys. 10), na cewkę zaworu MAA11AA252 zostaje podane napięcie i serwomotor zaworu odcinającego przymyka się częściowo. W momencie zaniku sygnału wyłącznika krańcowego MAA11CG501 (pełne otwarcie zaworu odcinającego) próba zostaje automatycznie zakończona, a wynik próby uznaje się za pozytywny. W przypadku braku zaniku sygnału z wyłącznika krańcowego MAA11CG501 - po 15 sekundach próba wycofuje się samoczynnie, a wynik próby uznaje się za negatywny. Wynik próby jest wyświetlany przez 5 s na pulpicie sterowniczym turbiny.</p>
         <p>Aby próba była wiarygodna, wyłącznik krańcowy MAA11CG501 musi być sprawny i poprawnie ustawiony.</p>
@@ -495,38 +528,32 @@
         <p>Próby przetworników oleju smarnego wykonuje się ręcznie. Do prób każdego toru pomiarowego oleju smarnego przeznaczone są trzy ręczne zawory, umieszczone w szafie przetworników ciśnienia oleju smarnego. Przestawienie wybranego zaworu</p>
     </div>
 
-    <!-- STRONA 14 -->
+    <!-- Strona 14 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 14/19
-        </div>
-        <p>w pozycję "Próba" (drenaż sprawdzanej linii olejowej) powoduje spadek ciśnienia oleju do wartości <br> 50 kPa > P <sub>oleju smarnego</sub> > 0 kPa mierzonego przez odpowiadający mu przetwornik ciśnienia.</p>
-
-        <p><u>Próba I - wykonywana na ruchu turbiny</u></p>
-        <p>Przestawić ręcznie zawór dla przetwornika MAV04CP201 w pozycję "Próba". Jeżeli na pulpicie sterowniczym wartość ciśnienia mierzonego przez sprawdzany przetwornik zmniejszy się do wartości 50 kPa > P <sub>oleju smarnego</sub> > 0 kPa oraz pojawi się komunikat "Próba ręczna" - wynik próby uznaje się za pozytywny. Przestawić zawór do prób w pozycję "Praca".</p>
-        <p>Próbę powtórzyć dla przetworników MAV04CP202/203.</p>
-        <p>Warunkiem wykonywania tej próby na ruchu turbiny jest sprawność wszystkich trzech torów pomiaru ciśnienia oleju smarnego MAV04CP201/202/203.</p>
-
-        <p><u>Próba II</u></p>
+        <p>w pozycję "Próba" (drenaż sprawdzanej linii olejowej) powoduje spadek ciśnienia oleju do wartości 50 kPa > p oleju smarnego > 0 kPa mierzonego przez odpowiadający mu przetwornik ciśnienia.</p>
+        
+        <h4>Próba I - wykonywana na ruchu turbiny</h4>
+        <p>Przestawić ręcznie zawór dla przetwornika MAV04CP201 w pozycję "Próba". Jeżeli na pulpicie sterowniczym wartość ciśnienia mierzonego przez sprawdzany przetwornik zmniejszy się do wartości 50 kPa > p oleju smarnego > 0 kPa oraz pojawi się komunikat "Próba ręczna" - wynik próby uznaje się za pozytywny. Przestawić zawór do prób w pozycję "Praca".</p>
+        <p>Próbę powtórzyć dla przetworników MAV04CP202/203. Warunkiem wykonywania tej próby na ruchu turbiny jest sprawność wszystkich trzech torów pomiaru ciśnienia oleju smarnego MAV04CP201/202/203.</p>
+        
+        <h4>Próba II</h4>
         <p>Uzbroić układ regulacji, przestawić ręcznie zawory dla przetworników MAV04CP201 i MAV04CP202 w pozycję "Próba". Potwierdzeniem pozytywnego wyniku próby jest załączenie pompy awaryjnej oleju smarnego i wyłączenie turbiny (wybicie układu regulacji). Przestawić zawory do prób w pozycję "Praca". Wyłączyć pompę awaryjną.</p>
         <p>Próbę powtórzyć dla par przetworników MAV04CP202 i MAV04CP203 oraz MAV04CP201 i MAV04CP203.</p>
 
         <h4>5.4 Próba szczelności zaworów</h4>
-        <p><u>Próba szczelności zaworu odcinającego.</u></p>
-        <p>Próbę przeprowadza się w początkowej fazie nabóru obrotów turbozespołu, przy prędkości obrotowej mniejszej od 500 obr/min. Jeżeli obroty turbozespołu są większe próba jest automatycznie blokowana. Regulację obrotów turbiny należy pozostawić w trybie automatycznym. Uruchomienie próby z pulpitu operatorskiego (rys. 10) powoduje zamknięcie zaworu odcinającego, zawory regulacyjne otwierają się w wyniku oddziaływania regulatora obrotów.</p>
+        <h5>Próba szczelności zaworu odcinającego.</h5>
+        <p>Próbę przeprowadza się w początkowej fazie naboru obrotów turbozespołu, przy prędkości obrotowej mniejszej od 500 obr/min. Jeżeli obroty turbozespołu są większe próba jest automatycznie blokowana. Regulację obrotów turbiny należy pozostawić w trybie automatycznym. Uruchomienie próby z pulpitu operatorskiego (rys. 10) powoduje zamknięcie zaworu odcinającego, zawory regulacyjne otwierają się w wyniku oddziaływania regulatora obrotów.</p>
         <p>Wynik próby uznaje się za pozytywny jeżeli zawory regulacyjne WP zostaną całkowicie otwarte (otwarcie większe od 95 %) i prędkość obrotowa turbiny maleje.</p>
         <p>Próbę należy zakończyć przez ręczne wyłączenie turbiny (wybicie).</p>
-
-        <p><u>Próba szczelności zaworów regulacyjnych.</u></p>
-        <p>Na biegu luzem turbiny przy n = 3000 obr/min załączyć regulator podstawowy. Przestawić wartość zadaną obrotów na "zero". Notować czas spadku obrotów do wartości n=500 obr/min.</p>
+        
+        <h5>Próba szczelności zaworów regulacyjnych.</h5>
+        <p>Na biegu luzem turbiny przy n = 3000 obr/min załączyć regulator podstawowy.</p>
+        <p>Przestawić wartość zadaną obrotów na "zero". Notować czas spadku obrotów do wartości n=500 obr/min.</p>
     </div>
 
-    <!-- STRONA 15 -->
+    <!-- Strona 15 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 15/19
-        </div>
-        <p><u>Kryterium oceny szczelności zaworów.</u></p>
+        <h5>Kryterium oceny szczelności zaworów.</h5>
         <p>Otrzymane czasy porównać z krzywą wybiegu turbiny. Nie powinny być one dłuższe o więcej niż 20% od czasów wynikających z krzywej wybiegu dla tych poziomów obrotów.</p>
 
         <h4>5.5 Sterowanie napędem pompy lewarowej.</h4>
@@ -539,272 +566,199 @@
         <p>Sygnał AWARIA zawiera w sobie informację o braku gotowości elektrycznej i błędnym zachowaniu się napędów (np. brak reakcji na rozkaz załącz).</p>
     </div>
 
-    <!-- STRONA 16 -->
+    <!-- Strona 16 - Rysunki 1-3 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 16/19
+        <div class="header-box">
+            <div><strong>INSTYTUT AUTOMATYKI<br>SYSTEMÓW<br>ENERGETYCZNYCH</strong></div>
+            <div><strong>Instrukcja wymaga</strong><br>turbiny TZ-2<br>w EC 2 Łódź</div>
+            <div><strong>Nr wydania:</strong> 2127-600</div>
+            <div><strong>Obecna:</strong> 16<br><strong>Dzień:</strong> 19</div>
         </div>
-        
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">F0 &nbsp; MENU</div>
-            <div style="display: flex; justify-content: space-between;">
+
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 1 Tablica operacyjna MENU GŁÓWNE</div>
+            <div class="screenshot-grid">
                 <div>
-                    F1 - NABÓR OBROTÓW<br>
-                    F2 - SYNCHRONIZACJA<br>
-                    F3 - REGULACJA MOCY<br>
-                    F4 - REGULACJA Psw<br>
-                    F5 - REGULACJA Pu<br>
-                    F6 - REGULACJA Pc,Tw<br>
-                    F7 - STER. OL. LEWAR.<br>
-                    F8 - STER. UKL. REG. OL.<br>
-                    F9 - SYGNAŁY WYTRZASKU
+                    <strong>UNIMAT</strong><br>
+                    F1- NABÓR OBROTÓW<br>
+                    F2- SYNCHRONIZACJA<br>
+                    F3- REGULACJA MOCY<br>
+                    F4- REGULACJA Psw<br>
+                    F5- REGULACJA Pu<br>
+                    F6- REGULACJA Pc, Tw<br>
+                    F7- STER.OL.LEWAR.<br>
+                    F8- STER.OL.REGUL.<br>
+                    F9- SYGNAŁY WYTRZASKU
                 </div>
                 <div>
-                    FA - TABLICA USZK.<br>
-                    FB - OBROTY<br>
-                    FC - SYGN. WEJŚC.<br>
-                    FD - PRÓBY ZAB.
+                    <strong>F0 MENU</strong><br>
+                    FA- TABLICA USZK.<br>
+                    FB- OBROTY SPEC.<br>
+                    FC- SYGN. WEJŚC.<br>
+                    FD- PRÓBY ZAB.
                 </div>
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between;">
-                <span>[F1]</span><span>[F2]</span><span>[F3]</span><span>[F4]</span><span>[F5]</span><span>[F6]</span><span>[F7]</span><span>[F8]</span><span>[F9]</span>
-            </div>
         </div>
-        <p style="text-align: center;">Rys. 1 Tablica operacyjna MENU GŁÓWNE</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="display: flex; justify-content: space-between;">
-                <div>Moc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>Psw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pu3SP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pu4NP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] kPa</div>
-                <div>WP/SP/NP<br>UPUST_SP<br>UPUST_NP<br>Tw</div>
-                <div>[ ] %<br>[ ] %<br>[ ] %<br>[ ] °C</div>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 2 Tablica operacyjna REGULACJA Pu</div>
+            <div class="screenshot-grid-3">
+                <div><strong>UNIMAT</strong><br>Moc [MW]<br>Psw [MPa]<br>Pu3SP [MPa]<br>Pu4NP [kPa]</div>
+                <div><strong>WP/SP/NP</strong><br>UPUST_SP<br>UPUST_NP<br>Tw [°C]</div>
+                <div><strong>F5-REGULACJA Pu3SP</strong><br>Uchyb [kPa]<br>Pu3SP zd. [MPa]</div>
             </div>
-            <div style="text-align: center; margin-top: 10px;">F5-REGULACJA Pu3SP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uchyb [ ] kPa</div>
-            <div style="text-align: center; margin-top: 10px;">Pu3SP zd. [ ] &lt;---|---> MPa</div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between;">
-                <span>F0 - MENU</span><span>F3 - R. MOCY</span><span>F4 - R. Psw</span>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">
+                F0-MENU &nbsp;&nbsp; F3-R.MOCY &nbsp;&nbsp; F4-R.Psw
             </div>
         </div>
-        <p style="text-align: center;">Rys. 2 Tablica operacyjna REGULACJA Pu</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="display: flex; justify-content: space-between;">
-                <div>Moc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>Psw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>Pc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] kPa</div>
-                <div>WP/SP/NP<br>UPUST_SP<br>UPUST_NP<br>Tw</div>
-                <div>[ ] %<br>[ ] %<br>[ ] %<br>[ ] °C</div>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 3 Tablica operacyjna REGULACJA Puc i Tw.</div>
+            <div class="screenshot-grid-3">
+                <div><strong>UNIMAT</strong><br>Moc [MW]<br>Psw [MPa]<br>Pu [MPa]<br>Pc [kPa]</div>
+                <div><strong>WP/SP/NP</strong><br>UPUST_SP<br>UPUST_NP<br>Tw [°C]</div>
+                <div><strong>F6-REGULACJA Pc, Tw</strong><br>Uchyb [kPa]<br>Pc zd. [kPa]<br>Tw zd. [°C]</div>
             </div>
-            <div style="text-align: center; margin-top: 10px;">F6-REGULACJA Pc,Tw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uchyb [ ] kPa</div>
-            <div style="text-align: center; margin-top: 10px;">Pc zd. [ ] &lt;---|---> kPa</div>
-            <div style="text-align: center; margin-top: 5px;">Reg.Tw [ ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tw zd. [ ] &lt;--|--> °C</div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; display: flex; justify-content: space-between;">
-                <span>F0 - MENU</span><span>F3 - REG. MOCY</span><span>F4 - REG. Psw</span>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">
+                F0-MENU &nbsp;&nbsp; F3-REG.MOCY &nbsp;&nbsp; F4-REG.Psw
             </div>
         </div>
-        <p style="text-align: center;">Rys. 3 Tablica operacyjna REGULACJA Puc i Tw.</p>
     </div>
 
-    <!-- STRONA 17 -->
+    <!-- Strona 17 - Rysunki 4-6 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 17/19
+        <div class="header-box">
+            <div><strong>INSTYTUT AUTOMATYKI<br>SYSTEMÓW<br>ENERGETYCZNYCH</strong></div>
+            <div><strong>turbiny TZ-2<br>w EC 2 Łódź</strong></div>
+            <div><strong>2127-600</strong></div>
+            <div><strong>17 / 19</strong></div>
         </div>
-        
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">FC SYGNAŁY WEJŚCIOWE</div>
-            <div style="text-align: center; margin-top: 10px;">
+
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">FC SYGNAŁY WEJŚCIOWE</div>
+            <div>
                 F1 - SYG. WEJŚCIOWE ANALOGOWE<br>
                 F2 - SYG. WEJŚCIOWE ANALOGOWE<br>
                 F3 - SYGNAŁY WEJŚCIOWE BOT
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 4 Tablica operacyjna SYGNAŁY WEJŚCIOWE</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">FC-F1 SYGNAŁY WEJŚCIOWE UNIMAT cz.I</div>
-            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-                <div>
-                    Moc1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>
-                    Moc2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MW<br>
-                    Psw1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    Psw2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    PuP3_1 &nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    PuP3_2 &nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    PuP4_1 &nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    PuP4_2 &nbsp;&nbsp;&nbsp;[ ] MPa
-                </div>
-                <div>
-                    Ppwy1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] kPa<br>
-                    Ppwy2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] kPa<br>
-                    Tpwy1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    Tpwy2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    Twum1 &nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    Twum2 &nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    dPf_ol &nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    Lol_zb &nbsp;&nbsp;&nbsp;&nbsp;[ ] mm
-                </div>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">FC-F1 SYGNAŁY WEJŚCIOWE UNIMAT cz. I</div>
+            <div class="screenshot-grid-3">
+                <div>Moc1 [MW]<br>Moc2 [MW]<br>Psw1 [MPa]<br>Psw2 [MPa]<br>PuP3_1 [MPa]<br>PuP3_2 [MPa]<br>PuP4_1 [MPa]<br>PuP4_2 [MPa]</div>
+                <div>Pwyl [kPa]<br>Pwyl2 [kPa]<br>Twyl [°C]<br>Twyl2 [°C]<br>dPt.ol [MPa]<br>Lol.zb [mm]</div>
+                <div></div>
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 5 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.I</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">FC-F2 SYGNAŁY WEJŚCIOWE UNIMAT cz.II</div>
-            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-                <div>
-                    IsterWP1 &nbsp;&nbsp;&nbsp;[ ] mA<br>
-                    IsterWP2 &nbsp;&nbsp;&nbsp;[ ] mA<br>
-                    IsterWP3 &nbsp;&nbsp;&nbsp;[ ] mA<br>
-                    IsterWP4 &nbsp;&nbsp;&nbsp;[ ] mA<br>
-                    IsterSP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] mA<br>
-                    IsterNP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] mA<br>
-                    Pol.reg. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] MPa<br>
-                    Po.robWP &nbsp;&nbsp;[ ] MPa<br>
-                    Tol.zb. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] °C
-                </div>
-                <div>
-                    Pol.WP1 &nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Pol.WP2 &nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Pol.WP3 &nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Pol.WP4 &nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Pol.SP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Pol.NP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Yr_WP &nbsp;&nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Yr_SP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Yr_NP &nbsp;&nbsp;&nbsp;&nbsp;[ ] %<br>
-                    Tszafy &nbsp;&nbsp;&nbsp;&nbsp;[ ] °C
-                </div>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">FC-F2 SYGNAŁY WEJŚCIOWE UNIMAT cz. II</div>
+            <div class="screenshot-grid-3">
+                <div>IsterWP1 [mA]<br>IsterWP2 [mA]<br>IsterWP3 [mA]<br>IsterWP4 [mA]<br>IsterSP [mA]<br>IsterNP [mA]</div>
+                <div>Pol.WP1 [%]<br>Pol.WP2 [%]<br>Pol.WP3 [%]<br>Pol.WP4 [%]<br>Pol.SP [%]<br>Pol.NP [%]</div>
+                <div>Pol.reg. [MPa]<br>Po.robNP [MPa]<br>Tol.zb. [°C]</div>
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 6 Tablica operacyjna SYGNAŁY WEJŚCIOWE UNIMAT cz.II</p>
     </div>
 
-    <!-- STRONA 18 -->
+    <!-- Strona 18 - Rysunki 7-9 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 18/19
+        <div class="header-box">
+            <div><strong>INSTYTUT AUTOMATYKI<br>SYSTEMÓW<br>ENERGETYCZNYCH</strong></div>
+            <div><strong>turbiny TZ-2<br>w EC 2 Łódź</strong></div>
+            <div><strong>2127-600</strong></div>
+            <div><strong>18 / 19</strong></div>
         </div>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">FC-F3 SYGNAŁY WEJŚCIOWE BOT</div>
-            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-                <div>
-                    Tp20_WP &nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    Tk.rpGs &nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    Tk.rpDs &nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    Tk.rLs &nbsp;&nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    dTm20/dt &nbsp;[ ]<br>
-                    dTk.rpGs/dt [ ]<br>
-                    Wydłużenia &nbsp;[ ] mm
-                </div>
-                <div>
-                    Tm20_WP &nbsp;&nbsp;[ ] °C<br>
-                    Tkrpls &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    TkrpPs &nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    TklLp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] °C<br>
-                    BOT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] %
-                </div>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">FC-F3 SYGNAŁY WEJŚCIOWE BOT</div>
+            <div class="screenshot-grid-3">
+                <div>Tezo WP [°C]<br>TkrGós [°C]<br>TkrDós [°C]<br>TkrDPs [°C]<br>TkLśr [°C]</div>
+                <div>Tmzo.WP [°C]<br>TkrPDs [°C]<br>TkLPs [°C]<br>TkPPs [°C]<br>TkLPb [°C]</div>
+                <div>dTmZO/dt [%]<br>dTkrPGs/dt [%]<br>Wydłużenia [mm]</div>
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
+            <div style="margin-top: 10px; text-align: right; border-top: 1px solid #ccc; padding-top: 5px;">
+                BOT: [%]
             </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 7 Tablica operacyjna SYGNAŁY WEJŚCIOWE BOT</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">F7 STEROWANIE NAPĘDEM POMPY LEWAROWEJ</div>
-            <div style="margin-top: 15px;">
-                MAV52AP001 [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ]
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">F7 STEROWANIE NAPĘDEM POMPY LEWAROWEJ</div>
+            <div>
+                MAV52AP001 [ ] [ ] [ ] [ ] [ ] [ ]
             </div>
-            <div style="margin-top: 15px;">
-                Obroty &nbsp;&nbsp;&nbsp;[ ] obr/min
+            <div style="margin-top: 20px;">
+                Obroty: [ ] obr/min
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 8 Tablica operacyjna STEROWANIE NAPĘDEM POMPY LEWAROWEJ</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">F8 STEROWANIE NAPĘDAMI POMP OŁ.REG.</div>
-            <div style="margin-top: 15px;">
-                MAX09AP001 [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ]<br><br>
-                MAX09AP002 [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ] &nbsp; [ ]
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OL. REGULAC.</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">F8 STEROWANIE NAPĘDAMI POMP OL.REG.</div>
+            <div>
+                MAX09AP001 [ ] [ ] [ ] [ ] [ ] [ ]<br><br>
+                MAX09AP002 [ ] [ ] [ ] [ ] [ ] [ ]
             </div>
-            <div style="margin-top: 15px;">
-                P ol.reg. [ ] MPa<br>
+            <div style="margin-top: 20px;">
+                P ol.reg. [MPa]<br>
                 L ol.reg. [ ]
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 9 Tablica operacyjna STEROWANIE NAPĘDAMI POMP OŁ. REGULAC.</p>
     </div>
 
-    <!-- STRONA 19 -->
+    <!-- Strona 19 - Rysunki 10-11 -->
     <div class="page">
-        <div class="footer-box" style="text-align: left; margin-bottom: 20px;">
-            INSTYTUT AUTOMATYKI SYSTEMÓW ENERGETYCZNYCH | Nazwa: Instrukcja obsługi turbiny TZ-2 w EC 2 Łódź | Nr ewid.: 2127-600 | Strona: 19/19
-        </div>
-
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">FD PRÓBY ZABEZPIECZEŃ</div>
-            <div style="margin-top: 10px;">
-                Próba cz.Prz.Z.O.[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ]<br>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ.</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">FD PRÓBY ZABEZPIECZEŃ</div>
+            <div>
+                Próba cz.Prz.Z.O.[ ]<br>
                 Próba szcz. Z.O. [ ]<br>
-                Próba RZ 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ]<br>
-                Próba RZ 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ]<br>
-                Próba RZ 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ] &nbsp;&nbsp;&nbsp;&nbsp;[ ]<br>
-                Ciśn.ol.smarnego [ ] &nbsp;&nbsp;&nbsp;&nbsp; MPa
+                Próba RZ 1<br>
+                Próba RZ 2<br>
+                Próba RZ 3<br>
+                Ciśń.ol.smarnego [MPa]
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 10 Tablica operacyjna PRÓBY ZABEZPIECZEŃ.</p>
 
-        <div class="screen-mock">
-            <div class="screen-header">UNIMAT</div>
-            <div style="text-align: center;">F9 SYGNAŁY WYTRZASKU</div>
-            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-                <div>
-                    Zab.technol.<br>
-                    Zab.elektr.<br>
-                    L oleju < MIN1<br>
-                    Pwy > MAX1<br>
-                    PupNP > MAX1<br>
-                    P ol.sm. < MIN2<br>
-                    P ol.sm. < MIN3<br>
-                    Obroty > MAX1<br>
-                    Obroty > MAX2<br>
-                    PupSP > MAX1
-                </div>
-                <div style="font-family: monospace;">
-                    [ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]<br>[ ]
-                </div>
+        <div class="screenshot">
+            <div class="screenshot-title">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU.</div>
+            <div><strong>UNIMAT</strong></div>
+            <div class="screenshot-title" style="background: #666;">F9 SYGNAŁY WYTRZASKU</div>
+            <div>
+                Zab.technol.<br>
+                Zab.elektr.<br>
+                L oleju &lt; MIN1<br>
+                Pwy &gt; MAX1<br>
+                PupNP &gt; MAX1<br>
+                P ol.sm. &lt; MIN2<br>
+                P ol.sm. &lt; MIN3<br>
+                Obroty &gt; MAX1<br>
+                Obroty &gt; MAX2<br>
+                PupSP &gt; MAX1
             </div>
-            <div style="border-top: 1px dashed #333; margin-top: 10px; padding-top: 5px; text-align: center;">
-                <span>F0-MENU</span>
-            </div>
+            <div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 5px;">F0-MENU</div>
         </div>
-        <p style="text-align: center;">Rys. 11 Tablica operacyjna SYGNAŁY WYTRZASKU.</p>
     </div>
 
 </div>
