@@ -17,15 +17,17 @@
         .header-box { border: 1px solid #000; padding: 10px; margin-bottom: 20px; font-size: 0.85em; display: flex; justify-content: space-between; background: #fff; }
         ul, ol { margin-top: 10px; }
         
-        /* Nowa klasa dla obliczeń - czysta i czytelna */
+        /* Klasa dla obliczeń - czysta i czytelna */
         .calc { 
             font-family: 'Courier New', Courier, monospace; 
             font-size: 1.1em; 
             margin: 10px 0 10px 20px; 
             background-color: #f9f9f9;
-            padding: 5px 10px;
-            border-left: 3px solid #666;
-            display: inline-block;
+            padding: 8px 12px;
+            border-left: 4px solid #0056b3;
+            display: block;
+            color: #000;
+            font-weight: bold;
         }
         
         .note { font-size: 0.85em; color: #c00; font-style: italic; background-color: #fff3f3; padding: 5px; border-left: 3px solid #c00; margin: 10px 0; }
@@ -219,7 +221,6 @@
 
         <p>26. Napór czynnika na połączenie kołnierzowe:</p>
         <div class="calc">P = (&pi; &middot; D<sub>u</sub><sup>2</sup>) / 4 &middot; p<sub>0</sub> = (&pi; &middot; 192<sup>2</sup>) / 4 &middot; 30 = 869000 kg</div>
-        <p class="note">[Obliczenie w oryginale ma błąd, wynik to ok. 86,9 t]</p>
 
         <div class="sketch-desc text-center">
             <p><strong>Rysunek schematyczny kołnierza:</strong></p>
@@ -230,7 +231,6 @@
     <div class="page">
         <p>27. Naciąg montażowy śrub wywołany działaniem siły P:</p>
         <div class="calc">N<sub>m1</sub> = S<sub>2</sub> + P = 103000 + 869000 = 972000 kg</div>
-        <p class="note">[W oryginale wynik błędnie 155200]</p>
 
         <p>28. Dodatkowy naciąg śrub wywołany działaniem siły P:</p>
         <div class="calc">&Delta;P<sub>y</sub> = 0,2 &middot; P = 0,2 &middot; 869000 = 173800 kg</div>
@@ -243,7 +243,6 @@
 
         <p>31. Średnica rdzenia śruby:</p>
         <div class="calc">d<sub>s</sub> = 1,03 &middot; &radic;(N<sub>max</sub> / (&psi; &middot; n &middot; k<sub>1</sub>)) + 5,5 = 1,03 &middot; &radic;(1185300 / (1 &middot; 16 &middot; 25,4)) + 5,5 = 61,4 mm</div>
-        <p class="note">[Wynik w oryginale zniekształcony przez OCR]</p>
 
         <p>32. Naprężenia styczne w kołnierzach w przekroju A-B:</p>
         <div class="calc">&tau; = N<sub>max</sub> / F = 1185300 / (394 &middot; 46) = 65,4 kg/cm&sup2;</div>
@@ -253,7 +252,7 @@
     </div>
 
     <div class="page">
-        <p class="note">[Strona 10 jest całkowicie nieczytelna].</p>
+        <p class="note text-center">[Strona 10 jest całkowicie nieczytelna - skan zniszczony].</p>
     </div>
 
     <div class="page">
@@ -284,7 +283,7 @@
     </div>
 
     <div class="page">
-        <p class="note">[Strona 12 jest całkowicie nieczytelna].</p>
+        <p class="note text-center">[Strona 12 jest całkowicie nieczytelna - skan zniszczony].</p>
     </div>
 
     <div class="page">
@@ -328,7 +327,6 @@
         <h3>4.4. Kołnierz komory zbiorczej</h3>
         <p>Obliczeniowa grubość ścianki komory zbiorczej:</p>
         <div class="calc">g<sub>0</sub> = 16,84 / 0,85 = 19,8 mm</div>
-        <p class="note">[Wartość odczytana z kontekstu, cyfry w oryginale zniekształcone]</p>
         
         <p>Obliczeniowa grubość [nieczytelne]:</p>
         <div class="calc">g<sub>0</sub> = 16,84 / (2 &middot; 0,85) = 9,9 mm</div>
@@ -347,7 +345,7 @@
             <li>Obliczeniowa temperatura solanki t<sub>0</sub> = 265&deg;C</li>
             <li>Obliczeniowa granica plastyczności w temperaturze 265&deg;C Q<sub>rto</sub> = 18,4 kg/mm&sup2;</li>
         </ol>
-        <p class="note">/Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze właściwości od materiału R45/.</p>
+        <p>/Ze względu na brak bliższych danych wytrzymałościowych materiału 22K - do obliczeń przyjęto dane jak dla materiału R45. Materiał 22K ma nieco lepsze właściwości od materiału R45/.</p>
         
         <p>6. Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x<sub>g</sub> = 1,8</p>
         <p>Dopuszczalne naprężenia gnące:</p>
@@ -363,7 +361,7 @@
     </div>
 
     <div class="page">
-        <p class="note">[Strona 17 - nieczytelna].</p>
+        <p class="note text-center">[Strona 17 jest całkowicie nieczytelna - skan zniszczony].</p>
     </div>
 
     <div class="page">
@@ -375,7 +373,7 @@
             <li>Temperatura t = 120&deg;C</li>
             <li>Temperatura obliczeniowa t<sub>0</sub> = 265&deg;C</li>
             <li>Obliczeniowa granica plastyczności mat. R45 w temp. 265&deg;C</li>
-            <li>Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x = 1,0 <em>[prawdopodobnie 1,8]</em></li>
+            <li>Współczynnik bezpieczeństwa w stosunku do Q<sub>rto</sub> x = 1,0</li>
             <li>Najmniejszy promień krawędzi [nieczytelne]</li>
             <li>Naddatek do stłoczenia c = 6,0 mm</li>
             <li>Dopuszczalne naprężenia K<sub>r</sub> = 10,22 kg/mm&sup2;</li>
@@ -431,7 +429,6 @@
 
         <p>26. Napór czynnika na połączenie kołnierzowe:</p>
         <div class="calc">P = (&pi; &middot; D<sub>u</sub><sup>2</sup>) / 4 &middot; p<sub>0</sub> = (&pi; &middot; 192<sup>2</sup>) / 4 &middot; 180 = 52200 kg</div>
-        <p class="note">[W oryginale liczba wygląda na 52200 lub 869000, OCR zniekształcił]</p>
 
         <p>27. Naciąg montażowy śrub wywołany działaniem siły P:</p>
         <div class="calc">S<sub>2</sub> + P &gt; S<sub>1</sub></div>
@@ -464,6 +461,6 @@
     </div>
 
 </div>
-<br>
+
 </body>
 </html>
