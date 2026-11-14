@@ -915,34 +915,64 @@ tbody tr:hover { background: #fafafa; }
   margin-bottom: 0;
 }
 
-.archive-category {
-  margin-bottom: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.category-header {
+  margin: 20px 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.14);
 }
 
-.archive-category:last-child {
-  margin-bottom: 0;
-}
-
-.archive-category__title {
-  font-size: 0.85rem;
+.category-header__title {
+  font-size: 1.15rem;
   font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.category-header__meta {
+  font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.14);
-  margin: 0;
+  opacity: 0.55;
+}
+
+.archive-card--category {
+  padding: 28px 24px;
+  min-height: 140px;
+  background: #fafafa;
+}
+
+.archive-card--category:hover {
+  background: #f0f0f0;
+  border-color: #000;
+}
+
+.archive-card--category .archive-card__sig {
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+#categorySkoroszytySection,
+#categoryDokumentySection {
+  margin-bottom: 36px;
+}
+
+#categorySkoroszytySection:empty,
+#categoryDokumentySection:empty {
+  display: none;
 }
 
 @media (max-width: 640px) {
-  .archive-category {
-    margin-bottom: 36px;
-    gap: 12px;
+  .archive-card--category {
+    padding: 20px 18px;
+    min-height: 110px;
   }
-  .archive-category__title {
-    font-size: 0.75rem;
-    padding-bottom: 10px;
+  .archive-card--category .archive-card__sig {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  .category-header__title {
+    font-size: 1rem;
   }
 }

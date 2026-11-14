@@ -22,11 +22,21 @@
       </div>
 
       <div id="archiveView">
-        <div id="archiveList"></div>
+        <div class="archive-list" id="archiveCategories"></div>
+      </div>
+
+      <div id="categoryView" class="hidden">
+        <button type="button" class="btn btn--ghost btn--small" id="backToArchiveBtn">&larr; Wróć do kategorii</button>
+        <div class="category-header">
+          <h2 class="category-header__title" id="categoryTitle"></h2>
+          <div class="category-header__meta" id="categoryMeta"></div>
+        </div>
+        <div id="categorySkoroszytySection"></div>
+        <div id="categoryDokumentySection"></div>
       </div>
 
       <div id="skoroszytView" class="hidden">
-        <button type="button" class="btn btn--ghost btn--small" id="backToArchiveBtn">&larr; Wróć do archiwum</button>
+        <button type="button" class="btn btn--ghost btn--small" id="backToCategoryBtn">&larr; Wróć do kategorii</button>
         <div class="skoroszyt-header">
           <h2 id="skoroszytSig"></h2>
           <div class="meta" id="skoroszytMeta"></div>
@@ -66,19 +76,28 @@
   <script>
   (function () {
     let DATA = null;
-    let currentSource = 'archive';
+    let currentKategoriaName = null;
     let currentSkoroszytId = null;
     let currentDocId = null;
+    let currentSource = null;
     let activeTab = 'analiza';
 
     const archiveView = document.getElementById('archiveView');
+    const categoryView = document.getElementById('categoryView');
     const skoroszytView = document.getElementById('skoroszytView');
     const documentView = document.getElementById('documentView');
-    const archiveList = document.getElementById('archiveList');
+
+    const archiveCategories = document.getElementById('archiveCategories');
+    const categoryTitle = document.getElementById('categoryTitle');
+    const categoryMeta = document.getElementById('categoryMeta');
+    const categorySkoroszytySection = document.getElementById('categorySkoroszytySection');
+    const categoryDokumentySection = document.getElementById('categoryDokumentySection');
+
     const skoroszytSig = document.getElementById('skoroszytSig');
     const skoroszytMeta = document.getElementById('skoroszytMeta');
     const skoroszytDesc = document.getElementById('skoroszytDesc');
     const skoroszytDocs = document.getElementById('skoroszytDocs');
+
     const docTitle = document.getElementById('docTitle');
     const docMeta = document.getElementById('docMeta');
     const tabContent = document.getElementById('tabContent');
@@ -92,9 +111,21 @@
 
     function showArchiveView() {
       archiveView.classList.remove('hidden');
+      categoryView.classList.add('hidden');
       skoroszytView.classList.add('hidden');
       documentView.classList.add('hidden');
-      currentSource = 'archive';
+      currentKategoriaName = null;
+      currentSkoroszytId = null;
+      currentDocId = null;
+      currentSource = null;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showCategoryView() {
+      archiveView.classList.add('hidden');
+      categoryView.classList.remove('hidden');
+      skoroszytView.classList.add('hidden');
+      documentView.classList.add('hidden');
       currentSkoroszytId = null;
       currentDocId = null;
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -102,25 +133,25 @@
 
     function showSkoroszytView() {
       archiveView.classList.add('hidden');
+      categoryView.classList.add('hidden');
       skoroszytView.classList.remove('hidden');
       documentView.classList.add('hidden');
-      currentSource = 'skoroszyt';
+      currentDocId = null;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showDocumentView() {
       archiveView.classList.add('hidden');
+      categoryView.classList.add('hidden');
       skoroszytView.classList.add('hidden');
       documentView.classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function renderArchive() {
-      archiveList.innerHTML = '';
-
+    function getCategories() {
       const categories = new Map();
 
-      function ensureCategory(name) {
+      function ensure(name) {
         if (!categories.has(name)) {
           categories.set(name, { skoroszyty: [], dokumenty: [] });
         }
@@ -129,72 +160,127 @@
 
       (DATA.skoroszyty || []).forEach(function (s) {
         const kat = s.kategoria || 'Pozostałe';
-        ensureCategory(kat).skoroszyty.push(s);
+        ensure(kat).skoroszyty.push(s);
       });
 
       (DATA.dokumenty_bez_skoroszytu || []).forEach(function (docId) {
         const doc = DATA.dokumenty[docId];
         if (!doc) return;
         const kat = doc.kategoria || 'Pozostałe';
-        ensureCategory(kat).dokumenty.push({ id: docId, doc: doc });
+        ensure(kat).dokumenty.push({ id: docId, doc: doc });
       });
 
+      return categories;
+    }
+
+    function renderArchive() {
+      archiveCategories.innerHTML = '';
+      const categories = getCategories();
+
       if (categories.size === 0) {
-        archiveList.innerHTML = '<div class="empty">Brak dokumentów w archiwum.</div>';
+        archiveCategories.innerHTML = '<div class="empty">Brak dokumentów w archiwum.</div>';
         return;
       }
 
       categories.forEach(function (catData, catName) {
-        const section = document.createElement('section');
-        section.className = 'archive-category';
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'archive-card archive-card--category';
 
-        const header = document.createElement('h2');
-        header.className = 'archive-category__title';
-        header.textContent = catName;
-        section.appendChild(header);
+        const sCount = catData.skoroszyty.length;
+        const dCount = catData.dokumenty.length;
+        const total = sCount + dCount;
 
-        if (catData.skoroszyty.length > 0) {
-          const grid = document.createElement('div');
-          grid.className = 'archive-list';
-          catData.skoroszyty.forEach(function (s) {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'archive-card';
-            const docCount = (s.zawartosc || []).filter(function (i) { return i.typ === 'dokument'; }).length;
+        let parts = [];
+        if (sCount > 0) parts.push(sCount + (sCount === 1 ? ' skoroszyt' : ' skoroszyty'));
+        if (dCount > 0) parts.push(dCount + (dCount === 1 ? ' dokument' : ' dokumenty'));
 
-            let metaParts = [];
-            if (s.rok) metaParts.push(s.rok);
-            if (s.tom) metaParts.push(s.tom);
+        btn.innerHTML =
+          '<div class="archive-card__sig">' + esc(catName) + '</div>'
+          + '<div class="archive-card__desc" style="opacity:0.5;">' + total + ' ' + (total === 1 ? 'pozycja' : 'pozycji') + ' w kategorii</div>'
+          + '<div class="archive-card__count">' + parts.join(' · ') + '</div>';
 
-            btn.innerHTML =
-              '<div class="archive-card__sig">' + esc(s.sygnatura) + '</div>'
-              + (s.projekt ? '<div class="archive-card__projekt">' + esc(s.projekt) + '</div>' : '')
-              + '<div class="archive-card__meta">'
-              +   metaParts.map(function (p) { return '<span>' + esc(p) + '</span>'; }).join('')
-              + '</div>'
-              + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
-              + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumenty') + '</div>';
-            btn.addEventListener('click', function () {
-              currentSkoroszytId = s.id;
-              renderSkoroszyt(s.id);
-              showSkoroszytView();
-            });
-            grid.appendChild(btn);
-          });
-          section.appendChild(grid);
-        }
-
-        if (catData.dokumenty.length > 0) {
-          const wrap = document.createElement('div');
-          wrap.className = 'skoroszyt-docs';
-          catData.dokumenty.forEach(function (item) {
-            wrap.appendChild(buildDocRow(item.id, item.doc, 'loose'));
-          });
-          section.appendChild(wrap);
-        }
-
-        archiveList.appendChild(section);
+        btn.addEventListener('click', function () {
+          showCategory(catName);
+        });
+        archiveCategories.appendChild(btn);
       });
+    }
+
+    function showCategory(catName) {
+      currentKategoriaName = catName;
+      renderCategory(catName);
+      showCategoryView();
+    }
+
+    function renderCategory(catName) {
+      const categories = getCategories();
+      const catData = categories.get(catName);
+      if (!catData) return;
+
+      const sCount = catData.skoroszyty.length;
+      const dCount = catData.dokumenty.length;
+      const total = sCount + dCount;
+
+      categoryTitle.textContent = catName;
+      categoryMeta.textContent = total + ' ' + (total === 1 ? 'pozycja' : 'pozycji');
+
+      categorySkoroszytySection.innerHTML = '';
+      if (catData.skoroszyty.length > 0) {
+        const subTitle = document.createElement('h2');
+        subTitle.className = 'archive-section-title';
+        subTitle.textContent = 'Skoroszyty';
+        categorySkoroszytySection.appendChild(subTitle);
+
+        const grid = document.createElement('div');
+        grid.className = 'archive-list';
+        catData.skoroszyty.forEach(function (s) {
+          grid.appendChild(buildSkoroszytCard(s));
+        });
+        categorySkoroszytySection.appendChild(grid);
+      }
+
+      categoryDokumentySection.innerHTML = '';
+      if (catData.dokumenty.length > 0) {
+        const subTitle = document.createElement('h2');
+        subTitle.className = 'archive-section-title';
+        subTitle.textContent = 'Dokumenty poza skoroszytami';
+        categoryDokumentySection.appendChild(subTitle);
+
+        const wrap = document.createElement('div');
+        wrap.className = 'skoroszyt-docs';
+        catData.dokumenty.forEach(function (item) {
+          wrap.appendChild(buildDocRow(item.id, item.doc, 'kategoria'));
+        });
+        categoryDokumentySection.appendChild(wrap);
+      }
+    }
+
+    function buildSkoroszytCard(s) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'archive-card';
+      const docCount = (s.zawartosc || []).filter(function (i) { return i.typ === 'dokument'; }).length;
+
+      let metaParts = [];
+      if (s.rok) metaParts.push(s.rok);
+      if (s.tom) metaParts.push(s.tom);
+
+      btn.innerHTML =
+        '<div class="archive-card__sig">' + esc(s.sygnatura) + '</div>'
+        + (s.projekt ? '<div class="archive-card__projekt">' + esc(s.projekt) + '</div>' : '')
+        + '<div class="archive-card__meta">'
+        +   metaParts.map(function (p) { return '<span>' + esc(p) + '</span>'; }).join('')
+        + '</div>'
+        + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
+        + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumenty') + '</div>';
+
+      btn.addEventListener('click', function () {
+        currentSkoroszytId = s.id;
+        renderSkoroszyt(s.id);
+        showSkoroszytView();
+      });
+      return btn;
     }
 
     function renderSkoroszyt(id) {
@@ -245,6 +331,7 @@
         +   '<div class="doc-row__meta">' + esc(doc.sygnatura) + ' · ' + esc(doc.data) + ' · ' + esc(doc.autor) + '</div>'
         + '</div>'
         + '<div class="doc-row__arrow">&rarr;</div>';
+
       btn.addEventListener('click', function () {
         currentSource = source;
         currentDocId = id;
@@ -380,7 +467,6 @@
           const src = typeof scan === 'string' ? scan : scan.src;
           const label = typeof scan === 'string' ? 'Dokument PDF' : (scan.label || 'Dokument PDF');
           const absoluteUrl = new URL(src, window.location.href).href;
-
           const viewerUrl = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=' + encodeURIComponent(absoluteUrl);
 
           const wrap = document.createElement('div');
@@ -416,10 +502,22 @@
     }
 
     document.getElementById('backToArchiveBtn').addEventListener('click', showArchiveView);
+    document.getElementById('backToCategoryBtn').addEventListener('click', function () {
+      if (currentKategoriaName) {
+        renderCategory(currentKategoriaName);
+        showCategoryView();
+      } else {
+        showArchiveView();
+      }
+    });
 
     document.getElementById('backToParentBtn').addEventListener('click', function () {
       if (currentSource === 'skoroszyt' && currentSkoroszytId) {
+        renderSkoroszyt(currentSkoroszytId);
         showSkoroszytView();
+      } else if (currentSource === 'kategoria' && currentKategoriaName) {
+        renderCategory(currentKategoriaName);
+        showCategoryView();
       } else {
         showArchiveView();
       }
@@ -446,7 +544,7 @@
       })
       .catch(function (error) {
         console.error(error);
-        archiveList.innerHTML = '<div class="empty">Nie udało się załadować danych archiwum. Spróbuj odświeżyć stronę.</div>';
+        archiveCategories.innerHTML = '<div class="empty">Nie udało się załadować danych archiwum. Spróbuj odświeżyć stronę.</div>';
       });
   })();
   </script>
