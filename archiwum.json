@@ -94,7 +94,9 @@
       "transkrypcja": [
         { "src": "dokumenty/obliczenia-pws-200-5-1966.html", "label": "Pełna transkrypcja (23 strony)" }
       ],
-      "skany": []
+      "skany": [
+        { "src": "skany/8106/main.pdf", "label": "Pełny skan dokumentu" }
+      ]
     },
     "p-725-21271": {
       "rodzaj": "dokument",
