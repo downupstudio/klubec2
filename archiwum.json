@@ -62,6 +62,7 @@
   ],
   "dokumenty": {
     "rysunek-7-51309": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek techniczny: Komora parowa PWS-200-5",
       "sygnatura": "7-51309",
       "data": "XII 1954",
@@ -73,12 +74,12 @@
         "Rysunek szczegółowo obrazuje przekroje urządzenia, geometrię króćców oraz detale spawalnicze (oznaczone literami A-K). Zawiera również kluczowe uwagi technologiczne, m.in. nakaz przeprowadzenia próby szczelności płaszcza wodnego na 5 atm i próby ciśnieniowej całej komory na 15 atm.",
         "Dokument ten jest niezwykle istotny z punktu widzenia historii EC-2, ponieważ stanowi fizyczne źródło wymiarów (np. średnica zewnętrzna płaszcza Ø1600, średnica kołnierza Ø1930), które blisko 50 lat później, w 2003 roku, posłużyły inżynierom do przeprowadzenia obliczeń modernizacyjnych i dopuszczenia tego starego urządzenia do dalszej eksploatacji."
       ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7-51309.html", "label": "Pełna transkrypcja rysunku (1954)" }
-      ],
-      "skany": []
+      "skany": [
+        { "src": "skany/8106/rysunek.jpg", "label": "Pełny skan rysunku" }
+      ]
     },
     "obliczenia-pws-200-5-1966": {
+      "rodzaj": "dokument",
       "tytul": "Obliczenia wytrzymałościowe podgrzewacza wysokoprężnego PWS-200-5",
       "sygnatura": "CBKK / 04-23",
       "data": "IX–X 1966",
@@ -96,6 +97,7 @@
       "skany": []
     },
     "p-725-21271": {
+      "rodzaj": "dokument",
       "tytul": "Obliczenia wytrzymałościowe podgrzewacza PWP-2",
       "sygnatura": "P-725 / 21271",
       "data": "IX 2003",
@@ -113,7 +115,8 @@
       "skany": []
     },
     "aneks-master-3-2004": {
-      "kategoria": "Turbiny i automatyka",
+      "rodzaj": "dokument",
+      "kategoria": "Turbina i automatyka",
       "tytul": "Aneks do instrukcji obsługi - MASTER 3 (UNIMAT-3M)",
       "sygnatura": "2127-600",
       "data": "I 2004",
@@ -133,6 +136,7 @@
       ]
     },
     "umowa-7-00-ec-2000": {
+      "rodzaj": "dokument",
       "kategoria": "Kotły i ciągi spalinowe",
       "tytul": "Umowa Nr 7/00/EC - Remont Czopucha K10 i K11",
       "sygnatura": "7/00/EC",
@@ -153,6 +157,7 @@
       ]
     },
     "projekt-wykonawczy-pwp1-pwp2-2005": {
+      "rodzaj": "dokument",
       "tytul": "Projekt Wykonawczy: Modernizacja zabezpieczeń PWP1 i PWP2",
       "sygnatura": "2-1/19 PM2-36/101",
       "data": "V 2005",
@@ -172,6 +177,7 @@
       ]
     },
     "kosztorys-pwp1-pwp2-2005": {
+      "rodzaj": "dokument",
       "tytul": "Kosztorys - Nakłady Rzeczowe (Modernizacja PWP1 i PWP2)",
       "sygnatura": "Tom 4 / Kosztorys",
       "data": "V 2005",
@@ -191,6 +197,7 @@
       ]
     },
     "odtworzenie-nawierzchni-1998": {
+      "rodzaj": "dokument",
       "tytul": "Projekt Wykonawczy: Odtworzenie nawierzchni drogowej",
       "sygnatura": "P-363 / Tom 15",
       "data": "VI 1998",
@@ -208,6 +215,7 @@
       "skany": []
     },
     "rysunek-7180-1998": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek 7180: Plan Sytuacyjny Dróg i Chodników",
       "sygnatura": "7180",
       "data": "VI 1998",
@@ -219,12 +227,10 @@
         "Zawiera on naniesioną siatkę istniejącej i projektowanej infrastruktury podziemnej (kable, rurociągi, sieci kanalizacyjne), a także precyzyjnie wytycza trasy planowanych dróg, placów manewrowych i ciągów pieszych. Legenda rysunku w czytelny sposób dzieli obiekty na projektowane, przebudowywane, istniejące bez zmian oraz przeznaczone do wyburzenia.",
         "Arkusz wieńczy zestawienie tabelaryczne z wyliczoną powierzchnią dróg (320 m²) i chodników (40 m²) oraz łączną długością krawężników (145 metrów bieżących)."
       ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7180-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
-      ],
       "skany": []
     },
     "rysunek-7181-1998": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek 7181: Przekroje nawierzchni",
       "sygnatura": "7181",
       "data": "VI 1998",
@@ -236,12 +242,10 @@
         "Rysunek w skali 1:10 szczegółowo obrazuje konstrukcję warstwową projektowanej infrastruktury drogowej. Górna część przedstawia przekrój odtwarzanej nawierzchni drogowej, precyzując grubość warstwy betonu B-20, podbudowy z betonu B-15 oraz podsypki piaskowej, a także sposób osadzenia krawężnika na ławie betonowej z oporem.",
         "Dolna część dokumentu wizualizuje przekrój chodnika, uwzględniając ułożenie płyt betonowych 50x50x7 na zaprawie i podsypce piaskowej, ograniczonych obrzeżem betonowym. Rysunek stanowi cenne, wizualne dopełnienie opisów inżynierskich z tego okresu, ukazując standardy budownictwa drogowego stosowane na terenie elektrociepłowni pod koniec lat 90."
       ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7181-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
-      ],
       "skany": []
     },
     "kosztorys-odtworzenie-drog-1998": {
+      "rodzaj": "dokument",
       "tytul": "Kosztorys Nakładów Rzeczowych (Tom 15/K1)",
       "sygnatura": "Tom 15/K1",
       "data": "VII 1998",
@@ -259,6 +263,7 @@
       "skany": []
     },
     "kosztorys-inwestorski-odtworzenie-drog-1998": {
+      "rodzaj": "dokument",
       "tytul": "Kosztorys Inwestorski (Tom 15/K2)",
       "sygnatura": "Tom 15/K2",
       "data": "VII 1998",
@@ -276,6 +281,7 @@
       "skany": []
     },
     "projekt-konstrukcji-galerii-1998": {
+      "rodzaj": "dokument",
       "tytul": "Projekt Konstrukcji Galerii (Tom 5)",
       "sygnatura": "Tom 5 / 7352",
       "data": "VII 1998",
@@ -293,6 +299,7 @@
       "skany": []
     },
     "rysunek-7353-1998": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek 7353: Schematy montażowe - przekroje",
       "sygnatura": "7353",
       "data": "IV 1998",
@@ -304,12 +311,10 @@
         "Arkusz zatytułowany „SCHEMATY MONTAŻOWE - PRZEKROJE” w skali 1:50 stanowi kluczowy element wykonawczy, precyzujący geometrię stalowej konstrukcji nośnej galerii. Rysunek szczegółowo przedstawia dwa główne przekroje poprzeczne w osiach 4a i 5a, ukazując układy kratownic (K-1, K-2), stężeń (SK-1, SK-2) i belek stropowych (BS-1, BS-2, BS-3).",
         "Zawiera również niezbędne rzędne wysokościowe (od posadowienia na poziomie +4,660 aż po dach na +10,84) oraz wymiary gabarytowe elementów, co czyni go niezbędnym materiałem dla ówczesnych konstruktorów i montażystów."
       ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7353-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
-      ],
       "skany": []
     },
     "rysunek-7354-1998": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek 7354: Schematy montażowe - rzuty",
       "sygnatura": "7354",
       "data": "IV 1998",
@@ -321,12 +326,10 @@
         "Arkusz w skali 1:50 szczegółowo przedstawia trzy kluczowe widoki z góry (rzuty w przekrojach 1-1, 2-2 oraz 3-3). Rysunek precyzyjnie lokalizuje elementy konstrukcyjne (kratownice K-1 i K-2, belki stropowe BS-1, BS-2, BS-3, stężenia SK-1) względem osi budynku (4a i 5a) oraz istniejącej ściany kotłowni.",
         "Zawiera również niezbędne wymiary gabarytowe (np. całkowita długość konstrukcji 10900 mm) i rozstawy podparć, stanowiąc nieocenione źródło wiedzy o ówczesnych technologiach montażu konstrukcji stalowych na terenie zakładu."
       ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7354-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
-      ],
       "skany": []
     },
     "rysunek-7355-1998": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek 7355: Stężenia SK-1, SK-2",
       "sygnatura": "7355",
       "data": "IV 1998",
@@ -338,12 +341,10 @@
         "Arkusz szczegółowo przedstawia elementy usztywniające (stężenia) dla dwóch głównych osi konstrukcyjnych (4a i 5a). Rysunek ukazuje rozrysowane pręty stężeń z podziałem na węzły montażowe (oznaczone cyframi 1, 2, 3 oraz symbolami A.3, A.4) i precyzyjnie określa ich długości (np. L=8090, L=6050).",
         "Dodatkowo zawiera widoki przekrojów A-A i B-B, ukazujące geometrię połączeń. W bloku uwag znalazły się kluczowe dla wykonawcy informacje: specyfikacja stali (St3SX), rodzaj elektrod (ER-150) oraz bezwzględny nakaz spawania elementów na całej długości złącza, co świadczy o wysokich wymaganiach wytrzymałościowych dla tej części konstrukcji."
       ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7355-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
-      ],
       "skany": []
     },
     "rysunek-7356-1998": {
+      "rodzaj": "rysunek",
       "tytul": "Rysunek 7356: Szczegóły konstrukcyjne",
       "sygnatura": "7356",
       "data": "IV 1998",
@@ -354,9 +355,6 @@
         "Prezentowany dokument to Rysunek nr 7356 z kwietnia 1998 roku, zatytułowany „SZCZEGÓŁY KONSTRUKCYJNE”, opracowany w skali 1:10 przez zespół P.P.U. PRO-TECH (J. Szydłowski, E. Bartyka, B. Sztelak, A. Żyłka). Arkusz stanowi niezwykle istotne uzupełnienie projektu konstrukcji stalowej galerii łączącej nastawnię kotłów K7÷K9 z kotłownią.",
         "Zamiast ogólnych rzutów, rysunek ten skupia się na detalach węzłów montażowych, pokazując sposoby posadowienia i mocowania dźwigarów (K-1, K-2) do słupów żelbetowych (RW), belek stropowych (B-6, B-13) oraz istniejących ścian kotłowni. Dokument precyzyjnie specyfikuje geometrię połączeń, wymiary otworów wierconych w ścianach (Ø 22) oraz szczegółowy wykaz niezbędnych łączników (śruby M20 o różnych długościach, podkładki klinowe i sprężyste).",
         "W bloku uwag znalazło się kluczowe dla bezpieczeństwa konstrukcji zalecenie: „ELEMENTY SPAWAĆ NA CAŁEJ DŁUGOŚCI ZŁĄCZA” oraz specyfikacja elektrod (ER-150), co doskonale oddaje rzemieślniczą precyzję wymaganą przy tego typu budowach przemysłowych."
-      ],
-      "transkrypcja": [
-        { "src": "dokumenty/rysunek-7356-1998.html", "label": "Pełna transkrypcja rysunku (1998)" }
       ],
       "skany": []
     }
