@@ -322,21 +322,48 @@
           tabContent.innerHTML = '<div class="empty" style="border:none;">Skany jeszcze nie zostały dodane.</div>';
           return;
         }
-        const grid = document.createElement('div');
-        grid.className = 'scans-grid';
-        scans.forEach(function (scan, i) {
-          const src = typeof scan === 'string' ? scan : scan.src;
-          const label = typeof scan === 'string' ? ('Strona ' + (i + 1)) : (scan.label || ('Strona ' + (i + 1)));
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'scan-card';
-          btn.innerHTML =
-            '<img src="' + esc(src) + '" alt="' + esc(label) + '" loading="lazy" />'
-            + '<div class="scan-card__label">' + esc(label) + '</div>';
-          btn.addEventListener('click', function () { window.open(src, '_blank'); });
-          grid.appendChild(btn);
+
+        const pdfs = scans.filter(function (s) {
+          const src = typeof s === 'string' ? s : s.src;
+          return src.toLowerCase().endsWith('.pdf');
         });
-        tabContent.appendChild(grid);
+        const images = scans.filter(function (s) {
+          const src = typeof s === 'string' ? s : s.src;
+          return !src.toLowerCase().endsWith('.pdf');
+        });
+
+        pdfs.forEach(function (scan) {
+          const src = typeof scan === 'string' ? scan : scan.src;
+          const label = typeof scan === 'string' ? 'Dokument PDF' : (scan.label || 'Dokument PDF');
+          const wrap = document.createElement('div');
+          wrap.className = 'scan-pdf-wrap';
+          wrap.innerHTML =
+            '<div class="scan-pdf-header">' + esc(label) + '</div>'
+            + '<iframe class="scan-pdf-frame" src="' + esc(src) + '#view=FitH" title="' + esc(label) + '" loading="lazy"></iframe>'
+            + '<div class="scan-pdf-footer">'
+            +   '<a href="' + esc(src) + '" target="_blank" rel="noopener" class="btn btn--ghost btn--small">Otwórz w nowej karcie</a>'
+            +   '<a href="' + esc(src) + '" download class="btn btn--ghost btn--small">Pobierz PDF</a>'
+            + '</div>';
+          tabContent.appendChild(wrap);
+        });
+
+        if (images.length > 0) {
+          const grid = document.createElement('div');
+          grid.className = 'scans-grid';
+          images.forEach(function (scan, i) {
+            const src = typeof scan === 'string' ? scan : scan.src;
+            const label = typeof scan === 'string' ? ('Strona ' + (i + 1)) : (scan.label || ('Strona ' + (i + 1)));
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'scan-card';
+            btn.innerHTML =
+              '<img src="' + esc(src) + '" alt="' + esc(label) + '" loading="lazy" />'
+              + '<div class="scan-card__label">' + esc(label) + '</div>';
+            btn.addEventListener('click', function () { window.open(src, '_blank'); });
+            grid.appendChild(btn);
+          });
+          tabContent.appendChild(grid);
+        }
       }
     }
 

@@ -140,7 +140,9 @@
       "transkrypcja": [
         { "src": "dokumenty/umowa-7-00-ec-2000.html", "label": "Pełna transkrypcja (30 stron)" }
       ],
-      "skany": []
+      "skany": [
+        { "src": "skany/7-00-ec-2000/umowa-7-00-EC.pdf", "label": "Pełny skan umowy (PDF, 30 stron)" }
+      ]
     },
     "projekt-wykonawczy-pwp1-pwp2-2005": {
       "tytul": "Projekt Wykonawczy: Modernizacja zabezpieczeń PWP1 i PWP2",
