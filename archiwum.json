@@ -123,7 +123,9 @@
       "transkrypcja": [
         { "src": "dokumenty/aneks-master-3-2004.html", "label": "Pełna transkrypcja (19 stron)" }
       ],
-      "skany": []
+      "skany": [
+        { "src": "skany/2127-600/aneksturbina.pdf", "label": "Pełny skan umowy" }
+      ]
     },
     "umowa-7-00-ec-2000": {
       "tytul": "Umowa Nr 7/00/EC - Remont Czopucha K10 i K11",
