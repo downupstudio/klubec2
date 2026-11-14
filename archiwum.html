@@ -19,7 +19,7 @@
       <div class="archive-disclaimer">
         <div class="archive-disclaimer__label">Uwaga</div>
         <p>Transkrypcje w tym archiwum zostały wygenerowane automatycznie za pomocą narzędzi OCR (image-to-text). Mimo staranności mogą zawierać błędy, przekłamania i nieścisłości. Jeśli zależy Ci na dokładnej zawartości dokumentu — zawsze sięgnij do oryginalnych skanów, dostępnych w zakładce <strong>Skany</strong> w każdym dokumencie.</p>
-      </div>      
+      </div>
 
       <div id="archiveView">
         <div class="archive-list" id="archiveList"></div>
@@ -42,24 +42,24 @@
           <h2 id="docTitle"></h2>
           <div class="doc-header__meta" id="docMeta"></div>
         </div>
-
-      <div class="archive-provenance">
-        <h2 class="archive-section-title">Proweniencja zbioru</h2>
-        <div class="prose prose--narrow">
-          <p>Wszystkie skany i transkrypcje prezentowane w tym archiwum pochodzą z fizycznych dokumentów odnalezionych na terenie Elektrociepłowni EC-2. W trakcie postępującej rozbiórki obiektu (prowadzonej przez nowego właściciela terenu, spółkę JHM Development), historyczne archiwum zakładowe zostało pozostawione bez nadzoru. Dokumentacja – w tym unikatowe rysunki, kosztorysy i umowy – leżała porozrzucana w byłych pomieszczeniach archiwalnych, skazana na zniszczenie wraz z resztą budynków.</p>
-          
-          <p>Materiały te nie zostały formalnie zabezpieczone przez dewelopera ani przekazane do Archiwum Państwowego, co stanowi naruszenie obowiązków wynikających z ustawy o narodowym zasobie archiwalnym. Uznaliśmy za swój obowiązek uratowanie ich przed bezpowrotną utratą.</p>
-          
-          <p>Zbiór ten traktujemy jako społeczne dziedzictwo historyczne Łodzi. Digitalizujemy go i udostępniamy wyłącznie w celach edukacyjnych i archiwalnych, bez czerpania jakichkolwiek korzyści majątkowych.</p>
-        </div>
-      </div>
-      
         <div class="tabs" role="tablist" id="docTabs">
           <button type="button" class="tab active" data-tab="analiza" role="tab">Analiza</button>
           <button type="button" class="tab" data-tab="transkrypcja" role="tab">Transkrypcja</button>
           <button type="button" class="tab" data-tab="skany" role="tab">Skany</button>
         </div>
         <div id="tabContent"></div>
+      </div>
+
+      <!-- PROWENIENCJA ZBIORU — na samym dole strony -->
+      <div class="archive-provenance">
+        <h2 class="archive-section-title">Proweniencja zbioru</h2>
+        <div class="prose prose--narrow">
+          <p>Wszystkie skany i transkrypcje prezentowane w tym archiwum pochodzą z fizycznych dokumentów odnalezionych na terenie Elektrociepłowni EC-2. W trakcie postępującej rozbiórki obiektu (prowadzonej przez nowego właściciela terenu, spółkę JHM Development), historyczne archiwum zakładowe zostało pozostawione bez nadzoru. Dokumentacja – w tym unikatowe rysunki, kosztorysy i umowy – leżała porozrzucana w byłych pomieszczeniach archiwalnych, skazana na zniszczenie wraz z resztą budynków.</p>
+
+          <p>Materiały te nie zostały formalnie zabezpieczone przez dewelopera ani przekazane do Archiwum Państwowego, co stanowi naruszenie obowiązków wynikających z ustawy o narodowym zasobie archiwalnym. Uznaliśmy za swój obowiązek uratowanie ich przed bezpowrotną utratą.</p>
+
+          <p>Zbiór ten traktujemy jako społeczne dziedzictwo historyczne Łodzi. Digitalizujemy go i udostępniamy wyłącznie w celach edukacyjnych i archiwalnych, bez czerpania jakichkolwiek korzyści majątkowych.</p>
+        </div>
       </div>
     </div>
   </main>
@@ -281,7 +281,7 @@
         parts.forEach(function (part) {
           const wrap = document.createElement('div');
           wrap.className = 'transcription-part';
-          
+
           const label = document.createElement('div');
           label.className = 'transcription-part__label';
           label.textContent = part.label || 'Transkrypcja';
@@ -292,7 +292,7 @@
           iframe.src = part.src;
           iframe.title = part.label || 'Transkrypcja';
           iframe.loading = 'lazy';
-          
+
           iframe.addEventListener('load', function() {
             try {
               const docIframe = iframe.contentDocument || iframe.contentWindow.document;
@@ -353,9 +353,9 @@
           const src = typeof scan === 'string' ? scan : scan.src;
           const label = typeof scan === 'string' ? 'Dokument PDF' : (scan.label || 'Dokument PDF');
           const absoluteUrl = new URL(src, window.location.href).href;
-          
+
           const viewerUrl = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=' + encodeURIComponent(absoluteUrl);
-          
+
           const wrap = document.createElement('div');
           wrap.className = 'scan-pdf-wrap';
           wrap.innerHTML =
