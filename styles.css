@@ -914,3 +914,35 @@ tbody tr:hover { background: #fafafa; }
 .archive-provenance .prose p:last-child {
   margin-bottom: 0;
 }
+
+.archive-category {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.archive-category:last-child {
+  margin-bottom: 0;
+}
+
+.archive-category__title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.14);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .archive-category {
+    margin-bottom: 36px;
+    gap: 12px;
+  }
+  .archive-category__title {
+    font-size: 0.75rem;
+    padding-bottom: 10px;
+  }
+}

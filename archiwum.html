@@ -22,8 +22,7 @@
       </div>
 
       <div id="archiveView">
-        <div class="archive-list" id="archiveList"></div>
-        <div id="looseDocsSection"></div>
+        <div id="archiveList"></div>
       </div>
 
       <div id="skoroszytView" class="hidden">
@@ -50,7 +49,6 @@
         <div id="tabContent"></div>
       </div>
 
-      <!-- PROWENIENCJA ZBIORU — na samym dole strony -->
       <div class="archive-provenance">
         <h2 class="archive-section-title">Proweniencja zbioru</h2>
         <div class="prose prose--narrow">
@@ -77,7 +75,6 @@
     const skoroszytView = document.getElementById('skoroszytView');
     const documentView = document.getElementById('documentView');
     const archiveList = document.getElementById('archiveList');
-    const looseDocsSection = document.getElementById('looseDocsSection');
     const skoroszytSig = document.getElementById('skoroszytSig');
     const skoroszytMeta = document.getElementById('skoroszytMeta');
     const skoroszytDesc = document.getElementById('skoroszytDesc');
@@ -121,53 +118,83 @@
     function renderArchive() {
       archiveList.innerHTML = '';
 
-      if (!DATA.skoroszyty || DATA.skoroszyty.length === 0) {
-        archiveList.innerHTML = '<div class="empty">Brak skoroszytów w archiwum.</div>';
-      } else {
-        DATA.skoroszyty.forEach(function (s) {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'archive-card';
-          const docCount = (s.zawartosc || []).filter(function (i) { return i.typ === 'dokument'; }).length;
+      const categories = new Map();
 
-          let metaParts = [];
-          if (s.rok) metaParts.push(s.rok);
-          if (s.tom) metaParts.push(s.tom);
+      function ensureCategory(name) {
+        if (!categories.has(name)) {
+          categories.set(name, { skoroszyty: [], dokumenty: [] });
+        }
+        return categories.get(name);
+      }
 
-          btn.innerHTML =
-            '<div class="archive-card__sig">' + esc(s.sygnatura) + '</div>'
-            + (s.projekt ? '<div class="archive-card__projekt">' + esc(s.projekt) + '</div>' : '')
-            + '<div class="archive-card__meta">'
-            +   metaParts.map(function (p) { return '<span>' + esc(p) + '</span>'; }).join('')
-            + '</div>'
-            + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
-            + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumenty') + '</div>';
-          btn.addEventListener('click', function () {
-            currentSkoroszytId = s.id;
-            renderSkoroszyt(s.id);
-            showSkoroszytView();
+      (DATA.skoroszyty || []).forEach(function (s) {
+        const kat = s.kategoria || 'Pozostałe';
+        ensureCategory(kat).skoroszyty.push(s);
+      });
+
+      (DATA.dokumenty_bez_skoroszytu || []).forEach(function (docId) {
+        const doc = DATA.dokumenty[docId];
+        if (!doc) return;
+        const kat = doc.kategoria || 'Pozostałe';
+        ensureCategory(kat).dokumenty.push({ id: docId, doc: doc });
+      });
+
+      if (categories.size === 0) {
+        archiveList.innerHTML = '<div class="empty">Brak dokumentów w archiwum.</div>';
+        return;
+      }
+
+      categories.forEach(function (catData, catName) {
+        const section = document.createElement('section');
+        section.className = 'archive-category';
+
+        const header = document.createElement('h2');
+        header.className = 'archive-category__title';
+        header.textContent = catName;
+        section.appendChild(header);
+
+        if (catData.skoroszyty.length > 0) {
+          const grid = document.createElement('div');
+          grid.className = 'archive-list';
+          catData.skoroszyty.forEach(function (s) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'archive-card';
+            const docCount = (s.zawartosc || []).filter(function (i) { return i.typ === 'dokument'; }).length;
+
+            let metaParts = [];
+            if (s.rok) metaParts.push(s.rok);
+            if (s.tom) metaParts.push(s.tom);
+
+            btn.innerHTML =
+              '<div class="archive-card__sig">' + esc(s.sygnatura) + '</div>'
+              + (s.projekt ? '<div class="archive-card__projekt">' + esc(s.projekt) + '</div>' : '')
+              + '<div class="archive-card__meta">'
+              +   metaParts.map(function (p) { return '<span>' + esc(p) + '</span>'; }).join('')
+              + '</div>'
+              + '<div class="archive-card__desc">' + esc(s.opis || '') + '</div>'
+              + '<div class="archive-card__count">' + docCount + ' ' + (docCount === 1 ? 'dokument' : 'dokumenty') + '</div>';
+            btn.addEventListener('click', function () {
+              currentSkoroszytId = s.id;
+              renderSkoroszyt(s.id);
+              showSkoroszytView();
+            });
+            grid.appendChild(btn);
           });
-          archiveList.appendChild(btn);
-        });
-      }
+          section.appendChild(grid);
+        }
 
-      looseDocsSection.innerHTML = '';
-      const loose = DATA.dokumenty_bez_skoroszytu || [];
-      if (loose.length > 0) {
-        const title = document.createElement('h2');
-        title.className = 'archive-section-title';
-        title.textContent = 'Dokumenty poza skoroszytami';
-        looseDocsSection.appendChild(title);
+        if (catData.dokumenty.length > 0) {
+          const wrap = document.createElement('div');
+          wrap.className = 'skoroszyt-docs';
+          catData.dokumenty.forEach(function (item) {
+            wrap.appendChild(buildDocRow(item.id, item.doc, 'loose'));
+          });
+          section.appendChild(wrap);
+        }
 
-        const wrap = document.createElement('div');
-        wrap.className = 'skoroszyt-docs';
-        loose.forEach(function (docId) {
-          const doc = DATA.dokumenty[docId];
-          if (!doc) return;
-          wrap.appendChild(buildDocRow(docId, doc, 'loose'));
-        });
-        looseDocsSection.appendChild(wrap);
-      }
+        archiveList.appendChild(section);
+      });
     }
 
     function renderSkoroszyt(id) {

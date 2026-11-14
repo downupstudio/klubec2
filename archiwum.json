@@ -2,6 +2,7 @@
   "skoroszyty": [
     {
       "id": "2-1-19-PM2-8-106",
+      "kategoria": "Podgrzewacze regeneracyjne",
       "sygnatura": "2-1/19 PM2-8/106",
       "projekt": "Dokumentacja techniczna podgrzewaczy regeneracyjnych",
       "tom": "",
@@ -15,6 +16,7 @@
     },
     {
       "id": "2-1-14-PK2-44-12",
+      "kategoria": "Nastawnia kotłów K7÷K9",
       "sygnatura": "2-1/14 PK2-44/12",
       "projekt": "Nastawnia kotłów K7÷K9 — odtworzenie dróg",
       "tom": "Tom 15",
@@ -30,6 +32,7 @@
     },
     {
       "id": "2-1-14-PK2-44-13",
+      "kategoria": "Nastawnia kotłów K7÷K9",
       "sygnatura": "2-1/14 PK2-44/13",
       "projekt": "Nastawnia kotłów K7÷K9 — konstrukcja galerii",
       "tom": "Tom 5",
@@ -45,6 +48,7 @@
     },
     {
       "id": "2-1-19-PM2-36-101",
+      "kategoria": "Podgrzewacze regeneracyjne",
       "sygnatura": "2-1/19 PM2-36/101",
       "projekt": "Modernizacja zabezpieczeń PWP1 i PWP2",
       "tom": "Tom 4",
@@ -109,6 +113,7 @@
       "skany": []
     },
     "aneks-master-3-2004": {
+      "kategoria": "Turbiny i automatyka",
       "tytul": "Aneks do instrukcji obsługi - MASTER 3 (UNIMAT-3M)",
       "sygnatura": "2127-600",
       "data": "I 2004",
@@ -128,6 +133,7 @@
       ]
     },
     "umowa-7-00-ec-2000": {
+      "kategoria": "Kotły i ciągi spalinowe",
       "tytul": "Umowa Nr 7/00/EC - Remont Czopucha K10 i K11",
       "sygnatura": "7/00/EC",
       "data": "16 sierpnia 2000",
