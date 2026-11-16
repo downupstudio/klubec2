@@ -1,5 +1,6 @@
 (function () {
   const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  const CACHE_KEY = 'klubec2-fragments-v1';
 
   function updateFavicon() {
     const favicon = document.getElementById('favicon');
@@ -8,13 +9,43 @@
     }
   }
 
+  function readCache(url) {
+    try {
+      const cache = JSON.parse(sessionStorage.getItem(CACHE_KEY) || '{}');
+      return typeof cache[url] === 'string' ? cache[url] : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeCache(url, html) {
+    try {
+      const cache = JSON.parse(sessionStorage.getItem(CACHE_KEY) || '{}');
+      cache[url] = html;
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+    } catch (e) {
+    }
+  }
+
+  async function fetchFragment(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(res.status);
+    const html = await res.text();
+    writeCache(url, html);
+    return html;
+  }
+
   async function loadFragment(selector, url) {
     const el = document.querySelector(selector);
     if (!el) return;
+    const cached = readCache(url);
+    if (cached !== null) {
+      el.innerHTML = cached;
+      fetchFragment(url).catch(function () {});
+      return;
+    }
     try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(res.status);
-      el.innerHTML = await res.text();
+      el.innerHTML = await fetchFragment(url);
     } catch (e) {
       console.error('Nie udało się załadować ' + url, e);
     }
@@ -38,13 +69,17 @@
     updateFavicon();
   }
 
-  document.addEventListener('DOMContentLoaded', async function () {
-    await Promise.all([
-      loadFragment('#header-placeholder', 'header.html'),
-      loadFragment('#footer-placeholder', 'footer.html')
-    ]);
-    initNav();
+  function start() {
+    const headerLoaded = loadFragment('#header-placeholder', 'header.html');
+    loadFragment('#footer-placeholder', 'footer.html');
+    headerLoaded.then(initNav);
     darkModeMedia.addEventListener('change', updateFavicon);
     updateFavicon();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
 })();
