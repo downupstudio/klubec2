@@ -282,7 +282,9 @@
       "transkrypcja": [
         { "src": "dokumenty/kosztorys-inwestorski-odtworzenie-drog-1998.html", "label": "Pełna transkrypcja (12 stron)" }
       ],
-      "skany": []
+      "skany": [
+        { "src": "skany/nawierzchk7k9/kosztorys2.pdf", "label": "Pełny skan dokumentu" }
+      ]
     },
     "projekt-konstrukcji-galerii-1998": {
       "rodzaj": "dokument",
