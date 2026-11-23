@@ -15,6 +15,18 @@
       ]
     },
     {
+      "id": "II-2-0224/J/2",
+      "kategoria": "Kanalizacja",
+      "sygnatura": "II-2-0224/J/2",
+      "projekt": "Odbudowa trasy kanalizacyjnej wzdłuż Budynku Głównego od strony elektrofiltrów",
+      "tom": "",
+      "rok": "1995",
+      "opis": "Skoroszyt dotyczący odbudowy trasy kanalizacyjnej wzdłuż Budynku Głównego EC-2, po stronie elektrofiltrów.",
+      "zawartosc": [
+        { "typ": "dokument", "id": "kanalywzdluzglownego" }
+      ]
+    },
+    {
       "id": "2-1-14-PK2-44-12",
       "kategoria": "Nastawnia kotłów K7÷K9",
       "sygnatura": "2-1/14 PK2-44/12",
@@ -363,6 +375,28 @@
         "W bloku uwag znalazło się kluczowe dla bezpieczeństwa konstrukcji zalecenie: „ELEMENTY SPAWAĆ NA CAŁEJ DŁUGOŚCI ZŁĄCZA” oraz specyfikacja elektrod (ER-150), co doskonale oddaje rzemieślniczą precyzję wymaganą przy tego typu budowach przemysłowych."
       ],
       "skany": []
+    },
+    "kanalywzdluzglownego": {
+      "rodzaj": "dokument",
+      "kategoria": "Kanalizacja",
+      "tytul": "Kosztorys odbudowy trasy kanalizacyjnej wzdłuż Budynku Głównego",
+      "sygnatura": "II-2-0224/J/2/100/95",
+      "data": "1995",
+      "autor": "W. Wieczorek",
+      "typ": "Kosztorys i przedmiar robót",
+      "strony": "7",
+      "analiza": [
+        "Prezentowany dokument to kosztorys nr II-2-0224/J/2/100/95 z 1995 roku, opracowany przez W. Wieczorek dla inwestora EC-2. Dotyczy odbudowy trasy kanalizacyjnej przebiegającej wzdłuż Budynku Głównego, po stronie elektrofiltrów.",
+        "Dokument składa się z przedmiaru robót, części kosztorysowej, zestawienia materiałów, sprzętu i zawodów. Określa zakres prac obejmujący rozbiórkę i ułożenie nowych fragmentów sieci, montaż rur kamionkowych i żeliwnych o średnicach od 75 do 400 mm, wykonanie studzienek, włazów i kształtek oraz uzupełnienie betonowych i murarskich elementów towarzyszących.",
+        "Materiał pokazuje szczegółowy skład nakładów na robociznę, materiały i mechanizację. Wykazano m.in. beton żwirowy, cegłę, cement, rury i trójniki kamionkowe oraz żeliwne, kręgi i pokrywy żelbetowe, elementy odciążające, haki, sznury konopne i kit asfaltowy. Wykorzystano też samochody dostawcze i skrzyniowe, spawarkę elektryczną, wyciągarkę ręczną oraz sprzęt pomocniczy.",
+        "Dokument ma istotną wartość archiwalną, ponieważ zachowuje szczegółowy obraz projektowania i remontowania infrastruktury podziemnej EC-2 w połowie lat 90. Osobno podkreślono, że rozbiórkę przybudówki przylegającej do kotłowni i pomp próżniowych wraz z silnikami i fundamentami należy rozliczyć odrębnym kosztorysem powykonawczym. Jest to cenna informacja o granicy zakresu prac i organizacji kolejnych inwestycji remontowych."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/kanalywzdlozgownego.html", "label": "Pełna transkrypcja (7 stron)" }
+      ],
+      "skany": [
+        { "src": "skany/kanalyidraws/kosztorys.pdf", "label": "Pełny skan dokumentu" }
+      ]
     },
     "dziennik-raportow-dyzurnych-1965": {
       "rodzaj": "dokument",
