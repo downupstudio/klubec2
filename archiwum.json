@@ -363,10 +363,32 @@
         "W bloku uwag znalazło się kluczowe dla bezpieczeństwa konstrukcji zalecenie: „ELEMENTY SPAWAĆ NA CAŁEJ DŁUGOŚCI ZŁĄCZA” oraz specyfikacja elektrod (ER-150), co doskonale oddaje rzemieślniczą precyzję wymaganą przy tego typu budowach przemysłowych."
       ],
       "skany": []
+    },
+    "dziennik-raportow-dyzurnych-1965": {
+      "rodzaj": "dokument",
+      "kategoria": "Eksploatacja i ruch",
+      "tytul": "Dziennik raportów dyżurnych ruchu EC-2",
+      "sygnatura": "",
+      "data": "28 III–8 IX 1965",
+      "autor": "Dyżurni ruchu EC-2 Łódź",
+      "typ": "Dziennik eksploatacyjny",
+      "strony": "185",
+      "analiza": [
+        "Prezentowany dokument to 185-stronicowy dziennik raportów dyżurnych ruchu Elektrowni EC-2 w Łodzi za 1965 rok. Obejmuje okres od 28 marca do 8 września i stanowi bieżącą kronikę pracy zakładu z podziałem na zmiany poranne, popołudniowe i nocne.",
+        "Dziennik z dużą szczegółowością opisuje uruchamianie i odstawianie kotłów K1–K8 oraz turbozespołów TG1–TG6. Zawiera również informacje o pracy rozdzielni elektrycznych, transformatorów, pomp, młynów węglowych, odgazowywaczy, chłodni i rurociągów parowych. Zapisy dokumentują odprawy dyżurne, ustalenia obciążeń, potrzeby remontowe, dostawy węgla oraz działania związane ze szczytami mocy i odbiorami pary.",
+        "Materiał ukazuje codzienną współpracę działów ruchu, kotłowni, elektromontażu i dyspozycji oraz ciągłe napięcie pomiędzy bieżącą eksploatacją a prowadzeniem napraw i modernizacji. Zachowane są liczne przypadki zwarć i doziemień sieci, uszkodzeń kabli i pomp, problemów z regulacją turbin, nieszczelności sprzęgieł i zaworów, pożarów oraz kapitalnych i bieżących remontów. Szczególną wartość dokumentu stanowi opis kolejnych czynności: ostrzeżenie dyspozytorów, odstawienie uszkodzonego urządzenia, pomiary i próby, uzgodnienie naprawy oraz ponowna zgoda na uruchomienie."
+      ],
+      "transkrypcja": [
+        { "src": "dokumenty/jebitnyzeszytidrawsa.html", "label": "Pełna transkrypcja (185 stron)" }
+      ],
+      "skany": [
+        { "src": "skany/dzien1/nodzien_compressed.pdf", "label": "Pełny skan dokumentu" }
+      ]
     }
   },
   "dokumenty_bez_skoroszytu": [
     "aneks-master-3-2004",
-    "umowa-7-00-ec-2000"
+    "umowa-7-00-ec-2000",
+    "dziennik-raportow-dyzurnych-1965"
   ]
 }
